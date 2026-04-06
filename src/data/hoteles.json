@@ -1,0 +1,36 @@
+[
+  {
+    "id": 2,
+    "documentId": "jlidzuchyw010x981vc24xkl",
+    "nombre": "Casa Chanehque",
+    "estrellas": 4,
+    "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
+    "createdAt": "2026-04-03T07:24:39.213Z",
+    "updatedAt": "2026-04-03T07:25:25.644Z",
+    "publishedAt": "2026-04-03T07:25:25.676Z",
+    "redes_sociales": [
+      {
+        "id": 3,
+        "plataforma": "Facebook",
+        "usuario": null,
+        "enlace": null
+      },
+      {
+        "id": 4,
+        "plataforma": "Instagram",
+        "usuario": null,
+        "enlace": null
+      }
+    ],
+    "contacto": null,
+    "galeria": [
+      {
+        "id": 1,
+        "documentId": "mkpfrlfl3up88qren9ugqrgc",
+        "url": "/assets/casa_chanehque_1.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    ]
+  }
+]
