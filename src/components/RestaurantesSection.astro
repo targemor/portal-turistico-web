@@ -1,0 +1,157 @@
+---
+/**
+ * RestaurantesSection – Restaurantes desde JSON, estilo fiel a test.jsx
+ * bg-slate-50, border-slate-100, #701010 acento
+ */
+import Card from "./ui/Card.astro";
+import Badge from "./ui/Badge.astro";
+import Button from "./ui/Button.astro";
+
+interface RedSocial {
+  id: number;
+  plataforma: string;
+  usuario: string | null;
+  enlace: string | null;
+}
+
+interface Contacto {
+  id: number;
+  telefono: string | null;
+  email: string | null;
+  sitio_web: string | null;
+  whatsapp: string | null;
+}
+
+interface Galeria {
+  id: number;
+  documentId: string;
+  url: string;
+  alternativeText: string | null;
+  caption: string | null;
+}
+
+interface Restaurante {
+  id: number;
+  documentId: string;
+  nombre: string;
+  descripcion: string | null;
+  direccion: string;
+  contacto: Contacto | null;
+  galeria: Galeria | Galeria[] | null;
+  redes_sociales: RedSocial[];
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
+interface Props {
+  restaurantes: Restaurante[];
+}
+
+const { restaurantes } = Astro.props;
+
+function getGaleriaUrl(galeria: Galeria | Galeria[] | null): string | null {
+  if (!galeria) return null;
+  if (Array.isArray(galeria)) return galeria[0]?.url ?? null;
+  return galeria.url;
+}
+
+function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): string {
+  if (!galeria) return fallback;
+  if (Array.isArray(galeria)) return galeria[0]?.alternativeText ?? fallback;
+  return galeria.alternativeText ?? fallback;
+}
+---
+
+<section id="restaurantes" class="py-20">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+      <div>
+        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Gastronomía</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE COMER</h2>
+      </div>
+      <Button variant="outline" class="text-xs font-bold gap-2">
+        VER TODOS LOS RESTAURANTES
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </Button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {restaurantes.map((restaurante) => {
+        const imgUrl = getGaleriaUrl(restaurante.galeria);
+        const imgAlt = getGaleriaAlt(restaurante.galeria, restaurante.nombre);
+        return (
+          <Card id={`restaurante-${restaurante.id}`} class="overflow-hidden group">
+            <!-- Imagen -->
+            <div class="aspect-video overflow-hidden bg-slate-100">
+              {imgUrl ? (
+                <img
+                  src={imgUrl}
+                  alt={imgAlt}
+                  class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center bg-slate-100">
+                  <svg class="w-12 h-12 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+                    <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+                  </svg>
+                </div>
+              )}
+            </div>
+
+            <!-- Contenido -->
+            <div class="p-6">
+              <Badge class="mb-3">Restaurante</Badge>
+              <h3 class="text-xl font-bold mb-2 text-slate-900">{restaurante.nombre}</h3>
+
+              {restaurante.descripcion && (
+                <p class="text-slate-500 text-sm mb-3 line-clamp-2">{restaurante.descripcion}</p>
+              )}
+
+              <p class="text-slate-500 text-sm mb-4 flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                {restaurante.direccion}
+              </p>
+
+              <!-- Contacto -->
+              {restaurante.contacto && (
+                <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
+                  {restaurante.contacto.telefono && (
+                    <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors">
+                      <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                      </svg>
+                      {restaurante.contacto.telefono}
+                    </a>
+                  )}
+                  {restaurante.contacto.email && (
+                    <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors truncate">
+                      <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                      </svg>
+                      {restaurante.contacto.email}
+                    </a>
+                  )}
+                </div>
+              )}
+
+              <Button variant="outline" class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all">
+                Ver menú y horarios
+              </Button>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  </div>
+</section>

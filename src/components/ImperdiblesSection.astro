@@ -1,0 +1,85 @@
+---
+/**
+ * ImperdiblesSection – "Los Imperdibles" con Cards shadcn
+ * Fiel al diseño de test.jsx: fondo slate-50/blanco, cards blancas, #701010
+ * Usa imágenes de Unsplash como en el original
+ */
+import Card from "./ui/Card.astro";
+import Badge from "./ui/Badge.astro";
+import Button from "./ui/Button.astro";
+
+const imperdibles = [
+  {
+    id: "san-juan-raya",
+    categoria: "Naturaleza",
+    titulo: "San Juan Raya",
+    descripcion: "Explora fósiles marinos y huellas de dinosaurios en un entorno desértico único.",
+    imagen: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=800&auto=format&fit=crop",
+    cta: "Ver detalles",
+  },
+  {
+    id: "sabor-local",
+    categoria: "Gastronomía",
+    titulo: "Sabor Local",
+    descripcion: "Prueba el auténtico Mole de Caderas, un tesoro culinario de la Matanza tradicional.",
+    imagen: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop",
+    cta: "Explorar menú",
+  },
+  {
+    id: "manantiales",
+    categoria: "Wellness",
+    titulo: "Manantiales",
+    descripcion: "Relájate en las aguas minerales curativas que dieron origen a la fama de la ciudad.",
+    imagen: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop",
+    cta: "Reservar ahora",
+  },
+];
+---
+
+<section id="destinos" class="py-20">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+      <div>
+        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Destacados</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">LOS IMPERDIBLES</h2>
+      </div>
+      <Button variant="outline" class="text-xs font-bold gap-2">
+        VER TODA LA LISTA
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </Button>
+    </div>
+
+    <!-- Grid de cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {imperdibles.map((item) => (
+        <Card id={`imperdible-${item.id}`} class="overflow-hidden group">
+          <!-- Imagen -->
+          <div class="aspect-video overflow-hidden">
+            <img
+              src={item.imagen}
+              alt={item.titulo}
+              class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <!-- Contenido -->
+          <div class="p-6">
+            <Badge class="mb-3">{item.categoria}</Badge>
+            <h3 class="text-xl font-bold mb-2 text-slate-900">{item.titulo}</h3>
+            <p class="text-slate-500 text-sm mb-6 line-clamp-2">{item.descripcion}</p>
+            <Button
+              variant="outline"
+              class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all"
+            >
+              {item.cta}
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

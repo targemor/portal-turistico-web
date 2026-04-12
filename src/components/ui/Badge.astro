@@ -1,0 +1,19 @@
+---
+/**
+ * Badge – shadcn-style, fiel al diseño de test.jsx
+ * bg-[#701010] text-white por defecto
+ */
+export interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className, id } = Astro.props;
+---
+
+<div
+  {id}
+  class={`inline-flex items-center rounded-full border border-transparent bg-[#701010] px-2.5 py-0.5 text-xs font-semibold text-white transition-colors ${className ?? ""}`}
+>
+  <slot />
+</div>

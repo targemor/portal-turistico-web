@@ -1,0 +1,149 @@
+---
+/**
+ * NavBar – fiel al diseño de test.jsx
+ * Transparente sobre hero, bg-white/80 con blur al hacer scroll
+ * Color de texto dinámico: blanco → slate-900
+ */
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-4">
+      <a href="/" id="nav-logo" class="text-xl font-bold tracking-tight nav-brand text-white">
+        TEHUACÁN
+      </a>
+      <div class="hidden sm:block h-5 w-[1px] nav-divider bg-white/20"></div>
+      <span class="hidden sm:block text-[10px] font-semibold uppercase tracking-widest nav-subtitle text-white/70">
+        Cuna del Maíz
+      </span>
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex gap-1 items-center" aria-label="Navegación principal">
+      {[
+        { label: "Donde hospedarse", href: "#hoteles", id: "nav-hoteles" },
+        { label: "Donde comer",      href: "#restaurantes", id: "nav-restaurantes" },
+        { label: "Que hacer",        href: "#destinos", id: "nav-destinos" },
+        { label: "Guias Turisticos", href: "#guias", id: "nav-guias" },
+      ].map(({ label, href, id }) => (
+        <a
+          {id}
+          {href}
+          class="nav-link inline-flex items-center justify-center rounded-md px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors focus-visible:outline-none text-white hover:bg-white/10"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 rounded-md nav-mobile-btn text-white"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="icon-open" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-white border-b border-slate-200 shadow-md"
+  >
+    <nav class="flex flex-col px-6 py-3 gap-1">
+      {[
+        { label: "Donde hospedarse", href: "#hoteles" },
+        { label: "Donde comer",      href: "#restaurantes" },
+        { label: "Que hacer",        href: "#destinos" },
+        { label: "Guias Turisticos", href: "#guias" },
+      ].map(({ label, href }) => (
+        <a
+          {href}
+          class="block px-3 py-2.5 rounded-md text-slate-700 hover:text-[#701010] hover:bg-slate-50 text-sm font-bold uppercase tracking-wide transition-colors"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const navbar  = document.getElementById("navbar")    as HTMLElement;
+  const brand   = document.querySelector(".nav-brand")  as HTMLElement;
+  const divider = document.querySelector(".nav-divider") as HTMLElement;
+  const subtitle= document.querySelector(".nav-subtitle") as HTMLElement;
+  const links   = document.querySelectorAll<HTMLElement>(".nav-link");
+  const mobileBtn = document.querySelector(".nav-mobile-btn") as HTMLElement;
+
+  function applyScrolled(scrolled: boolean) {
+    if (scrolled) {
+      navbar.style.background   = "rgba(255,255,255,0.85)";
+      navbar.style.backdropFilter = "blur(12px)";
+      navbar.style.borderBottom = "1px solid #e2e8f0";
+      navbar.style.paddingTop   = "0.75rem";
+      navbar.style.paddingBottom= "0.75rem";
+
+      brand.style.color    = "#701010";
+      divider.style.background = "#e2e8f0";
+      subtitle.style.color = "#64748b";
+      links.forEach(l => {
+        l.style.color = "#475569";
+        l.onmouseenter = () => l.style.background = "#f1f5f9";
+        l.onmouseleave = () => l.style.background = "transparent";
+      });
+      mobileBtn.style.color = "#475569";
+    } else {
+      navbar.style.background    = "transparent";
+      navbar.style.backdropFilter= "none";
+      navbar.style.borderBottom  = "none";
+      navbar.style.paddingTop    = "1.5rem";
+      navbar.style.paddingBottom = "1.5rem";
+
+      brand.style.color    = "#ffffff";
+      divider.style.background = "rgba(255,255,255,0.2)";
+      subtitle.style.color = "rgba(255,255,255,0.7)";
+      links.forEach(l => {
+        l.style.color = "#ffffff";
+        l.onmouseenter = () => l.style.background = "rgba(255,255,255,0.1)";
+        l.onmouseleave = () => l.style.background = "transparent";
+      });
+      mobileBtn.style.color = "#ffffff";
+    }
+  }
+
+  window.addEventListener("scroll", () => applyScrolled(window.scrollY > 50));
+  applyScrolled(false);
+
+  // Mobile toggle
+  const btn      = document.getElementById("mobile-menu-btn")  as HTMLButtonElement;
+  const menu     = document.getElementById("mobile-menu")       as HTMLElement;
+  const iconOpen = document.getElementById("icon-open")         as HTMLElement;
+  const iconClose= document.getElementById("icon-close")        as HTMLElement;
+
+  btn.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden", isOpen);
+    iconOpen.classList.toggle("hidden",  !isOpen);
+    iconClose.classList.toggle("hidden",  isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  menu.querySelectorAll("a").forEach(link =>
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      iconOpen.classList.remove("hidden");
+      iconClose.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+    })
+  );
+</script>

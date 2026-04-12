@@ -1,0 +1,19 @@
+---
+/**
+ * Card – shadcn-style, fiel al diseño de test.jsx
+ * border-slate-200, bg-white, hover:shadow-md
+ */
+export interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className, id } = Astro.props;
+---
+
+<div
+  {id}
+  class={`rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md ${className ?? ""}`}
+>
+  <slot />
+</div>

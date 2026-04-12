@@ -1,17 +1,100 @@
 ---
+/**
+ * index.astro – Página principal del Portal Turístico Tehuacán
+ *
+ * Estructura fiel a test.jsx refactorizada en componentes Astro:
+ * - NavBar          → header transparente → blur al scroll
+ * - HeroSection     → imagen + overlay + barra búsqueda
+ * - IntroSection    → cita minimalista con divisor rojo
+ * - ImperdiblesSection → grid de 3 cards shadcn
+ * - ExploraSection  → bento grid + tabs por categoría
+ * - HotelesSection  → cards de hoteles con datos JSON
+ * - RestaurantesSection → cards de restaurantes con datos JSON
+ * - GuiasSection    → cards de guías con datos JSON
+ * - Footer          → dark slate-950
+ * - BottomNav       → nav móvil fijo + FAB
+ */
+import NavBar             from "../components/NavBar.astro";
+import HeroSection        from "../components/HeroSection.astro";
+import IntroSection       from "../components/IntroSection.astro";
+import ImperdiblesSection from "../components/ImperdiblesSection.astro";
+import ExploraSection     from "../components/ExploraSection.astro";
+import HotelesSection     from "../components/HotelesSection.astro";
+import RestaurantesSection from "../components/RestaurantesSection.astro";
+import GuiasSection       from "../components/GuiasSection.astro";
+import Footer             from "../components/Footer.astro";
+import BottomNav          from "../components/BottomNav.astro";
 
+import "../styles/global.css";
+
+import hoteles      from "../data/hoteles.json";
+import restaurantes from "../data/restaurantes.json";
+import guias        from "../data/guias-turisticos.json";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portal Turístico Tehuacán – Descubre la Cuna del Maíz y Patrimonio de la Humanidad. Hoteles, restaurantes, destinos y guías certificados en Tehuacán, Puebla."
+    />
+    <meta name="keywords" content="Tehuacán, Puebla, turismo, hoteles, restaurantes, destinos turísticos, biosfera, patrimonio, México" />
+    <meta name="author" content="Ayuntamiento de Tehuacán" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="Portal Turístico Tehuacán | Cuna del Maíz" />
+    <meta property="og:description" content="Descubre la Cuna del Maíz y Patrimonio de la Humanidad. Hoteles, restaurantes y guías turísticos de Tehuacán, Puebla." />
+    <meta property="og:locale"      content="es_MX" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Portal Turístico Tehuacán" />
+    <meta name="twitter:description" content="Cuna del Maíz y Patrimonio de la Humanidad. Descubre Tehuacán, Puebla." />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Portal Turístico Tehuacán | Cuna del Maíz</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-[#701010]/10 pb-20 md:pb-0">
+
+    <!-- Barra de navegación fija -->
+    <NavBar />
+
+    <main id="main-content">
+      <!-- Hero: imagen de fondo + buscador -->
+      <HeroSection />
+
+      <!-- Introducción minimalista con cita -->
+      <IntroSection />
+
+      <!-- Los Imperdibles: 3 cards con imagen -->
+      <ImperdiblesSection />
+
+      <!-- Bento grid: Explora cada rincón -->
+      <ExploraSection />
+
+      <!-- Hoteles (datos desde JSON) -->
+      <HotelesSection hoteles={hoteles} />
+
+      <!-- Restaurantes (datos desde JSON) -->
+      <RestaurantesSection restaurantes={restaurantes} />
+
+      <!-- Guías turísticos (datos desde JSON) -->
+      <GuiasSection guias={guias} />
+    </main>
+
+    <!-- Footer dark -->
+    <Footer />
+
+    <!-- Bottom nav móvil + FAB -->
+    <BottomNav />
+
+  </body>
 </html>

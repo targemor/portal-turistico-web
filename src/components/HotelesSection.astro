@@ -1,0 +1,124 @@
+---
+/**
+ * HotelesSection – Hoteles desde JSON, estilo fiel a test.jsx
+ * bg-white, border-slate-200, #701010 acento
+ */
+import Card from "./ui/Card.astro";
+import Badge from "./ui/Badge.astro";
+import Button from "./ui/Button.astro";
+
+interface RedSocial {
+  id: number;
+  plataforma: string;
+  usuario: string | null;
+  enlace: string | null;
+}
+
+interface Galeria {
+  id: number;
+  documentId: string;
+  url: string;
+  alternativeText: string | null;
+  caption: string | null;
+}
+
+interface Hotel {
+  id: number;
+  documentId: string;
+  nombre: string;
+  estrellas: number;
+  direccion: string;
+  contacto: unknown | null;
+  galeria: Galeria[] | null;
+  redes_sociales: RedSocial[];
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
+interface Props {
+  hoteles: Hotel[];
+}
+
+const { hoteles } = Astro.props;
+---
+
+<section id="hoteles" class="py-20 bg-white border-y border-slate-100">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+      <div>
+        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Alojamiento</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE HOSPEDARSE</h2>
+      </div>
+      <Button variant="outline" class="text-xs font-bold gap-2">
+        VER TODOS LOS HOTELES
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </Button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {hoteles.map((hotel) => (
+        <Card id={`hotel-${hotel.id}`} class="overflow-hidden group">
+          <!-- Imagen -->
+          <div class="aspect-video overflow-hidden bg-slate-100">
+            {hotel.galeria && hotel.galeria.length > 0 ? (
+              <img
+                src={hotel.galeria[0].url}
+                alt={hotel.galeria[0].alternativeText ?? hotel.nombre}
+                class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center bg-slate-100">
+                <svg class="w-12 h-12 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+            )}
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-6">
+            {hotel.estrellas && (
+              <Badge class="mb-3">{"★".repeat(hotel.estrellas)} {hotel.estrellas} Estrellas</Badge>
+            )}
+            <h3 class="text-xl font-bold mb-2 text-slate-900">{hotel.nombre}</h3>
+
+            <!-- Estrellas visuales -->
+            {hotel.estrellas && (
+              <div class="flex gap-0.5 mb-3" aria-label={`${hotel.estrellas} de 5 estrellas`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    class={`w-4 h-4 ${i < hotel.estrellas ? "text-amber-400" : "text-slate-200"}`}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                ))}
+              </div>
+            )}
+
+            <p class="text-slate-500 text-sm mb-6 flex items-start gap-2">
+              <svg class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+              {hotel.direccion}
+            </p>
+
+            <Button variant="outline" class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all">
+              Ver disponibilidad
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
