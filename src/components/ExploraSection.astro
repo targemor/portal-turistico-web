@@ -23,7 +23,7 @@ const discoveryItems = [
     id: 2,
     title: "Museo de la Evolución",
     description: "Un viaje desde el Big Bang hasta la megafauna que habitó la región de Tehuacán.",
-    image: "https://images.unsplash.com/photo-1518998053574-53f1f61f90ee?q=80&w=600&auto=format&fit=crop",
+    image: "assets/img/museo-evolucion.jpeg",
   },
   {
     id: 3,
@@ -62,9 +62,9 @@ const discoveryItems = [
     </div>
 
     <!-- Bento grid -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[600px]">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
       <!-- Large card -->
-      <div class="md:col-span-8 relative rounded-2xl overflow-hidden group shadow-sm">
+      <div class="md:col-span-8 relative rounded-2xl overflow-hidden group shadow-sm min-h-[420px] md:h-[580px]">
         <img
           src={discoveryItems[0].image}
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -89,7 +89,7 @@ const discoveryItems = [
       </div>
 
       <!-- Small cards -->
-      <div class="md:col-span-4 grid grid-rows-2 gap-6">
+      <div class="md:col-span-4 grid grid-rows-2 gap-6 md:h-[580px]">
         {discoveryItems.slice(1).map((item) => (
           <div class="relative rounded-2xl overflow-hidden group shadow-sm">
             <img
