@@ -1,7 +1,7 @@
 ---
 /**
  * GuiasSection – Guías turísticos desde JSON, estilo fiel a test.jsx
- * bg-white, border-slate-200, #701010 acento
+ * bg-white, border-slate-200, var(--color-brand) acento
  */
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
@@ -52,7 +52,7 @@ const socialIcons: Record<string, string> = {
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Certificados SECTUR</p>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Certificados SECTUR</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">GUÍAS TURÍSTICOS</h2>
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
@@ -86,7 +86,7 @@ const socialIcons: Record<string, string> = {
             <h3 class="text-xl font-bold mb-1 text-slate-900">{guia.nombre}</h3>
 
             {guia.credencial_sectur === "Sí" && (
-              <p class="text-xs text-[#701010] font-semibold mb-4 uppercase tracking-wide">
+              <p class="text-xs text-brand font-semibold mb-4 uppercase tracking-wide">
                 Guía Certificado por SECTUR
               </p>
             )}
@@ -95,7 +95,7 @@ const socialIcons: Record<string, string> = {
             {guia.contacto && (
               <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
                 {guia.contacto.telefono && (
-                  <a href={`tel:${guia.contacto.telefono}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors">
+                  <a href={`tel:${guia.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
                     <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
                     </svg>
@@ -103,7 +103,7 @@ const socialIcons: Record<string, string> = {
                   </a>
                 )}
                 {guia.contacto.email && (
-                  <a href={`mailto:${guia.contacto.email}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors">
+                  <a href={`mailto:${guia.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors">
                     <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                     </svg>
@@ -122,14 +122,14 @@ const socialIcons: Record<string, string> = {
                     target={red.enlace ? "_blank" : undefined}
                     rel="noopener noreferrer"
                     aria-label={red.plataforma}
-                    class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-[#701010] border border-slate-200 hover:border-[#701010]/30 bg-white transition-all"
+                    class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
                     set:html={socialIcons[red.plataforma] ?? ""}
                   />
                 ))}
               </div>
             )}
 
-            <Button variant="outline" class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all">
+            <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
               Contactar guía
             </Button>
           </div>

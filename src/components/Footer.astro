@@ -1,7 +1,7 @@
 ---
 /**
  * Footer – fiel al diseño de test.jsx
- * bg-slate-950 dark, texto slate-400, acento #701010
+ * bg-slate-950 dark, texto slate-400, acento var(--color-brand)
  * Sin lucide-react: iconos inline SVG
  */
 ---
@@ -12,29 +12,23 @@
 
       <!-- Brand -->
       <div class="md:col-span-2">
-        <h2 class="text-2xl font-bold tracking-tighter mb-6 uppercase">VISITA TEHUACÁN</h2>
-        <p class="text-slate-400 max-w-sm mb-8 text-sm leading-relaxed font-medium">
-          Cuna del Maíz y Patrimonio de la Humanidad. Vive una experiencia natural y cultural inigualable en el corazón de Puebla.
-        </p>
-        <!-- Social buttons -->
-        <div class="flex gap-3">
-          {[
-            { label: "Facebook", icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>` },
-            { label: "Instagram", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>` },
-            { label: "WhatsApp", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>` },
-          ].map(({ label, icon }) => (
-            <button
-              aria-label={label}
-              class="inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate-800 bg-transparent text-slate-400 hover:text-white hover:border-white transition-colors"
-              set:html={icon}
-            />
-          ))}
-        </div>
+        <h2 class="text-4xl font-black tracking-tighter mb-8 flex gap-1">
+          <span style="color: #C82E31;">M</span>
+          <span style="color: #E6007E;">É</span>
+          <span style="color: #F39200;">X</span>
+          <span style="color: #7D287E;">I</span>
+          <span style="color: #82BC00;">C</span>
+          <span style="color: #009BA4;">O</span>
+        </h2>
+        <p class="text-slate-400 max-w-md mb-10 text-lg leading-relaxed font-medium">
+          Tehuacán te espera con los brazos abiertos. Vive la magia de sus manantiales y la majestuosidad de su biosfera en una explosión de cultura.
+        </p>     
       </div>
+
 
       <!-- Quick links -->
       <div>
-        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-[#701010] mb-6">Explora</h4>
+        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6">Explora</h4>
         <ul class="space-y-3 text-sm text-slate-400 font-bold">
           <li><a href="#hoteles"      class="hover:text-white transition-colors">Donde hospedarse</a></li>
           <li><a href="#restaurantes" class="hover:text-white transition-colors">Donde comer</a></li>
@@ -45,7 +39,7 @@
 
       <!-- Contact -->
       <div>
-        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-[#701010] mb-6">Contacto</h4>
+        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6">Contacto</h4>
         <ul class="space-y-4 text-sm text-slate-400">
           <li class="flex items-center gap-3">
             <svg class="w-4 h-4 text-slate-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">

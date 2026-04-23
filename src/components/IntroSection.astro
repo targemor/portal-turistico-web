@@ -1,15 +1,23 @@
 ---
 /**
  * IntroSection – Sección de introducción minimalista
- * Fiel a test.jsx: py-24 bg-white, divisor rojo, texto italic
+ * Fiel a page.tsx: divisor multicolor, texto impactante con colores destacados
  */
 ---
 
 <section class="py-24 bg-white border-b border-slate-100">
   <div class="container mx-auto px-6 max-w-4xl text-center">
-    <div class="w-10 h-0.5 bg-[#701010] mx-auto mb-10"></div>
-    <p class="text-xl md:text-3xl text-slate-700 leading-snug font-medium italic opacity-90">
-      Donde la biodiversidad se encuentra con la historia. Descubre el origen de la agricultura en Mesoamérica y sumérgete en nuestras legendarias aguas minerales.
+    <!-- Divisor multicolor -->
+    <div class="flex justify-center gap-1 mb-10">
+      <div class="h-1 w-8 rounded-full" style="background-color: #C82E31;"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: #E6007E;"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: #F39200;"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: #7D287E;"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: #82BC00;"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: #009BA4;"></div>
+    </div>
+    <p class="text-2xl md:text-4xl text-slate-800 leading-tight font-black tracking-tight">
+      Descubre la <span style="color: #E6007E;">Cuna del Maíz</span>, un destino Patrimonio de la Humanidad que late con los <span style="color: #F39200;">colores</span> de nuestra tierra.
     </p>
   </div>
 </section>

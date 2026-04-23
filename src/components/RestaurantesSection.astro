@@ -1,7 +1,7 @@
 ---
 /**
  * RestaurantesSection – Restaurantes desde JSON, estilo fiel a test.jsx
- * bg-slate-50, border-slate-100, #701010 acento
+ * bg-slate-50, border-slate-100, var(--color-brand) acento
  */
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
@@ -68,7 +68,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Gastronomía</p>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Gastronomía</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE COMER</h2>
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
@@ -127,7 +127,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
               {restaurante.contacto && (
                 <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
                   {restaurante.contacto.telefono && (
-                    <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors">
+                    <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
                       <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
                       </svg>
@@ -135,7 +135,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
                     </a>
                   )}
                   {restaurante.contacto.email && (
-                    <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-[#701010] transition-colors truncate">
+                    <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors truncate">
                       <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                       </svg>
@@ -145,7 +145,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
                 </div>
               )}
 
-              <Button variant="outline" class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all">
+              <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
                 Ver menú y horarios
               </Button>
             </div>

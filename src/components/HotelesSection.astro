@@ -1,7 +1,7 @@
 ---
 /**
  * HotelesSection – Hoteles desde JSON, estilo fiel a test.jsx
- * bg-white, border-slate-200, #701010 acento
+ * bg-white, border-slate-200, var(--color-brand) acento
  */
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
@@ -48,7 +48,7 @@ const { hoteles } = Astro.props;
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="text-[#701010] font-bold text-xs uppercase tracking-[0.3em] mb-2">Alojamiento</p>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Alojamiento</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE HOSPEDARSE</h2>
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
@@ -113,7 +113,7 @@ const { hoteles } = Astro.props;
               {hotel.direccion}
             </p>
 
-            <Button variant="outline" class="w-full group-hover:bg-[#701010] group-hover:text-white transition-all">
+            <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
               Ver disponibilidad
             </Button>
           </div>
