@@ -60,6 +60,41 @@ import guias        from "../data/guias-turisticos.json";
     <meta name="generator" content={Astro.generator} />
 
     <title>Portal Turístico Tehuacán | Cuna del Maíz</title>
+
+    <!-- ─── Google Fonts: carga no bloqueante ──────────────────────── -->
+    <!-- 1. Preconnect: resuelve DNS+TLS antes de que se necesiten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 2. Preload: inicia la descarga sin bloquear el renderizado -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    />
+    <!-- 3. Carga asíncrona: onload cambia rel a 'stylesheet' cuando el CSS está listo -->
+    <link
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    />
+    <!-- 4. Fallback para JS desactivado -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      />
+    </noscript>
+
+    <!-- ─── Preload del LCP (imagen hero) ──────────────────────────── -->
+    <!-- Indica al browser que descargue la imagen hero con máxima prioridad -->
+    <link
+      rel="preload"
+      as="image"
+      fetchpriority="high"
+      href="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=1400&auto=format&fit=crop&fm=webp"
+      imagesrcset="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=768&auto=format&fit=crop&fm=webp 768w, https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=1400&auto=format&fit=crop&fm=webp 1400w"
+    />
   </head>
 
   <body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-brand/10 pb-20 md:pb-0">
