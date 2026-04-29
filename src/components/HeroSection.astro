@@ -3,27 +3,23 @@
  * HeroSection – fiel al diseño de page.tsx
  * Puntos multicolor + "VIVE TEHUACÁN" + barra de búsqueda h-12
  */
+import SearchIcon from "../assets/icons/SearchIcon.astro";
 ---
 
 <section id="hero" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
-  <!-- Background image: LCP element → fetchpriority=high + WebP + srcset -->
+  <!-- Background video -->
   <div class="absolute inset-0">
-    <img
-      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=1400&auto=format&fit=crop&fm=webp"
-      srcset="
-        https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=768&auto=format&fit=crop&fm=webp  768w,
-        https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=1400&auto=format&fit=crop&fm=webp 1400w,
-        https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=60&w=2000&auto=format&fit=crop&fm=webp 2000w
-      "
-      sizes="100vw"
-      alt="Paisaje de Tehuacán, Puebla"
-      class="w-full h-full object-cover"
-      width="1400"
-      height="933"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-    />
+    <div class="w-full h-full">
+      <video
+        class="w-full h-full object-cover rounded-xl"
+        src="/assets/output.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+    </div>
     <div class="absolute inset-0 bg-slate-950/30"></div>
   </div>
 
@@ -38,9 +34,7 @@
     <div class="max-w-2xl mx-auto flex gap-2 p-2 bg-white rounded-2xl shadow-2xl">
       <div class="flex-1 flex items-center gap-3 px-4">
         <!-- Search icon -->
-        <svg class="text-slate-400 shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-        </svg>
+        <SearchIcon class="text-slate-400 shrink-0 w-5 h-5" />
         <input
           id="hero-search"
           type="text"

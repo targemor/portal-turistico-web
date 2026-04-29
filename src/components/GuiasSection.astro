@@ -6,6 +6,12 @@
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
 import Button from "./ui/Button.astro";
+import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
+import UserIcon from "../assets/icons/UserIcon.astro";
+import PhoneIcon from "../assets/icons/PhoneIcon.astro";
+import MailIcon from "../assets/icons/MailIcon.astro";
+import FacebookIcon from "../assets/icons/FacebookIcon.astro";
+import InstagramIcon from "../assets/icons/InstagramIcon.astro";
 
 interface RedSocial {
   id: number;
@@ -41,9 +47,9 @@ interface Props {
 
 const { guias } = Astro.props;
 
-const socialIcons: Record<string, string> = {
-  Facebook:  `<svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>`,
-  Instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>`,
+const SocialIconComponents: Record<string, any> = {
+  Facebook: FacebookIcon,
+  Instagram: InstagramIcon,
 };
 ---
 
@@ -57,9 +63,7 @@ const socialIcons: Record<string, string> = {
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS GUÍAS
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M9 18l6-6-6-6"/>
-        </svg>
+        <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
     </div>
 
@@ -70,9 +74,7 @@ const socialIcons: Record<string, string> = {
           <!-- Avatar header -->
           <div class="aspect-video bg-slate-100 flex items-center justify-center overflow-hidden relative">
             <div class="w-20 h-20 rounded-full bg-slate-200 flex items-center justify-center border-4 border-white shadow-sm">
-              <svg class="w-10 h-10 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
+              <UserIcon class="w-10 h-10 text-slate-400" />
             </div>
             {guia.credencial_sectur === "Sí" && (
               <div class="absolute top-3 right-3">
@@ -96,17 +98,13 @@ const socialIcons: Record<string, string> = {
               <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
                 {guia.contacto.telefono && (
                   <a href={`tel:${guia.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                    <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                    </svg>
+                    <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     {guia.contacto.telefono}
                   </a>
                 )}
                 {guia.contacto.email && (
                   <a href={`mailto:${guia.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                    <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                    </svg>
+                    <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     {guia.contacto.email}
                   </a>
                 )}
@@ -116,16 +114,20 @@ const socialIcons: Record<string, string> = {
             <!-- Redes sociales -->
             {guia.redes_sociales.length > 0 && (
               <div class="flex gap-2 mb-5">
-                {guia.redes_sociales.map((red) => (
-                  <a
-                    href={red.enlace ?? "#"}
-                    target={red.enlace ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    aria-label={red.plataforma}
-                    class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
-                    set:html={socialIcons[red.plataforma] ?? ""}
-                  />
-                ))}
+                {guia.redes_sociales.map((red) => {
+                  const Icon = SocialIconComponents[red.plataforma];
+                  return (
+                    <a
+                      href={red.enlace ?? "#"}
+                      target={red.enlace ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      aria-label={red.plataforma}
+                      class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
+                    >
+                      {Icon && <Icon class="w-4 h-4" />}
+                    </a>
+                  );
+                })}
               </div>
             )}
 

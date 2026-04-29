@@ -1,4 +1,9 @@
 import { useState } from "react";
+import LeafIcon from "../../assets/icons/LeafIcon";
+import UtensilsIcon from "../../assets/icons/UtensilsIcon";
+import CultureIcon from "../../assets/icons/CultureIcon";
+import DropletIcon from "../../assets/icons/DropletIcon";
+import ArrowRightIcon from "../../assets/icons/ArrowRightIcon";
 
 const colors = {
   Naturaleza: "#82BC00",
@@ -8,10 +13,10 @@ const colors = {
 };
 
 const categories = [
-  { id: "Naturaleza", label: "Biosfera",    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true"><path d="M17 8c0 5.5-5 10-5 10S7 13.5 7 8a5 5 0 0110 0z"/><path d="M12 18v4"/></svg> },
-  { id: "Sabor",      label: "Gastronomía", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> },
-  { id: "Historia",   label: "Cultura",     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-  { id: "Wellness",   label: "Manantiales", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg> },
+  { id: "Naturaleza", label: "Biosfera",    icon: <LeafIcon className="w-4 h-4" /> },
+  { id: "Sabor",      label: "Gastronomía", icon: <UtensilsIcon className="w-4 h-4" /> },
+  { id: "Historia",   label: "Cultura",     icon: <CultureIcon className="w-4 h-4" /> },
+  { id: "Wellness",   label: "Manantiales", icon: <DropletIcon className="w-4 h-4" /> },
 ];
 
 const discoveryItems = [
@@ -133,7 +138,7 @@ export default function ExploraSection() {
                   <h3 className="text-white text-2xl font-black mb-2">{item.title}</h3>
                   <button className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all">
                     Explorar
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5"><path d="M9 18l6-6-6-6"/></svg>
+                    <ArrowRightIcon className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>

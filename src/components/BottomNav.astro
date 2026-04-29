@@ -4,6 +4,11 @@
  * Fiel al diseño de test.jsx: bg-white/95, blur, border-slate-200
  * FAB: bg-brand, rounded-full, fijo
  */
+import MessageCircleIcon from "../assets/icons/MessageCircleIcon.astro";
+import PaperPlaneIcon from "../assets/icons/PaperPlaneIcon.astro";
+import HomeIcon from "../assets/icons/HomeIcon.astro";
+import MapIcon from "../assets/icons/MapIcon.astro";
+import UserIcon from "../assets/icons/UserIcon.astro";
 ---
 
 <!-- FAB flotante (WhatsApp / Chat) -->
@@ -14,9 +19,7 @@
   class="fixed bottom-24 right-6 md:bottom-10 md:right-10 z-40 p-4 rounded-2xl shadow-2xl text-white transform transition-all hover:scale-110 active:scale-95"
   style="background-color: #E6007E; box-shadow: 0 25px 50px -12px rgba(230,0,126,0.25);"
 >
-  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
-  </svg>
+  <MessageCircleIcon class="w-6 h-6" />
 </a>
 
 <!-- Bottom nav (solo mobile) -->
@@ -28,35 +31,25 @@
 >
   <!-- Explora -->
   <a href="#destinos" id="bn-explora" class="flex flex-col items-center gap-1 text-brand">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <polygon points="3 11 22 2 13 21 11 13 3 11" fill="rgba(112,16,16,0.1)"/>
-    </svg>
+    <PaperPlaneIcon class="w-5 h-5" />
     <span class="text-[9px] font-black uppercase">Explora</span>
   </a>
 
   <!-- Hoteles -->
   <a href="#hoteles" id="bn-hoteles" class="flex flex-col items-center gap-1 text-slate-400">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-    </svg>
+    <HomeIcon class="w-5 h-5" />
     <span class="text-[9px] font-black uppercase">Hoteles</span>
   </a>
 
   <!-- Mapas -->
   <a href="#" id="bn-mapas" class="flex flex-col items-center gap-1 text-slate-400">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
-      <line x1="8" y1="2" x2="8" y2="18"/>
-      <line x1="16" y1="6" x2="16" y2="22"/>
-    </svg>
+    <MapIcon class="w-5 h-5" />
     <span class="text-[9px] font-black uppercase">Mapas</span>
   </a>
 
   <!-- Guías -->
   <a href="#guias" id="bn-guias" class="flex flex-col items-center gap-1 text-slate-400">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-    </svg>
+    <UserIcon class="w-5 h-5" />
     <span class="text-[9px] font-black uppercase">Guías</span>
   </a>
 </div>

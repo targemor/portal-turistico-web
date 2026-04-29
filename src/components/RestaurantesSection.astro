@@ -6,6 +6,11 @@
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
 import Button from "./ui/Button.astro";
+import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
+import UtensilsIcon from "../assets/icons/UtensilsIcon.astro";
+import MapPinIcon from "../assets/icons/MapPinIcon.astro";
+import PhoneIcon from "../assets/icons/PhoneIcon.astro";
+import MailIcon from "../assets/icons/MailIcon.astro";
 
 interface RedSocial {
   id: number;
@@ -73,9 +78,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS RESTAURANTES
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M9 18l6-6-6-6"/>
-        </svg>
+        <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
     </div>
 
@@ -98,10 +101,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
                 />
               ) : (
                 <div class="w-full h-full flex items-center justify-center bg-slate-100">
-                  <svg class="w-12 h-12 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-                    <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
-                  </svg>
+                  <UtensilsIcon class="w-12 h-12 text-slate-300" />
                 </div>
               )}
             </div>
@@ -116,10 +116,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
               )}
 
               <p class="text-slate-500 text-sm mb-4 flex items-start gap-2">
-                <svg class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
+                <MapPinIcon class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
                 {restaurante.direccion}
               </p>
 
@@ -128,17 +125,13 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
                 <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
                   {restaurante.contacto.telefono && (
                     <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                      <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                      </svg>
+                      <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       {restaurante.contacto.telefono}
                     </a>
                   )}
                   {restaurante.contacto.email && (
                     <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors truncate">
-                      <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                      </svg>
+                      <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       {restaurante.contacto.email}
                     </a>
                   )}

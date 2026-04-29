@@ -6,6 +6,10 @@
 import Card from "./ui/Card.astro";
 import Badge from "./ui/Badge.astro";
 import Button from "./ui/Button.astro";
+import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
+import HomeIcon from "../assets/icons/HomeIcon.astro";
+import StarIcon from "../assets/icons/StarIcon.astro";
+import MapPinIcon from "../assets/icons/MapPinIcon.astro";
 
 interface RedSocial {
   id: number;
@@ -53,9 +57,7 @@ const { hoteles } = Astro.props;
       </div>
       <Button variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS HOTELES
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M9 18l6-6-6-6"/>
-        </svg>
+        <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
     </div>
 
@@ -75,9 +77,7 @@ const { hoteles } = Astro.props;
               />
             ) : (
               <div class="w-full h-full flex items-center justify-center bg-slate-100">
-                <svg class="w-12 h-12 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
+                <HomeIcon class="w-12 h-12 text-slate-300" />
               </div>
             )}
           </div>
@@ -93,23 +93,13 @@ const { hoteles } = Astro.props;
             {hotel.estrellas && (
               <div class="flex gap-0.5 mb-3" aria-label={`${hotel.estrellas} de 5 estrellas`}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg
-                    class={`w-4 h-4 ${i < hotel.estrellas ? "text-amber-400" : "text-slate-200"}`}
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                  </svg>
+                  <StarIcon class={`w-4 h-4 ${i < hotel.estrellas ? "text-amber-400" : "text-slate-200"}`} />
                 ))}
               </div>
             )}
 
             <p class="text-slate-500 text-sm mb-6 flex items-start gap-2">
-              <svg class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-              </svg>
+              <MapPinIcon class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
               {hotel.direccion}
             </p>
 
