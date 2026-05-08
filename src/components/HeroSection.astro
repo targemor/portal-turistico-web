@@ -12,13 +12,18 @@ import SearchIcon from "../assets/icons/SearchIcon.astro";
     <div class="w-full h-full">
       <video
         class="w-full h-full object-cover rounded-xl"
-        src="/assets/output.mp4"
+        poster="/assets/hero-poster.png"
         autoplay
         muted
         loop
         playsinline
         aria-hidden="true"
-      ></video>
+      >
+        <!-- Formato moderno (menor peso) -->
+        <source src="/assets/output.webm" type="video/webm" />
+        <!-- Formato de respaldo para navegadores antiguos -->
+        <source src="/assets/output.mp4" type="video/mp4" />
+      </video>
     </div>
     <div class="absolute inset-0 bg-slate-950/30"></div>
   </div>
