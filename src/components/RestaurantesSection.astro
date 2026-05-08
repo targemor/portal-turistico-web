@@ -3,69 +3,19 @@
  * RestaurantesSection – Restaurantes desde JSON, estilo fiel a test.jsx
  * bg-slate-50, border-slate-100, var(--color-brand) acento
  */
-import Card from "./ui/Card.astro";
-import Badge from "./ui/Badge.astro";
+import ReactCard from "./react/Card";
 import Button from "./ui/Button.astro";
 import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
-import UtensilsIcon from "../assets/icons/UtensilsIcon.astro";
-import MapPinIcon from "../assets/icons/MapPinIcon.astro";
 import PhoneIcon from "../assets/icons/PhoneIcon.astro";
 import MailIcon from "../assets/icons/MailIcon.astro";
 
-interface RedSocial {
-  id: number;
-  plataforma: string;
-  usuario: string | null;
-  enlace: string | null;
-}
-
-interface Contacto {
-  id: number;
-  telefono: string | null;
-  email: string | null;
-  sitio_web: string | null;
-  whatsapp: string | null;
-}
-
-interface Galeria {
-  id: number;
-  documentId: string;
-  url: string;
-  alternativeText: string | null;
-  caption: string | null;
-}
-
-interface Restaurante {
-  id: number;
-  documentId: string;
-  nombre: string;
-  descripcion: string | null;
-  direccion: string;
-  contacto: Contacto | null;
-  galeria: Galeria | Galeria[] | null;
-  redes_sociales: RedSocial[];
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
+import type { Restaurante } from "../types";
 
 interface Props {
   restaurantes: Restaurante[];
 }
 
 const { restaurantes } = Astro.props;
-
-function getGaleriaUrl(galeria: Galeria | Galeria[] | null): string | null {
-  if (!galeria) return null;
-  if (Array.isArray(galeria)) return galeria[0]?.url ?? null;
-  return galeria.url;
-}
-
-function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): string {
-  if (!galeria) return fallback;
-  if (Array.isArray(galeria)) return galeria[0]?.alternativeText ?? fallback;
-  return galeria.alternativeText ?? fallback;
-}
 ---
 
 <section id="restaurantes" class="py-20">
@@ -76,7 +26,7 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
         <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Gastronomía</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE COMER</h2>
       </div>
-      <Button variant="outline" class="text-xs font-bold gap-2">
+      <Button href="/directorio/restaurantes" variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS RESTAURANTES
         <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
@@ -84,67 +34,27 @@ function getGaleriaAlt(galeria: Galeria | Galeria[] | null, fallback: string): s
 
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {restaurantes.map((restaurante) => {
-        const imgUrl = getGaleriaUrl(restaurante.galeria);
-        const imgAlt = getGaleriaAlt(restaurante.galeria, restaurante.nombre);
-        return (
-          <Card id={`restaurante-${restaurante.id}`} class="overflow-hidden group">
-            <!-- Imagen -->
-            <div class="aspect-video overflow-hidden bg-slate-100">
-              {imgUrl ? (
-                <img
-                  src={imgUrl}
-                  alt={imgAlt}
-                  class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <div class="w-full h-full flex items-center justify-center bg-slate-100">
-                  <UtensilsIcon class="w-12 h-12 text-slate-300" />
-                </div>
+      {restaurantes.map((restaurante) => (
+        <ReactCard client:visible item={restaurante} categoria="restaurantes">
+          {/* Contacto extra para restaurantes */}
+          {restaurante.contacto && (
+            <div class="mt-4 flex flex-col gap-1.5 text-sm text-slate-500">
+              {restaurante.contacto.telefono && (
+                <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
+                  <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  {restaurante.contacto.telefono}
+                </a>
+              )}
+              {restaurante.contacto.email && (
+                <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors truncate">
+                  <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  {restaurante.contacto.email}
+                </a>
               )}
             </div>
-
-            <!-- Contenido -->
-            <div class="p-6">
-              <Badge class="mb-3">Restaurante</Badge>
-              <h3 class="text-xl font-bold mb-2 text-slate-900">{restaurante.nombre}</h3>
-
-              {restaurante.descripcion && (
-                <p class="text-slate-500 text-sm mb-3 line-clamp-2">{restaurante.descripcion}</p>
-              )}
-
-              <p class="text-slate-500 text-sm mb-4 flex items-start gap-2">
-                <MapPinIcon class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-                {restaurante.direccion}
-              </p>
-
-              <!-- Contacto -->
-              {restaurante.contacto && (
-                <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
-                  {restaurante.contacto.telefono && (
-                    <a href={`tel:${restaurante.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                      <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      {restaurante.contacto.telefono}
-                    </a>
-                  )}
-                  {restaurante.contacto.email && (
-                    <a href={`mailto:${restaurante.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors truncate">
-                      <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      {restaurante.contacto.email}
-                    </a>
-                  )}
-                </div>
-              )}
-
-              <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
-                Ver menú y horarios
-              </Button>
-            </div>
-          </Card>
-        );
-      })}
+          )}
+        </ReactCard>
+      ))}
     </div>
   </div>
 </section>

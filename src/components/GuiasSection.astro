@@ -3,43 +3,15 @@
  * GuiasSection – Guías turísticos desde JSON, estilo fiel a test.jsx
  * bg-white, border-slate-200, var(--color-brand) acento
  */
-import Card from "./ui/Card.astro";
-import Badge from "./ui/Badge.astro";
+import ReactCard from "./react/Card";
 import Button from "./ui/Button.astro";
 import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
-import UserIcon from "../assets/icons/UserIcon.astro";
 import PhoneIcon from "../assets/icons/PhoneIcon.astro";
 import MailIcon from "../assets/icons/MailIcon.astro";
 import FacebookIcon from "../assets/icons/FacebookIcon.astro";
 import InstagramIcon from "../assets/icons/InstagramIcon.astro";
 
-interface RedSocial {
-  id: number;
-  plataforma: string;
-  usuario: string | null;
-  enlace: string | null;
-}
-
-interface Contacto {
-  id: number;
-  telefono: string | null;
-  email: string | null;
-  sitio_web: string | null;
-  whatsapp: string | null;
-}
-
-interface Guia {
-  id: number;
-  documentId: string;
-  nombre: string;
-  credencial_sectur: string | null;
-  contacto: Contacto | null;
-  galeria: unknown | null;
-  redes_sociales: RedSocial[];
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
+import type { Guia } from "../types";
 
 interface Props {
   guias: Guia[];
@@ -61,7 +33,7 @@ const SocialIconComponents: Record<string, any> = {
         <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Certificados SECTUR</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">GUÍAS TURÍSTICOS</h2>
       </div>
-      <Button variant="outline" class="text-xs font-bold gap-2">
+      <Button href="/directorio/guias" variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS GUÍAS
         <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
@@ -70,72 +42,52 @@ const SocialIconComponents: Record<string, any> = {
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {guias.map((guia) => (
-        <Card id={`guia-${guia.id}`} class="overflow-hidden group">
-          <!-- Avatar header -->
-          <div class="aspect-video bg-slate-100 flex items-center justify-center overflow-hidden relative">
-            <div class="w-20 h-20 rounded-full bg-slate-200 flex items-center justify-center border-4 border-white shadow-sm">
-              <UserIcon class="w-10 h-10 text-slate-400" />
+        <ReactCard client:visible item={guia} categoria="guias">
+          {/* Subtítulo SECTUR */}
+          {guia.credencial_sectur === "Sí" && (
+            <p class="text-xs text-brand font-semibold mb-4 uppercase tracking-wide">
+              Guía Certificado por SECTUR
+            </p>
+          )}
+
+          {/* Contacto */}
+          {guia.contacto && (
+            <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
+              {guia.contacto.telefono && (
+                <a href={`tel:${guia.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
+                  <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  {guia.contacto.telefono}
+                </a>
+              )}
+              {guia.contacto.email && (
+                <a href={`mailto:${guia.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors">
+                  <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  {guia.contacto.email}
+                </a>
+              )}
             </div>
-            {guia.credencial_sectur === "Sí" && (
-              <div class="absolute top-3 right-3">
-                <Badge>✓ SECTUR</Badge>
-              </div>
-            )}
-          </div>
+          )}
 
-          <!-- Contenido -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-slate-900">{guia.nombre}</h3>
-
-            {guia.credencial_sectur === "Sí" && (
-              <p class="text-xs text-brand font-semibold mb-4 uppercase tracking-wide">
-                Guía Certificado por SECTUR
-              </p>
-            )}
-
-            <!-- Contacto -->
-            {guia.contacto && (
-              <div class="mb-4 flex flex-col gap-1.5 text-sm text-slate-500">
-                {guia.contacto.telefono && (
-                  <a href={`tel:${guia.contacto.telefono}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                    <PhoneIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    {guia.contacto.telefono}
+          {/* Redes sociales */}
+          {guia.redes_sociales.length > 0 && (
+            <div class="flex gap-2 mb-2">
+              {guia.redes_sociales.map((red) => {
+                const Icon = SocialIconComponents[red.plataforma];
+                return (
+                  <a
+                    href={red.enlace ?? "#"}
+                    target={red.enlace ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    aria-label={red.plataforma}
+                    class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
+                  >
+                    {Icon && <Icon class="w-4 h-4" />}
                   </a>
-                )}
-                {guia.contacto.email && (
-                  <a href={`mailto:${guia.contacto.email}`} class="flex items-center gap-2 hover:text-brand transition-colors">
-                    <MailIcon class="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    {guia.contacto.email}
-                  </a>
-                )}
-              </div>
-            )}
-
-            <!-- Redes sociales -->
-            {guia.redes_sociales.length > 0 && (
-              <div class="flex gap-2 mb-5">
-                {guia.redes_sociales.map((red) => {
-                  const Icon = SocialIconComponents[red.plataforma];
-                  return (
-                    <a
-                      href={red.enlace ?? "#"}
-                      target={red.enlace ? "_blank" : undefined}
-                      rel="noopener noreferrer"
-                      aria-label={red.plataforma}
-                      class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
-                    >
-                      {Icon && <Icon class="w-4 h-4" />}
-                    </a>
-                  );
-                })}
-              </div>
-            )}
-
-            <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
-              Contactar guía
-            </Button>
-          </div>
-        </Card>
+                );
+              })}
+            </div>
+          )}
+        </ReactCard>
       ))}
     </div>
   </div>

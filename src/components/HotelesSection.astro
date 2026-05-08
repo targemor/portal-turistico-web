@@ -3,42 +3,11 @@
  * HotelesSection – Hoteles desde JSON, estilo fiel a test.jsx
  * bg-white, border-slate-200, var(--color-brand) acento
  */
-import Card from "./ui/Card.astro";
-import Badge from "./ui/Badge.astro";
+import ReactCard from "./react/Card";
 import Button from "./ui/Button.astro";
 import ArrowRightIcon from "../assets/icons/ArrowRightIcon.astro";
-import HomeIcon from "../assets/icons/HomeIcon.astro";
-import StarIcon from "../assets/icons/StarIcon.astro";
-import MapPinIcon from "../assets/icons/MapPinIcon.astro";
 
-interface RedSocial {
-  id: number;
-  plataforma: string;
-  usuario: string | null;
-  enlace: string | null;
-}
-
-interface Galeria {
-  id: number;
-  documentId: string;
-  url: string;
-  alternativeText: string | null;
-  caption: string | null;
-}
-
-interface Hotel {
-  id: number;
-  documentId: string;
-  nombre: string;
-  estrellas: number;
-  direccion: string;
-  contacto: unknown | null;
-  galeria: Galeria[] | null;
-  redes_sociales: RedSocial[];
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
+import type { Hotel } from "../types";
 
 interface Props {
   hoteles: Hotel[];
@@ -55,7 +24,7 @@ const { hoteles } = Astro.props;
         <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Alojamiento</p>
         <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE HOSPEDARSE</h2>
       </div>
-      <Button variant="outline" class="text-xs font-bold gap-2">
+      <Button href="/directorio/hoteles" variant="outline" class="text-xs font-bold gap-2">
         VER TODOS LOS HOTELES
         <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
@@ -64,50 +33,7 @@ const { hoteles } = Astro.props;
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {hoteles.map((hotel) => (
-        <Card id={`hotel-${hotel.id}`} class="overflow-hidden group">
-          <!-- Imagen -->
-          <div class="aspect-video overflow-hidden bg-slate-100">
-            {hotel.galeria && hotel.galeria.length > 0 ? (
-              <img
-                src={hotel.galeria[0].url}
-                alt={hotel.galeria[0].alternativeText ?? hotel.nombre}
-                class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
-                loading="lazy"
-                decoding="async"
-              />
-            ) : (
-              <div class="w-full h-full flex items-center justify-center bg-slate-100">
-                <HomeIcon class="w-12 h-12 text-slate-300" />
-              </div>
-            )}
-          </div>
-
-          <!-- Contenido -->
-          <div class="p-6">
-            {hotel.estrellas && (
-              <Badge class="mb-3">{"★".repeat(hotel.estrellas)} {hotel.estrellas} Estrellas</Badge>
-            )}
-            <h3 class="text-xl font-bold mb-2 text-slate-900">{hotel.nombre}</h3>
-
-            <!-- Estrellas visuales -->
-            {hotel.estrellas && (
-              <div class="flex gap-0.5 mb-3" aria-label={`${hotel.estrellas} de 5 estrellas`}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon class={`w-4 h-4 ${i < hotel.estrellas ? "text-amber-400" : "text-slate-200"}`} />
-                ))}
-              </div>
-            )}
-
-            <p class="text-slate-500 text-sm mb-6 flex items-start gap-2">
-              <MapPinIcon class="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-              {hotel.direccion}
-            </p>
-
-            <Button variant="outline" class="w-full group-hover:bg-brand group-hover:text-white transition-all">
-              Ver disponibilidad
-            </Button>
-          </div>
-        </Card>
+        <ReactCard client:visible item={hotel} categoria="hoteles" />
       ))}
     </div>
   </div>

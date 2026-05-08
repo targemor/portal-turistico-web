@@ -1,0 +1,36 @@
+{
+  "heroTitle": "VIVE TEHUACÁN",
+  "searchPlaceholder": "Busca experiencias increíbles...",
+  "heroPoster": "/assets/hero-poster.png",
+  "topDestinos": [
+    {
+      "id": "san-juan-raya",
+      "categoria": "Naturaleza",
+      "titulo": "San Juan Raya",
+      "descripcion": "Fósiles marinos y rutas de senderismo en el corazón de la biosfera.",
+      "imagen": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=70&w=600&auto=format&fit=crop&fm=webp",
+      "cta": "Saber más",
+      "color": "#82BC00"
+    },
+    {
+      "id": "sabor-local",
+      "categoria": "Sabor",
+      "titulo": "Manjares del Valle",
+      "descripcion": "Deleita tu paladar con los muéganos y el tradicional mole de caderas.",
+      "imagen": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=70&w=600&auto=format&fit=crop&fm=webp",
+      "cta": "Ver menú",
+      "color": "#F39200"
+    },
+    {
+      "id": "manantiales",
+      "categoria": "Wellness",
+      "titulo": "Aguas Minerales",
+      "descripcion": "Relajación total en los manantiales curativos de fama mundial.",
+      "imagen": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=70&w=600&auto=format&fit=crop&fm=webp",
+      "cta": "Reservar",
+      "color": "#009BA4"
+    }
+  ],
+  "topHotelesIds": [1, 2],
+  "topRestaurantesIds": [1, 2]
+}

@@ -4,6 +4,16 @@
  * Puntos multicolor + "VIVE TEHUACÁN" + barra de búsqueda h-12
  */
 import SearchIcon from "../assets/icons/SearchIcon.astro";
+
+interface Props {
+  data: {
+    heroTitle: string;
+    searchPlaceholder: string;
+    heroPoster: string;
+  };
+}
+
+const { data } = Astro.props;
 ---
 
 <section id="hero" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
@@ -11,8 +21,8 @@ import SearchIcon from "../assets/icons/SearchIcon.astro";
   <div class="absolute inset-0">
     <div class="w-full h-full">
       <video
-        class="w-full h-full object-cover rounded-xl"
-        poster="/assets/hero-poster.png"
+        class="w-full h-full object-cover object-bottom rounded-xl"
+        poster={data.heroPoster}
         autoplay
         muted
         loop
@@ -32,7 +42,7 @@ import SearchIcon from "../assets/icons/SearchIcon.astro";
   <div class="relative z-10 container mx-auto px-6 text-center">    
     <!-- Heading -->
     <h1 class="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-2xl">
-      VIVE TEHUACÁN
+      {data.heroTitle}
     </h1>
 
     <!-- Search bar -->
@@ -43,7 +53,7 @@ import SearchIcon from "../assets/icons/SearchIcon.astro";
         <input
           id="hero-search"
           type="text"
-          placeholder="Busca experiencias increíbles..."
+          placeholder={data.searchPlaceholder}
           class="w-full h-12 bg-transparent outline-none text-slate-800 font-medium placeholder:text-slate-400"
           aria-label="Buscar en Tehuacán"
         />
@@ -52,7 +62,7 @@ import SearchIcon from "../assets/icons/SearchIcon.astro";
         href="#destinos"
         id="hero-search-btn"
         class="inline-flex items-center justify-center rounded-xl h-12 px-8 text-white text-xs font-black uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm"
-        style="background-color: #E6007E;"
+        style="background-color: var(--color-mex-rosa);"
       >
         Buscar
       </a>

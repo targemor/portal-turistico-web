@@ -25,11 +25,13 @@ import GuiasSection       from "../components/GuiasSection.astro";
 import Footer             from "../components/Footer.astro";
 import BottomNav          from "../components/BottomNav.astro";
 
-import "../styles/global.css";
-
+import homePageData from "../data/home-page.json";
 import hoteles      from "../data/hoteles.json";
 import restaurantes from "../data/restaurantes.json";
 import guias        from "../data/guias-turisticos.json";
+
+import "../styles/global.css";
+
 ---
 
 <!doctype html>
@@ -62,23 +64,19 @@ import guias        from "../data/guias-turisticos.json";
     <title>Portal Turístico Tehuacán | Cuna del Maíz</title>
 
     <!-- ─── Google Fonts: carga no bloqueante ──────────────────────── -->
-    <!-- 1. Preconnect: resuelve DNS+TLS antes de que se necesiten -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- 2. Preload: inicia la descarga sin bloquear el renderizado -->
     <link
       rel="preload"
       as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     />
-    <!-- 3. Carga asíncrona: onload cambia rel a 'stylesheet' cuando el CSS está listo -->
     <link
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     />
-    <!-- 4. Fallback para JS desactivado -->
     <noscript>
       <link
         rel="stylesheet"
@@ -87,7 +85,6 @@ import guias        from "../data/guias-turisticos.json";
     </noscript>
 
     <!-- ─── Preload del LCP (imagen hero) ──────────────────────────── -->
-    <!-- Indica al browser que descargue la imagen hero con máxima prioridad -->
     <link
       rel="preload"
       as="image"
@@ -99,18 +96,17 @@ import guias        from "../data/guias-turisticos.json";
 
   <body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-brand/10 pb-20 md:pb-0">
 
-    <!-- Barra de navegación fija -->
     <NavBar />
 
     <main id="main-content">
       <!-- Hero: imagen de fondo + buscador -->
-      <HeroSection />
+      <HeroSection data={homePageData} />
 
       <!-- Introducción minimalista con cita -->
       <IntroSection />
 
       <!-- Los Imperdibles: 3 cards con imagen -->
-      <ImperdiblesSection />
+      <ImperdiblesSection imperdibles={homePageData.topDestinos} />
 
       <!-- Bento grid: Explora cada rincón -->
       <ExploraSection />

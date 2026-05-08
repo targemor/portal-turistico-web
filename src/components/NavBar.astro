@@ -1,5 +1,11 @@
 ---
 import ReactNavBar from "./react/NavBar";
+
+interface Props {
+  forceBackground?: boolean;
+}
+
+const { forceBackground = false } = Astro.props;
 ---
 
-<ReactNavBar client:load />
+<ReactNavBar forceBackground={forceBackground} client:load />

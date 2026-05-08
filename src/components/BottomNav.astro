@@ -1,55 +1,9 @@
 ---
 /**
  * BottomNav – Barra de navegación inferior móvil + FAB flotante
- * Fiel al diseño de test.jsx: bg-white/95, blur, border-slate-200
- * FAB: bg-brand, rounded-full, fijo
+ * Reemplazado por componente React para manejar el estado activo de forma simple.
  */
-import MessageCircleIcon from "../assets/icons/MessageCircleIcon.astro";
-import PaperPlaneIcon from "../assets/icons/PaperPlaneIcon.astro";
-import HomeIcon from "../assets/icons/HomeIcon.astro";
-import MapIcon from "../assets/icons/MapIcon.astro";
-import UserIcon from "../assets/icons/UserIcon.astro";
+import ReactBottomNav from "./react/BottomNav";
 ---
 
-<!-- FAB flotante (WhatsApp / Chat) -->
-<a
-  href="#"
-  id="fab-chat"
-  aria-label="Abrir chat"
-  class="fixed bottom-24 right-6 md:bottom-10 md:right-10 z-40 p-4 rounded-2xl shadow-2xl text-white transform transition-all hover:scale-110 active:scale-95"
-  style="background-color: #E6007E; box-shadow: 0 25px 50px -12px rgba(230,0,126,0.25);"
->
-  <MessageCircleIcon class="w-6 h-6" />
-</a>
-
-<!-- Bottom nav (solo mobile) -->
-<div
-  id="bottom-nav"
-  class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-8 py-3 flex justify-between items-center shadow-lg"
-  role="navigation"
-  aria-label="Navegación principal móvil"
->
-  <!-- Explora -->
-  <a href="#destinos" id="bn-explora" class="flex flex-col items-center gap-1 text-brand">
-    <PaperPlaneIcon class="w-5 h-5" />
-    <span class="text-[9px] font-black uppercase">Explora</span>
-  </a>
-
-  <!-- Hoteles -->
-  <a href="#hoteles" id="bn-hoteles" class="flex flex-col items-center gap-1 text-slate-400">
-    <HomeIcon class="w-5 h-5" />
-    <span class="text-[9px] font-black uppercase">Hoteles</span>
-  </a>
-
-  <!-- Mapas -->
-  <a href="#" id="bn-mapas" class="flex flex-col items-center gap-1 text-slate-400">
-    <MapIcon class="w-5 h-5" />
-    <span class="text-[9px] font-black uppercase">Mapas</span>
-  </a>
-
-  <!-- Guías -->
-  <a href="#guias" id="bn-guias" class="flex flex-col items-center gap-1 text-slate-400">
-    <UserIcon class="w-5 h-5" />
-    <span class="text-[9px] font-black uppercase">Guías</span>
-  </a>
-</div>
+<ReactBottomNav client:load />

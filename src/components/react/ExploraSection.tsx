@@ -48,8 +48,7 @@ const discoveryItems = [
 
 export default function ExploraSection() {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
-  const activeColor = colors[activeCategory as keyof typeof colors];
-
+  
   return (
     <section className="py-24 bg-white border-y border-slate-100">
       <div className="container mx-auto px-6">
