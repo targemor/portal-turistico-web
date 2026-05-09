@@ -32,7 +32,7 @@ const discoveryItems = [
     id: 2,
     title: "Museo de la Evolución",
     description: "De los dinosaurios al origen del maíz en un solo lugar.",
-    image: "assets/img/museo-evolucion.jpeg",
+    image: "assets/img/museo-evolucion.webp",
     color: "#7D287E",
     category: "Historia",
   },
@@ -56,7 +56,7 @@ export default function ExploraSection() {
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl font-black tracking-tighter mb-8 uppercase">Descubre por Categoría</h2>
 
-          <div className="flex flex-wrap justify-center gap-2" role="tablist" aria-label="Categorías">
+          <div className="flex flex-wrap justify-center gap-2" role="group" aria-label="Filtro de categorías">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
               const catColor = colors[cat.id as keyof typeof colors];
@@ -64,10 +64,6 @@ export default function ExploraSection() {
               return (
                 <button
                   key={cat.id}
-                  role="tab"
-                  id={`tab-${cat.id}`}
-                  aria-selected={isActive ? "true" : "false"}
-                  aria-controls="explora-panel"
                   data-cat={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   style={isActive ? { backgroundColor: catColor, borderColor: catColor } : undefined}
@@ -85,7 +81,7 @@ export default function ExploraSection() {
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div id="explora-panel" className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Large card */}
           <div className="md:col-span-7 relative rounded-[2rem] overflow-hidden group shadow-xl h-[420px] md:h-[600px]">
             <img

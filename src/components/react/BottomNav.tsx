@@ -110,7 +110,7 @@ export default function BottomNav() {
               key={item.id}
               href={item.href} 
               id={`bn-${item.id}`} 
-              className={`flex flex-col items-center gap-1 transition-colors ${isActive ? 'text-brand' : 'text-slate-400'}`}
+              className={`flex flex-col items-center gap-1 transition-colors ${isActive ? 'text-orange-600' : 'text-slate-400'}`}
               onClick={() => setActiveItem(item.id)}
             >
               <Icon className="w-5 h-5" />
