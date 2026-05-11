@@ -1,48 +1,41 @@
 [
   {
-    "id": 2,
+    "id": 3,
     "documentId": "jlidzuchyw010x981vc24xkl",
     "nombre": "Casa Chanehque",
     "estrellas": 4,
     "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
     "createdAt": "2026-04-03T07:24:39.213Z",
-    "updatedAt": "2026-04-03T07:25:25.644Z",
-    "publishedAt": "2026-04-03T07:25:25.676Z",
+    "updatedAt": "2026-05-09T16:38:50.927Z",
+    "publishedAt": "2026-05-09T16:38:50.955Z",
     "redes_sociales": [
       {
-        "id": 3,
+        "id": 30,
         "plataforma": "Facebook",
-        "usuario": null,
-        "enlace": null
+        "usuario": "test",
+        "enlace": "www.facebook.com"
       },
       {
-        "id": 4,
+        "id": 31,
         "plataforma": "Instagram",
-        "usuario": null,
-        "enlace": null
+        "usuario": "istagran",
+        "enlace": "www.instagran.com"
       }
     ],
     "contacto": null,
     "galeria": [
       {
-        "id": 1,
-        "documentId": "mkpfrlfl3up88qren9ugqrgc",
-        "url": "assets/img/casa_chanehque_1.jpg",
+        "id": 3,
+        "documentId": "cbvjwofn410hel2g7nm893w7",
+        "url": "/assets/casa_chanehque_1.webp",
         "alternativeText": null,
         "caption": null
       },
       {
-        "id": 2,
-        "documentId": "mock-img-2",
-        "url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
-        "alternativeText": "Interior",
-        "caption": null
-      },
-      {
-        "id": 3,
-        "documentId": "mock-img-3",
-        "url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop",
-        "alternativeText": "Exterior",
+        "id": 5,
+        "documentId": "ed26xp1h4pmdp8aj2oq9w68b",
+        "url": "/assets/casa_chanehque_2.webp",
+        "alternativeText": null,
         "caption": null
       }
     ]

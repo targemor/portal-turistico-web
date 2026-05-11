@@ -1,34 +1,55 @@
 [
   {
-    "id": 4,
+    "id": 5,
     "documentId": "l5rdphysik3rbq8oxzz60fsq",
-    "nombre": "Turibike Cholula",
+    "nombre": "Destino Tehuacan 1 ",
     "descripcion": null,
     "createdAt": "2026-04-06T07:05:00.713Z",
-    "updatedAt": "2026-04-06T07:05:01.939Z",
-    "publishedAt": "2026-04-06T07:05:01.964Z",
+    "updatedAt": "2026-05-09T16:35:32.311Z",
+    "publishedAt": "2026-05-09T16:35:32.336Z",
     "direccion": "Av. Morelos y calle 6 norte, San Miguel, Tianguisnahuatl, 72760 Pue.",
     "redes_sociales": [
       {
-        "id": 20,
+        "id": 25,
         "plataforma": "Instagram",
-        "usuario": null,
-        "enlace": null
+        "usuario": "istagran",
+        "enlace": "wwww.instagram.com"
       },
       {
-        "id": 21,
+        "id": 26,
         "plataforma": "Facebook",
-        "usuario": null,
-        "enlace": null
+        "usuario": "test fb",
+        "enlace": "www.facebook.com"
       },
       {
-        "id": 22,
+        "id": 27,
         "plataforma": "TikTok",
-        "usuario": null,
-        "enlace": null
+        "usuario": "test",
+        "enlace": "www.tiktok.com"
       }
     ],
-    "contacto": null,
-    "galeria": null
+    "contacto": {
+      "id": 8,
+      "telefono": "123456789",
+      "email": "test@test.com",
+      "sitio_web": "wwww.google.com",
+      "whatsapp": "123456789"
+    },
+    "galeria": [
+      {
+        "id": 7,
+        "documentId": "jn6gqdo2mtp6ppsfcea1cgyo",
+        "url": "/assets/destino_tehuacan_1_5.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 6,
+        "documentId": "v6vl229l44gbk6keczwlqie3",
+        "url": "/assets/destino_tehuacan_1_6.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    ]
   }
 ]

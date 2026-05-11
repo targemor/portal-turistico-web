@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { StrapiClient } from './StrapiClient.ts';
 import { AssetDownloader } from './AssetDownloader.ts';
 import { optimizeAssets } from './optimize-assets.ts';
-import type { CollectionDefinition, StrapiClientConfig } from './types.ts';
+import type { CollectionDefinition, FlatRecord, StrapiClientConfig } from './types.ts';
 
 // ─── Load environment variables (Node >= 20.6.0) ─────────────────────────────
 try {
@@ -88,6 +88,34 @@ const COLLECTIONS: CollectionDefinition[] = [
       }
     },
   },
+  {
+    name: 'home-page',
+    singleType: true,
+    query: {
+      fields: ['heroTitle', 'searchPlaceholder'],
+      populate: {
+        heroPoster: {
+          fields: ['url', 'alternativeText', 'caption'],
+        },
+        topDestinos: {
+          populate: '*',
+        },
+        topHoteles: {
+          populate: '*',
+        },
+        topRestaurantes: {
+          populate: '*',
+        },
+        imperdibles: {
+          populate: {
+            imagen: {
+              fields: ['url', 'alternativeText', 'caption'],
+            },
+          },
+        },
+      }
+    },
+  },
 ];
 
 // ─── Orchestrator ─────────────────────────────────────────────────────────────
@@ -131,10 +159,15 @@ class StrapiFetcher {
     const records = await this.client.fetchAll(collection);
     console.log(` → ${records.length} records fetched. Processing media assets...`);
 
-    const processedRecords = await this.downloader.process(records);
+    const processedRecords = (await this.downloader.process(records)) as FlatRecord[];
+
+    // Single Types devuelven un arreglo de un elemento — guardamos solo el objeto.
+    const output = collection.singleType
+      ? (processedRecords[0] ?? null)
+      : processedRecords;
 
     const filePath = path.join(DATA_DIR, `${collection.name}.json`);
-    await fs.writeFile(filePath, JSON.stringify(processedRecords, null, 2), 'utf-8');
+    await fs.writeFile(filePath, JSON.stringify(output, null, 2), 'utf-8');
 
     console.log(` ✔ Saved → ${filePath}`);
   }

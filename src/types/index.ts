@@ -76,12 +76,21 @@ export interface Destino {
   publishedAt: string;
 }
 
+export type CategoriaImperdible = 'Naturaleza' | 'Cultura' | 'Salud';
+
+export interface ImperdibleImagen {
+  id?: number;
+  documentId?: string;
+  url: string;
+  alternativeText?: string | null;
+  caption?: string | null;
+}
+
 export interface Imperdible {
   id: string | number;
-  categoria: string;
+  categoria: CategoriaImperdible;
   titulo: string;
-  descripcion: string;
-  imagen: string;
+  descripcion: string | null;
+  imagen: ImperdibleImagen | null;
   cta: string;
-  color: string;
 }

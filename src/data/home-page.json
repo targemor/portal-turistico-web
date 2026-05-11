@@ -1,36 +1,491 @@
 {
+  "id": 3,
+  "documentId": "ee2fupuln6r04f4mvofe6kuq",
   "heroTitle": "VIVE TEHUACÁN",
   "searchPlaceholder": "Busca experiencias increíbles...",
-  "heroPoster": "/assets/hero-poster.webp",
+  "heroPoster": {
+    "id": 11,
+    "documentId": "k9o5ihfc2x3oog4w2zvw7erg",
+    "url": "/assets/media_7.webp",
+    "alternativeText": null,
+    "caption": null
+  },
   "topDestinos": [
     {
-      "id": "san-juan-raya",
-      "categoria": "Naturaleza",
-      "titulo": "San Juan Raya",
-      "descripcion": "Fósiles marinos y rutas de senderismo en el corazón de la biosfera.",
-      "imagen": "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=70&w=600&auto=format&fit=crop&fm=webp",
-      "cta": "Saber más",
-      "color": "#82BC00"
-    },
-    {
-      "id": "sabor-local",
-      "categoria": "Sabor",
-      "titulo": "Manjares del Valle",
-      "descripcion": "Deleita tu paladar con los muéganos y el tradicional mole de caderas.",
-      "imagen": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=70&w=600&auto=format&fit=crop&fm=webp",
-      "cta": "Ver menú",
-      "color": "#F39200"
-    },
-    {
-      "id": "manantiales",
-      "categoria": "Wellness",
-      "titulo": "Aguas Minerales",
-      "descripcion": "Relajación total en los manantiales curativos de fama mundial.",
-      "imagen": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=70&w=600&auto=format&fit=crop&fm=webp",
-      "cta": "Reservar",
-      "color": "#009BA4"
+      "id": 5,
+      "documentId": "l5rdphysik3rbq8oxzz60fsq",
+      "nombre": "Destino Tehuacan 1 ",
+      "descripcion": null,
+      "createdAt": "2026-04-06T07:05:00.713Z",
+      "updatedAt": "2026-05-09T16:35:32.311Z",
+      "publishedAt": "2026-05-09T16:35:32.336Z",
+      "direccion": "Av. Morelos y calle 6 norte, San Miguel, Tianguisnahuatl, 72760 Pue.",
+      "galeria": [
+        {
+          "id": 7,
+          "documentId": "jn6gqdo2mtp6ppsfcea1cgyo",
+          "name": "tehuacan-puebla-reserva-de-la-biosfera.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1280,
+          "height": 853,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce.jpg",
+              "hash": "large_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce",
+              "mime": "image/jpeg",
+              "name": "large_tehuacan-puebla-reserva-de-la-biosfera.jpg",
+              "path": null,
+              "size": 140.1,
+              "width": 1000,
+              "height": 666,
+              "sizeInBytes": 140096
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce.jpg",
+              "hash": "small_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce",
+              "mime": "image/jpeg",
+              "name": "small_tehuacan-puebla-reserva-de-la-biosfera.jpg",
+              "path": null,
+              "size": 43.6,
+              "width": 500,
+              "height": 333,
+              "sizeInBytes": 43598
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce.jpg",
+              "hash": "medium_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce",
+              "mime": "image/jpeg",
+              "name": "medium_tehuacan-puebla-reserva-de-la-biosfera.jpg",
+              "path": null,
+              "size": 87.9,
+              "width": 750,
+              "height": 500,
+              "sizeInBytes": 87895
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce.jpg",
+              "hash": "thumbnail_tehuacan_puebla_reserva_de_la_biosfera_0129a879ce",
+              "mime": "image/jpeg",
+              "name": "thumbnail_tehuacan-puebla-reserva-de-la-biosfera.jpg",
+              "path": null,
+              "size": 10.62,
+              "width": 234,
+              "height": 156,
+              "sizeInBytes": 10621
+            }
+          },
+          "hash": "tehuacan_puebla_reserva_de_la_biosfera_0129a879ce",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 163.86,
+          "url": "/assets/destino_tehuacan_1_8.webp",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-05-09T16:32:39.012Z",
+          "updatedAt": "2026-05-09T16:32:39.012Z",
+          "publishedAt": "2026-05-09T16:32:39.012Z"
+        },
+        {
+          "id": 6,
+          "documentId": "v6vl229l44gbk6keczwlqie3",
+          "name": "valle_tehuacan5.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1185,
+          "height": 800,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_valle_tehuacan5_7ea6e2182c.jpg",
+              "hash": "large_valle_tehuacan5_7ea6e2182c",
+              "mime": "image/jpeg",
+              "name": "large_valle_tehuacan5.jpg",
+              "path": null,
+              "size": 221.29,
+              "width": 1000,
+              "height": 675,
+              "sizeInBytes": 221294
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_valle_tehuacan5_7ea6e2182c.jpg",
+              "hash": "small_valle_tehuacan5_7ea6e2182c",
+              "mime": "image/jpeg",
+              "name": "small_valle_tehuacan5.jpg",
+              "path": null,
+              "size": 61.12,
+              "width": 500,
+              "height": 338,
+              "sizeInBytes": 61118
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_valle_tehuacan5_7ea6e2182c.jpg",
+              "hash": "medium_valle_tehuacan5_7ea6e2182c",
+              "mime": "image/jpeg",
+              "name": "medium_valle_tehuacan5.jpg",
+              "path": null,
+              "size": 130.09,
+              "width": 750,
+              "height": 506,
+              "sizeInBytes": 130090
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_valle_tehuacan5_7ea6e2182c.jpg",
+              "hash": "thumbnail_valle_tehuacan5_7ea6e2182c",
+              "mime": "image/jpeg",
+              "name": "thumbnail_valle_tehuacan5.jpg",
+              "path": null,
+              "size": 13.9,
+              "width": 231,
+              "height": 156,
+              "sizeInBytes": 13900
+            }
+          },
+          "hash": "valle_tehuacan5_7ea6e2182c",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 307.73,
+          "url": "/assets/destino_tehuacan_1_9.webp",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-05-09T16:32:38.909Z",
+          "updatedAt": "2026-05-09T16:32:38.909Z",
+          "publishedAt": "2026-05-09T16:32:38.909Z"
+        }
+      ],
+      "contacto": {
+        "id": 8,
+        "telefono": "123456789",
+        "email": "test@test.com",
+        "sitio_web": "wwww.google.com",
+        "whatsapp": "123456789"
+      },
+      "redes_sociales": [
+        {
+          "id": 25,
+          "plataforma": "Instagram",
+          "usuario": "istagran",
+          "enlace": "wwww.instagram.com"
+        },
+        {
+          "id": 26,
+          "plataforma": "Facebook",
+          "usuario": "test fb",
+          "enlace": "www.facebook.com"
+        },
+        {
+          "id": 27,
+          "plataforma": "TikTok",
+          "usuario": "test",
+          "enlace": "www.tiktok.com"
+        }
+      ]
     }
   ],
-  "topHotelesIds": [1, 2],
-  "topRestaurantesIds": [1, 2]
+  "topHoteles": [
+    {
+      "id": 3,
+      "documentId": "jlidzuchyw010x981vc24xkl",
+      "nombre": "Casa Chanehque",
+      "estrellas": 4,
+      "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
+      "createdAt": "2026-04-03T07:24:39.213Z",
+      "updatedAt": "2026-05-09T16:38:50.927Z",
+      "publishedAt": "2026-05-09T16:38:50.955Z",
+      "galeria": [
+        {
+          "id": 3,
+          "documentId": "cbvjwofn410hel2g7nm893w7",
+          "name": "hotel.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 900,
+          "height": 506,
+          "formats": {
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_hotel_bc6d1720d6.jpg",
+              "hash": "small_hotel_bc6d1720d6",
+              "mime": "image/jpeg",
+              "name": "small_hotel.jpg",
+              "path": null,
+              "size": 33.57,
+              "width": 500,
+              "height": 281,
+              "sizeInBytes": 33566
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_hotel_bc6d1720d6.jpg",
+              "hash": "medium_hotel_bc6d1720d6",
+              "mime": "image/jpeg",
+              "name": "medium_hotel.jpg",
+              "path": null,
+              "size": 75.84,
+              "width": 750,
+              "height": 422,
+              "sizeInBytes": 75841
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_hotel_bc6d1720d6.jpg",
+              "hash": "thumbnail_hotel_bc6d1720d6",
+              "mime": "image/jpeg",
+              "name": "thumbnail_hotel.jpg",
+              "path": null,
+              "size": 8.85,
+              "width": 245,
+              "height": 138,
+              "sizeInBytes": 8845
+            }
+          },
+          "hash": "hotel_bc6d1720d6",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 113.06,
+          "url": "/assets/casa_chanehque_10.webp",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-05-09T16:32:38.574Z",
+          "updatedAt": "2026-05-09T16:32:38.574Z",
+          "publishedAt": "2026-05-09T16:32:38.574Z"
+        },
+        {
+          "id": 5,
+          "documentId": "ed26xp1h4pmdp8aj2oq9w68b",
+          "name": "hotel 2.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 863,
+          "height": 575,
+          "formats": {
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_hotel_2_2faf29ac40.jpg",
+              "hash": "small_hotel_2_2faf29ac40",
+              "mime": "image/jpeg",
+              "name": "small_hotel 2.jpg",
+              "path": null,
+              "size": 46.9,
+              "width": 500,
+              "height": 333,
+              "sizeInBytes": 46901
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_hotel_2_2faf29ac40.jpg",
+              "hash": "medium_hotel_2_2faf29ac40",
+              "mime": "image/jpeg",
+              "name": "medium_hotel 2.jpg",
+              "path": null,
+              "size": 96.1,
+              "width": 750,
+              "height": 500,
+              "sizeInBytes": 96096
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_hotel_2_2faf29ac40.jpg",
+              "hash": "thumbnail_hotel_2_2faf29ac40",
+              "mime": "image/jpeg",
+              "name": "thumbnail_hotel 2.jpg",
+              "path": null,
+              "size": 12.04,
+              "width": 234,
+              "height": 156,
+              "sizeInBytes": 12036
+            }
+          },
+          "hash": "hotel_2_2faf29ac40",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 122.51,
+          "url": "/assets/casa_chanehque_11.webp",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-05-09T16:32:38.691Z",
+          "updatedAt": "2026-05-09T16:32:38.691Z",
+          "publishedAt": "2026-05-09T16:32:38.691Z"
+        }
+      ],
+      "contacto": null,
+      "redes_sociales": [
+        {
+          "id": 30,
+          "plataforma": "Facebook",
+          "usuario": "test",
+          "enlace": "www.facebook.com"
+        },
+        {
+          "id": 31,
+          "plataforma": "Instagram",
+          "usuario": "istagran",
+          "enlace": "www.instagran.com"
+        }
+      ]
+    }
+  ],
+  "topRestaurantes": [
+    {
+      "id": 3,
+      "documentId": "gjovo7fdgnvyvagcody4yiv1",
+      "nombre": "Restaurante Bar Mesón de la Quinta",
+      "descripcion": null,
+      "direccion": "Av. Miguel Hidalgo 106, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "createdAt": "2026-04-06T06:50:58.241Z",
+      "updatedAt": "2026-05-09T16:41:07.348Z",
+      "publishedAt": "2026-05-09T16:41:07.393Z",
+      "galeria": {
+        "id": 8,
+        "documentId": "xqmv8lycw4yyebybq6r7ar3b",
+        "name": "WA_00138-scaled.jpg",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 2560,
+        "height": 1707,
+        "formats": {
+          "large": {
+            "ext": ".jpg",
+            "url": "/uploads/large_WA_00138_scaled_057b5ee56b.jpg",
+            "hash": "large_WA_00138_scaled_057b5ee56b",
+            "mime": "image/jpeg",
+            "name": "large_WA_00138-scaled.jpg",
+            "path": null,
+            "size": 172.05,
+            "width": 1000,
+            "height": 667,
+            "sizeInBytes": 172051
+          },
+          "small": {
+            "ext": ".jpg",
+            "url": "/uploads/small_WA_00138_scaled_057b5ee56b.jpg",
+            "hash": "small_WA_00138_scaled_057b5ee56b",
+            "mime": "image/jpeg",
+            "name": "small_WA_00138-scaled.jpg",
+            "path": null,
+            "size": 50.5,
+            "width": 500,
+            "height": 333,
+            "sizeInBytes": 50499
+          },
+          "medium": {
+            "ext": ".jpg",
+            "url": "/uploads/medium_WA_00138_scaled_057b5ee56b.jpg",
+            "hash": "medium_WA_00138_scaled_057b5ee56b",
+            "mime": "image/jpeg",
+            "name": "medium_WA_00138-scaled.jpg",
+            "path": null,
+            "size": 103.6,
+            "width": 750,
+            "height": 500,
+            "sizeInBytes": 103600
+          },
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_WA_00138_scaled_057b5ee56b.jpg",
+            "hash": "thumbnail_WA_00138_scaled_057b5ee56b",
+            "mime": "image/jpeg",
+            "name": "thumbnail_WA_00138-scaled.jpg",
+            "path": null,
+            "size": 13.58,
+            "width": 234,
+            "height": 156,
+            "sizeInBytes": 13576
+          }
+        },
+        "hash": "WA_00138_scaled_057b5ee56b",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 859.94,
+        "url": "/assets/restaurante_bar_meson_de_la_quinta_12.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-05-09T16:32:39.038Z",
+        "updatedAt": "2026-05-09T16:32:39.038Z",
+        "publishedAt": "2026-05-09T16:32:39.038Z"
+      },
+      "contacto": null,
+      "redes_sociales": [
+        {
+          "id": 32,
+          "plataforma": "Facebook",
+          "usuario": "test",
+          "enlace": "www.facebook.com"
+        },
+        {
+          "id": 33,
+          "plataforma": "Instagram",
+          "usuario": "instagran",
+          "enlace": "www.instagram.com"
+        },
+        {
+          "id": 34,
+          "plataforma": "TikTok",
+          "usuario": "tiktok",
+          "enlace": "www.tiktok.com"
+        }
+      ]
+    }
+  ],
+  "imperdibles": [
+    {
+      "id": 4,
+      "titulo": "Reserva de la Biosfera",
+      "categoria": "Naturaleza",
+      "descripcion": "Descubre el desierto de cactus columnares más espectacular de México, Patrimonio de la Humanidad.",
+      "cta": "EXPLORAR RESERVA",
+      "imagen": {
+        "id": 7,
+        "documentId": "jn6gqdo2mtp6ppsfcea1cgyo",
+        "url": "/assets/media_13.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    },
+    {
+      "id": 5,
+      "titulo": "Museo de la Evolución",
+      "categoria": "Cultura",
+      "descripcion": "Un viaje fascinante desde el origen del universo hasta la biodiversidad actual de la región.",
+      "cta": "VER MUSEO",
+      "imagen": {
+        "id": 4,
+        "documentId": "vnx21aytqgxw58fwdm2bakzr",
+        "url": "/assets/media_14.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    },
+    {
+      "id": 6,
+      "titulo": "Manantiales Curativos",
+      "categoria": "Salud",
+      "descripcion": "Relájate en las famosas aguas minerales de Tehuacán, conocidas mundialmente por sus propiedades.",
+      "cta": "VISITAR MANANTIALES",
+      "imagen": {
+        "id": 9,
+        "documentId": "e24l4js9ogqrwafsd5nx4oof",
+        "url": "/assets/media_15.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    }
+  ]
 }

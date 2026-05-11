@@ -54,8 +54,8 @@ export class StrapiClient {
     const flatPage = this.flattenResponse(json.data) as FlatRecord[];
     const allRecords = accumulated.concat(flatPage);
 
-    const { pagination } = json.meta;
-    if (pagination.page < pagination.pageCount) {
+    const pagination = json.meta?.pagination;
+    if (pagination && pagination.page < pagination.pageCount) {
       return this.fetchAll(collection, page + 1, allRecords);
     }
 

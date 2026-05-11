@@ -59,6 +59,11 @@ export interface CollectionDefinition {
   name: string;
   /** Nested query params object serialized via qs.stringify */
   query: StrapiQueryParams;
+  /**
+   * Set to true for Strapi Single Types.
+   * When true, the output JSON file will be a single object instead of an array.
+   */
+  singleType?: boolean;
 }
 
 // ─── Fetcher Config ───────────────────────────────────────────────────────────

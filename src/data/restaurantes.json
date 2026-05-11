@@ -1,55 +1,40 @@
 [
   {
-    "id": 2,
+    "id": 3,
     "documentId": "gjovo7fdgnvyvagcody4yiv1",
     "nombre": "Restaurante Bar Mesón de la Quinta",
     "descripcion": null,
     "direccion": "Av. Miguel Hidalgo 106, Centro, 72760 Cholula de Rivadavia, Pue.",
     "createdAt": "2026-04-06T06:50:58.241Z",
-    "updatedAt": "2026-04-06T06:50:59.651Z",
-    "publishedAt": "2026-04-06T06:50:59.669Z",
+    "updatedAt": "2026-05-09T16:41:07.348Z",
+    "publishedAt": "2026-05-09T16:41:07.393Z",
     "redes_sociales": [
       {
-        "id": 12,
+        "id": 32,
         "plataforma": "Facebook",
-        "usuario": null,
-        "enlace": null
+        "usuario": "test",
+        "enlace": "www.facebook.com"
       },
       {
-        "id": 13,
+        "id": 33,
         "plataforma": "Instagram",
-        "usuario": null,
-        "enlace": null
+        "usuario": "instagran",
+        "enlace": "www.instagram.com"
       },
       {
-        "id": 14,
+        "id": 34,
         "plataforma": "TikTok",
-        "usuario": null,
-        "enlace": null
+        "usuario": "tiktok",
+        "enlace": "www.tiktok.com"
       }
     ],
-    "contacto": {
-      "id": 4,
-      "telefono": null,
-      "email": "pabellonqag@gmail.com",
-      "sitio_web": null,
-      "whatsapp": null
-    },
-    "galeria": [
-      {
-        "id": 2,
-        "documentId": "umxo7vfht84n58we1t51afix",
-        "url": "/assets/restaurante_bar_meson_de_la_quinta_2.webp",
-        "alternativeText": null,
-        "caption": null
-      },
-      {
-        "id": 3,
-        "documentId": "mock-restaurante-img-2",
-        "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
-        "alternativeText": "Interior del restaurante",
-        "caption": null
-      }
-    ]
+    "contacto": null,
+    "galeria": {
+      "id": 8,
+      "documentId": "xqmv8lycw4yyebybq6r7ar3b",
+      "url": "/assets/restaurante_bar_meson_de_la_quinta_3.webp",
+      "alternativeText": null,
+      "caption": null
+    }
   }
 ]

@@ -1,7 +1,8 @@
 ---
 /**
  * ImperdiblesSection – "Los Imperdibles" con Cards multicolor
- * Fiel a page.tsx: barra superior animada, badges y botones con color por categoría
+ * La imagen viene como objeto {url, alternativeText} desde Strapi.
+ * El color se deriva de la categoría (enum).
  */
 
 import type { Imperdible } from "../types";
@@ -11,6 +12,13 @@ interface Props {
 }
 
 const { imperdibles } = Astro.props;
+
+/** Color por categoría — refleja el enum de Strapi */
+const CATEGORIA_COLOR: Record<string, string> = {
+  Naturaleza: '#065f46',
+  Cultura:    '#991b1b',
+  Salud:      '#1e40af',
+};
 ---
 
 <section id="destinos" class="py-20">
@@ -32,46 +40,51 @@ const { imperdibles } = Astro.props;
 
     <!-- Grid de cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {imperdibles.map((item) => (
-        <div class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl overflow-hidden">
-          <!-- Barra superior animada con color de categoría -->
-          <div
-            class="h-1.5 w-full transition-transform duration-500 origin-left group-hover:scale-x-110"
-            style={`background-color: ${item.color};`}
-          ></div>
-          <!-- Imagen -->
-          <div class="aspect-[4/3] overflow-hidden relative">
-            <img
-              src={item.imagen}
-              alt={item.titulo}
-              class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
-              loading="lazy"
-              decoding="async"
-            />
-            <!-- Badge de categoría con color -->
+      {imperdibles.map((item) => {
+        const color = CATEGORIA_COLOR[item.categoria] ?? '#64748b';
+        const imgSrc = item.imagen?.url ?? '';
+        const imgAlt = item.imagen?.alternativeText ?? item.titulo;
+        return (
+          <div class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl overflow-hidden">
+            <!-- Barra superior animada con color de categoría -->
             <div
-              class="absolute top-4 left-4 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-black text-white uppercase tracking-wider"
-              style={`background-color: ${item.color};`}
-            >
-              {item.categoria}
+              class="h-1.5 w-full transition-transform duration-500 origin-left group-hover:scale-x-110"
+              style={`background-color: ${color};`}
+            ></div>
+            <!-- Imagen -->
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img
+                src={imgSrc}
+                alt={imgAlt}
+                class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
+                loading="lazy"
+                decoding="async"
+              />
+              <!-- Badge de categoría con color -->
+              <div
+                class="absolute top-4 left-4 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-black text-white uppercase tracking-wider"
+                style={`background-color: ${color};`}
+              >
+                {item.categoria}
+              </div>
+            </div>
+            <!-- Contenido -->
+            <div class="p-8">
+              <h3 class="text-2xl font-black mb-2">{item.titulo}</h3>
+              <p class="text-slate-500 text-sm mb-8 leading-relaxed">{item.descripcion}</p>
+              <a
+                href="#"
+                class="inline-flex w-full items-center justify-center rounded-md border-2 px-4 py-2 text-sm font-bold transition-all hover:text-white"
+                style={`border-color: ${color}; color: ${color};`}
+                onmouseover={`this.style.backgroundColor='${color}'; this.style.color='white';`}
+                onmouseout={`this.style.backgroundColor='transparent'; this.style.color='${color}';`}
+              >
+                {item.cta}
+              </a>
             </div>
           </div>
-          <!-- Contenido -->
-          <div class="p-8">
-            <h3 class="text-2xl font-black mb-2">{item.titulo}</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed">{item.descripcion}</p>
-            <a
-              href="#"
-              class="inline-flex w-full items-center justify-center rounded-md border-2 px-4 py-2 text-sm font-bold transition-all hover:text-white"
-              style={`border-color: ${item.color}; color: ${item.color};`}
-              onmouseover={`this.style.backgroundColor='${item.color}'; this.style.color='white';`}
-              onmouseout={`this.style.backgroundColor='transparent'; this.style.color='${item.color}';`}
-            >
-              {item.cta}
-            </a>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
