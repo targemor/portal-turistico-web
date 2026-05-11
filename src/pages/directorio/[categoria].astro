@@ -1,9 +1,9 @@
 ---
-import NavBar from "../../components/NavBar.astro";
-import Footer from "../../components/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavBar    from "../../components/NavBar.astro";
+import Footer    from "../../components/Footer.astro";
 import BottomNav from "../../components/BottomNav.astro";
 import ReactCard from "../../components/react/Card";
-import "../../styles/global.css";
 
 export function getStaticPaths() {
   return [
@@ -38,40 +38,33 @@ if (categoria === 'hoteles') {
   subtitulo = "Tours y Experiencias";
 }
 ---
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{titulo} | Portal Turístico Tehuacán</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  </head>
-  <body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans pb-20 md:pb-0">
-    <NavBar forceBackground={true} />
 
-    <main id="main-content" class="pt-32 pb-20">
-      <div class="container mx-auto px-6">
-        <!-- Header -->
-        <div class="mb-12">
-          <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">{subtitulo}</p>
-          <h1 class="text-4xl font-bold tracking-tight text-slate-900">{titulo}</h1>
-        </div>
+<BaseLayout
+  title={`${titulo} | Portal Turístico Tehuacán`}
+  description={`Descubre los mejores ${titulo.toLowerCase()} de Tehuacán, Puebla. Cuna del Maíz y Patrimonio de la Humanidad.`}
+  bodyClass="pb-20 md:pb-0"
+>
+  <NavBar forceBackground={true} />
 
-        <h2 class="sr-only">Directorio de {titulo}</h2>
-
-        <!-- Grid de elementos -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {data.map((item: any) => (
-            <ReactCard client:visible item={item} categoria={categoria} />
-          ))}
-        </div>
+  <main id="main-content" class="pt-32 pb-20">
+    <div class="container mx-auto px-6">
+      <!-- Header -->
+      <div class="mb-12">
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">{subtitulo}</p>
+        <h1 class="text-4xl font-bold tracking-tight text-slate-900">{titulo}</h1>
       </div>
-    </main>
 
-    <Footer />
-    <BottomNav />
-  </body>
-</html>
+      <h2 class="sr-only">Directorio de {titulo}</h2>
+
+      <!-- Grid de elementos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {data.map((item: any) => (
+          <ReactCard client:visible item={item} categoria={categoria} />
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <BottomNav />
+</BaseLayout>
