@@ -1,5 +1,6 @@
 ---
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from '@vercel/analytics/astro'
 /**
  * index.astro – Página principal del Portal Turístico Tehuacán
  *
@@ -34,7 +35,6 @@ import guias        from "../data/guias-turisticos.json";
 import "../styles/global.css";
 
 ---
-<SpeedInsights/>
 <!doctype html>
 <html lang="es">
   <head>
@@ -94,7 +94,8 @@ import "../styles/global.css";
       type="image/webp"
     />
   </head>
-
+  <SpeedInsights/>
+  <Analytics/>
   <body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-brand/10 pb-20 md:pb-0">
 
     <NavBar />
