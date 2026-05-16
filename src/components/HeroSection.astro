@@ -22,7 +22,7 @@ const { data } = Astro.props;
     <div class="w-full h-full">
       <video
         class="w-full h-full object-cover object-bottom rounded-xl"
-        poster={data.heroPoster}
+        poster={data.heroPoster || "/assets/hero-poster.webp"}
         autoplay
         muted
         loop

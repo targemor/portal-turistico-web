@@ -35,21 +35,6 @@
       "sitio_web": "wwww.google.com",
       "whatsapp": "123456789"
     },
-    "galeria": [
-      {
-        "id": 7,
-        "documentId": "jn6gqdo2mtp6ppsfcea1cgyo",
-        "url": "/assets/destino_tehuacan_1_5.webp",
-        "alternativeText": null,
-        "caption": null
-      },
-      {
-        "id": 6,
-        "documentId": "v6vl229l44gbk6keczwlqie3",
-        "url": "/assets/destino_tehuacan_1_6.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
+    "galeria": null
   }
 ]

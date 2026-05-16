@@ -22,6 +22,26 @@ const StarIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+  </svg>
+);
+
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
+
 export interface CardItem {
   id: string | number;
   nombre?: string;
@@ -32,6 +52,7 @@ export interface CardItem {
   especialidad?: string;
   galeria?: any;
   imagen?: string; // Para imperdibles que usa 'imagen'
+  redes_sociales?: { plataforma: string; enlace: string }[];
 }
 
 interface CardProps {
@@ -101,6 +122,13 @@ export default function Card({ item, categoria, children }: CardProps) {
         {/* Título */}
         <h3 className="text-xl font-bold mb-2 text-slate-900">{nombreItem}</h3>
 
+        {/* Descripción */}
+        {item.descripcion && (
+          <p className="text-slate-500 text-sm line-clamp-3 mb-3">
+            {item.descripcion}
+          </p>
+        )}
+
         {/* Estrellas visuales */}
         {item.estrellas && (
           <div className="flex gap-0.5 mb-3" aria-label={`${item.estrellas} de 5 estrellas`}>
@@ -110,16 +138,40 @@ export default function Card({ item, categoria, children }: CardProps) {
           </div>
         )}
 
-        {/* Ubicación / Descripción */}
-        {(item.direccion || item.descripcion) && (
-          <p className="text-slate-500 text-sm flex items-start gap-2 line-clamp-2">
-            {item.direccion && <MapPinIcon className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />}
-            {item.direccion ?? item.descripcion}
+        {/* Ubicación */}
+        {item.direccion && (
+          <p className="text-slate-500 text-sm flex items-start gap-2 mb-2">
+            <MapPinIcon className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+            {item.direccion}
           </p>
         )}
 
         {/* Contenido extra inyectado como children */}
         {children}
+
+        {/* Redes sociales */}
+        {item.redes_sociales && item.redes_sociales.length > 0 && (
+          <div className="flex gap-2 mb-3 mt-4">
+            {item.redes_sociales.map((red, idx) => {
+              const platformLower = red.plataforma.toLowerCase();
+              const Icon = platformLower === 'facebook' ? FacebookIcon : 
+                           platformLower === 'instagram' ? InstagramIcon : 
+                           platformLower === 'tiktok' ? TiktokIcon : null;
+              return (
+                <a
+                  key={idx}
+                  href={red.enlace ?? "#"}
+                  target={red.enlace ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={red.plataforma}
+                  className="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
+                >
+                  {Icon && <Icon className="w-4 h-4" />}
+                </a>
+              );
+            })}
+          </div>
+        )}
 
         {/* Spacer para empujar el botón al fondo si la card crece */}
         <div className="mt-auto pt-6">

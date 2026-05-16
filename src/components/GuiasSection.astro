@@ -68,25 +68,6 @@ const SocialIconComponents: Record<string, any> = {
             </div>
           )}
 
-          {/* Redes sociales */}
-          {guia.redes_sociales.length > 0 && (
-            <div class="flex gap-2 mb-2">
-              {guia.redes_sociales.map((red) => {
-                const Icon = SocialIconComponents[red.plataforma];
-                return (
-                  <a
-                    href={red.enlace ?? "#"}
-                    target={red.enlace ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    aria-label={red.plataforma}
-                    class="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
-                  >
-                    {Icon && <Icon class="w-4 h-4" />}
-                  </a>
-                );
-              })}
-            </div>
-          )}
         </ReactCard>
       ))}
     </div>

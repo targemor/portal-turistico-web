@@ -1,40 +1,135 @@
 [
   {
-    "id": 3,
-    "documentId": "jlidzuchyw010x981vc24xkl",
-    "nombre": "Casa Chanehque",
+    "id": 5,
+    "documentId": "de68rzj8wec0971yg9b1ugi7",
+    "nombre": "City Express By Marriott Tehuacán",
     "estrellas": 4,
-    "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
-    "createdAt": "2026-04-03T07:24:39.213Z",
-    "updatedAt": "2026-05-09T16:38:50.927Z",
-    "publishedAt": "2026-05-09T16:38:50.955Z",
+    "direccion": "Calz. Adolfo López Mateos 3800, San Lorenzo Teotipilco, 75855 Tehuacán, Pue.",
+    "createdAt": "2026-05-16T17:07:04.355Z",
+    "updatedAt": "2026-05-16T17:07:05.705Z",
+    "publishedAt": "2026-05-16T17:07:05.733Z",
     "redes_sociales": [
       {
-        "id": 30,
+        "id": 41,
         "plataforma": "Facebook",
-        "usuario": "test",
-        "enlace": "www.facebook.com"
+        "usuario": "Hoteles City Express ",
+        "enlace": "https://www.facebook.com/hotelescityexpress"
       },
       {
-        "id": 31,
+        "id": 42,
         "plataforma": "Instagram",
-        "usuario": "istagran",
-        "enlace": "www.instagran.com"
+        "usuario": "@hotelescityexpress",
+        "enlace": "https://www.instagram.com/hotelescityexpress/"
       }
     ],
-    "contacto": null,
+    "contacto": {
+      "id": 13,
+      "telefono": "2225010408",
+      "email": null,
+      "sitio_web": null,
+      "whatsapp": "2383840120"
+    },
     "galeria": [
       {
-        "id": 3,
-        "documentId": "cbvjwofn410hel2g7nm893w7",
-        "url": "/assets/casa_chanehque_1.webp",
+        "id": 80,
+        "documentId": "om1rvnh5aj4nt50fmecj0khz",
+        "url": "/assets/city_express_by_marriott_tehuacan_1.webp",
         "alternativeText": null,
         "caption": null
       },
       {
-        "id": 5,
-        "documentId": "ed26xp1h4pmdp8aj2oq9w68b",
-        "url": "/assets/casa_chanehque_2.webp",
+        "id": 79,
+        "documentId": "pg9117fcx10lu7hookojr8wa",
+        "url": "/assets/city_express_by_marriott_tehuacan_2.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 78,
+        "documentId": "geanfzqcq5zayut9rchui80n",
+        "url": "/assets/city_express_by_marriott_tehuacan_3.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 77,
+        "documentId": "yyx6dg53tyt8bcokic2bidvl",
+        "url": "/assets/city_express_by_marriott_tehuacan_4.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 74,
+        "documentId": "kdfddf3j64m6cdimaazzxl8w",
+        "url": "/assets/city_express_by_marriott_tehuacan_5.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 75,
+        "documentId": "c9aw604or2dqjk9mbqzjk4uk",
+        "url": "/assets/city_express_by_marriott_tehuacan_6.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 76,
+        "documentId": "tg3xecild3j0528uor7zzzxl",
+        "url": "/assets/city_express_by_marriott_tehuacan_7.webp",
+        "alternativeText": null,
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "documentId": "lmh7aezklj3p65ch6zpjff20",
+    "nombre": "Hotel Plaza Iberia",
+    "estrellas": 4,
+    "direccion": "Avenida Independencia Oriente # 211, Centro de la Ciudad, 75700 Tehuacán, Pue.",
+    "createdAt": "2026-05-16T17:12:38.740Z",
+    "updatedAt": "2026-05-16T17:12:41.956Z",
+    "publishedAt": "2026-05-16T17:12:41.973Z",
+    "redes_sociales": [
+      {
+        "id": 45,
+        "plataforma": "Facebook",
+        "usuario": "Hotel Plaza Iberia ",
+        "enlace": "https://www.facebook.com/hotelplazaiberia"
+      },
+      {
+        "id": 46,
+        "plataforma": "Instagram",
+        "usuario": "@hotelplazaiberia211",
+        "enlace": "https://www.instagram.com/hotelplazaiberia211"
+      }
+    ],
+    "contacto": {
+      "id": 15,
+      "telefono": "238 38 31500",
+      "email": null,
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "galeria": [
+      {
+        "id": 83,
+        "documentId": "eopdhjood2ck7l7u7s3d67lc",
+        "url": "/assets/hotel_plaza_iberia_8.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 82,
+        "documentId": "j3xqs569ws250s4dopi0whkj",
+        "url": "/assets/hotel_plaza_iberia_9.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 81,
+        "documentId": "oo79wfpgvknekp0m6bp2g7ls",
+        "url": "/assets/hotel_plaza_iberia_10.webp",
         "alternativeText": null,
         "caption": null
       }

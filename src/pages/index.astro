@@ -27,8 +27,6 @@ import Footer             from "../components/Footer.astro";
 import BottomNav          from "../components/BottomNav.astro";
 
 import homePageData from "../data/home-page.json";
-import hoteles      from "../data/hoteles.json";
-import restaurantes from "../data/restaurantes.json";
 import guias        from "../data/guias-turisticos.json";
 ---
 
@@ -62,10 +60,10 @@ import guias        from "../data/guias-turisticos.json";
     <ExploraSection />
 
     <!-- Hoteles (datos desde JSON) -->
-    <HotelesSection hoteles={hoteles} />
+    <HotelesSection hoteles={homePageData.topHoteles} />
 
     <!-- Restaurantes (datos desde JSON) -->
-    <RestaurantesSection restaurantes={restaurantes} />
+    <RestaurantesSection restaurantes={homePageData.topRestaurantes} />
 
     <!-- Guías turísticos (datos desde JSON) -->
     <GuiasSection guias={guias} />
