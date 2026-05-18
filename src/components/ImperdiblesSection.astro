@@ -1,90 +1,12 @@
 ---
-/**
- * ImperdiblesSection – "Los Imperdibles" con Cards multicolor
- * La imagen viene como objeto {url, alternativeText} desde Strapi.
- * El color se deriva de la categoría (enum).
- */
-
 import type { Imperdible } from "../types";
+import ImperdiblesReact from "./react/ImperdiblesSection";
 
 interface Props {
   imperdibles: Imperdible[];
 }
 
 const { imperdibles } = Astro.props;
-
-/** Color por categoría — refleja el enum de Strapi */
-const CATEGORIA_COLOR: Record<string, string> = {
-  Naturaleza: '#065f46',
-  Cultura:    '#991b1b',
-  Salud:      '#1e40af',
-};
 ---
 
-<section id="destinos" class="py-20">
-  <div class="container mx-auto px-6">
-    <!-- Header -->
-    <div class="flex justify-between items-center mb-16">
-      <h2 class="text-4xl font-black tracking-tighter">LOS IMPERDIBLES</h2>
-      <div class="h-px flex-1 mx-8 bg-slate-200 hidden md:block"></div>
-      <a
-        href="/directorio/destinos"
-        class="inline-flex items-center justify-center rounded-full border-2 px-4 py-2 text-xs font-black uppercase tracking-wider transition-all hover:text-white"
-        style="border-color: var(--color-mex-purpura); color: var(--color-mex-purpura);"
-        onmouseover="this.style.backgroundColor='var(--color-mex-purpura)'; this.style.color='white';"
-        onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--color-mex-purpura)';"
-      >
-        EXPLORAR TODO
-      </a>
-    </div>
-
-    <!-- Grid de cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {imperdibles.map((item) => {
-        const color = CATEGORIA_COLOR[item.categoria] ?? '#64748b';
-        const imgSrc = item.imagen?.url ?? '';
-        const imgAlt = item.imagen?.alternativeText ?? item.titulo;
-        return (
-          <div class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl overflow-hidden">
-            <!-- Barra superior animada con color de categoría -->
-            <div
-              class="h-1.5 w-full transition-transform duration-500 origin-left group-hover:scale-x-110"
-              style={`background-color: ${color};`}
-            ></div>
-            <!-- Imagen -->
-            <div class="aspect-[4/3] overflow-hidden relative">
-              <img
-                src={imgSrc}
-                alt={imgAlt}
-                class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
-                loading="lazy"
-                decoding="async"
-              />
-              <!-- Badge de categoría con color -->
-              <div
-                class="absolute top-4 left-4 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-black text-white uppercase tracking-wider"
-                style={`background-color: ${color};`}
-              >
-                {item.categoria}
-              </div>
-            </div>
-            <!-- Contenido -->
-            <div class="p-8">
-              <h3 class="text-2xl font-black mb-2">{item.titulo}</h3>
-              <p class="text-slate-500 text-sm mb-8 leading-relaxed">{item.descripcion}</p>
-              <a
-                href="#"
-                class="inline-flex w-full items-center justify-center rounded-md border-2 px-4 py-2 text-sm font-bold transition-all hover:text-white"
-                style={`border-color: ${color}; color: ${color};`}
-                onmouseover={`this.style.backgroundColor='${color}'; this.style.color='white';`}
-                onmouseout={`this.style.backgroundColor='transparent'; this.style.color='${color}';`}
-              >
-                {item.cta}
-              </a>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+<ImperdiblesReact imperdibles={imperdibles} client:only="react" />

@@ -19,7 +19,6 @@ import NavBar             from "../components/NavBar.astro";
 import HeroSection        from "../components/HeroSection.astro";
 import IntroSection       from "../components/IntroSection.astro";
 import ImperdiblesSection from "../components/ImperdiblesSection.astro";
-import ExploraSection     from "../components/ExploraSection.astro";
 import HotelesSection     from "../components/HotelesSection.astro";
 import RestaurantesSection from "../components/RestaurantesSection.astro";
 import GuiasSection       from "../components/GuiasSection.astro";
@@ -53,11 +52,8 @@ import guias        from "../data/guias-turisticos.json";
     <!-- Introducción minimalista con cita -->
     <IntroSection />
 
-    <!-- Los Imperdibles: 3 cards con imagen -->
+    <!-- Bento grid + Imperdibles por categoría -->
     <ImperdiblesSection imperdibles={homePageData.imperdibles} />
-
-    <!-- Bento grid: Explora cada rincón -->
-    <ExploraSection />
 
     <!-- Hoteles (datos desde JSON) -->
     <HotelesSection hoteles={homePageData.topHoteles} />
