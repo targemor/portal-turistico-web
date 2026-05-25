@@ -97,19 +97,37 @@ const COLLECTIONS: CollectionDefinition[] = [
         heroPoster: {
           fields: ['url', 'alternativeText', 'caption'],
         },
-        topDestinos: {
-          populate: '*',
-        },
         topHoteles: {
-          populate: '*',
+          populate: {
+            galeria: {
+              fields: ['url', 'alternativeText', 'caption'],
+            },
+            contacto: {
+              fields: ['telefono', 'email', 'sitio_web', 'whatsapp'],
+            },
+            redes_sociales: {
+              fields: ['plataforma', 'usuario', 'enlace'],
+            },
+          },
         },
         topRestaurantes: {
-          populate: '*',
+          populate: {
+            galeria: {
+              fields: ['url', 'alternativeText', 'caption'],
+            },
+            contacto: {
+              fields: ['telefono', 'email', 'sitio_web', 'whatsapp'],
+            },
+            redes_sociales: {
+              fields: ['plataforma', 'usuario', 'enlace'],
+            },
+          },
         },
         imperdibles: {
+          fields: ['titulo', 'descripcion', 'categoria', 'cta', 'direccionGoogleMaps'],
           populate: {
             imagen: {
-              fields: ['url', 'alternativeText', 'caption'],
+              fields: ['url', 'alternativeText', 'caption',],
             },
           },
         },
@@ -165,6 +183,11 @@ class StrapiFetcher {
     const output = collection.singleType
       ? (processedRecords[0] ?? null)
       : processedRecords;
+
+    if (collection.name === 'home-page' && output) {
+      const { enrichImperdiblesWithCoords } = await import('./geocode-urls.ts');
+      await enrichImperdiblesWithCoords(output);
+    }
 
     const filePath = path.join(DATA_DIR, `${collection.name}.json`);
     await fs.writeFile(filePath, JSON.stringify(output, null, 2), 'utf-8');

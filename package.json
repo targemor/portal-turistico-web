@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
+    "@googlemaps/google-maps-services-js": "^3.4.2",
     "@radix-ui/react-dialog": "^1.1.10",
     "@radix-ui/react-slot": "^1.2.2",
     "@radix-ui/react-tabs": "^1.1.9",

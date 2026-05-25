@@ -93,6 +93,16 @@ export class AssetDownloader {
     const localPath = path.join(this.assetsDir, fileName);
 
     try {
+      // Verificar si el archivo ya existe
+      try {
+        await fs.access(localPath);
+        console.log(`   ⏭ Skipping (already exists): ${fileName}`);
+        media.url = `${this.assetsPublicPath}/${fileName}`;
+        return;
+      } catch {
+        // El archivo no existe, continuar con la descarga
+      }
+
       console.log(`   ⬇ Downloading: ${fileName}`);
 
       const response = await fetch(remoteUrl);

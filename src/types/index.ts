@@ -93,4 +93,12 @@ export interface Imperdible {
   descripcion: string | null;
   imagen: ImperdibleImagen | null;
   cta: string;
+  direccionGoogleMaps?: string | null;
+  lat?: number;
+  lng?: number;
+  googleMapsInfo?: {
+    rating?: number;
+    userRatingsTotal?: number;
+    formattedAddress?: string;
+  };
 }

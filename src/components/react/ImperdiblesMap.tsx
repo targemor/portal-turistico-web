@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   APIProvider,
   Map,
   Marker,
   InfoWindow,
+  useMap,
 } from "@vis.gl/react-google-maps";
 
 /* ─── Estilos para ocultar POIs (funciona sin mapId) ─── */
@@ -35,15 +36,65 @@ export interface MarkerData {
   title: string;
   position: { lat: number; lng: number };
   color: string;
+  googleMapsInfo?: {
+    rating?: number;
+    userRatingsTotal?: number;
+    formattedAddress?: string;
+  };
 }
 
 interface Props {
   markers: MarkerData[];
 }
 
+function MapUpdater({ markers, activeMarkerId }: { markers: MarkerData[], activeMarkerId: string | number | null }) {
+  const map = useMap();
+  const prevFirstMarkerId = React.useRef<string | number | null>(null);
+
+  useEffect(() => {
+    if (!map || markers.length === 0) return;
+
+    const firstMarkerId = markers[0]?.id ?? null;
+    const isCategoryChange = firstMarkerId !== prevFirstMarkerId.current;
+    prevFirstMarkerId.current = firstMarkerId;
+
+    if (isCategoryChange || !activeMarkerId) {
+      // Al cambiar categoría o si no hay ninguno activo, ajustar bounds para ver todos
+      if (markers.length === 1) {
+        map.panTo(markers[0].position);
+        map.setZoom(13); // Zoom adecuado para un solo marcador
+      } else {
+        const bounds = new window.google.maps.LatLngBounds();
+        markers.forEach(marker => bounds.extend(marker.position));
+        map.fitBounds(bounds, 50); // 50px de padding
+      }
+    } else if (activeMarkerId && !isCategoryChange) {
+      // Si el usuario hizo clic manualmente en un marcador dentro de la misma categoría
+      const targetMarker = markers.find(m => m.id === activeMarkerId);
+      if (targetMarker) {
+        map.panTo(targetMarker.position);
+        map.setZoom(14);
+      }
+    }
+  }, [map, markers, activeMarkerId]);
+
+  return null;
+}
+
 /* ─── Componente ─── */
 export default function ImperdiblesMap({ markers }: Props) {
-  const [activeMarkerId, setActiveMarkerId] = useState<string | number | null>(null);
+  const [activeMarkerId, setActiveMarkerId] = useState<string | number | null>(markers[0]?.id ?? null);
+  const prevFirstMarkerId = React.useRef<string | number | null>(markers[0]?.id ?? null);
+  
+  // Seleccionar automáticamente el primer marcador cuando cambiamos de categoría
+  useEffect(() => {
+    const firstMarkerId = markers[0]?.id ?? null;
+    if (firstMarkerId !== prevFirstMarkerId.current) {
+      setActiveMarkerId(firstMarkerId);
+      prevFirstMarkerId.current = firstMarkerId;
+    }
+  }, [markers]);
+
   const activeMarker = markers.find((m) => m.id === activeMarkerId) ?? null;
 
   return (
@@ -51,20 +102,23 @@ export default function ImperdiblesMap({ markers }: Props) {
       <div className="absolute inset-0 pointer-events-none rounded-[2rem] ring-1 ring-inset ring-black/10 z-10" />
       <APIProvider apiKey={import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
         <Map
-          defaultCenter={{ lat: 18.42, lng: -97.43 }}
-          defaultZoom={12}
+          defaultCenter={{ lat: 18.43, lng: -97.44 }}
+          defaultZoom={11}
           gestureHandling="greedy"
+          draggable={false}
           disableDefaultUI={true}
           zoomControl={true}
           keyboardShortcuts={false}
           /* Sin mapId → styles funciona correctamente */
           styles={MAP_STYLES}
           restriction={{
-            latLngBounds: { north: 18.65, south: 18.25, east: -97.25, west: -97.60 },
+            latLngBounds: { north: 18.65, south: 18.20, east: -97.25, west: -97.65 },
             strictBounds: true,
           }}
           className="w-full h-full grayscale-[20%] contrast-125 transition-all duration-700 group-hover:grayscale-0"
         >
+          <MapUpdater markers={markers} activeMarkerId={activeMarkerId} />
+
           {markers.map((marker) => (
             <Marker
               key={marker.id}
@@ -82,10 +136,28 @@ export default function ImperdiblesMap({ markers }: Props) {
               position={activeMarker.position}
               onCloseClick={() => setActiveMarkerId(null)}
               pixelOffset={[0, -48]}
+              headerContent={
+                <h3 style={{ fontWeight: 900, fontSize: 14, margin: 0, color: activeMarker.color, paddingRight: '12px' }}>
+                  {activeMarker.title}
+                </h3>
+              }
             >
-              <p style={{ fontWeight: 900, fontSize: 13, margin: 0, color: activeMarker.color }}>
-                {activeMarker.title}
-              </p>
+              <div className="flex flex-col max-w-[200px] pt-1">
+                {activeMarker.googleMapsInfo?.rating && (
+                  <div className="flex items-center gap-1 text-xs font-semibold text-slate-700">
+                    <span className="text-yellow-500 text-sm">★</span>
+                    {activeMarker.googleMapsInfo.rating} 
+                    <span className="text-slate-400 font-normal">
+                      ({activeMarker.googleMapsInfo.userRatingsTotal ?? 0})
+                    </span>
+                  </div>
+                )}
+                {activeMarker.googleMapsInfo?.formattedAddress && (
+                  <p className="mt-2 text-[11px] leading-snug text-slate-500 font-medium">
+                    {activeMarker.googleMapsInfo.formattedAddress}
+                  </p>
+                )}
+              </div>
             </InfoWindow>
           )}
         </Map>

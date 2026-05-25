@@ -18,18 +18,21 @@ interface Imperdible {
   categoria: string;
   cta: string;
   imagen: ImperdibleImagen | null;
+  direccionGoogleMaps?: string | null;
+  lat?: number;
+  lng?: number;
+  googleMapsInfo?: {
+    rating?: number;
+    userRatingsTotal?: number;
+    formattedAddress?: string;
+  };
 }
 
 interface Props {
   imperdibles: Imperdible[];
 }
 
-/* ─── Coordenadas aproximadas de Imperdibles ─── */
-const IMPERDIBLES_COORDS: Record<string, { lat: number; lng: number }> = {
-  "Reserva de la Biosfera": { lat: 18.3308, lng: -97.4711 },
-  "Museo de la Evolución": { lat: 18.4800, lng: -97.4110 },
-  "Manantiales Curativos": { lat: 18.4754, lng: -97.4038 },
-};
+
 
 /* ─── Config de categorías ────────────────────────────────── */
 const CATEGORIA_CONFIG: Record<
@@ -65,9 +68,8 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
     color: CATEGORIA_CONFIG[cat]?.color ?? "#64748b",
   }));
 
-  const [activeCategory, setActiveCategory] = useState(
-    categories[0]?.id ?? ""
-  );
+  const defaultCategory = categories.find(c => c.id === "Naturaleza")?.id ?? (categories[0]?.id ?? "");
+  const [activeCategory, setActiveCategory] = useState(defaultCategory);
 
   // Filtrar los imperdibles de la categoría activa
   const filtered = imperdibles.filter((i) => i.categoria === activeCategory);
@@ -84,15 +86,16 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
   const mainColor =
     CATEGORIA_CONFIG[mainItem?.categoria]?.color ?? "#64748b";
 
-  const markers: MarkerData[] = imperdibles
+  const markers: MarkerData[] = filtered
     .map((item) => {
-      const coords = IMPERDIBLES_COORDS[item.titulo];
-      if (!coords) return null;
+      if (item.lat === undefined || item.lng === undefined || item.lat === null || item.lng === null) return null;
+      
       return {
         id: item.id,
         title: item.titulo,
-        position: coords,
+        position: { lat: item.lat, lng: item.lng },
         color: CATEGORIA_CONFIG[item.categoria]?.color ?? "#000",
+        googleMapsInfo: item.googleMapsInfo,
       };
     })
     .filter((m): m is MarkerData => m !== null);
@@ -163,7 +166,9 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                   {mainItem.descripcion}
                 </p>
                 <a
-                  href="#destinos"
+                  href={mainItem.direccionGoogleMaps || "#destinos"}
+                  target={mainItem.direccionGoogleMaps ? "_blank" : undefined}
+                  rel={mainItem.direccionGoogleMaps ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center justify-center rounded-full px-8 py-3 text-white text-xs font-black uppercase hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: mainColor }}
                 >
@@ -201,10 +206,15 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                         <h3 className="text-white text-2xl font-black mb-2">
                           {item.titulo}
                         </h3>
-                        <button className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all">
+                        <a 
+                          href={item.direccionGoogleMaps || "#destinos"}
+                          target={item.direccionGoogleMaps ? "_blank" : undefined}
+                          rel={item.direccionGoogleMaps ? "noopener noreferrer" : undefined}
+                          className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all z-10 relative"
+                        >
                           {item.cta}
                           <ArrowRightIcon className="w-3.5 h-3.5" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   );
@@ -240,10 +250,15 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                           <h3 className="text-white text-2xl font-black mb-2">
                             {item.titulo}
                           </h3>
-                          <button className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all">
+                          <a 
+                            href={item.direccionGoogleMaps || "#destinos"}
+                            target={item.direccionGoogleMaps ? "_blank" : undefined}
+                            rel={item.direccionGoogleMaps ? "noopener noreferrer" : undefined}
+                            className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all z-10 relative"
+                          >
                             {item.cta}
                             <ArrowRightIcon className="w-3.5 h-3.5" />
-                          </button>
+                          </a>
                         </div>
                       </div>
                     );
