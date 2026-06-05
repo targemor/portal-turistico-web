@@ -101,7 +101,7 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
     .filter((m): m is MarkerData => m !== null);
 
   return (
-    <section className="py-24 bg-white border-y border-slate-100">
+    <section id="imperdibles" className="py-24 bg-white border-y border-slate-100">
       <div className="container mx-auto px-6">
         {/* ── Header + Tabs ── */}
         <div className="flex flex-col items-center mb-16">

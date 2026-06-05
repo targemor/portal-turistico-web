@@ -27,6 +27,7 @@ import BottomNav          from "../components/BottomNav.astro";
 
 import homePageData from "../data/home-page.json";
 import guias        from "../data/guias-turisticos.json";
+import destinos     from "../data/destinos-turisticos.json";
 ---
 
 <BaseLayout
@@ -47,7 +48,7 @@ import guias        from "../data/guias-turisticos.json";
 
   <main id="main-content">
     <!-- Hero: imagen de fondo + buscador -->
-    <HeroSection data={homePageData} />
+    <HeroSection data={homePageData} destinos={destinos} />
 
     <!-- Introducción minimalista con cita -->
     <IntroSection />

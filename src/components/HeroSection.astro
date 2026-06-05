@@ -1,24 +1,68 @@
 ---
 /**
  * HeroSection – fiel al diseño de page.tsx
- * Puntos multicolor + "VIVE TEHUACÁN" + barra de búsqueda h-12
+ * Puntos multicolor + "VIVE TEHUACÁN" + barra de búsqueda en tiempo real
  */
-import SearchIcon from "../assets/icons/SearchIcon.astro";
+import SearchBar from "./react/SearchBar";
 
 interface Props {
   data: {
     heroTitle: string;
     searchPlaceholder: string;
     heroPoster: string;
+    topHoteles?: { id: number; nombre: string; direccion?: string }[];
+    topRestaurantes?: { id: number; nombre: string; descripcion?: string | null; direccion?: string }[];
+    imperdibles?: { id: string | number; titulo: string; categoria: string; descripcion?: string | null }[];
   };
+  destinos?: { id: number; nombre: string; descripcion?: string | null; direccion?: string }[];
 }
 
-const { data } = Astro.props;
+const { data, destinos = [] } = Astro.props;
+
+/* ── Construir lista buscable plana ─────────────────────── */
+type SearchableItem = {
+  id: string | number;
+  label: string;
+  category: string;
+  sublabel?: string;
+  href: string;
+};
+
+const searchItems: SearchableItem[] = [
+  ...(data.topHoteles ?? []).map((h) => ({
+    id: h.id,
+    label: h.nombre,
+    category: "Hotel",
+    sublabel: h.direccion,
+    href: "#hoteles",
+  })),
+  ...(data.topRestaurantes ?? []).map((r) => ({
+    id: r.id,
+    label: r.nombre,
+    category: "Restaurante",
+    sublabel: r.descripcion ?? r.direccion,
+    href: "#restaurantes",
+  })),
+  ...destinos.map((d) => ({
+    id: d.id,
+    label: d.nombre,
+    category: "Destino",
+    sublabel: d.descripcion ?? d.direccion,
+    href: "#destinos",
+  })),
+  ...(data.imperdibles ?? []).map((i) => ({
+    id: i.id,
+    label: i.titulo,
+    category: "Imperdible",
+    sublabel: i.descripcion ?? i.categoria,
+    href: "#imperdibles",
+  })),
+];
 ---
 
-<section id="hero" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+<section id="hero" class="relative h-[85vh] flex items-center justify-center">
   <!-- Background video -->
-  <div class="absolute inset-0">
+  <div class="absolute inset-0 overflow-hidden rounded-xl">
     <div class="w-full h-full">
       <video
         class="w-full h-full object-cover object-bottom rounded-xl"
@@ -39,33 +83,17 @@ const { data } = Astro.props;
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 container mx-auto px-6 text-center">    
+  <div class="relative z-[9999] container mx-auto px-6 text-center">    
     <!-- Heading -->
     <h1 class="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-2xl">
       {data.heroTitle}
     </h1>
 
-    <!-- Search bar -->
-    <div class="max-w-2xl mx-auto flex gap-2 p-2 bg-white rounded-2xl shadow-2xl">
-      <div class="flex-1 flex items-center gap-3 px-4">
-        <!-- Search icon -->
-        <SearchIcon class="text-slate-400 shrink-0 w-5 h-5" />
-        <input
-          id="hero-search"
-          type="text"
-          placeholder={data.searchPlaceholder}
-          class="w-full h-12 bg-transparent outline-none text-slate-800 font-medium placeholder:text-slate-400"
-          aria-label="Buscar en Tehuacán"
-        />
-      </div>
-      <a
-        href="#destinos"
-        id="hero-search-btn"
-        class="inline-flex items-center justify-center rounded-xl h-12 px-8 text-white text-xs font-black uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm"
-        style="background-color: var(--color-mex-rosa);"
-      >
-        Buscar
-      </a>
-    </div>
+    <!-- Search bar (React) con datos buscables -->
+    <SearchBar
+      client:load
+      placeholder={data.searchPlaceholder}
+      items={searchItems}
+    />
   </div>
 </section>

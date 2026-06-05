@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavBar    from "../../components/NavBar.astro";
 import Footer    from "../../components/Footer.astro";
 import BottomNav from "../../components/BottomNav.astro";
-import ReactCard from "../../components/react/Card";
+import DirectorioGrid from "../../components/react/DirectorioGrid";
 
 export function getStaticPaths() {
   return [
@@ -56,12 +56,8 @@ if (categoria === 'hoteles') {
 
       <h2 class="sr-only">Directorio de {titulo}</h2>
 
-      <!-- Grid de elementos -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {data.map((item: any) => (
-          <ReactCard client:visible item={item} categoria={categoria} />
-        ))}
-      </div>
+      <!-- Grid con highlight reactivo al ?id del URL -->
+      <DirectorioGrid client:load items={data} categoria={categoria} />
     </div>
   </main>
 
