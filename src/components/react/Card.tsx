@@ -42,6 +42,24 @@ const TiktokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const PhoneIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
+  </svg>
+);
+
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+  </svg>
+);
+
+const ShareIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path fillRule="evenodd" d="M12 2.246c-6.81 0-11.42 5.562-11.42 12.33 0 2.65 1.353 4.966 3.024 6.772a.75.75 0 0 0 1.155-.953c-1.42-1.536-2.679-3.528-2.679-5.819 0-5.836 4.093-10.83 9.92-10.83h2.25v3.428a.75.75 0 0 0 1.28.53l5.25-5.25a.75.75 0 0 0 0-1.06l-5.25-5.25a.75.75 0 0 0-1.28.53v3.427h-2.25Z" clipRule="evenodd" />
+  </svg>
+);
+
 export interface CardItem {
   id: string | number;
   nombre?: string;
@@ -53,6 +71,14 @@ export interface CardItem {
   galeria?: any;
   imagen?: string; // Para imperdibles que usa 'imagen'
   redes_sociales?: { plataforma: string; enlace: string }[];
+  telefono?: string;
+  whatsapp?: string;
+  contacto?: {
+    telefono?: string | null;
+    whatsapp?: string | null;
+    email?: string | null;
+    sitio_web?: string | null;
+  } | null;
 }
 
 interface CardProps {
@@ -175,10 +201,46 @@ export default function Card({ item, categoria, children }: CardProps) {
 
         {/* Spacer para empujar el botón al fondo si la card crece */}
         <div className="mt-auto pt-6">
-          {/* Botón */}
-          <button className="inline-flex items-center justify-center rounded-md text-sm font-bold transition-colors border border-slate-200 bg-white hover:bg-brand hover:text-white hover:border-brand h-10 px-4 py-2 w-full text-slate-900">
-            {getBtnText()}
-          </button>
+          <div className="flex gap-2 w-full">
+            {(item.contacto?.telefono || item.telefono) && (
+              <a 
+                href={`tel:${item.contacto?.telefono || item.telefono}`} 
+                className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#C55A50] hover:bg-[#A84C43] text-white h-10 px-2 py-2 whitespace-nowrap"
+              >
+                LLAMAR
+                <PhoneIcon className="w-4 h-4 shrink-0" />
+              </a>
+            )}
+            {(item.contacto?.whatsapp || item.whatsapp) && (
+              <a 
+                href={`https://wa.me/${item.contacto?.whatsapp || item.whatsapp}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#25D366] hover:bg-[#1DA851] text-white h-10 px-2 py-2 whitespace-nowrap"
+              >
+                RESERVAR
+                <WhatsAppIcon className="w-4 h-4 shrink-0" />
+              </a>
+            )}
+            <button 
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: nombreItem,
+                    text: item.descripcion || '',
+                    url: window.location.href,
+                  }).catch(console.error);
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                  alert('Enlace copiado al portapapeles');
+                }
+              }}
+              className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#4B5563] hover:bg-[#374151] text-white h-10 px-2 py-2 whitespace-nowrap"
+            >
+              COMPARTIR
+              <ShareIcon className="w-4 h-4 shrink-0" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

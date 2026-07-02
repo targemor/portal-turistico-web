@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import MenuIcon from "../../assets/icons/MenuIcon";
-import CloseIcon from "../../assets/icons/CloseIcon";
+
 const navLinks = [
-  { label: "Donde hospedarse", href: "/#hoteles" },
-  { label: "Donde comer", href: "/#restaurantes" },
-  { label: "Que hacer", href: "/#destinos" },
-  { label: "Guias Turisticos", href: "/#guias" },
+  { label: "Donde hospedarse", href: "/directorio/hoteles" },
+  { label: "Donde comer", href: "/directorio/restaurantes" },
+  { label: "Que hacer", href: "/directorio/destinos" },
+  { label: "Guias Turisticos", href: "/directorio/guias" },
 ];
 
 interface NavBarProps {
@@ -32,7 +31,7 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
 
   const dividerClass = isScrolled ? "bg-slate-200" : "bg-white/20";
   const subtitleClass = isScrolled ? "text-slate-500" : "text-white/70";
-  
+
   const linkClass = isScrolled
     ? "text-slate-600 hover:bg-slate-100"
     : "text-white hover:bg-white/20";
@@ -55,16 +54,23 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo multicolor */}
         <div className="flex items-center gap-4">
-          <a href="/" className="flex text-2xl font-black tracking-tighter">
-            {logoLetters.map(({ letter, color }, i) => (
-              <span
-                key={i}
-                style={{ color: isScrolled ? color : "white" }}
-                className="transition-colors duration-300"
-              >
-                {letter}
-              </span>
-            ))}
+          <a href="/" className="flex items-center gap-2 text-2xl font-black tracking-tighter">
+            <img
+              src="/sanando_tehuacan.png"
+              alt="Sanando Tehuacán"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <div className="flex">
+              {logoLetters.map(({ letter, color }, i) => (
+                <span
+                  key={i}
+                  style={{ color: isScrolled ? color : "white" }}
+                  className="transition-colors duration-300"
+                >
+                  {letter}
+                </span>
+              ))}
+            </div>
           </a>
           <div className={`hidden sm:block h-5 w-[1px] transition-colors ${dividerClass}`}></div>
           <span className={`hidden sm:block text-[10px] font-semibold uppercase tracking-widest transition-colors ${subtitleClass}`}>

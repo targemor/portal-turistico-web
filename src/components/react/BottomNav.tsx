@@ -80,19 +80,7 @@ export default function BottomNav() {
 
   return (
     <>
-      {/* FAB flotante (WhatsApp / Chat) */}
-      <a
-        href="#"
-        id="fab-chat"
-        aria-label="Abrir chat"
-        className="fixed bottom-24 right-6 md:bottom-10 md:right-10 z-40 p-4 rounded-2xl shadow-2xl text-white transform transition-all hover:scale-110 active:scale-95"
-        style={{ 
-          backgroundColor: 'var(--color-mex-rosa)', 
-          boxShadow: '0 25px 50px -12px color-mix(in srgb, var(--color-mex-rosa) 25%, transparent)' 
-        }}
-      >
-        <MessageCircleIcon className="w-6 h-6" />
-      </a>
+
 
       {/* Bottom nav (solo mobile) */}
       <div
