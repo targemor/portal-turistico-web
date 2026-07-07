@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImperdiblesMap from "./ImperdiblesMap";
+import DestinoInfoCard from "./DestinoInfoCard";
 import LeafIcon from "../../assets/icons/LeafIcon";
 import CultureIcon from "../../assets/icons/CultureIcon";
 import DropletIcon from "../../assets/icons/DropletIcon";
 import ArrowRightIcon from "../../assets/icons/ArrowRightIcon";
+import LandmarkIcon from "../../assets/icons/LandmarkIcon";
+import MountainIcon from "../../assets/icons/MountainIcon";
 import type { MarkerData } from "./ImperdiblesMap";
 /* ─── Tipos ──────────────────────────────────────────────── */
 interface ImperdibleImagen {
@@ -13,11 +16,10 @@ interface ImperdibleImagen {
 
 interface Imperdible {
   id: string | number;
-  titulo: string;
-  descripcion: string | null;
-  categoria: string;
-  cta: string;
-  imagen: ImperdibleImagen | null;
+  nombre: string;
+  descripcion_corta: string | null;
+  categorias?: { nombre: string }[];
+  galeria?: ImperdibleImagen[] | null;
   direccionGoogleMaps?: string | null;
   lat?: number;
   lng?: number;
@@ -26,6 +28,13 @@ interface Imperdible {
     userRatingsTotal?: number;
     formattedAddress?: string;
   };
+  precio?: string | null;
+  horarios?: string | null;
+  como_llegar?: string | null;
+  duracion_recomendada?: string | null;
+  recomendaciones?: string | null;
+  tips_imperdibles?: string | null;
+  es_pet_friendly?: boolean;
 }
 
 interface Props {
@@ -54,14 +63,28 @@ const CATEGORIA_CONFIG: Record<
     label: "Manantiales",
     icon: <DropletIcon className="w-4 h-4" />,
   },
+  Historia: {
+    color: "#D97706",
+    label: "Historia",
+    icon: <LandmarkIcon className="w-4 h-4" />,
+  },
+  Aventura: {
+    color: "#EF4444",
+    label: "Aventura",
+    icon: <MountainIcon className="w-4 h-4" />,
+  },
 };
 
 /* ─── Componente principal ────────────────────────────────── */
 export default function ImperdiblesSection({ imperdibles }: Props) {
-  // Extraer categorías únicas presentes en los datos
-  const categories = Array.from(
-    new Set(imperdibles.map((i) => i.categoria))
-  ).map((cat) => ({
+  const allCategories = new Set<string>();
+  imperdibles.forEach(i => {
+    i.categorias?.forEach(c => {
+      if (c.nombre) allCategories.add(c.nombre);
+    });
+  });
+
+  const categories = Array.from(allCategories).map((cat) => ({
     id: cat,
     label: CATEGORIA_CONFIG[cat]?.label ?? cat,
     icon: CATEGORIA_CONFIG[cat]?.icon ?? null,
@@ -70,9 +93,33 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
 
   const defaultCategory = categories.find(c => c.id === "Naturaleza")?.id ?? (categories[0]?.id ?? "");
   const [activeCategory, setActiveCategory] = useState(defaultCategory);
+  const [activeMarkerId, setActiveMarkerId] = useState<string | number | null>(null);
 
   // Filtrar los imperdibles de la categoría activa
-  const filtered = imperdibles.filter((i) => i.categoria === activeCategory);
+  const filtered = imperdibles.filter((i) => i.categorias?.some(c => c.nombre === activeCategory));
+
+  // Actualizar el marcador activo cuando cambia la categoría
+  useEffect(() => {
+    setActiveMarkerId(filtered[0]?.id ?? null);
+  }, [activeCategory]);
+
+  const activeMarkerItem = filtered.find(i => i.id === activeMarkerId) ?? filtered[0];
+  const activeIndex = filtered.findIndex(i => i.id === activeMarkerId);
+  const actualIndex = activeIndex >= 0 ? activeIndex : 0;
+  
+  const handlePrev = () => {
+    if (filtered.length <= 1) return;
+    const prevIndex = actualIndex > 0 ? actualIndex - 1 : filtered.length - 1;
+    setActiveMarkerId(filtered[prevIndex].id);
+  };
+
+  const handleNext = () => {
+    if (filtered.length <= 1) return;
+    const nextIndex = actualIndex < filtered.length - 1 ? actualIndex + 1 : 0;
+    setActiveMarkerId(filtered[nextIndex].id);
+  };
+
+  const activeMarkerColor = CATEGORIA_CONFIG[activeMarkerItem?.categorias?.[0]?.nombre || ""]?.color ?? "#64748b";
 
   // Card principal (la más grande, col-span-7)
   const main = filtered[0];
@@ -84,7 +131,7 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
   const secondaryItems = secondary.length > 0 ? secondary : imperdibles.slice(1);
 
   const mainColor =
-    CATEGORIA_CONFIG[mainItem?.categoria]?.color ?? "#64748b";
+    CATEGORIA_CONFIG[mainItem?.categorias?.[0]?.nombre || ""]?.color ?? "#64748b";
 
   const markers: MarkerData[] = filtered
     .map((item) => {
@@ -92,9 +139,9 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
       
       return {
         id: item.id,
-        title: item.titulo,
+        title: item.nombre,
         position: { lat: item.lat, lng: item.lng },
-        color: CATEGORIA_CONFIG[item.categoria]?.color ?? "#000",
+        color: CATEGORIA_CONFIG[item.categorias?.[0]?.nombre || ""]?.color ?? "#000",
         googleMapsInfo: item.googleMapsInfo,
       };
     })
@@ -141,13 +188,13 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
 
         {/* ── Bento grid ── */}
         {mainItem && (
-          <div id="explora-panel" className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div id="explora-panel" className="hidden md:grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Card grande */}
             <div className="md:col-span-7 relative rounded-[2rem] overflow-hidden group shadow-xl h-[420px] md:h-[600px]">
               <img
-                src={mainItem.imagen?.url ?? ""}
+                src={mainItem.galeria?.[0]?.url ?? ""}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt={mainItem.imagen?.alternativeText ?? mainItem.titulo}
+                alt={mainItem.galeria?.[0]?.alternativeText ?? mainItem.nombre}
                 loading="lazy"
                 decoding="async"
               />
@@ -160,10 +207,10 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                   Destacado
                 </div>
                 <h3 className="text-white text-4xl font-black mb-4 leading-none tracking-tighter">
-                  {mainItem.titulo}
+                  {mainItem.nombre}
                 </h3>
-                <p className="text-white/80 max-w-md mb-8 font-medium">
-                  {mainItem.descripcion}
+                <p className="text-white/80 max-w-md mb-8 font-medium line-clamp-3">
+                  {mainItem.descripcion_corta}
                 </p>
                 <a
                   href={mainItem.direccionGoogleMaps || "#destinos"}
@@ -172,7 +219,7 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                   className="inline-flex items-center justify-center rounded-full px-8 py-3 text-white text-xs font-black uppercase hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: mainColor }}
                 >
-                  {mainItem.cta}
+                  Ver más
                 </a>
               </div>
             </div>
@@ -181,17 +228,18 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
             <div className="md:col-span-5 flex flex-col gap-6 h-[600px] md:h-[600px]">
               {secondaryItems.length > 0 ? (
                 secondaryItems.map((item) => {
+                  const itemCat = item.categorias?.[0]?.nombre || "";
                   const itemColor =
-                    CATEGORIA_CONFIG[item.categoria]?.color ?? "#64748b";
+                    CATEGORIA_CONFIG[itemCat]?.color ?? "#64748b";
                   return (
                     <div
                       key={item.id}
                       className="relative rounded-[2rem] overflow-hidden group shadow-lg flex-1 min-h-0"
                     >
                       <img
-                        src={item.imagen?.url ?? ""}
+                        src={item.galeria?.[0]?.url ?? ""}
                         className="w-full h-full object-cover transition-all duration-700"
-                        alt={item.imagen?.alternativeText ?? item.titulo}
+                        alt={item.galeria?.[0]?.alternativeText ?? item.nombre}
                         loading="lazy"
                         decoding="async"
                       />
@@ -201,10 +249,10 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                           className="inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-[10px] font-black text-white uppercase tracking-wider mb-2"
                           style={{ backgroundColor: itemColor }}
                         >
-                          {item.categoria}
+                          {itemCat}
                         </div>
                         <h3 className="text-white text-2xl font-black mb-2">
-                          {item.titulo}
+                          {item.nombre}
                         </h3>
                         <a 
                           href={item.direccionGoogleMaps || "#destinos"}
@@ -212,7 +260,7 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                           rel={item.direccionGoogleMaps ? "noopener noreferrer" : undefined}
                           className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all z-10 relative"
                         >
-                          {item.cta}
+                          Ver más
                           <ArrowRightIcon className="w-3.5 h-3.5" />
                         </a>
                       </div>
@@ -225,17 +273,18 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                   .filter((i) => i.id !== mainItem.id)
                   .slice(0, 2)
                   .map((item) => {
+                    const itemCat = item.categorias?.[0]?.nombre || "";
                     const itemColor =
-                      CATEGORIA_CONFIG[item.categoria]?.color ?? "#64748b";
+                      CATEGORIA_CONFIG[itemCat]?.color ?? "#64748b";
                     return (
                       <div
                         key={item.id}
                         className="relative rounded-[2rem] overflow-hidden group shadow-lg flex-1 min-h-0"
                       >
                         <img
-                          src={item.imagen?.url ?? ""}
+                          src={item.galeria?.[0]?.url ?? ""}
                           className="w-full h-full object-cover transition-all duration-700"
-                          alt={item.imagen?.alternativeText ?? item.titulo}
+                          alt={item.galeria?.[0]?.alternativeText ?? item.nombre}
                           loading="lazy"
                           decoding="async"
                         />
@@ -245,10 +294,10 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                             className="inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-[10px] font-black text-white uppercase tracking-wider mb-2"
                             style={{ backgroundColor: itemColor }}
                           >
-                            {item.categoria}
+                            {itemCat}
                           </div>
                           <h3 className="text-white text-2xl font-black mb-2">
-                            {item.titulo}
+                            {item.nombre}
                           </h3>
                           <a 
                             href={item.direccionGoogleMaps || "#destinos"}
@@ -256,7 +305,7 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
                             rel={item.direccionGoogleMaps ? "noopener noreferrer" : undefined}
                             className="text-white/80 text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all z-10 relative"
                           >
-                            {item.cta}
+                            Ver más
                             <ArrowRightIcon className="w-3.5 h-3.5" />
                           </a>
                         </div>
@@ -268,8 +317,26 @@ export default function ImperdiblesSection({ imperdibles }: Props) {
           </div>
         )}
 
-        {/* ── Mapa Oficial de Google Maps ── */}
-        <ImperdiblesMap markers={markers} />
+        {/* ── Mapa Oficial de Google Maps y Tarjeta de Detalles ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16">
+          <div className="lg:col-span-2">
+            <ImperdiblesMap 
+              markers={markers} 
+              activeMarkerId={activeMarkerId}
+              onMarkerClick={setActiveMarkerId}
+            />
+          </div>
+          <div className="lg:col-span-1 h-[450px]">
+            <DestinoInfoCard 
+              destino={activeMarkerItem} 
+              color={activeMarkerColor} 
+              onPrev={handlePrev}
+              onNext={handleNext}
+              hasPrev={filtered.length > 1}
+              hasNext={filtered.length > 1}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

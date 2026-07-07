@@ -289,9 +289,9 @@
     },
     "galeria": [
       {
-        "id": 36,
-        "documentId": "fmyt2nhhjc2876kj95yxae6d",
-        "url": "/assets/jacinta_cocina_casual_33.webp",
+        "id": 42,
+        "documentId": "rrnklhn7qfftmov7bmy9xoo0",
+        "url": "/assets/jacinta_cocina_casual_29.webp",
         "alternativeText": null,
         "caption": null
       },
@@ -299,13 +299,6 @@
         "id": 41,
         "documentId": "h7q29cm6zkdrl1bpucrq183n",
         "url": "/assets/jacinta_cocina_casual_30.webp",
-        "alternativeText": null,
-        "caption": null
-      },
-      {
-        "id": 42,
-        "documentId": "rrnklhn7qfftmov7bmy9xoo0",
-        "url": "/assets/jacinta_cocina_casual_29.webp",
         "alternativeText": null,
         "caption": null
       },
@@ -320,6 +313,13 @@
         "id": 39,
         "documentId": "lnwnr2zpmbgy9foqquf6idmu",
         "url": "/assets/jacinta_cocina_casual_32.webp",
+        "alternativeText": null,
+        "caption": null
+      },
+      {
+        "id": 36,
+        "documentId": "fmyt2nhhjc2876kj95yxae6d",
+        "url": "/assets/jacinta_cocina_casual_33.webp",
         "alternativeText": null,
         "caption": null
       },

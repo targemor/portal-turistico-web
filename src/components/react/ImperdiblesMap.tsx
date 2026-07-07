@@ -45,6 +45,8 @@ export interface MarkerData {
 
 interface Props {
   markers: MarkerData[];
+  activeMarkerId: string | number | null;
+  onMarkerClick: (id: string | number) => void;
 }
 
 function MapUpdater({ markers, activeMarkerId }: { markers: MarkerData[], activeMarkerId: string | number | null }) {
@@ -82,23 +84,11 @@ function MapUpdater({ markers, activeMarkerId }: { markers: MarkerData[], active
 }
 
 /* ─── Componente ─── */
-export default function ImperdiblesMap({ markers }: Props) {
-  const [activeMarkerId, setActiveMarkerId] = useState<string | number | null>(markers[0]?.id ?? null);
-  const prevFirstMarkerId = React.useRef<string | number | null>(markers[0]?.id ?? null);
-  
-  // Seleccionar automáticamente el primer marcador cuando cambiamos de categoría
-  useEffect(() => {
-    const firstMarkerId = markers[0]?.id ?? null;
-    if (firstMarkerId !== prevFirstMarkerId.current) {
-      setActiveMarkerId(firstMarkerId);
-      prevFirstMarkerId.current = firstMarkerId;
-    }
-  }, [markers]);
-
+export default function ImperdiblesMap({ markers, activeMarkerId, onMarkerClick }: Props) {
   const activeMarker = markers.find((m) => m.id === activeMarkerId) ?? null;
 
   return (
-    <div className="mt-16 rounded-[2rem] overflow-hidden shadow-xl border border-slate-100 relative group h-[450px]">
+    <div className="rounded-[2rem] overflow-hidden shadow-xl border border-slate-100 relative group h-[450px]">
       <div className="absolute inset-0 pointer-events-none rounded-[2rem] ring-1 ring-inset ring-black/10 z-10" />
       <APIProvider apiKey={import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
         <Map
@@ -125,16 +115,14 @@ export default function ImperdiblesMap({ markers }: Props) {
               position={marker.position}
               title={marker.title}
               icon={makePinIcon(marker.color)}
-              onClick={() =>
-                setActiveMarkerId((prev) => (prev === marker.id ? null : marker.id))
-              }
+              onClick={() => onMarkerClick(activeMarkerId === marker.id ? (markers[0]?.id || null) : marker.id)}
             />
           ))}
 
           {activeMarker && (
             <InfoWindow
               position={activeMarker.position}
-              onCloseClick={() => setActiveMarkerId(null)}
+              onCloseClick={() => onMarkerClick(markers[0]?.id || null)}
               pixelOffset={[0, -48]}
               headerContent={
                 <h3 style={{ fontWeight: 900, fontSize: 14, margin: 0, color: activeMarker.color, paddingRight: '12px' }}>

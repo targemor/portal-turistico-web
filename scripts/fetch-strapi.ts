@@ -124,10 +124,33 @@ const COLLECTIONS: CollectionDefinition[] = [
           },
         },
         imperdibles: {
-          fields: ['titulo', 'descripcion', 'categoria', 'cta', 'direccionGoogleMaps'],
+          fields: [
+            'nombre',
+            'direccion',
+            'direccionGoogleMaps',
+            'slug',
+            'descripcion_corta',
+            'descripcion_larga',
+            'precio',
+            'como_llegar',
+            'horarios',
+            'duracion_recomendada',
+            'recomendaciones',
+            'tips_imperdibles',
+            'es_pet_friendly'
+          ],
           populate: {
-            imagen: {
-              fields: ['url', 'alternativeText', 'caption',],
+            galeria: {
+              fields: ['url', 'alternativeText', 'caption'],
+            },
+            contacto: {
+              fields: ['telefono', 'email', 'sitio_web', 'whatsapp'],
+            },
+            redes_sociales: {
+              fields: ['plataforma', 'usuario', 'enlace'],
+            },
+            categorias: {
+              fields: ['nombre'],
             },
           },
         },

@@ -105,8 +105,8 @@ export async function enrichImperdiblesWithCoords(homePageData: any): Promise<vo
     }
 
     if (apiKey) {
-      console.log(`Buscando detalles enriquecidos para: ${item.titulo}`);
-      const richInfo = await getPlaceInfoFromSDK(`${item.titulo}, Tehuacán, Puebla`, apiKey);
+      console.log(`Buscando detalles enriquecidos para: ${item.nombre}`);
+      const richInfo = await getPlaceInfoFromSDK(`${item.nombre}, Tehuacán, Puebla`, apiKey);
       if (richInfo) {
         placeInfo = {
           // Mantener coords de URL si son más exactas, o usar las de SDK
@@ -129,9 +129,9 @@ export async function enrichImperdiblesWithCoords(homePageData: any): Promise<vo
           formattedAddress: placeInfo.formattedAddress,
         };
       }
-      console.log(`📍 Info encontrada para ${item.titulo}: ${placeInfo.lat}, ${placeInfo.lng}`);
+      console.log(`📍 Info encontrada para ${item.nombre}: ${placeInfo.lat}, ${placeInfo.lng}`);
     } else {
-      console.log(`⚠️ No se encontró info para ${item.titulo}`);
+      console.log(`⚠️ No se encontró info para ${item.nombre}`);
     }
   }
 }
