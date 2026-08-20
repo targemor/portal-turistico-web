@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
+import LangToggle from "./LangToggle";
 
 // Iconos SVG en línea
 const MessageCircleIcon = ({ className }: { className?: string }) => (
@@ -37,15 +39,17 @@ const UserIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const navItems = [
-  { id: 'destinos', label: 'Explora', href: '/#destinos', icon: PaperPlaneIcon },
-  { id: 'hoteles', label: 'Hoteles', href: '/#hoteles', icon: HomeIcon },
-  { id: 'restaurantes', label: 'Cocina', href: '/#restaurantes', icon: UtensilsIcon },
-  { id: 'guias', label: 'Guías', href: '/#guias', icon: UserIcon },
-];
-
 export default function BottomNav() {
-  const [activeItem, setActiveItem] = useState<string>('destinos'); // default
+  const { t } = useLanguage();
+
+  const navItems = [
+    { id: 'destinos',     icon: PaperPlaneIcon, label: t.bnExplore, href: '/#destinos' },
+    { id: 'hoteles',      icon: HomeIcon,        label: t.bnHotels,  href: '/#hoteles' },
+    { id: 'restaurantes', icon: UtensilsIcon,    label: t.bnFood,    href: '/#restaurantes' },
+    { id: 'guias',        icon: UserIcon,        label: t.bnGuides,  href: '/#guias' },
+  ];
+
+  const [activeItem, setActiveItem] = useState<string>('destinos');
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -63,12 +67,10 @@ export default function BottomNav() {
         break;
       }
     }
-    
     if (!matched && pathname === '/' && !hash) {
       setActiveItem(navItems[0].id);
     }
-    
-    // Opcional: Escuchar eventos de cambio de hash si navegamos estando en la misma página
+
     const handleHashChange = () => {
       const currentHash = window.location.hash;
       const match = navItems.find(item => item.href.includes(currentHash));
@@ -80,24 +82,22 @@ export default function BottomNav() {
 
   return (
     <>
-
-
       {/* Bottom nav (solo mobile) */}
       <div
         id="bottom-nav"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-8 py-3 flex justify-between items-center shadow-lg"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-3 flex justify-between items-center shadow-lg"
         role="navigation"
-        aria-label="Navegación principal móvil"
+        aria-label={t.bnAriaLabel}
       >
+        {/* Nav items */}
         {navItems.map((item) => {
           const isActive = activeItem === item.id;
           const Icon = item.icon;
-          
           return (
-            <a 
+            <a
               key={item.id}
-              href={item.href} 
-              id={`bn-${item.id}`} 
+              href={item.href}
+              id={`bn-${item.id}`}
               className={`flex flex-col items-center gap-1 transition-colors ${isActive ? 'text-orange-600' : 'text-slate-400'}`}
               onClick={() => setActiveItem(item.id)}
             >
@@ -106,6 +106,10 @@ export default function BottomNav() {
             </a>
           );
         })}
+
+        {/* Divisor + Lang toggle */}
+        <div className="w-px h-8 bg-slate-200 flex-shrink-0 mx-1" aria-hidden="true" />
+        <LangToggle />
       </div>
     </>
   );

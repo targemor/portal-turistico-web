@@ -1,5 +1,10 @@
 ---
-import ReactNavBar from "./react/NavBar";
+/**
+ * NavBar.astro – Delegado a AppShell (React) que incluye NavBar + BottomNav
+ * bajo un único LanguageProvider.
+ * Este wrapper solo monta el AppShell para que Astro lo hidrate.
+ */
+import AppShell from "./react/AppShell";
 
 interface Props {
   forceBackground?: boolean;
@@ -8,4 +13,4 @@ interface Props {
 const { forceBackground = false } = Astro.props;
 ---
 
-<ReactNavBar forceBackground={forceBackground} client:load />
+<AppShell forceNavBackground={forceBackground} client:load />

@@ -7,17 +7,21 @@ import SearchBar from "./react/SearchBar";
 
 interface Props {
   data: {
-    heroTitle: string;
-    searchPlaceholder: string;
-    heroPoster: string;
-    topHoteles?: { id: number; nombre: string; direccion?: string }[];
-    topRestaurantes?: { id: number; nombre: string; descripcion?: string | null; direccion?: string }[];
-    imperdibles?: { id: string | number; titulo: string; categoria: string; descripcion?: string | null }[];
+    titulo_principal: string;
+    texto_busqueda: string;
+    imagen_principal?: string | { url: string } | null;
+    mejores_hoteles?: { id: number; nombre: string; direccion?: string }[];
+    mejores_restaurantes?: { id: number; nombre: string; descripcion?: string | null; direccion?: string }[];
+    imperdibles?: { id: string | number; nombre: string; categorias?: {nombre: string}[]; descripcion_corta?: string | null }[];
   };
   destinos?: { id: number; nombre: string; descripcion?: string | null; direccion?: string }[];
 }
 
 const { data, destinos = [] } = Astro.props;
+
+const posterUrl = typeof data.imagen_principal === "string"
+  ? data.imagen_principal
+  : (data.imagen_principal?.url || "/assets/hero-poster.webp");
 
 /* ── Construir lista buscable plana ─────────────────────── */
 type SearchableItem = {
@@ -29,14 +33,14 @@ type SearchableItem = {
 };
 
 const searchItems: SearchableItem[] = [
-  ...(data.topHoteles ?? []).map((h) => ({
+  ...(data.mejores_hoteles ?? []).map((h) => ({
     id: h.id,
     label: h.nombre,
     category: "Hotel",
     sublabel: h.direccion,
     href: "#hoteles",
   })),
-  ...(data.topRestaurantes ?? []).map((r) => ({
+  ...(data.mejores_restaurantes ?? []).map((r) => ({
     id: r.id,
     label: r.nombre,
     category: "Restaurante",
@@ -52,9 +56,9 @@ const searchItems: SearchableItem[] = [
   })),
   ...(data.imperdibles ?? []).map((i) => ({
     id: i.id,
-    label: i.titulo,
+    label: i.nombre || "Sin nombre",
     category: "Imperdible",
-    sublabel: i.descripcion ?? i.categoria,
+    sublabel: i.descripcion_corta ?? (i.categorias && i.categorias.length > 0 ? i.categorias[0].nombre : undefined),
     href: "#imperdibles",
   })),
 ];
@@ -66,7 +70,7 @@ const searchItems: SearchableItem[] = [
     <div class="w-full h-full">
       <video
         class="w-full h-full object-cover object-bottom rounded-xl"
-        poster={data.heroPoster || "/assets/hero-poster.webp"}
+        poster={posterUrl}
         autoplay
         muted
         loop
@@ -86,13 +90,13 @@ const searchItems: SearchableItem[] = [
   <div class="relative z-[9999] container mx-auto px-6 text-center">    
     <!-- Heading -->
     <h1 class="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-2xl">
-      {data.heroTitle}
+      {data.titulo_principal}
     </h1>
 
     <!-- Search bar (React) con datos buscables -->
     <SearchBar
       client:load
-      placeholder={data.searchPlaceholder}
+      placeholder={data.texto_busqueda}
       items={searchItems}
     />
   </div>

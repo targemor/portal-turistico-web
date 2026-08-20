@@ -38,21 +38,21 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content="Tehuacán, Puebla, turismo, hoteles, restaurantes, destinos turísticos, biosfera, patrimonio, México" />
+    <meta id="meta-desc" name="description" content={description} />
+    <meta id="meta-keywords" name="keywords" content="Tehuacán, Puebla, turismo, hoteles, restaurantes, destinos turísticos, biosfera, patrimonio, México" />
     <meta name="author" content="Ayuntamiento de Tehuacán" />
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website" />
-    <meta property="og:title"       content={title} />
-    <meta property="og:description" content={description} />
+    <meta id="og-title"             property="og:title"       content={title} />
+    <meta id="og-desc"              property="og:description" content={description} />
     <meta property="og:image"       content={ogImage} />
-    <meta property="og:locale"      content="es_MX" />
+    <meta id="og-locale"            property="og:locale"      content="es_MX" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta id="tw-title"              name="twitter:title"       content={title} />
+    <meta id="tw-desc"               name="twitter:description" content={description} />
     <meta name="twitter:image"       content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -97,6 +97,59 @@ const {
     ──────────────────────────────────────────────────────────────── -->
     <SpeedInsights />
     <Analytics />
+
+    <!-- ─── i18n sync for static Astro components ─────────────────
+         Listens to the 'portal:lang-change' event fired by LanguageContext
+         and updates data-i18n elements and meta tags accordingly.
+    ──────────────────────────────────────────────────────────────── -->
+    <script>
+      import translations from '../i18n/translations.json';
+
+      (function () {
+        const T = translations as Record<string, Record<string, string>>;
+
+        function applyLang(lang: string) {
+          const t = T[lang] || T.es;
+
+          // Meta / SEO
+          document.title = t.pageTitle;
+          document.documentElement.lang = lang;
+          const set = (id: string, attr: string, val: string) => { const el = document.getElementById(id); if (el) el.setAttribute(attr, val); };
+          set('meta-desc',    'content', t.description);
+          set('meta-keywords','content', t.keywords);
+          set('og-title',     'content', t.pageTitle);
+          set('og-desc',      'content', t.description);
+          set('og-locale',    'content', t.ogLocale);
+          set('tw-title',     'content', t.pageTitle);
+          set('tw-desc',      'content', t.description);
+
+          // data-i18n elements
+          document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (key && t[key] !== undefined) {
+              if (el.getAttribute('data-i18n-html') === 'true') {
+                el.innerHTML = t[key];
+              } else {
+                el.textContent = t[key];
+              }
+            }
+          });
+        }
+
+        // Init from localStorage
+        const saved = localStorage.getItem('portal-lang');
+        const lang = (saved === 'es' || saved === 'en') ? saved : 'es';
+        applyLang(lang);
+
+        // Listen to React context changes
+        document.addEventListener('portal:lang-change', (e: Event) => {
+          const customEvent = e as CustomEvent<{ lang: string }>;
+          if (customEvent.detail?.lang) {
+            applyLang(customEvent.detail.lang);
+          }
+        });
+      })();
+    </script>
 
   </body>
 </html>

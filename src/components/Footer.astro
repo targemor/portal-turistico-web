@@ -2,7 +2,6 @@
 /**
  * Footer – fiel al diseño de test.jsx
  * bg-slate-950 dark, texto slate-400, acento var(--color-brand)
- * Sin lucide-react: iconos inline SVG
  */
 import MapPinIcon from "../assets/icons/MapPinIcon.astro";
 import MessageCircleIcon from "../assets/icons/MessageCircleIcon.astro";
@@ -23,38 +22,37 @@ import ExternalLinkIcon from "../assets/icons/ExternalLinkIcon.astro";
           <span style="color: var(--color-mex-verde);">C</span>
           <span style="color: var(--color-mex-turquesa);">O</span>
         </h2>
-        <p class="text-slate-400 max-w-md mb-10 text-lg leading-relaxed font-medium">
+        <p class="text-slate-400 max-w-md mb-10 text-lg leading-relaxed font-medium" data-i18n="footerTagline">
           Tehuacán te espera con los brazos abiertos. Vive la magia de sus manantiales y la majestuosidad de su biosfera en una explosión de cultura.
-        </p>     
+        </p>
       </div>
-
 
       <!-- Quick links -->
       <div>
-        <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6">Explora</h3>
+        <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6" data-i18n="footerExplore">Explora</h3>
         <ul class="space-y-3 text-sm text-slate-400 font-bold">
-          <li><a href="#hoteles"      class="hover:text-white transition-colors">Donde hospedarse</a></li>
-          <li><a href="#restaurantes" class="hover:text-white transition-colors">Donde comer</a></li>
-          <li><a href="#destinos"     class="hover:text-white transition-colors">Que hacer</a></li>
-          <li><a href="#guias"        class="hover:text-white transition-colors">Guias Turisticos</a></li>
+          <li><a href="#hoteles"      class="hover:text-white transition-colors" data-i18n="footerWhere">Donde hospedarse</a></li>
+          <li><a href="#restaurantes" class="hover:text-white transition-colors" data-i18n="footerEat">Donde comer</a></li>
+          <li><a href="#destinos"     class="hover:text-white transition-colors" data-i18n="footerDo">Que hacer</a></li>
+          <li><a href="#guias"        class="hover:text-white transition-colors" data-i18n="footerGuides">Guías Turísticos</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6">Contacto</h3>
+        <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand mb-6" data-i18n="footerContact">Contacto</h3>
         <ul class="space-y-4 text-sm text-slate-400">
           <li class="flex items-center gap-3">
             <MapPinIcon class="w-4 h-4 text-slate-600 shrink-0" />
-            Centro Histórico, Tehuacán
+            <span data-i18n="footerAddress">Centro Histórico, Tehuacán</span>
           </li>
           <li class="flex items-center gap-3">
             <MessageCircleIcon class="w-4 h-4 text-slate-600 shrink-0" />
-            WhatsApp Oficial
+            <span data-i18n="footerWhatsapp">WhatsApp Oficial</span>
           </li>
           <li class="flex items-center gap-3">
             <ExternalLinkIcon class="w-4 h-4 text-slate-600 shrink-0" />
-            Portal del Ayuntamiento
+            <span data-i18n="footerPortal">Portal del Ayuntamiento</span>
           </li>
         </ul>
       </div>
@@ -62,12 +60,12 @@ import ExternalLinkIcon from "../assets/icons/ExternalLinkIcon.astro";
 
     <!-- Bottom bar -->
     <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-[10px] font-bold uppercase tracking-widest text-slate-600">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-slate-600" data-i18n="footerCopy">
         Ayuntamiento de Tehuacán 2024-2027
       </p>
       <div class="flex gap-6 text-[10px] font-bold text-slate-600 uppercase">
-        <a href="#" class="cursor-pointer hover:text-white transition-colors">Privacidad</a>
-        <a href="#" class="cursor-pointer hover:text-white transition-colors">Directorio</a>
+        <a href="#" class="cursor-pointer hover:text-white transition-colors" data-i18n="footerPrivacy">Privacidad</a>
+        <a href="#" class="cursor-pointer hover:text-white transition-colors" data-i18n="footerDir">Directorio</a>
       </div>
     </div>
   </div>

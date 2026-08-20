@@ -1,0 +1,152 @@
+{
+  "viewBox": [
+    2936,
+    1440
+  ],
+  "letters": [
+    {
+      "key": "Y1",
+      "color": "#7A2E8E",
+      "src": "/logo_letters/00-Y1.png",
+      "left": 32.8678,
+      "top": 29.9306,
+      "width": 5.4496,
+      "height": 14.5139
+    },
+    {
+      "key": "O1",
+      "color": "#7A2E8E",
+      "src": "/logo_letters/01-O1.png",
+      "left": 38.3856,
+      "top": 29.7222,
+      "width": 5.3134,
+      "height": 14.8611
+    },
+    {
+      "key": "S",
+      "color": "#76BC21",
+      "src": "/logo_letters/02-S.png",
+      "left": 46.1853,
+      "top": 29.7222,
+      "width": 4.9387,
+      "height": 14.8611
+    },
+    {
+      "key": "O2",
+      "color": "#76BC21",
+      "src": "/logo_letters/03-O2.png",
+      "left": 51.5668,
+      "top": 29.7222,
+      "width": 5.3134,
+      "height": 14.8611
+    },
+    {
+      "key": "Y2",
+      "color": "#76BC21",
+      "src": "/logo_letters/04-Y2.png",
+      "left": 57.0163,
+      "top": 29.9306,
+      "width": 5.4496,
+      "height": 14.5139
+    },
+    {
+      "key": "D",
+      "color": "#7A2E8E",
+      "src": "/logo_letters/05-D.png",
+      "left": 64.9183,
+      "top": 29.8611,
+      "width": 4.8706,
+      "height": 14.5833
+    },
+    {
+      "key": "E",
+      "color": "#7A2E8E",
+      "src": "/logo_letters/06-E.png",
+      "left": 70.4019,
+      "top": 29.9306,
+      "width": 4.3256,
+      "height": 14.5139
+    },
+    {
+      "key": "T",
+      "color": "#A9123F",
+      "src": "/logo_letters/07-T.png",
+      "left": 4.7684,
+      "top": 41.875,
+      "width": 13.7262,
+      "height": 33.9583
+    },
+    {
+      "key": "e",
+      "color": "#D9A441",
+      "src": "/logo_letters/08-e.png",
+      "left": 16.8597,
+      "top": 48.4722,
+      "width": 11.2057,
+      "height": 27.9861
+    },
+    {
+      "key": "h",
+      "color": "#2E9E4F",
+      "src": "/logo_letters/09-h.png",
+      "left": 26.7371,
+      "top": 42.0833,
+      "width": 12.4659,
+      "height": 33.75
+    },
+    {
+      "key": "u",
+      "color": "#D62027",
+      "src": "/logo_letters/10-u.png",
+      "left": 37.9428,
+      "top": 52.1528,
+      "width": 12.3638,
+      "height": 24.3056
+    },
+    {
+      "key": "a",
+      "color": "#D62027",
+      "src": "/logo_letters/11-a.png",
+      "left": 48.8079,
+      "top": 51.5972,
+      "width": 12.8406,
+      "height": 24.7917
+    },
+    {
+      "key": "c",
+      "color": "#1B75BB",
+      "src": "/logo_letters/12-c.png",
+      "left": 61.8188,
+      "top": 51.5972,
+      "width": 10.3542,
+      "height": 24.8611
+    },
+    {
+      "key": "a_con_acento",
+      "color": "#C0894F",
+      "src": "/logo_letters/13-a_con_acento.png",
+      "left": 72.3093,
+      "top": 51.6667,
+      "width": 11.8869,
+      "height": 24.7917
+    },
+    {
+      "key": "acento",
+      "color": "#C0894F",
+      "src": "/logo_letters/14-acento.png",
+      "left": 76.4646,
+      "top": 41.5972,
+      "width": 5.5858,
+      "height": 9.5833
+    },
+    {
+      "key": "n",
+      "color": "#7A3B9E",
+      "src": "/logo_letters/15-n.png",
+      "left": 84.5368,
+      "top": 51.5972,
+      "width": 12.3638,
+      "height": 24.375
+    }
+  ]
+}

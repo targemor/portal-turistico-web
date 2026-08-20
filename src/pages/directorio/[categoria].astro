@@ -17,31 +17,43 @@ export function getStaticPaths() {
 const { categoria } = Astro.params;
 
 let data: any[] = [];
-let titulo = "";
-let subtitulo = "";
+
+// Claves i18n para el script del BaseLayout (se usan en data-i18n)
+const tituloKey   = categoria === 'hoteles'      ? 'dirHoteles'
+                  : categoria === 'restaurantes' ? 'dirRestaurantes'
+                  : categoria === 'destinos'     ? 'dirDestinos'
+                  : 'dirGuias';
+
+const subtituloKey = categoria === 'hoteles'      ? 'dirHotelesSub'
+                   : categoria === 'restaurantes' ? 'dirRestaurantesSub'
+                   : categoria === 'destinos'     ? 'dirDestinosSub'
+                   : 'dirGuiasSub';
+
+// Valores por defecto en ES (se sobreescriben por el script i18n del cliente)
+const tituloES   = categoria === 'hoteles'      ? 'HOTELES'
+                 : categoria === 'restaurantes' ? 'RESTAURANTES'
+                 : categoria === 'destinos'     ? 'DESTINOS TURÍSTICOS'
+                 : 'GUÍAS TURÍSTICOS';
+
+const subtituloES = categoria === 'hoteles'      ? 'Alojamiento'
+                  : categoria === 'restaurantes' ? 'Gastronomía'
+                  : categoria === 'destinos'     ? 'Explora Tehuacán'
+                  : 'Tours y Experiencias';
 
 if (categoria === 'hoteles') {
   data = (await import("../../data/hoteles.json")).default;
-  titulo = "HOTELES";
-  subtitulo = "Alojamiento";
 } else if (categoria === 'restaurantes') {
   data = (await import("../../data/restaurantes.json")).default;
-  titulo = "RESTAURANTES";
-  subtitulo = "Gastronomía";
 } else if (categoria === 'destinos') {
   data = (await import("../../data/destinos-turisticos.json")).default;
-  titulo = "DESTINOS TURÍSTICOS";
-  subtitulo = "Explora Tehuacán";
 } else if (categoria === 'guias') {
   data = (await import("../../data/guias-turisticos.json")).default;
-  titulo = "GUÍAS TURÍSTICOS";
-  subtitulo = "Tours y Experiencias";
 }
 ---
 
 <BaseLayout
-  title={`${titulo} | Portal Turístico Tehuacán`}
-  description={`Descubre los mejores ${titulo.toLowerCase()} de Tehuacán, Puebla. Cuna del Maíz y Patrimonio de la Humanidad.`}
+  title={`${tituloES} | Portal Turístico Tehuacán`}
+  description={`Descubre los mejores ${tituloES.toLowerCase()} de Tehuacán, Puebla. Cuna del Maíz y Patrimonio de la Humanidad.`}
   bodyClass="pb-20 md:pb-0"
 >
   <NavBar forceBackground={true} />
@@ -50,11 +62,11 @@ if (categoria === 'hoteles') {
     <div class="container mx-auto px-6">
       <!-- Header -->
       <div class="mb-12">
-        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">{subtitulo}</p>
-        <h1 class="text-4xl font-bold tracking-tight text-slate-900">{titulo}</h1>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2" data-i18n={subtituloKey}>{subtituloES}</p>
+        <h1 class="text-4xl font-bold tracking-tight text-slate-900" data-i18n={tituloKey}>{tituloES}</h1>
       </div>
 
-      <h2 class="sr-only">Directorio de {titulo}</h2>
+      <h2 class="sr-only" data-i18n="dirHeadingSR">Directorio de</h2>
 
       <!-- Grid con highlight reactivo al ?id del URL -->
       <DirectorioGrid client:load items={data} categoria={categoria} />

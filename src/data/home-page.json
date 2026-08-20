@@ -1,10 +1,16 @@
 {
-  "id": 7,
+  "id": 9,
   "documentId": "ee2fupuln6r04f4mvofe6kuq",
-  "heroTitle": "VIVE TEHUACÁN",
-  "searchPlaceholder": "Busca experiencias increíbles...",
-  "heroPoster": null,
-  "topHoteles": [
+  "titulo_principal": "VIVE TEHUACÁN",
+  "texto_busqueda": "Busca experiencias increíbles..",
+  "imagen_principal": {
+    "id": 88,
+    "documentId": "n981fkmvev0otkb1dm0u4b9u",
+    "url": "/assets/media_60.webp",
+    "alternativeText": null,
+    "caption": null
+  },
+  "mejores_hoteles": [
     {
       "id": 5,
       "documentId": "de68rzj8wec0971yg9b1ugi7",
@@ -18,49 +24,49 @@
         {
           "id": 80,
           "documentId": "om1rvnh5aj4nt50fmecj0khz",
-          "url": "/assets/city_express_by_marriott_tehuacan_66.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_61.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 79,
           "documentId": "pg9117fcx10lu7hookojr8wa",
-          "url": "/assets/city_express_by_marriott_tehuacan_67.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_62.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 78,
           "documentId": "geanfzqcq5zayut9rchui80n",
-          "url": "/assets/city_express_by_marriott_tehuacan_68.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_63.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 77,
           "documentId": "yyx6dg53tyt8bcokic2bidvl",
-          "url": "/assets/city_express_by_marriott_tehuacan_69.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_64.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 74,
           "documentId": "kdfddf3j64m6cdimaazzxl8w",
-          "url": "/assets/city_express_by_marriott_tehuacan_70.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_65.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 75,
           "documentId": "c9aw604or2dqjk9mbqzjk4uk",
-          "url": "/assets/city_express_by_marriott_tehuacan_71.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_66.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 76,
           "documentId": "tg3xecild3j0528uor7zzzxl",
-          "url": "/assets/city_express_by_marriott_tehuacan_72.webp",
+          "url": "/assets/city_express_by_marriott_tehuacan_67.webp",
           "alternativeText": null,
           "caption": null
         }
@@ -100,21 +106,21 @@
         {
           "id": 83,
           "documentId": "eopdhjood2ck7l7u7s3d67lc",
-          "url": "/assets/hotel_plaza_iberia_73.webp",
+          "url": "/assets/hotel_plaza_iberia_68.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 82,
           "documentId": "j3xqs569ws250s4dopi0whkj",
-          "url": "/assets/hotel_plaza_iberia_74.webp",
+          "url": "/assets/hotel_plaza_iberia_69.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 81,
           "documentId": "oo79wfpgvknekp0m6bp2g7ls",
-          "url": "/assets/hotel_plaza_iberia_75.webp",
+          "url": "/assets/hotel_plaza_iberia_70.webp",
           "alternativeText": null,
           "caption": null
         }
@@ -142,86 +148,101 @@
       ]
     }
   ],
-  "topRestaurantes": [
+  "mejores_restaurantes": [
     {
-      "id": 9,
-      "documentId": "uh6sk2zd4mo48tmxzw9fwyvk",
-      "nombre": "Jacinta, Cocina Casual",
+      "id": 18,
+      "documentId": "uxgnlp7ikibeswznoorijg7x",
+      "nombre": "Restaurante María Sabina",
       "descripcion": null,
-      "direccion": "Av. Reforma Sur 911, Guadalupe Hidalgo, 75790 Tehuacán, Pue.",
-      "createdAt": "2026-05-16T17:24:04.798Z",
-      "updatedAt": "2026-05-16T17:24:06.110Z",
-      "publishedAt": "2026-05-16T17:24:06.130Z",
+      "direccion": "Calle 13 oriente No. 309 Colonia Guadalupe Hidalgo, a una cuadra del parque Jardín Guadalupe",
+      "createdAt": "2026-05-16T18:09:24.379Z",
+      "updatedAt": "2026-05-16T18:09:31.682Z",
+      "publishedAt": "2026-05-16T18:09:31.724Z",
       "galeria": [
         {
-          "id": 42,
-          "documentId": "rrnklhn7qfftmov7bmy9xoo0",
-          "url": "/assets/jacinta_cocina_casual_76.webp",
+          "id": 27,
+          "documentId": "tiuloavvms9jfqpl7ux55z0e",
+          "url": "/assets/restaurante_maria_sabina_71.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 41,
-          "documentId": "h7q29cm6zkdrl1bpucrq183n",
-          "url": "/assets/jacinta_cocina_casual_77.webp",
+          "id": 26,
+          "documentId": "bl5usdiwfj9mfpvaav361n5w",
+          "url": "/assets/restaurante_maria_sabina_72.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 40,
-          "documentId": "ffaqzefygp4zcspmxdnlhib0",
-          "url": "/assets/jacinta_cocina_casual_78.webp",
+          "id": 25,
+          "documentId": "zx3pbf8oana3mki70zlrnxsk",
+          "url": "/assets/restaurante_maria_sabina_73.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 39,
-          "documentId": "lnwnr2zpmbgy9foqquf6idmu",
-          "url": "/assets/jacinta_cocina_casual_79.webp",
+          "id": 24,
+          "documentId": "blobxajmycxqvz1f6b6v0u93",
+          "url": "/assets/restaurante_maria_sabina_74.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 36,
-          "documentId": "fmyt2nhhjc2876kj95yxae6d",
-          "url": "/assets/jacinta_cocina_casual_80.webp",
+          "id": 23,
+          "documentId": "bpb6bfeztmbymabcpt927ith",
+          "url": "/assets/restaurante_maria_sabina_75.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 37,
-          "documentId": "g71hdg6ya5vpaj9972sfeq5v",
-          "url": "/assets/jacinta_cocina_casual_81.webp",
+          "id": 22,
+          "documentId": "n7vf7uop92hutk88w8ctxblq",
+          "url": "/assets/restaurante_maria_sabina_76.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 38,
-          "documentId": "bs1e4wu8jra3504c8cpnf9vu",
-          "url": "/assets/jacinta_cocina_casual_82.JPG.webp",
+          "id": 21,
+          "documentId": "frt3bqqx7sgqfbebwciw3rq3",
+          "url": "/assets/restaurante_maria_sabina_77.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 20,
+          "documentId": "du379q9l7533d2tk2ta6t0oo",
+          "url": "/assets/restaurante_maria_sabina_78.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 19,
+          "documentId": "hikxll6it7yltxgcw0higdl8",
+          "url": "/assets/restaurante_maria_sabina_79.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 18,
+          "documentId": "lz4fgeao620kayk5blvrknji",
+          "url": "/assets/restaurante_maria_sabina_80.webp",
           "alternativeText": null,
           "caption": null
         }
       ],
       "contacto": {
-        "id": 19,
-        "telefono": "238 128 0921",
+        "id": 28,
+        "telefono": "2381472023",
         "email": null,
         "sitio_web": null,
-        "whatsapp": null
+        "whatsapp": "2381092989"
       },
       "redes_sociales": [
         {
-          "id": 59,
+          "id": 72,
           "plataforma": "Instagram",
-          "usuario": "@jacintacocinacasual",
-          "enlace": "https://www.instagram.com/jacintacocinacasual/"
-        },
-        {
-          "id": 60,
-          "plataforma": "Facebook",
-          "usuario": "Jacinta Cocina Casual ",
-          "enlace": "https://www.facebook.com/jacintacocinacasual/"
+          "usuario": "@restaurante_maria_sabina",
+          "enlace": "https://www.instagram.com/restaurante_maria_sabina/"
         }
       ]
     },
@@ -238,35 +259,35 @@
         {
           "id": 65,
           "documentId": "cz9tgy50k755tegykq69eyas",
-          "url": "/assets/rancho_aislados_83.webp",
+          "url": "/assets/rancho_aislados_81.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 64,
           "documentId": "qgdeh8wjk50gg5220ouhpz6b",
-          "url": "/assets/rancho_aislados_84.webp",
+          "url": "/assets/rancho_aislados_82.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 63,
           "documentId": "h0fdov9lp9v7uoj9exmlhg8t",
-          "url": "/assets/rancho_aislados_85.webp",
+          "url": "/assets/rancho_aislados_83.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 62,
           "documentId": "g5tqgjp9nid3varu5fwfgdyy",
-          "url": "/assets/rancho_aislados_86.webp",
+          "url": "/assets/rancho_aislados_84.webp",
           "alternativeText": null,
           "caption": null
         },
         {
           "id": 61,
           "documentId": "yrf3zxqrq5obilvpu0jjs483",
-          "url": "/assets/rancho_aislados_87.webp",
+          "url": "/assets/rancho_aislados_85.webp",
           "alternativeText": null,
           "caption": null
         }
@@ -300,74 +321,94 @@
       ]
     },
     {
-      "id": 20,
-      "documentId": "wyptd49sq1hh13jge17axhu8",
-      "nombre": "Za Bistro",
-      "descripcion": "Algo nuevo y fresco en la ciudad, con el mejor sabor y originalidad de la bella Italia.",
-      "direccion": "Calz. Adolfo López Mateos 2420, Zona Alta, 75760 Tehuacán, Pue.",
-      "createdAt": "2026-05-16T18:13:17.904Z",
-      "updatedAt": "2026-05-16T18:13:19.128Z",
-      "publishedAt": "2026-05-16T18:13:19.164Z",
+      "id": 9,
+      "documentId": "uh6sk2zd4mo48tmxzw9fwyvk",
+      "nombre": "Jacinta, Cocina Casual",
+      "descripcion": null,
+      "direccion": "Av. Reforma Sur 911, Guadalupe Hidalgo, 75790 Tehuacán, Pue.",
+      "createdAt": "2026-05-16T17:24:04.798Z",
+      "updatedAt": "2026-05-16T17:24:06.110Z",
+      "publishedAt": "2026-05-16T17:24:06.130Z",
       "galeria": [
         {
-          "id": 31,
-          "documentId": "z47u9jgov5sgeajah4ymj0e1",
-          "url": "/assets/za_bistro_88.webp",
+          "id": 42,
+          "documentId": "rrnklhn7qfftmov7bmy9xoo0",
+          "url": "/assets/jacinta_cocina_casual_86.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 30,
-          "documentId": "sw6ot182tvy0rxt6edro8iwv",
-          "url": "/assets/za_bistro_89.webp",
+          "id": 41,
+          "documentId": "h7q29cm6zkdrl1bpucrq183n",
+          "url": "/assets/jacinta_cocina_casual_87.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 29,
-          "documentId": "kl9ymkk6qhk9of6tkhprq1ou",
-          "url": "/assets/za_bistro_90.webp",
+          "id": 40,
+          "documentId": "ffaqzefygp4zcspmxdnlhib0",
+          "url": "/assets/jacinta_cocina_casual_88.webp",
           "alternativeText": null,
           "caption": null
         },
         {
-          "id": 28,
-          "documentId": "g42hs5ga7t8rzzquebr4a054",
-          "url": "/assets/za_bistro_91.webp",
+          "id": 39,
+          "documentId": "lnwnr2zpmbgy9foqquf6idmu",
+          "url": "/assets/jacinta_cocina_casual_89.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 36,
+          "documentId": "fmyt2nhhjc2876kj95yxae6d",
+          "url": "/assets/jacinta_cocina_casual_90.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 37,
+          "documentId": "g71hdg6ya5vpaj9972sfeq5v",
+          "url": "/assets/jacinta_cocina_casual_91.webp",
+          "alternativeText": null,
+          "caption": null
+        },
+        {
+          "id": 38,
+          "documentId": "bs1e4wu8jra3504c8cpnf9vu",
+          "url": "/assets/jacinta_cocina_casual_92.JPG.webp",
           "alternativeText": null,
           "caption": null
         }
       ],
       "contacto": {
-        "id": 30,
-        "telefono": "2386885038",
+        "id": 19,
+        "telefono": "238 128 0921",
         "email": null,
         "sitio_web": null,
-        "whatsapp": "2383880105"
+        "whatsapp": null
       },
       "redes_sociales": [
         {
-          "id": 75,
+          "id": 59,
           "plataforma": "Instagram",
-          "usuario": "@zabistro",
-          "enlace": "https://www.instagram.com/zabistro/"
+          "usuario": "@jacintacocinacasual",
+          "enlace": "https://www.instagram.com/jacintacocinacasual/"
         },
         {
-          "id": 76,
+          "id": 60,
           "plataforma": "Facebook",
-          "usuario": "ZA bistró italian food & pizza ",
-          "enlace": "https://www.facebook.com/ZABISTRO"
+          "usuario": "Jacinta Cocina Casual ",
+          "enlace": "https://www.facebook.com/jacintacocinacasual/"
         }
       ]
     }
   ],
   "imperdibles": [
     {
-      "id": 67,
-      "documentId": "nas40cq29d3hqq0et5drqcdv",
+      "id": 110,
+      "documentId": "yhycl7x2em703wh7o0jo5azr",
       "nombre": "Catedral de Tehuacán",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
+      "direccion_google_maps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
       "slug": "catedral-tehuacan",
       "descripcion_corta": "Conoce la historia de la catedral y maravíllate con su reloj solar.",
       "descripcion_larga": "Ubicada en el corazón de la ciudad, la Catedral de Tehuacán es un recinto histórico que resguarda importantes relatos religiosos y restos de personajes destacados de la región.",
@@ -378,17 +419,11 @@
       "recomendaciones": "Acércate al módulo de información turística y solicita un recorrido.",
       "tips_imperdibles": "Visita libre para conocer su interior y no te pierdas el asombroso reloj solar.",
       "es_pet_friendly": false,
-      "galeria": [
-        {
-          "id": 88,
-          "documentId": "n981fkmvev0otkb1dm0u4b9u",
-          "url": "/assets/catedral_de_tehuacan_92.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
+      "lat": 18.46,
+      "lng": -97.39,
+      "galeria": null,
       "contacto": {
-        "id": 55,
+        "id": 98,
         "telefono": "2380000000",
         "email": "hola@catedral-tehuacan.com",
         "sitio_web": "https://www.catedral-tehuacan.com",
@@ -396,7 +431,7 @@
       },
       "redes_sociales": [
         {
-          "id": 107,
+          "id": 150,
           "plataforma": "Facebook",
           "usuario": "Catedral de Tehuacán",
           "enlace": "https://facebook.com/catedral-tehuacan"
@@ -404,18 +439,21 @@
       ],
       "categorias": [
         {
-          "id": 5,
-          "documentId": "n253opimcpmc1ych7dxz268n",
+          "id": 19,
+          "documentId": "ryiyluspglmy2hskvsfbme5w",
           "nombre": "Cultura"
         },
         {
-          "id": 3,
-          "documentId": "ip9oz9efoqjjn4lpcmrpztve",
+          "id": 17,
+          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
           "nombre": "Historia"
+        },
+        {
+          "id": 23,
+          "documentId": "ps8n0brqd7s8f4kumden0xto",
+          "nombre": "Religión"
         }
       ],
-      "lat": 18.4611598,
-      "lng": -97.3933519,
       "googleMapsInfo": {
         "rating": 4.6,
         "userRatingsTotal": 804,
@@ -423,11 +461,10 @@
       }
     },
     {
-      "id": 73,
-      "documentId": "uwbb9opempi63o6xacou4g7w",
+      "id": 102,
+      "documentId": "kxu7kms4g8tnkt8gl4gbpshb",
       "nombre": "Museo del Agua Peñafiel",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
+      "direccion_google_maps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
       "slug": "penafiel",
       "descripcion_corta": "Aquí el agua nace de la tierra… y puedes probarla directo del manantial.",
       "descripcion_larga": "El Museo del Agua Peñafiel te lleva al origen de una de las aguas minerales más famosas de México. Rodeado de jardines de cactáceas y manantiales naturales, este espacio combina historia, tradición y ciencia. Podrás conocer antiguas máquinas, procesos de embotellado y un impresionante mural que narra la historia de la ciudad, además de probar agua mineral de El Chorrito, un venero natural.",
@@ -438,17 +475,11 @@
       "recomendaciones": "De preferencia, TIENES QUE RESERVAR.",
       "tips_imperdibles": "Prueba el agua mineral directo del manantial que tiene propiedades curativas. Conoce el Tecuate (Guía de piedra) representativo de Tehuacán. No te pierdas los obsequios al final del recorrido.",
       "es_pet_friendly": false,
-      "galeria": [
-        {
-          "id": 87,
-          "documentId": "zdidir8c8cnds1qlmtmnmkvi",
-          "url": "/assets/museo_del_agua_penafiel_93.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
+      "lat": 18.47,
+      "lng": -97.4,
+      "galeria": null,
       "contacto": {
-        "id": 61,
+        "id": 90,
         "telefono": "2380000000",
         "email": "hola@penafiel.com",
         "sitio_web": "https://www.penafiel.com",
@@ -456,7 +487,7 @@
       },
       "redes_sociales": [
         {
-          "id": 113,
+          "id": 142,
           "plataforma": "Facebook",
           "usuario": "Museo del Agua Peñafiel",
           "enlace": "https://facebook.com/penafiel"
@@ -464,200 +495,32 @@
       ],
       "categorias": [
         {
-          "id": 8,
-          "documentId": "pyof2zch8ra6sccdi4yuzjvx",
-          "nombre": "Naturaleza"
+          "id": 18,
+          "documentId": "zr9vhu22gm0dwznq94scya1b",
+          "nombre": "Familiar"
+        },
+        {
+          "id": 19,
+          "documentId": "ryiyluspglmy2hskvsfbme5w",
+          "nombre": "Cultura"
+        },
+        {
+          "id": 17,
+          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
+          "nombre": "Historia"
         }
       ],
-      "lat": 18.4719001,
-      "lng": -97.4042888,
       "googleMapsInfo": {
         "rating": 4.4,
-        "userRatingsTotal": 569,
+        "userRatingsTotal": 572,
         "formattedAddress": "Av. José Garci-Crespo 2805, Planta Peñafiel, San Nicolás Tetitzintla, 75750 Tehuacán, Pue., Mexico"
       }
     },
     {
-      "id": 74,
-      "documentId": "jwzz8fh6a3t23qks32n5hbq8",
-      "nombre": "Parque El Riego",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
-      "slug": "el-riego",
-      "descripcion_corta": "El lugar donde Tehuacán vivió su época más elegante entre aguas minerales, fiestas y noches de porfiriato.",
-      "descripcion_larga": "Inaugurado en 1879 sobre una antigua hacienda, El Riego fue uno de los hoteles más exclusivos de Tehuacán durante el Porfiriato. Actualmente conserva su valor histórico y funciona como un extenso espacio recreativo y deportivo con aire libre, ideal para pasar el día.",
-      "precio": "$12 pesos",
-      "como_llegar": "A 15 minutos del centro en coche. Puedes llegar en taxi o apps de transporte.",
-      "horarios": "Lunes a domingo de 9:00 am a 6:00 pm",
-      "duracion_recomendada": "1 hora o más",
-      "recomendaciones": "Perfecto para un día de picnic familiar. Si te gusta el ejercicio, cuenta con pista de atletismo y cancha de fútbol.",
-      "tips_imperdibles": "Visita el jardín botánico con plantas endémicas de la reserva de la biosfera (ideal si no tienes tiempo de ir a la reserva completa).",
-      "es_pet_friendly": true,
-      "galeria": [
-        {
-          "id": 87,
-          "documentId": "zdidir8c8cnds1qlmtmnmkvi",
-          "url": "/assets/parque_el_riego_94.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
-      "contacto": {
-        "id": 62,
-        "telefono": "2380000000",
-        "email": "hola@el-riego.com",
-        "sitio_web": "https://www.el-riego.com",
-        "whatsapp": "2380000000"
-      },
-      "redes_sociales": [
-        {
-          "id": 114,
-          "plataforma": "Facebook",
-          "usuario": "Parque El Riego",
-          "enlace": "https://facebook.com/el-riego"
-        }
-      ],
-      "categorias": [
-        {
-          "id": 8,
-          "documentId": "pyof2zch8ra6sccdi4yuzjvx",
-          "nombre": "Naturaleza"
-        }
-      ],
-      "lat": 18.4552433,
-      "lng": -97.4111322,
-      "googleMapsInfo": {
-        "rating": 4.1,
-        "userRatingsTotal": 1035,
-        "formattedAddress": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico"
-      }
-    },
-    {
-      "id": 69,
-      "documentId": "b60ndsj4w05qs0w03wmpbdjj",
-      "nombre": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
-      "slug": "reserva-biosfera",
-      "descripcion_corta": "Cactus gigantes, paisajes surrealistas y fósiles marinos en uno de los lugares más extraordinarios de México. Patrimonio Mundial Mixto UNESCO.",
-      "descripcion_larga": "Declarada Patrimonio Mundial Mixto por la UNESCO, esta reserva cuenta con más de 490 mil hectáreas. Alberga la mayor concentración de cactáceas columnares del planeta y especies emblemáticas. Entre sus atractivos destacan el Jardín Botánico Helia Bravo Hollis, las salinas ancestrales y los fósiles marinos de San Juan Raya.",
-      "precio": "$50 pesos (entrada con guía)",
-      "como_llegar": "A unos 50 minutos del centro. Lo más recomendable es ir en tour (ej. Vagabundos, BIOFAN, Desierto Mágico).",
-      "horarios": "Lunes a domingo de 9:00 am a 3:00 pm",
-      "duracion_recomendada": "De 2 a 5 horas, o bien, apartar todo el día para la experiencia completa.",
-      "recomendaciones": "Ir en un horario de 9:00 am a 1:00 pm (no se recomienda en la tarde por el sol). Llevar botas, sombrero o gorra, ropa para cubrirse del calor, bloqueador solar y abundante agua. Cuidado con las plantas.",
-      "tips_imperdibles": "Conoce más de 9,000 plantas endémicas. Si vas a San Juan Raya, pide a tu guía ver los fósiles marinos, o las huellas de dinosaurio en Santa Ana Teloxtoc.",
-      "es_pet_friendly": false,
-      "galeria": [
-        {
-          "id": 85,
-          "documentId": "p0wrtzo4cip4e1opo6via6wl",
-          "url": "/assets/reserva_de_la_biosfera_tehuacan_cuicatlan_95.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
-      "contacto": {
-        "id": 57,
-        "telefono": "2380000000",
-        "email": "hola@reserva-biosfera.com",
-        "sitio_web": "https://www.reserva-biosfera.com",
-        "whatsapp": "2380000000"
-      },
-      "redes_sociales": [
-        {
-          "id": 109,
-          "plataforma": "Facebook",
-          "usuario": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-          "enlace": "https://facebook.com/reserva-biosfera"
-        }
-      ],
-      "categorias": [
-        {
-          "id": 2,
-          "documentId": "xao6xbngvr6equ8ka2q8a902",
-          "nombre": "Aventura"
-        },
-        {
-          "id": 8,
-          "documentId": "pyof2zch8ra6sccdi4yuzjvx",
-          "nombre": "Naturaleza"
-        }
-      ],
-      "lat": 18.3308906,
-      "lng": -97.4533038,
-      "googleMapsInfo": {
-        "rating": 4.7,
-        "userRatingsTotal": 10,
-        "formattedAddress": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico"
-      }
-    },
-    {
-      "id": 70,
-      "documentId": "ujbwci7n69wh4347qdgvf2sv",
-      "nombre": "Tehuacán Viejo (Ndajhian - Ndyan)",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
-      "slug": "tehuacan-viejo",
-      "descripcion_corta": "Explora una impresionante ciudad prehispánica llena de templos, plazas ceremoniales y vestigios ancestrales con vistas únicas del valle de Tehuacán.",
-      "descripcion_larga": "Tehuacán Viejo es una antigua ciudad prehispánica construida sobre una extensa meseta y considerada uno de los sitios arqueológicos más importantes de la región. Entre sus principales atractivos destacan el Templo Mayor, el Templo de las Calaveras y el emblemático templo dedicado a Ehécatl-Quetzalcóatl, dios del viento. También sobresale la Plaza del Fuego Nuevo. El sitio cuenta con plazas, calzadas, áreas habitacionales, estructuras piramidales y antiguos sistemas de drenaje.",
-      "precio": "Extranjeros $195 (corroborar), domingos gratuitos para nacionales.",
-      "como_llegar": "Se encuentra a 20 minutos en coche del centro de Tehuacán. Transporte: Taxi, unidad propia, o apps (Pronto, inDrive, taxi regular).",
-      "horarios": "10:00 am a 5:00 pm",
-      "duracion_recomendada": "1 hora",
-      "recomendaciones": "Llevar sombrilla para el sol, ropa y zapatos cómodos porque se camina mucho y se suben escaleras, llevar agua. Se recomienda tomar el tour temprano por el sol y llevar un guía para que te cuente la historia.",
-      "tips_imperdibles": "Escucha el sonido del ave prehispánica (el Quetzal) en el Templo Mayor. Si corres con suerte puedes ver a un correcaminos.",
-      "es_pet_friendly": true,
-      "galeria": [
-        {
-          "id": 88,
-          "documentId": "n981fkmvev0otkb1dm0u4b9u",
-          "url": "/assets/tehuacan_viejo_ndajhian_ndyan_96.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
-      "contacto": {
-        "id": 58,
-        "telefono": "2380000000",
-        "email": "hola@tehuacan-viejo.com",
-        "sitio_web": "https://www.tehuacan-viejo.com",
-        "whatsapp": "2380000000"
-      },
-      "redes_sociales": [
-        {
-          "id": 110,
-          "plataforma": "Facebook",
-          "usuario": "Tehuacán Viejo (Ndajhian - Ndyan)",
-          "enlace": "https://facebook.com/tehuacan-viejo"
-        }
-      ],
-      "categorias": [
-        {
-          "id": 2,
-          "documentId": "xao6xbngvr6equ8ka2q8a902",
-          "nombre": "Aventura"
-        },
-        {
-          "id": 3,
-          "documentId": "ip9oz9efoqjjn4lpcmrpztve",
-          "nombre": "Historia"
-        }
-      ],
-      "lat": 18.423985,
-      "lng": -97.436151,
-      "googleMapsInfo": {
-        "rating": 4.5,
-        "userRatingsTotal": 10,
-        "formattedAddress": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico"
-      }
-    },
-    {
-      "id": 72,
-      "documentId": "bwnsdh8413n8nilq5cjj5jc3",
+      "id": 104,
+      "documentId": "zwmig9yj9qhd3eali5722co3",
       "nombre": "Palacio Municipal",
-      "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-      "direccionGoogleMaps": "https://www.google.com/maps/place/Palacio+Municipal+De+Tehuac%C3%A1n/@18.4616239,-97.3934375,15z",
+      "direccion_google_maps": "https://www.google.com/maps/place/Palacio+Municipal+De+Tehuac%C3%A1n/@18.4616239,-97.3934375,15z",
       "slug": "palacio-municipal",
       "descripcion_corta": "Un palacio con influencia árabe, murales históricos y un reloj legendario en el corazón de Tehuacán.",
       "descripcion_larga": "El Palacio Municipal de Tehuacán es uno de los edificios históricos más emblemáticos de la ciudad. Antiguamente conocido como 'La Casa de los Altos', su arquitectura de influencia árabe (morisca) destaca por sus arcos y columnas. En su interior alberga importantes murales como 'Tehuacán y sus Cinco Regiones', 'El Nuevo Mundo' y 'Los Días Serenos de Morelos', reflejando la historia e identidad de la región.",
@@ -668,17 +531,11 @@
       "recomendaciones": "Acércate al módulo de atención turística (puedes llegar en cualquier horario) y solicita un recorrido guiado.",
       "tips_imperdibles": "Conoce la réplica del Título de Ciudad de Indios Tehuacán. Admira los murales interiores y el legendario reloj de la fachada construido en 1950. Conoce dónde vivió María Morelos y Pavón.",
       "es_pet_friendly": false,
-      "galeria": [
-        {
-          "id": 88,
-          "documentId": "n981fkmvev0otkb1dm0u4b9u",
-          "url": "/assets/palacio_municipal_97.webp",
-          "alternativeText": null,
-          "caption": null
-        }
-      ],
+      "lat": 18.46,
+      "lng": -97.39,
+      "galeria": null,
       "contacto": {
-        "id": 60,
+        "id": 92,
         "telefono": "2380000000",
         "email": "hola@palacio-municipal.com",
         "sitio_web": "https://www.palacio-municipal.com",
@@ -686,7 +543,7 @@
       },
       "redes_sociales": [
         {
-          "id": 112,
+          "id": 144,
           "plataforma": "Facebook",
           "usuario": "Palacio Municipal",
           "enlace": "https://facebook.com/palacio-municipal"
@@ -694,22 +551,183 @@
       ],
       "categorias": [
         {
-          "id": 3,
-          "documentId": "ip9oz9efoqjjn4lpcmrpztve",
+          "id": 17,
+          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
           "nombre": "Historia"
         },
         {
-          "id": 5,
-          "documentId": "n253opimcpmc1ych7dxz268n",
+          "id": 19,
+          "documentId": "ryiyluspglmy2hskvsfbme5w",
           "nombre": "Cultura"
         }
       ],
-      "lat": 18.4616239,
-      "lng": -97.3934375,
       "googleMapsInfo": {
         "rating": 4.2,
         "userRatingsTotal": 5,
         "formattedAddress": "Calle 1 Ote. 7, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico"
+      }
+    },
+    {
+      "id": 106,
+      "documentId": "r9wydfbz2dzo16d8pirimnf5",
+      "nombre": "Parque El Riego",
+      "direccion_google_maps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
+      "slug": "el-riego",
+      "descripcion_corta": "El lugar donde Tehuacán vivió su época más elegante entre aguas minerales, fiestas y noches de porfiriato.",
+      "descripcion_larga": "Inaugurado en 1879 sobre una antigua hacienda, El Riego fue uno de los hoteles más exclusivos de Tehuacán durante el Porfiriato. Actualmente conserva su valor histórico y funciona como un extenso espacio recreativo y deportivo con aire libre, ideal para pasar el día.",
+      "precio": "$12 pesos",
+      "como_llegar": "A 15 minutos del centro en coche. Puedes llegar en taxi o apps de transporte.",
+      "horarios": "Lunes a domingo de 9:00 am a 6:00 pm",
+      "duracion_recomendada": "1 hora o más",
+      "recomendaciones": "Perfecto para un día de picnic familiar. Si te gusta el ejercicio, cuenta con pista de atletismo y cancha de fútbol.",
+      "tips_imperdibles": "Visita el jardín botánico con plantas endémicas de la reserva de la biosfera (ideal si no tienes tiempo de ir a la reserva completa).",
+      "es_pet_friendly": true,
+      "lat": 18.46,
+      "lng": -97.41,
+      "galeria": null,
+      "contacto": {
+        "id": 94,
+        "telefono": "2380000000",
+        "email": "hola@el-riego.com",
+        "sitio_web": "https://www.el-riego.com",
+        "whatsapp": "2380000000"
+      },
+      "redes_sociales": [
+        {
+          "id": 146,
+          "plataforma": "Facebook",
+          "usuario": "Parque El Riego",
+          "enlace": "https://facebook.com/el-riego"
+        }
+      ],
+      "categorias": [
+        {
+          "id": 18,
+          "documentId": "zr9vhu22gm0dwznq94scya1b",
+          "nombre": "Familiar"
+        },
+        {
+          "id": 21,
+          "documentId": "dslpgaen45yjangpqmu4no1c",
+          "nombre": "Deporte"
+        }
+      ],
+      "googleMapsInfo": {
+        "rating": 4.1,
+        "userRatingsTotal": 1036,
+        "formattedAddress": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico"
+      }
+    },
+    {
+      "id": 108,
+      "documentId": "c9svq0e1jb5o0fvxckp92i5s",
+      "nombre": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+      "direccion_google_maps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
+      "slug": "reserva-biosfera",
+      "descripcion_corta": "Cactus gigantes, paisajes surrealistas y fósiles marinos en uno de los lugares más extraordinarios de México. Patrimonio Mundial Mixto UNESCO.",
+      "descripcion_larga": "Declarada Patrimonio Mundial Mixto por la UNESCO, esta reserva cuenta con más de 490 mil hectáreas. Alberga la mayor concentración de cactáceas columnares del planeta y especies emblemáticas. Entre sus atractivos destacan el Jardín Botánico Helia Bravo Hollis, las salinas ancestrales y los fósiles marinos de San Juan Raya.",
+      "precio": "$50 pesos (entrada con guía)",
+      "como_llegar": "A unos 50 minutos del centro. Lo más recomendable es ir en tour (ej. Vagabundos, BIOFAN, Desierto Mágico).",
+      "horarios": "Lunes a domingo de 9:00 am a 3:00 pm",
+      "duracion_recomendada": "De 2 a 5 horas, o bien, apartar todo el día para la experiencia completa.",
+      "recomendaciones": "Ir en un horario de 9:00 am a 1:00 pm (no se recomienda en la tarde por el sol). Llevar botas, sombrero o gorra, ropa para cubrirse del calor, bloqueador solar y abundante agua. Cuidado con las plantas.",
+      "tips_imperdibles": "Conoce más de 9,000 plantas endémicas. Si vas a San Juan Raya, pide a tu guía ver los fósiles marinos, o las huellas de dinosaurio en Santa Ana Teloxtoc.",
+      "es_pet_friendly": false,
+      "lat": 18.33,
+      "lng": -97.45,
+      "galeria": null,
+      "contacto": {
+        "id": 96,
+        "telefono": "2380000000",
+        "email": "hola@reserva-biosfera.com",
+        "sitio_web": "https://www.reserva-biosfera.com",
+        "whatsapp": "2380000000"
+      },
+      "redes_sociales": [
+        {
+          "id": 148,
+          "plataforma": "Facebook",
+          "usuario": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+          "enlace": "https://facebook.com/reserva-biosfera"
+        }
+      ],
+      "categorias": [
+        {
+          "id": 16,
+          "documentId": "awlik42fn9e1y5qs4uizfehc",
+          "nombre": "Aventura"
+        },
+        {
+          "id": 22,
+          "documentId": "o6g0j3x4hi6n1dk2a0lykf10",
+          "nombre": "Naturaleza"
+        },
+        {
+          "id": 17,
+          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
+          "nombre": "Historia"
+        }
+      ],
+      "googleMapsInfo": {
+        "rating": 4.7,
+        "userRatingsTotal": 10,
+        "formattedAddress": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico"
+      }
+    },
+    {
+      "id": 100,
+      "documentId": "m6duqnahn5wq4hywkbwpdbct",
+      "nombre": "Tehuacán Viejo (Ndajhian - Ndyan)",
+      "direccion_google_maps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
+      "slug": "tehuacan-viejo",
+      "descripcion_corta": "Explora una impresionante ciudad prehispánica llena de templos, plazas ceremoniales y vestigios ancestrales con vistas únicas del valle de Tehuacán.",
+      "descripcion_larga": "Tehuacán Viejo es una antigua ciudad prehispánica construida sobre una extensa meseta y considerada uno de los sitios arqueológicos más importantes de la región. Entre sus principales atractivos destacan el Templo Mayor, el Templo de las Calaveras y el emblemático templo dedicado a Ehécatl-Quetzalcóatl, dios del viento. También sobresale la Plaza del Fuego Nuevo. El sitio cuenta con plazas, calzadas, áreas habitacionales, estructuras piramidales y antiguos sistemas de drenaje.",
+      "precio": "Extranjeros $195 (corroborar), domingos gratuitos para nacionales.",
+      "como_llegar": "Se encuentra a 20 minutos en coche del centro de Tehuacán. Transporte: Taxi, unidad propia, o apps (Pronto, inDrive, taxi regular).",
+      "horarios": "10:00 am a 5:00 pm",
+      "duracion_recomendada": "1 hora",
+      "recomendaciones": "Llevar sombrilla para el sol, ropa y zapatos cómodos porque se camina mucho y se suben escaleras, llevar agua. Se recomienda tomar el tour temprano por el sol y llevar un guía para que te cuente la historia.",
+      "tips_imperdibles": "Escucha el sonido del ave prehispánica (el Quetzal) en el Templo Mayor. Si corres con suerte puedes ver a un correcaminos.",
+      "es_pet_friendly": true,
+      "lat": 18.42,
+      "lng": -97.44,
+      "galeria": null,
+      "contacto": {
+        "id": 88,
+        "telefono": "2380000000",
+        "email": "hola@tehuacan-viejo.com",
+        "sitio_web": "https://www.tehuacan-viejo.com",
+        "whatsapp": "2380000000"
+      },
+      "redes_sociales": [
+        {
+          "id": 140,
+          "plataforma": "Facebook",
+          "usuario": "Tehuacán Viejo (Ndajhian - Ndyan)",
+          "enlace": "https://facebook.com/tehuacan-viejo"
+        }
+      ],
+      "categorias": [
+        {
+          "id": 15,
+          "documentId": "tqsza0s5xpj74q55i0oviyfm",
+          "nombre": "Espiritual"
+        },
+        {
+          "id": 16,
+          "documentId": "awlik42fn9e1y5qs4uizfehc",
+          "nombre": "Aventura"
+        },
+        {
+          "id": 17,
+          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
+          "nombre": "Historia"
+        }
+      ],
+      "googleMapsInfo": {
+        "rating": 4.5,
+        "userRatingsTotal": 10,
+        "formattedAddress": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico"
       }
     }
   ]

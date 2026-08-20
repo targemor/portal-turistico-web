@@ -1,7 +1,6 @@
 ---
 /**
  * RestaurantesSection – Restaurantes desde JSON, estilo fiel a test.jsx
- * bg-slate-50, border-slate-100, var(--color-brand) acento
  */
 import ReactCard from "./react/Card";
 import Button from "./ui/Button.astro";
@@ -23,11 +22,11 @@ const { restaurantes } = Astro.props;
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Gastronomía</p>
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900">DONDE COMER</h2>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2" data-i18n="restaurantBadge">Gastronomía</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900" data-i18n="restaurantTitle">DONDE COMER</h2>
       </div>
       <Button href="/directorio/restaurantes" variant="outline" class="text-xs font-bold gap-2">
-        VER TODOS LOS RESTAURANTES
+        <span data-i18n="restaurantCta">VER TODOS LOS RESTAURANTES</span>
         <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
     </div>

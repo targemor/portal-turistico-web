@@ -67,7 +67,6 @@ export interface Destino {
   documentId: string;
   nombre: string;
   descripcion: string | null;
-  direccion: string;
   contacto: Contacto | null;
   galeria: unknown | null;
   redes_sociales: RedSocial[];
@@ -76,7 +75,7 @@ export interface Destino {
   publishedAt: string;
 }
 
-export type CategoriaImperdible = 'Naturaleza' | 'Cultura' | 'Salud';
+export type CategoriaImperdible = 'Naturaleza' | 'Cultura' | 'Salud' | 'Historia' | 'Aventura' | string;
 
 export interface ImperdibleImagen {
   id?: number;
@@ -86,19 +85,42 @@ export interface ImperdibleImagen {
   caption?: string | null;
 }
 
+export interface ImperdibleCategoria {
+  id?: number;
+  documentId?: string;
+  nombre: string;
+}
+
+/** Shape real devuelto por la API / home-page.json */
 export interface Imperdible {
   id: string | number;
-  categoria: CategoriaImperdible;
-  titulo: string;
-  descripcion: string | null;
-  imagen: ImperdibleImagen | null;
-  cta: string;
-  direccionGoogleMaps?: string | null;
-  lat?: number;
-  lng?: number;
+  documentId?: string;
+  nombre: string;
+  descripcion_corta: string | null;
+  descripcion_larga?: string | null;
+  galeria?: ImperdibleImagen[] | null;
+  imagen?: ImperdibleImagen | null;       // compatibilidad legacy
+  categorias?: ImperdibleCategoria[];
+  categoria?: CategoriaImperdible;        // compatibilidad legacy
+  slug?: string | null;
+  precio?: string | null;
+  horarios?: string | null;
+  como_llegar?: string | null;
+  duracion_recomendada?: string | null;
+  recomendaciones?: string | null;
+  tips_imperdibles?: string | null;
+  es_pet_friendly?: boolean;
+  direccion_google_maps?: string | null;
+  lat?: number | null;
+  lng?: number | null;
+  contacto?: Contacto | null;
+  redes_sociales?: RedSocial[];
   googleMapsInfo?: {
     rating?: number;
     userRatingsTotal?: number;
     formattedAddress?: string;
   };
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
 }

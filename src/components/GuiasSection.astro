@@ -1,7 +1,6 @@
 ---
 /**
  * GuiasSection – Guías turísticos desde JSON, estilo fiel a test.jsx
- * bg-white, border-slate-200, var(--color-brand) acento
  */
 import ReactCard from "./react/Card";
 import Button from "./ui/Button.astro";
@@ -30,11 +29,11 @@ const SocialIconComponents: Record<string, any> = {
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2">Certificados SECTUR</p>
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900">GUÍAS TURÍSTICOS</h2>
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2" data-i18n="guideBadge">Certificados SECTUR</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900" data-i18n="guideTitle">GUÍAS TURÍSTICOS</h2>
       </div>
       <Button href="/directorio/guias" variant="outline" class="text-xs font-bold gap-2">
-        VER TODOS LOS GUÍAS
+        <span data-i18n="guideCta">VER TODOS LOS GUÍAS</span>
         <ArrowRightIcon class="w-3.5 h-3.5" />
       </Button>
     </div>
@@ -45,7 +44,7 @@ const SocialIconComponents: Record<string, any> = {
         <ReactCard client:visible item={guia} categoria="guias">
           {/* Subtítulo SECTUR */}
           {guia.credencial_sectur === "Sí" && (
-            <p class="text-xs text-brand font-semibold mb-4 uppercase tracking-wide">
+            <p class="text-xs text-brand font-semibold mb-4 uppercase tracking-wide" data-i18n="guideCertified">
               Guía Certificado por SECTUR
             </p>
           )}

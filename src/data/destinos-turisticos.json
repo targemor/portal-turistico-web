@@ -1,12 +1,11 @@
 [
   {
-    "id": 70,
-    "documentId": "ujbwci7n69wh4347qdgvf2sv",
+    "id": 100,
+    "documentId": "m6duqnahn5wq4hywkbwpdbct",
     "nombre": "Tehuacán Viejo (Ndajhian - Ndyan)",
-    "createdAt": "2026-07-05T08:10:50.825Z",
-    "updatedAt": "2026-07-05T08:17:51.575Z",
-    "publishedAt": "2026-07-05T08:17:51.628Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
+    "createdAt": "2026-07-11T00:39:44.960Z",
+    "updatedAt": "2026-07-11T00:39:44.960Z",
+    "publishedAt": "2026-07-11T00:39:46.714Z",
     "slug": "tehuacan-viejo",
     "descripcion_corta": "Explora una impresionante ciudad prehispánica llena de templos, plazas ceremoniales y vestigios ancestrales con vistas únicas del valle de Tehuacán.",
     "descripcion_larga": "Tehuacán Viejo es una antigua ciudad prehispánica construida sobre una extensa meseta y considerada uno de los sitios arqueológicos más importantes de la región. Entre sus principales atractivos destacan el Templo Mayor, el Templo de las Calaveras y el emblemático templo dedicado a Ehécatl-Quetzalcóatl, dios del viento. También sobresale la Plaza del Fuego Nuevo. El sitio cuenta con plazas, calzadas, áreas habitacionales, estructuras piramidales y antiguos sistemas de drenaje.",
@@ -17,84 +16,36 @@
     "recomendaciones": "Llevar sombrilla para el sol, ropa y zapatos cómodos porque se camina mucho y se suben escaleras, llevar agua. Se recomienda tomar el tour temprano por el sol y llevar un guía para que te cuente la historia.",
     "tips_imperdibles": "Escucha el sonido del ave prehispánica (el Quetzal) en el Templo Mayor. Si corres con suerte puedes ver a un correcaminos.",
     "es_pet_friendly": true,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
+    "direccion_google_maps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
+    "lat": 18.42,
+    "lng": -97.44,
+    "google_maps_rating": 4.5,
+    "google_maps_user_ratings_total": 10,
+    "google_maps_formatted_address": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico",
     "redes_sociales": [
       {
-        "id": 110,
+        "id": 140,
         "plataforma": "Facebook",
         "usuario": "Tehuacán Viejo (Ndajhian - Ndyan)",
         "enlace": "https://facebook.com/tehuacan-viejo"
       }
     ],
     "contacto": {
-      "id": 58,
+      "id": 88,
       "telefono": "2380000000",
       "email": "hola@tehuacan-viejo.com",
       "sitio_web": "https://www.tehuacan-viejo.com",
       "whatsapp": "2380000000"
     },
-    "galeria": [
-      {
-        "id": 88,
-        "documentId": "n981fkmvev0otkb1dm0u4b9u",
-        "url": "/assets/tehuacan_viejo_ndajhian_ndyan_60.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
+    "galeria": null
   },
   {
-    "id": 72,
-    "documentId": "bwnsdh8413n8nilq5cjj5jc3",
-    "nombre": "Palacio Municipal",
-    "createdAt": "2026-07-05T08:10:51.377Z",
-    "updatedAt": "2026-07-05T08:18:21.494Z",
-    "publishedAt": "2026-07-05T08:18:21.551Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-    "slug": "palacio-municipal",
-    "descripcion_corta": "Un palacio con influencia árabe, murales históricos y un reloj legendario en el corazón de Tehuacán.",
-    "descripcion_larga": "El Palacio Municipal de Tehuacán es uno de los edificios históricos más emblemáticos de la ciudad. Antiguamente conocido como 'La Casa de los Altos', su arquitectura de influencia árabe (morisca) destaca por sus arcos y columnas. En su interior alberga importantes murales como 'Tehuacán y sus Cinco Regiones', 'El Nuevo Mundo' y 'Los Días Serenos de Morelos', reflejando la historia e identidad de la región.",
-    "precio": "GRATIS",
-    "como_llegar": "Ubicado en el zócalo de Tehuacán, a solo una cuadra de la terminal de autobuses ADO.",
-    "horarios": "9:00 am a 4:00 pm",
-    "duracion_recomendada": "25 a 40 minutos",
-    "recomendaciones": "Acércate al módulo de atención turística (puedes llegar en cualquier horario) y solicita un recorrido guiado.",
-    "tips_imperdibles": "Conoce la réplica del Título de Ciudad de Indios Tehuacán. Admira los murales interiores y el legendario reloj de la fachada construido en 1950. Conoce dónde vivió María Morelos y Pavón.",
-    "es_pet_friendly": false,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Palacio+Municipal+De+Tehuac%C3%A1n/@18.4616239,-97.3934375,15z",
-    "redes_sociales": [
-      {
-        "id": 112,
-        "plataforma": "Facebook",
-        "usuario": "Palacio Municipal",
-        "enlace": "https://facebook.com/palacio-municipal"
-      }
-    ],
-    "contacto": {
-      "id": 60,
-      "telefono": "2380000000",
-      "email": "hola@palacio-municipal.com",
-      "sitio_web": "https://www.palacio-municipal.com",
-      "whatsapp": "2380000000"
-    },
-    "galeria": [
-      {
-        "id": 88,
-        "documentId": "n981fkmvev0otkb1dm0u4b9u",
-        "url": "/assets/palacio_municipal_61.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
-  },
-  {
-    "id": 73,
-    "documentId": "uwbb9opempi63o6xacou4g7w",
+    "id": 102,
+    "documentId": "kxu7kms4g8tnkt8gl4gbpshb",
     "nombre": "Museo del Agua Peñafiel",
-    "createdAt": "2026-07-05T08:10:51.043Z",
-    "updatedAt": "2026-07-05T19:10:06.387Z",
-    "publishedAt": "2026-07-05T19:10:06.421Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
+    "createdAt": "2026-07-11T00:39:47.263Z",
+    "updatedAt": "2026-07-11T00:39:47.263Z",
+    "publishedAt": "2026-07-11T00:39:48.721Z",
     "slug": "penafiel",
     "descripcion_corta": "Aquí el agua nace de la tierra… y puedes probarla directo del manantial.",
     "descripcion_larga": "El Museo del Agua Peñafiel te lleva al origen de una de las aguas minerales más famosas de México. Rodeado de jardines de cactáceas y manantiales naturales, este espacio combina historia, tradición y ciencia. Podrás conocer antiguas máquinas, procesos de embotellado y un impresionante mural que narra la historia de la ciudad, además de probar agua mineral de El Chorrito, un venero natural.",
@@ -105,40 +56,76 @@
     "recomendaciones": "De preferencia, TIENES QUE RESERVAR.",
     "tips_imperdibles": "Prueba el agua mineral directo del manantial que tiene propiedades curativas. Conoce el Tecuate (Guía de piedra) representativo de Tehuacán. No te pierdas los obsequios al final del recorrido.",
     "es_pet_friendly": false,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
+    "direccion_google_maps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
+    "lat": 18.47,
+    "lng": -97.4,
+    "google_maps_rating": 4.4,
+    "google_maps_user_ratings_total": 572,
+    "google_maps_formatted_address": "Av. José Garci-Crespo 2805, Planta Peñafiel, San Nicolás Tetitzintla, 75750 Tehuacán, Pue., Mexico",
     "redes_sociales": [
       {
-        "id": 113,
+        "id": 142,
         "plataforma": "Facebook",
         "usuario": "Museo del Agua Peñafiel",
         "enlace": "https://facebook.com/penafiel"
       }
     ],
     "contacto": {
-      "id": 61,
+      "id": 90,
       "telefono": "2380000000",
       "email": "hola@penafiel.com",
       "sitio_web": "https://www.penafiel.com",
       "whatsapp": "2380000000"
     },
-    "galeria": [
-      {
-        "id": 87,
-        "documentId": "zdidir8c8cnds1qlmtmnmkvi",
-        "url": "/assets/museo_del_agua_penafiel_62.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
+    "galeria": null
   },
   {
-    "id": 74,
-    "documentId": "jwzz8fh6a3t23qks32n5hbq8",
+    "id": 104,
+    "documentId": "zwmig9yj9qhd3eali5722co3",
+    "nombre": "Palacio Municipal",
+    "createdAt": "2026-07-11T00:39:50.170Z",
+    "updatedAt": "2026-07-11T00:39:50.170Z",
+    "publishedAt": "2026-07-11T00:39:50.782Z",
+    "slug": "palacio-municipal",
+    "descripcion_corta": "Un palacio con influencia árabe, murales históricos y un reloj legendario en el corazón de Tehuacán.",
+    "descripcion_larga": "El Palacio Municipal de Tehuacán es uno de los edificios históricos más emblemáticos de la ciudad. Antiguamente conocido como 'La Casa de los Altos', su arquitectura de influencia árabe (morisca) destaca por sus arcos y columnas. En su interior alberga importantes murales como 'Tehuacán y sus Cinco Regiones', 'El Nuevo Mundo' y 'Los Días Serenos de Morelos', reflejando la historia e identidad de la región.",
+    "precio": "GRATIS",
+    "como_llegar": "Ubicado en el zócalo de Tehuacán, a solo una cuadra de la terminal de autobuses ADO.",
+    "horarios": "9:00 am a 4:00 pm",
+    "duracion_recomendada": "25 a 40 minutos",
+    "recomendaciones": "Acércate al módulo de atención turística (puedes llegar en cualquier horario) y solicita un recorrido guiado.",
+    "tips_imperdibles": "Conoce la réplica del Título de Ciudad de Indios Tehuacán. Admira los murales interiores y el legendario reloj de la fachada construido en 1950. Conoce dónde vivió María Morelos y Pavón.",
+    "es_pet_friendly": false,
+    "direccion_google_maps": "https://www.google.com/maps/place/Palacio+Municipal+De+Tehuac%C3%A1n/@18.4616239,-97.3934375,15z",
+    "lat": 18.46,
+    "lng": -97.39,
+    "google_maps_rating": 4.2,
+    "google_maps_user_ratings_total": 5,
+    "google_maps_formatted_address": "Calle 1 Ote. 7, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico",
+    "redes_sociales": [
+      {
+        "id": 144,
+        "plataforma": "Facebook",
+        "usuario": "Palacio Municipal",
+        "enlace": "https://facebook.com/palacio-municipal"
+      }
+    ],
+    "contacto": {
+      "id": 92,
+      "telefono": "2380000000",
+      "email": "hola@palacio-municipal.com",
+      "sitio_web": "https://www.palacio-municipal.com",
+      "whatsapp": "2380000000"
+    },
+    "galeria": null
+  },
+  {
+    "id": 106,
+    "documentId": "r9wydfbz2dzo16d8pirimnf5",
     "nombre": "Parque El Riego",
-    "createdAt": "2026-07-05T08:10:51.487Z",
-    "updatedAt": "2026-07-05T19:10:20.900Z",
-    "publishedAt": "2026-07-05T19:10:20.940Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
+    "createdAt": "2026-07-11T00:39:51.385Z",
+    "updatedAt": "2026-07-11T00:39:51.385Z",
+    "publishedAt": "2026-07-11T00:39:51.985Z",
     "slug": "el-riego",
     "descripcion_corta": "El lugar donde Tehuacán vivió su época más elegante entre aguas minerales, fiestas y noches de porfiriato.",
     "descripcion_larga": "Inaugurado en 1879 sobre una antigua hacienda, El Riego fue uno de los hoteles más exclusivos de Tehuacán durante el Porfiriato. Actualmente conserva su valor histórico y funciona como un extenso espacio recreativo y deportivo con aire libre, ideal para pasar el día.",
@@ -149,84 +136,36 @@
     "recomendaciones": "Perfecto para un día de picnic familiar. Si te gusta el ejercicio, cuenta con pista de atletismo y cancha de fútbol.",
     "tips_imperdibles": "Visita el jardín botánico con plantas endémicas de la reserva de la biosfera (ideal si no tienes tiempo de ir a la reserva completa).",
     "es_pet_friendly": true,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
+    "direccion_google_maps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
+    "lat": 18.46,
+    "lng": -97.41,
+    "google_maps_rating": 4.1,
+    "google_maps_user_ratings_total": 1036,
+    "google_maps_formatted_address": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico",
     "redes_sociales": [
       {
-        "id": 114,
+        "id": 146,
         "plataforma": "Facebook",
         "usuario": "Parque El Riego",
         "enlace": "https://facebook.com/el-riego"
       }
     ],
     "contacto": {
-      "id": 62,
+      "id": 94,
       "telefono": "2380000000",
       "email": "hola@el-riego.com",
       "sitio_web": "https://www.el-riego.com",
       "whatsapp": "2380000000"
     },
-    "galeria": [
-      {
-        "id": 87,
-        "documentId": "zdidir8c8cnds1qlmtmnmkvi",
-        "url": "/assets/parque_el_riego_63.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
+    "galeria": null
   },
   {
-    "id": 67,
-    "documentId": "nas40cq29d3hqq0et5drqcdv",
-    "nombre": "Catedral de Tehuacán",
-    "createdAt": "2026-07-05T08:10:51.721Z",
-    "updatedAt": "2026-07-05T08:16:48.912Z",
-    "publishedAt": "2026-07-05T08:16:48.992Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
-    "slug": "catedral-tehuacan",
-    "descripcion_corta": "Conoce la historia de la catedral y maravíllate con su reloj solar.",
-    "descripcion_larga": "Ubicada en el corazón de la ciudad, la Catedral de Tehuacán es un recinto histórico que resguarda importantes relatos religiosos y restos de personajes destacados de la región.",
-    "precio": "GRATIS",
-    "como_llegar": "Ubicada en el Centro de Tehuacán.",
-    "horarios": "Lunes a sábado",
-    "duracion_recomendada": "30 minutos",
-    "recomendaciones": "Acércate al módulo de información turística y solicita un recorrido.",
-    "tips_imperdibles": "Visita libre para conocer su interior y no te pierdas el asombroso reloj solar.",
-    "es_pet_friendly": false,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
-    "redes_sociales": [
-      {
-        "id": 107,
-        "plataforma": "Facebook",
-        "usuario": "Catedral de Tehuacán",
-        "enlace": "https://facebook.com/catedral-tehuacan"
-      }
-    ],
-    "contacto": {
-      "id": 55,
-      "telefono": "2380000000",
-      "email": "hola@catedral-tehuacan.com",
-      "sitio_web": "https://www.catedral-tehuacan.com",
-      "whatsapp": "2380000000"
-    },
-    "galeria": [
-      {
-        "id": 88,
-        "documentId": "n981fkmvev0otkb1dm0u4b9u",
-        "url": "/assets/catedral_de_tehuacan_64.webp",
-        "alternativeText": null,
-        "caption": null
-      }
-    ]
-  },
-  {
-    "id": 69,
-    "documentId": "b60ndsj4w05qs0w03wmpbdjj",
+    "id": 108,
+    "documentId": "c9svq0e1jb5o0fvxckp92i5s",
     "nombre": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-    "createdAt": "2026-07-05T08:10:51.608Z",
-    "updatedAt": "2026-07-05T08:17:36.934Z",
-    "publishedAt": "2026-07-05T08:17:37.019Z",
-    "direccion": "Av. Falsa 123, Centro, Tehuacán, Puebla",
+    "createdAt": "2026-07-11T00:39:53.368Z",
+    "updatedAt": "2026-07-11T00:39:53.368Z",
+    "publishedAt": "2026-07-11T00:39:53.960Z",
     "slug": "reserva-biosfera",
     "descripcion_corta": "Cactus gigantes, paisajes surrealistas y fósiles marinos en uno de los lugares más extraordinarios de México. Patrimonio Mundial Mixto UNESCO.",
     "descripcion_larga": "Declarada Patrimonio Mundial Mixto por la UNESCO, esta reserva cuenta con más de 490 mil hectáreas. Alberga la mayor concentración de cactáceas columnares del planeta y especies emblemáticas. Entre sus atractivos destacan el Jardín Botánico Helia Bravo Hollis, las salinas ancestrales y los fósiles marinos de San Juan Raya.",
@@ -237,30 +176,67 @@
     "recomendaciones": "Ir en un horario de 9:00 am a 1:00 pm (no se recomienda en la tarde por el sol). Llevar botas, sombrero o gorra, ropa para cubrirse del calor, bloqueador solar y abundante agua. Cuidado con las plantas.",
     "tips_imperdibles": "Conoce más de 9,000 plantas endémicas. Si vas a San Juan Raya, pide a tu guía ver los fósiles marinos, o las huellas de dinosaurio en Santa Ana Teloxtoc.",
     "es_pet_friendly": false,
-    "direccionGoogleMaps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
+    "direccion_google_maps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
+    "lat": 18.33,
+    "lng": -97.45,
+    "google_maps_rating": 4.7,
+    "google_maps_user_ratings_total": 10,
+    "google_maps_formatted_address": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico",
     "redes_sociales": [
       {
-        "id": 109,
+        "id": 148,
         "plataforma": "Facebook",
         "usuario": "Reserva de la Biosfera Tehuacán-Cuicatlán",
         "enlace": "https://facebook.com/reserva-biosfera"
       }
     ],
     "contacto": {
-      "id": 57,
+      "id": 96,
       "telefono": "2380000000",
       "email": "hola@reserva-biosfera.com",
       "sitio_web": "https://www.reserva-biosfera.com",
       "whatsapp": "2380000000"
     },
-    "galeria": [
+    "galeria": null
+  },
+  {
+    "id": 110,
+    "documentId": "yhycl7x2em703wh7o0jo5azr",
+    "nombre": "Catedral de Tehuacán",
+    "createdAt": "2026-07-11T00:39:55.355Z",
+    "updatedAt": "2026-07-11T00:39:55.355Z",
+    "publishedAt": "2026-07-11T00:39:56.787Z",
+    "slug": "catedral-tehuacan",
+    "descripcion_corta": "Conoce la historia de la catedral y maravíllate con su reloj solar.",
+    "descripcion_larga": "Ubicada en el corazón de la ciudad, la Catedral de Tehuacán es un recinto histórico que resguarda importantes relatos religiosos y restos de personajes destacados de la región.",
+    "precio": "GRATIS",
+    "como_llegar": "Ubicada en el Centro de Tehuacán.",
+    "horarios": "Lunes a sábado",
+    "duracion_recomendada": "30 minutos",
+    "recomendaciones": "Acércate al módulo de información turística y solicita un recorrido.",
+    "tips_imperdibles": "Visita libre para conocer su interior y no te pierdas el asombroso reloj solar.",
+    "es_pet_friendly": false,
+    "direccion_google_maps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
+    "lat": 18.46,
+    "lng": -97.39,
+    "google_maps_rating": 4.6,
+    "google_maps_user_ratings_total": 804,
+    "google_maps_formatted_address": "C. 1 Sur 101, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico",
+    "redes_sociales": [
       {
-        "id": 85,
-        "documentId": "p0wrtzo4cip4e1opo6via6wl",
-        "url": "/assets/reserva_de_la_biosfera_tehuacan_cuicatlan_65.webp",
-        "alternativeText": null,
-        "caption": null
+        "id": 150,
+        "plataforma": "Facebook",
+        "usuario": "Catedral de Tehuacán",
+        "enlace": "https://facebook.com/catedral-tehuacan"
       }
-    ]
+    ],
+    "contacto": {
+      "id": 98,
+      "telefono": "2380000000",
+      "email": "hola@catedral-tehuacan.com",
+      "sitio_web": "https://www.catedral-tehuacan.com",
+      "whatsapp": "2380000000"
+    },
+    "galeria": null
   }
 ]

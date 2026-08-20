@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Card, { type CardItem } from "./Card";
+import { LanguageProvider } from "../../i18n/LanguageContext";
 
 interface Props {
   items: CardItem[];
@@ -7,6 +8,14 @@ interface Props {
 }
 
 export default function DirectorioGrid({ items, categoria }: Props) {
+  return (
+    <LanguageProvider>
+      <DirectorioGridInner items={items} categoria={categoria} />
+    </LanguageProvider>
+  );
+}
+
+function DirectorioGridInner({ items, categoria }: Props) {
   const [highlightId, setHighlightId] = useState<string | number | null>(null);
   const [sortedItems, setSortedItems] = useState<CardItem[]>(items);
   const highlightRef = useRef<HTMLDivElement>(null);

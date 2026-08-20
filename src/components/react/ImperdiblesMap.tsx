@@ -46,7 +46,7 @@ export interface MarkerData {
 interface Props {
   markers: MarkerData[];
   activeMarkerId: string | number | null;
-  onMarkerClick: (id: string | number) => void;
+  onMarkerClick: (id: string | number | null) => void;
 }
 
 function MapUpdater({ markers, activeMarkerId }: { markers: MarkerData[], activeMarkerId: string | number | null }) {

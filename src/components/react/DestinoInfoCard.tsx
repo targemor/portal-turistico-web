@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const IconClock = () => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>;
 const IconTicket = () => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /><line x1="13" x2="13" y1="5" y2="19" /><line x1="17" x2="17" y1="9" y2="15" /></svg>;
@@ -23,6 +24,7 @@ export default function DestinoInfoCard({
   hasPrev?: boolean;
   hasNext?: boolean;
 }) {
+  const { t } = useLanguage();
   if (!destino) return null;
 
   return (
@@ -42,7 +44,7 @@ export default function DestinoInfoCard({
             {destino.horarios && (
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-1.5 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
-                  <IconClock /> Horarios
+                  <IconClock /> {t.infoHorarios}
                 </div>
                 <p className="text-sm font-medium text-slate-700">{destino.horarios}</p>
               </div>
@@ -50,7 +52,7 @@ export default function DestinoInfoCard({
             {destino.precio && (
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-1.5 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
-                  <IconTicket /> Precio
+                  <IconTicket /> {t.infoPrecio}
                 </div>
                 <p className="text-sm font-medium text-slate-700">{destino.precio}</p>
               </div>
@@ -58,7 +60,7 @@ export default function DestinoInfoCard({
             {destino.duracion_recomendada && (
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-1.5 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
-                  <IconClock /> Duración
+                  <IconClock /> {t.infoDuracion}
                 </div>
                 <p className="text-sm font-medium text-slate-700">{destino.duracion_recomendada}</p>
               </div>
@@ -69,7 +71,7 @@ export default function DestinoInfoCard({
           {destino.como_llegar && (
             <div>
               <div className="flex items-center gap-1.5 text-slate-400 font-bold text-[10px] uppercase tracking-wider mb-2">
-                <IconMapPin /> Cómo llegar
+                <IconMapPin /> {t.infoComoLlegar}
               </div>
               <p className="text-sm text-slate-600 leading-relaxed">{destino.como_llegar}</p>
             </div>
@@ -82,14 +84,14 @@ export default function DestinoInfoCard({
                 <div style={{ color }}>
                   <IconInfo />
                 </div>
-                <h4 className="font-bold text-slate-800 text-sm">Tips del viajero</h4>
+                <h4 className="font-bold text-slate-800 text-sm">{t.infoTips}</h4>
               </div>
               <div className="space-y-3 text-sm text-slate-600">
                 {destino.tips_imperdibles && (
-                  <p><strong>Lo imperdible:</strong> {destino.tips_imperdibles}</p>
+                  <p><strong>{t.infoMustSee}</strong> {destino.tips_imperdibles}</p>
                 )}
                 {destino.recomendaciones && (
-                  <p><strong>Recomendación:</strong> {destino.recomendaciones}</p>
+                  <p><strong>{t.infoRecomendacion}</strong> {destino.recomendaciones}</p>
                 )}
               </div>
             </div>
@@ -98,7 +100,7 @@ export default function DestinoInfoCard({
           {/* Badges */}
           {destino.es_pet_friendly && (
             <div className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-xs font-bold border border-green-200">
-              <IconPaw /> Pet Friendly
+              <IconPaw /> {t.infoPetFriendly}
             </div>
           )}
         </div>
@@ -111,14 +113,14 @@ export default function DestinoInfoCard({
             onClick={onPrev}
             className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3.5 text-xs font-black uppercase tracking-wider transition-all border hover:bg-slate-50 text-slate-600 border-slate-200"
           >
-            <IconChevronLeft /> Anterior
+            <IconChevronLeft /> {t.infoPrev}
           </button>
           <button
             onClick={onNext}
             className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3.5 text-white text-xs font-black uppercase tracking-wider transition-all hover:opacity-90 shadow-md"
             style={{ backgroundColor: color }}
           >
-            Siguiente <IconChevronRight />
+            {t.infoNext} <IconChevronRight />
           </button>
         </div>
       )}

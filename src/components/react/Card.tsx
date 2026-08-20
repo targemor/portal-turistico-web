@@ -1,7 +1,8 @@
 import React from "react";
 import ImageGallery from "./ImageGallery";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-// Iconos SVG en línea (reemplazos compatibles con React para los iconos de Astro)
+// Iconos SVG en línea
 const MapPinIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -63,13 +64,13 @@ const ShareIcon = ({ className }: { className?: string }) => (
 export interface CardItem {
   id: string | number;
   nombre?: string;
-  titulo?: string; // Para el caso de imperdibles que usa 'titulo' en vez de 'nombre'
+  titulo?: string;
   descripcion?: string | null;
   direccion?: string;
   estrellas?: number;
   especialidad?: string;
   galeria?: any;
-  imagen?: string; // Para imperdibles que usa 'imagen'
+  imagen?: string;
   redes_sociales?: { plataforma: string; enlace: string }[];
   telefono?: string;
   whatsapp?: string;
@@ -88,21 +89,20 @@ interface CardProps {
 }
 
 export default function Card({ item, categoria, children }: CardProps) {
+  const { t } = useLanguage();
+
   const getBtnText = () => {
     switch (categoria) {
-      case 'hoteles': return 'Ver disponibilidad';
-      case 'restaurantes': return 'Ver menú';
-      case 'guias': return 'Contactar guía';
-      default: return 'Ver detalles';
+      case 'hoteles':      return t.cardAvailability;
+      case 'restaurantes': return t.cardMenu;
+      case 'guias':        return t.cardContact;
+      default:             return t.cardDetails;
     }
   };
 
-  const nombreItem = item.nombre || item.titulo || "Sin nombre";
+  const nombreItem = item.nombre || item.titulo || t.cardNoName;
 
-  // Verificar si hay galería o imagen
   const hasGaleria = item.galeria && (Array.isArray(item.galeria) ? item.galeria.length > 0 : true);
-  
-  // Transformar imagen única de imperdibles al formato de galería si es necesario
   const galeriaAdaptada = hasGaleria ? item.galeria : (item.imagen ? [{ url: item.imagen }] : null);
 
   return (
@@ -123,7 +123,7 @@ export default function Card({ item, categoria, children }: CardProps) {
                 </div>
                 {(item as any).credencial_sectur === "Sí" && (
                   <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center rounded-full border border-transparent bg-brand px-2.5 py-0.5 text-xs font-semibold text-white">✓ SECTUR</span>
+                    <span className="inline-flex items-center rounded-full border border-transparent bg-brand px-2.5 py-0.5 text-xs font-semibold text-white">{t.cardSectur}</span>
                   </div>
                 )}
               </>
@@ -136,7 +136,6 @@ export default function Card({ item, categoria, children }: CardProps) {
 
       {/* Contenido */}
       <div className="p-6 flex flex-col flex-1">
-        {/* Badges (ej. Especialidad en restaurantes) */}
         {item.especialidad && (
           <div className="mb-3">
             <span className="inline-flex items-center rounded-full border border-orange-200 bg-orange-100 px-2.5 py-0.5 text-xs font-semibold text-orange-800 transition-colors">
@@ -145,26 +144,20 @@ export default function Card({ item, categoria, children }: CardProps) {
           </div>
         )}
 
-        {/* Título */}
         <h3 className="text-xl font-bold mb-2 text-slate-900">{nombreItem}</h3>
 
-        {/* Descripción */}
         {item.descripcion && (
-          <p className="text-slate-500 text-sm line-clamp-3 mb-3">
-            {item.descripcion}
-          </p>
+          <p className="text-slate-500 text-sm line-clamp-3 mb-3">{item.descripcion}</p>
         )}
 
-        {/* Estrellas visuales */}
         {item.estrellas && (
-          <div className="flex gap-0.5 mb-3" aria-label={`${item.estrellas} de 5 estrellas`}>
+          <div className="flex gap-0.5 mb-3" aria-label={`${item.estrellas} ${t.cardStars}`}>
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon key={i} className={`w-4 h-4 ${i < (item.estrellas || 0) ? "text-amber-400" : "text-slate-200"}`} />
             ))}
           </div>
         )}
 
-        {/* Ubicación */}
         {item.direccion && (
           <p className="text-slate-500 text-sm flex items-start gap-2 mb-2">
             <MapPinIcon className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
@@ -172,16 +165,14 @@ export default function Card({ item, categoria, children }: CardProps) {
           </p>
         )}
 
-        {/* Contenido extra inyectado como children */}
         {children}
 
-        {/* Redes sociales */}
         {item.redes_sociales && item.redes_sociales.length > 0 && (
           <div className="flex gap-2 mb-3 mt-4">
             {item.redes_sociales.map((red, idx) => {
               const platformLower = red.plataforma.toLowerCase();
-              const Icon = platformLower === 'facebook' ? FacebookIcon : 
-                           platformLower === 'instagram' ? InstagramIcon : 
+              const Icon = platformLower === 'facebook' ? FacebookIcon :
+                           platformLower === 'instagram' ? InstagramIcon :
                            platformLower === 'tiktok' ? TiktokIcon : null;
               return (
                 <a
@@ -199,30 +190,29 @@ export default function Card({ item, categoria, children }: CardProps) {
           </div>
         )}
 
-        {/* Spacer para empujar el botón al fondo si la card crece */}
         <div className="mt-auto pt-6">
           <div className="flex gap-2 w-full">
             {(item.contacto?.telefono || item.telefono) && (
-              <a 
-                href={`tel:${item.contacto?.telefono || item.telefono}`} 
+              <a
+                href={`tel:${item.contacto?.telefono || item.telefono}`}
                 className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#C55A50] hover:bg-[#A84C43] text-white h-10 px-2 py-2 whitespace-nowrap"
               >
-                LLAMAR
+                {t.cardCall}
                 <PhoneIcon className="w-4 h-4 shrink-0" />
               </a>
             )}
             {(item.contacto?.whatsapp || item.whatsapp) && (
-              <a 
-                href={`https://wa.me/${item.contacto?.whatsapp || item.whatsapp}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={`https://wa.me/${item.contacto?.whatsapp || item.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#25D366] hover:bg-[#1DA851] text-white h-10 px-2 py-2 whitespace-nowrap"
               >
-                RESERVAR
+                {t.cardBook}
                 <WhatsAppIcon className="w-4 h-4 shrink-0" />
               </a>
             )}
-            <button 
+            <button
               onClick={() => {
                 if (navigator.share) {
                   navigator.share({
@@ -232,12 +222,12 @@ export default function Card({ item, categoria, children }: CardProps) {
                   }).catch(console.error);
                 } else {
                   navigator.clipboard.writeText(window.location.href);
-                  alert('Enlace copiado al portapapeles');
+                  alert(t.cardLinkCopied);
                 }
               }}
               className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#4B5563] hover:bg-[#374151] text-white h-10 px-2 py-2 whitespace-nowrap"
             >
-              COMPARTIR
+              {t.cardShare}
               <ShareIcon className="w-4 h-4 shrink-0" />
             </button>
           </div>

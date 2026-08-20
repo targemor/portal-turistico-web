@@ -92,12 +92,12 @@ const COLLECTIONS: CollectionDefinition[] = [
     name: 'home-page',
     singleType: true,
     query: {
-      fields: ['heroTitle', 'searchPlaceholder'],
+      fields: ['titulo_principal', 'texto_busqueda'],
       populate: {
-        heroPoster: {
+        imagen_principal: {
           fields: ['url', 'alternativeText', 'caption'],
         },
-        topHoteles: {
+        mejores_hoteles: {
           populate: {
             galeria: {
               fields: ['url', 'alternativeText', 'caption'],
@@ -110,7 +110,7 @@ const COLLECTIONS: CollectionDefinition[] = [
             },
           },
         },
-        topRestaurantes: {
+        mejores_restaurantes: {
           populate: {
             galeria: {
               fields: ['url', 'alternativeText', 'caption'],
@@ -126,8 +126,7 @@ const COLLECTIONS: CollectionDefinition[] = [
         imperdibles: {
           fields: [
             'nombre',
-            'direccion',
-            'direccionGoogleMaps',
+            'direccion_google_maps',
             'slug',
             'descripcion_corta',
             'descripcion_larga',
@@ -137,7 +136,12 @@ const COLLECTIONS: CollectionDefinition[] = [
             'duracion_recomendada',
             'recomendaciones',
             'tips_imperdibles',
-            'es_pet_friendly'
+            'es_pet_friendly',
+            'lat',
+            'lng',
+            'google_maps_rating',
+            'google_maps_user_ratings_total',
+            'google_maps_formatted_address'
           ],
           populate: {
             galeria: {
@@ -208,8 +212,21 @@ class StrapiFetcher {
       : processedRecords;
 
     if (collection.name === 'home-page' && output) {
-      const { enrichImperdiblesWithCoords } = await import('./geocode-urls.ts');
-      await enrichImperdiblesWithCoords(output);
+      const homeData = output as any;
+      if (homeData.imperdibles && Array.isArray(homeData.imperdibles)) {
+        for (const item of homeData.imperdibles) {
+          if (item.google_maps_rating || item.google_maps_formatted_address) {
+            item.googleMapsInfo = {
+              rating: item.google_maps_rating,
+              userRatingsTotal: item.google_maps_user_ratings_total,
+              formattedAddress: item.google_maps_formatted_address,
+            };
+          }
+          delete item.google_maps_rating;
+          delete item.google_maps_user_ratings_total;
+          delete item.google_maps_formatted_address;
+        }
+      }
     }
 
     const filePath = path.join(DATA_DIR, `${collection.name}.json`);

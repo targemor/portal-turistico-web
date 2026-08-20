@@ -1,16 +1,18 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 /* ─── Tipos de ítem buscable ─────────────────────────────── */
 interface SearchableItem {
   id: string | number;
-  label: string;           // nombre/titulo del ítem
-  category: string;        // "Hotel" | "Restaurante" | "Destino" | "Imperdible"
-  sublabel?: string;       // descripción o dirección (opcional)
-  href: string;            // sección a la que pertenece (#hoteles, #destinos, etc.)
+  label: string;
+  category: string;
+  sublabel?: string;
+  href: string;
 }
 
 /* ─── Utilidad: normalizar texto para comparación ────────── */
-function normalize(str: string) {
+function normalize(str?: string | null) {
+  if (!str) return "";
   return str
     .toLowerCase()
     .normalize("NFD")
@@ -18,11 +20,10 @@ function normalize(str: string) {
 }
 
 /**
- * Resalta TODAS las ocurrencias de `query` en `label`,
- * comparando texto normalizado (sin acentos, minúsculas).
- * Devuelve un array de React nodes con <mark> en las coincidencias.
+ * Resalta TODAS las ocurrencias de `query` en `label`.
  */
 function highlightLabel(label: string, query: string): React.ReactNode {
+  if (!label) return "";
   const normQ = normalize(query.trim());
   if (!normQ) return label;
 
@@ -34,13 +35,7 @@ function highlightLabel(label: string, query: string): React.ReactNode {
   while (searchFrom < normLabel.length) {
     const idx = normLabel.indexOf(normQ, searchFrom);
     if (idx === -1) break;
-
-    // Texto antes de la coincidencia
-    if (idx > lastIdx) {
-      nodes.push(label.slice(lastIdx, idx));
-    }
-
-    // Texto coincidente (tomado del original, posición idéntica)
+    if (idx > lastIdx) nodes.push(label.slice(lastIdx, idx));
     nodes.push(
       <mark
         key={idx}
@@ -50,33 +45,27 @@ function highlightLabel(label: string, query: string): React.ReactNode {
         {label.slice(idx, idx + normQ.length)}
       </mark>
     );
-
     lastIdx = idx + normQ.length;
     searchFrom = lastIdx;
   }
 
-  // Resto del texto después de la última coincidencia
-  if (lastIdx < label.length) {
-    nodes.push(label.slice(lastIdx));
-  }
-
+  if (lastIdx < label.length) nodes.push(label.slice(lastIdx));
   return nodes.length > 0 ? <>{nodes}</> : label;
 }
 
 /* ─── Props ──────────────────────────────────────────────── */
 interface SearchBarProps {
   placeholder?: string;
-  /** Todos los ítems buscables, inyectados desde Astro */
   items?: SearchableItem[];
 }
 
-/* ═══════════════════════════════════════════════════════════
-   Componente principal
-═══════════════════════════════════════════════════════════ */
 export default function SearchBar({
-  placeholder = "Busca lugares, restaurantes, hoteles…",
+  placeholder,
   items = [],
 }: SearchBarProps) {
+  const { t } = useLanguage();
+  const effectivePlaceholder = placeholder ?? t.heroPlaceholder;
+
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchableItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -94,24 +83,19 @@ export default function SearchBar({
         if (!norm) {
           setResults([]);
           setIsOpen(false);
-          // Emitir evento con query vacío → mostrar todo
           document.dispatchEvent(
             new CustomEvent("portal:search", { detail: { query: "" } })
           );
           return;
         }
-
         const found = items.filter(
           (item) =>
             normalize(item.label).includes(norm) ||
             normalize(item.category).includes(norm) ||
             (item.sublabel && normalize(item.sublabel).includes(norm))
         );
-
         setResults(found);
         setIsOpen(true);
-
-        // Emitir evento global para que las secciones filtren sus cards
         document.dispatchEvent(
           new CustomEvent("portal:search", { detail: { query: norm, results: found } })
         );
@@ -122,18 +106,13 @@ export default function SearchBar({
 
   useEffect(() => {
     search(query);
-    return () => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-    };
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
   }, [query, search]);
 
   /* ── Cerrar al hacer click fuera ── */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -145,17 +124,18 @@ export default function SearchBar({
   const categorySlug: Record<string, string> = {
     Hotel: "hoteles",
     Restaurante: "restaurantes",
+    Restaurant: "restaurantes",
     Destino: "destinos",
+    Destination: "destinos",
     Guia: "guias",
+    Guide: "guias",
   };
 
   /* ── Navegar a un resultado ── */
   const goTo = (item: SearchableItem) => {
     setQuery(item.label);
     setIsOpen(false);
-
-    if (item.category === "Imperdible") {
-      // Los imperdibles están en la home → scroll suave
+    if (item.category === "Imperdible" || item.category === "Must-see") {
       const el = document.querySelector("#imperdibles") ?? document.querySelector(item.href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -169,7 +149,6 @@ export default function SearchBar({
     }
   };
 
-
   /* ── Agrupar resultados por categoría ── */
   const grouped = results.reduce<Record<string, SearchableItem[]>>((acc, item) => {
     (acc[item.category] ??= []).push(item);
@@ -179,11 +158,17 @@ export default function SearchBar({
   const categoryIcons: Record<string, string> = {
     Hotel: "🏨",
     Restaurante: "🍽️",
+    Restaurant: "🍽️",
     Destino: "📍",
+    Destination: "📍",
     Imperdible: "⭐",
+    "Must-see": "⭐",
   };
 
   const showDropdown = isOpen && query.trim().length > 0;
+
+  const resultCount = results.length;
+  const resultLabel = resultCount !== 1 ? t.searchResults : t.searchResult;
 
   return (
     <div ref={containerRef} className="max-w-2xl mx-auto relative">
@@ -212,21 +197,14 @@ export default function SearchBar({
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => {
-            setFocused(true);
-            if (results.length > 0) setIsOpen(true);
-          }}
+          onFocus={() => { setFocused(true); if (results.length > 0) setIsOpen(true); }}
           onBlur={() => setFocused(false)}
           onKeyDown={(e) => {
-            if (e.key === "Escape") {
-              setQuery("");
-              setIsOpen(false);
-              inputRef.current?.blur();
-            }
+            if (e.key === "Escape") { setQuery(""); setIsOpen(false); inputRef.current?.blur(); }
           }}
-          placeholder={placeholder}
+          placeholder={effectivePlaceholder}
           className="flex-1 h-14 bg-transparent outline-none focus-visible:outline-none text-slate-800 font-medium placeholder:text-slate-400 text-base"
-          aria-label="Buscar en Tehuacán"
+          aria-label={t.heroAriaSearch}
           aria-autocomplete="list"
           aria-expanded={showDropdown}
           autoComplete="off"
@@ -235,13 +213,9 @@ export default function SearchBar({
         {/* Botón limpiar */}
         {query && (
           <button
-            onClick={() => {
-              setQuery("");
-              setIsOpen(false);
-              inputRef.current?.focus();
-            }}
+            onClick={() => { setQuery(""); setIsOpen(false); inputRef.current?.focus(); }}
             className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all"
-            aria-label="Limpiar búsqueda"
+            aria-label={t.searchClear}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
               <path d="M18 6 6 18M6 6l12 12" />
@@ -254,41 +228,31 @@ export default function SearchBar({
       {showDropdown && (
         <div
           className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden"
-          style={{
-            animation: "dropdownIn 0.18s ease-out",
-            zIndex: 9999,
-          }}
+          style={{ animation: "dropdownIn 0.18s ease-out", zIndex: 9999 }}
           role="listbox"
-          aria-label="Resultados de búsqueda"
+          aria-label={t.searchAriaList}
         >
           {results.length === 0 ? (
-            /* Empty state */
             <div className="py-10 px-6 text-center">
               <div className="text-3xl mb-2">🔍</div>
               <p className="text-slate-500 font-medium">
-                Sin resultados para <span className="text-slate-800 font-bold">"{query}"</span>
+                {t.searchEmpty} <span className="text-slate-800 font-bold">"{query}"</span>
               </p>
-              <p className="text-slate-400 text-sm mt-1">Intenta con otro término</p>
+              <p className="text-slate-400 text-sm mt-1">{t.searchEmptySub}</p>
             </div>
           ) : (
             <div className="max-h-80 overflow-y-auto">
               {Object.entries(grouped).map(([cat, catItems]) => (
                 <div key={cat}>
-                  {/* Encabezado de categoría */}
                   <div className="flex items-center gap-2 px-5 py-2 bg-slate-50 border-b border-slate-100">
                     <span className="text-base">{categoryIcons[cat] ?? "📌"}</span>
                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
                       {cat}s
                     </span>
                   </div>
-
-                  {/* Ítems */}
                   {catItems.map((item) => {
                     const labelNode = highlightLabel(item.label, query);
-                    const sublabelNode = item.sublabel
-                      ? highlightLabel(item.sublabel, query)
-                      : null;
-
+                    const sublabelNode = item.sublabel ? highlightLabel(item.sublabel, query) : null;
                     return (
                       <button
                         key={`${cat}-${item.id}`}
@@ -297,22 +261,13 @@ export default function SearchBar({
                         className="w-full flex items-start gap-3 px-5 py-3 hover:bg-slate-50 transition-colors text-left group border-b border-slate-50 last:border-none"
                       >
                         <div className="min-w-0 flex-1">
-                          <p className="text-slate-800 font-semibold text-sm">
-                            {labelNode}
-                          </p>
+                          <p className="text-slate-800 font-semibold text-sm">{labelNode}</p>
                           {sublabelNode && (
-                            <p className="text-slate-400 text-xs truncate mt-0.5">
-                              {sublabelNode}
-                            </p>
+                            <p className="text-slate-400 text-xs truncate mt-0.5">{sublabelNode}</p>
                           )}
                         </div>
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          className="w-4 h-4 ml-auto shrink-0 text-slate-300 group-hover:text-slate-400 transition-colors mt-0.5"
-                        >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
+                          className="w-4 h-4 ml-auto shrink-0 text-slate-300 group-hover:text-slate-400 transition-colors mt-0.5">
                           <path d="m9 18 6-6-6-6" />
                         </svg>
                       </button>
@@ -324,10 +279,10 @@ export default function SearchBar({
               {/* Footer */}
               <div className="px-5 py-3 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs text-slate-400">
-                  {results.length} resultado{results.length !== 1 ? "s" : ""}
+                  {resultCount} {resultLabel}
                 </span>
                 <span className="text-[10px] text-slate-300 uppercase tracking-wider">
-                  ↵ para ir
+                  {t.searchFooter}
                 </span>
               </div>
             </div>
