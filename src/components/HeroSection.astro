@@ -1,13 +1,12 @@
 ---
 /**
- * HeroSection – fiel al diseño de page.tsx
- * Puntos multicolor + "VIVE TEHUACÁN" + barra de búsqueda en tiempo real
+ * HeroSection – Video hero + barra de búsqueda debajo del video
  */
 import SearchBar from "./react/SearchBar";
 
 interface Props {
   data: {
-    titulo_principal: string;
+    titulo_principal?: string;
     texto_busqueda: string;
     imagen_principal?: string | { url: string } | null;
     mejores_hoteles?: { id: number; nombre: string; direccion?: string }[];
@@ -64,40 +63,59 @@ const searchItems: SearchableItem[] = [
 ];
 ---
 
-<section id="hero" class="relative h-[85vh] flex items-center justify-center">
-  <!-- Background video -->
-  <div class="absolute inset-0 overflow-hidden rounded-xl">
-    <div class="w-full h-full">
-      <video
-        class="w-full h-full object-cover object-bottom rounded-xl"
-        poster={posterUrl}
-        autoplay
-        muted
-        loop
-        playsinline
-        aria-hidden="true"
-      >
-        <!-- Formato moderno (menor peso) -->
-        <source src="/assets/output.webm" type="video/webm" />
-        <!-- Formato de respaldo para navegadores antiguos -->
-        <source src="/assets/output.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="absolute inset-0 bg-slate-950/30"></div>
+<section id="hero" class="w-full bg-[#f8f9fa]">
+  <!-- 1. Video Hero Banner compacto (+15% height) -->
+  <div class="relative w-full h-[368px] sm:h-[437px] md:h-[530px] overflow-hidden">
+    <video
+      class="w-full h-full object-cover object-center"
+      poster={posterUrl}
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <!-- Formato moderno (menor peso) -->
+      <source src="/assets/output.webm" type="video/webm" />
+      <!-- Formato de respaldo para navegadores antiguos -->
+      <source src="/assets/output.mp4" type="video/mp4" />
+    </video>
   </div>
 
-  <!-- Content -->
-  <div class="relative z-[9999] container mx-auto px-6 text-center">    
-    <!-- Heading -->
-    <h1 class="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-2xl">
-      {data.titulo_principal}
+  <!-- 2. Sección de Introducción y Búsqueda debajo del video -->
+  <div class="py-12 sm:py-16 px-6 container mx-auto text-center max-w-4xl">
+    <!-- Divisor multicolor -->
+    <div class="flex justify-center gap-1 mb-8">
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-rojo);"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-rosa);"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-naranja);"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-purpura);"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-verde);"></div>
+      <div class="h-1 w-8 rounded-full" style="background-color: var(--color-mex-turquesa);"></div>
+    </div>
+
+    <!-- Cita de introducción -->
+    <h1
+      class="text-2xl sm:text-3xl md:text-4xl text-slate-800 leading-tight font-black tracking-tight mb-4"
+      data-i18n="introText"
+      data-i18n-html="true"
+    >
+      Descubre la <span style="color: var(--color-mex-rosa);">Cuna del Maíz</span>, un destino Patrimonio de la Humanidad que late con los <span style="color: var(--color-mex-naranja);">colores</span> de nuestra tierra.
     </h1>
 
-    <!-- Search bar (React) con datos buscables -->
+    <!-- Subtítulo -->
+    <p
+      class="text-slate-500 text-sm sm:text-base md:text-lg mb-8 max-w-xl mx-auto font-medium"
+      data-i18n="heroSubheading"
+    >
+      Cuéntanos qué buscas y te lo mostramos al instante
+    </p>
+
+    <!-- Barra de búsqueda (React) -->
     <SearchBar
       client:load
-      placeholder={data.texto_busqueda}
       items={searchItems}
     />
   </div>
 </section>
+

@@ -109,7 +109,7 @@ export default function BottomNav() {
 
         {/* Divisor + Lang toggle */}
         <div className="w-px h-8 bg-slate-200 flex-shrink-0 mx-1" aria-hidden="true" />
-        <LangToggle />
+        <LangToggle isScrolled={true} />
       </div>
     </>
   );

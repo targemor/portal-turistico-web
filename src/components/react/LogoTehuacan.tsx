@@ -16,9 +16,15 @@ interface LogoTehuacanProps {
  */
 const LETTERS = logoLetters.letters;
 
-/** Retardo entre una letra y la siguiente */
-const STAGGER_MS = 55;
-const FADE_MS = 320;
+/** Keys de las letras que forman "YO SOY DE" */
+const YO_SOY_DE_KEYS = ["Y1", "O1", "S", "O2", "Y2", "D", "E"];
+
+/** Solo las letras de "Tehuacán" para la silueta inicial en rosa */
+const TEHUACAN_LETTERS = LETTERS.filter((l) => !YO_SOY_DE_KEYS.includes(l.key));
+
+/** Retardo entre una letra y la siguiente (+30% más rápido) */
+const STAGGER_MS = 38;
+const FADE_MS = 224;
 
 /**
  * El logo arranca macizo en un solo color y al hacer scroll cada letra toma su
@@ -32,7 +38,7 @@ const FADE_MS = 320;
 export default function LogoTehuacan({
   className = "h-14 md:h-16 w-auto",
   isScrolled = false,
-  baseColor = "#FFFFFF",
+  baseColor = "var(--color-mex-rojo, #C82E31)",
   detailOpacity = 0.45,
 }: LogoTehuacanProps) {
   const maskOf = (url: string): React.CSSProperties => ({
@@ -49,57 +55,103 @@ export default function LogoTehuacan({
       className={`relative inline-block ${className}`}
       style={{
         aspectRatio: "2936 / 1440",
-        /* una sola sombra para todo el conjunto, no una por capa */
-        filter: isScrolled
-          ? "drop-shadow(0px 1px 2px rgba(0,0,0,0.18))"
-          : "drop-shadow(0px 2px 8px rgba(0,0,0,0.85)) drop-shadow(0px 0px 3px rgba(0,0,0,0.9))",
-        transition: "filter 400ms ease",
+        filter: "none",
       }}
       aria-label="Yo Soy De Tehuacán"
       role="img"
     >
-      {/* Estado inicial: la silueta completa en un solo color */}
+      {/* Estado inicial (sin scroll): letras de "Tehuacán" en baseColor uniforme.
+          - Todas salvo "e": maskOf + background → color exacto (counter transparente ✓)
+          - "e": <img> + CSS filter → convierte dorado → rojo, counter queda claro (visible) */}
       <div
         className="absolute inset-0"
         style={{
-          ...maskOf("/logo_fill.png"),
-          background: baseColor,
           opacity: isScrolled ? 0 : 1,
           transition: `opacity ${FADE_MS}ms ease`,
           transitionDelay: isScrolled ? `${LETTERS.length * STAGGER_MS}ms` : "0ms",
         }}
-      />
+      >
+        {TEHUACAN_LETTERS.map((letter) => {
+          if (letter.key === "e") {
+            // Conversión directa de dorado → rojo via CSS filter:
+            // hue-rotate(315°) lleva el hue de 43° (dorado) a 358° (rojo)
+            // saturate(0.94) ajusta la saturación de 67% → 63%
+            // brightness(0.87) reduce la luminosidad de 55% → ~48% (rojo exacto)
+            // Los pixels blancos del counter se vuelven gris claro (~222,222,222) → visible ✓
+            return (
+              <img
+                key={`base-${letter.key}`}
+                src={letter.src}
+                alt=""
+                aria-hidden="true"
+                draggable={false}
+                className="absolute"
+                style={{
+                  left: `${letter.left}%`,
+                  top: `${letter.top}%`,
+                  width: `${letter.width}%`,
+                  height: `${letter.height}%`,
+                  /* Convierte dorado → rojo #C82E31:
+                     hue-rotate(318deg) gira H=39° (dorado) a H≈357° (rojo)
+                     saturate(2.5)     ajusta saturación
+                     brightness(0.76)  ajusta luminosidad exacta */
+                  filter: "hue-rotate(318deg) saturate(2.5) brightness(0.76)",
+                }}
+              />
+            );
+          }
+          return (
+            <div
+              key={`base-${letter.key}`}
+              className="absolute"
+              style={{
+                left: `${letter.left}%`,
+                top: `${letter.top}%`,
+                width: `${letter.width}%`,
+                height: `${letter.height}%`,
+                ...maskOf(letter.src),
+                background: baseColor,
+              }}
+            />
+          );
+        })}
+      </div>
 
-      {/* Cada letra con su color, revelada en cascada */}
-      {LETTERS.map((letter, i) => (
-        <img
-          key={letter.key}
-          src={letter.src}
-          alt=""
-          aria-hidden="true"
-          draggable={false}
-          className="absolute logo-letter"
-          style={{
-            left: `${letter.left}%`,
-            top: `${letter.top}%`,
-            width: `${letter.width}%`,
-            height: `${letter.height}%`,
-            opacity: isScrolled ? 1 : 0,
-            transition: `opacity ${FADE_MS}ms ease`,
-            /* de izquierda a derecha al colorearse, al reves al volver arriba */
-            transitionDelay: `${(isScrolled ? i : LETTERS.length - 1 - i) * STAGGER_MS}ms`,
-          }}
-        />
-      ))}
+      {/* Cada letra con su color original, revelada en cascada al hacer scroll ("YO SOY DE" aparece aquí) */}
+      {LETTERS.map((letter, i) => {
+        const isYoSoyDe = YO_SOY_DE_KEYS.includes(letter.key);
+        return (
+          <img
+            key={letter.key}
+            src={letter.src}
+            alt=""
+            aria-hidden="true"
+            draggable={false}
+            className="absolute logo-letter"
+            style={{
+              left: `${letter.left}%`,
+              top: `${letter.top}%`,
+              width: `${letter.width}%`,
+              height: `${letter.height}%`,
+              opacity: isScrolled ? 1 : 0,
+              transform: !isScrolled && isYoSoyDe ? "translateY(-6px)" : "translateY(0)",
+              transition: `opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease`,
+              /* de izquierda a derecha al colorearse, al reves al volver arriba */
+              transitionDelay: `${(isScrolled ? i : LETTERS.length - 1 - i) * STAGGER_MS}ms`,
+            }}
+          />
+        );
+      })}
 
-      {/* Detalle interior sobre el relleno. Es el line art recortado a la
-          silueta, no logo_bn.svg entero, para que las contraformas queden
-          limpias: si no, el dibujo de la gota aparece dentro del hueco de la a. */}
+      {/* Detalle interior de line-art — solo visible cuando el logo está en color completo */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           ...maskOf("/logo_detail.png"),
           background: `rgba(0,0,0,${detailOpacity})`,
+          opacity: isScrolled ? 1 : 0,
+          transition: `opacity ${FADE_MS}ms ease`,
+          transitionDelay: isScrolled ? `0ms` : `${LETTERS.length * STAGGER_MS}ms`,
         }}
       />
 

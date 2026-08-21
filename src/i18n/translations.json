@@ -24,8 +24,15 @@
     "bnGuides": "Guías",
 
     "heroTitle": "VIVE TEHUACÁN",
-    "heroPlaceholder": "Busca lugares, restaurantes, hoteles…",
+    "heroHeading": "¿Qué te gustaría vivir hoy?",
+    "heroSubheading": "Cuéntanos qué buscas y te lo mostramos al instante",
+    "heroSearchBtn": "Buscar",
+    "heroPlaceholder": "¿Qué te gustaría hacer hoy en Tehuacán?",
     "heroAriaSearch": "Buscar en Tehuacán",
+    "pillEat": "Comer",
+    "pillSleep": "Dormir",
+    "pillExperiences": "Experiencias",
+    "pillGuides": "Guías Certificados",
 
     "catHotel": "Hotel",
     "catRestaurante": "Restaurante",
@@ -155,8 +162,15 @@
     "bnGuides": "Guides",
 
     "heroTitle": "LIVE TEHUACÁN",
-    "heroPlaceholder": "Search places, restaurants, hotels…",
+    "heroHeading": "What would you like to experience today?",
+    "heroSubheading": "Tell us what you are looking for and we will show you instantly",
+    "heroSearchBtn": "Search",
+    "heroPlaceholder": "What would you like to do today in Tehuacán?",
     "heroAriaSearch": "Search in Tehuacán",
+    "pillEat": "Eat",
+    "pillSleep": "Stay",
+    "pillExperiences": "Experiences",
+    "pillGuides": "Certified Guides",
 
     "catHotel": "Hotel",
     "catRestaurante": "Restaurant",
