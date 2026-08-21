@@ -12,12 +12,17 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
   const [isScrolled, setIsScrolled] = useState(forceBackground);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30 || forceBackground);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (forceBackground) {
+      setIsScrolled(true);
+      return;
+    }
+
+    // Se activa la transición automáticamente 0.5 segundos después de cargar la página
+    const timer = setTimeout(() => {
+      setIsScrolled(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, [forceBackground]);
 
   const navLinks = [
@@ -29,7 +34,7 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-3.5 shadow-xs transition-all duration-300">
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-center md:justify-between items-center">
         {/* Logo multicolor SVG: YO SOY DE Tehuacán */}
         <div
           className="flex items-center gap-4"
@@ -71,11 +76,6 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
           {/* Language toggle — desktop */}
           <div className="ml-4 h-5 w-[1px] bg-slate-200" aria-hidden="true" />
           <LangToggle isScrolled={true} className="ml-3" />
-        </div>
-
-        {/* Mobile: lang toggle only (nav stays in BottomNav) */}
-        <div className="md:hidden">
-          <LangToggle isScrolled={true} />
         </div>
       </div>
     </header>

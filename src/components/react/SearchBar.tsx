@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { Search, X, Utensils, Hotel, Compass, UserCheck, ChevronRight, ArrowRight } from "lucide-react";
 
 /* ─── Tipos de ítem buscable ─────────────────────────────── */
 interface SearchableItem {
@@ -180,17 +181,7 @@ export default function SearchBar({
       >
         {/* Icono Lupa */}
         <div className="pl-2 sm:pl-3 shrink-0 text-slate-700">
-          <svg
-            className="w-5 h-5 sm:w-6 sm:h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.2}
-            aria-hidden="true"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="M21 21l-4.35-4.35" />
-          </svg>
+          <Search className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
 
         {/* Input enmarcado con borde gris suavizado */}
@@ -233,9 +224,7 @@ export default function SearchBar({
               className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-all ml-1"
               aria-label={t.searchClear}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5">
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
+              <X className="w-3.5 h-3.5" />
             </button>
           )}
         </div>
@@ -254,7 +243,7 @@ export default function SearchBar({
           className="shrink-0 bg-[#c85244] hover:bg-[#b54538] active:scale-95 text-white font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl shadow-xs transition-all duration-200 flex items-center gap-1.5 text-sm sm:text-base md:text-lg cursor-pointer"
         >
           <span>{t.heroSearchBtn ?? "Buscar"}</span>
-          <span className="text-base sm:text-lg font-normal">→</span>
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
         </button>
       </div>
 
@@ -300,10 +289,7 @@ export default function SearchBar({
                             <p className="text-slate-400 text-xs truncate mt-0.5">{sublabelNode}</p>
                           )}
                         </div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
-                          className="w-4 h-4 ml-auto shrink-0 text-slate-300 group-hover:text-slate-400 transition-colors mt-0.5">
-                          <path d="m9 18 6-6-6-6" />
-                        </svg>
+                        <ChevronRight className="w-4 h-4 ml-auto shrink-0 text-slate-300 group-hover:text-slate-400 transition-colors mt-0.5" />
                       </button>
                     );
                   })}
@@ -336,9 +322,7 @@ export default function SearchBar({
           }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#c85244] text-[#c85244] hover:bg-rose-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
         >
-          <svg className="w-5 h-5 text-[#c85244]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
-            <path d="M18 2v20M18 2a4 4 0 0 0-4 4v4h8V6a4 4 0 0 0-4-4zM6 2v6a3 3 0 0 0 6 0V2M9 8v14" />
-          </svg>
+          <Utensils className="w-5 h-5 text-[#c85244]" />
           <span>{t.pillEat ?? "Comer"}</span>
         </button>
 
@@ -352,9 +336,7 @@ export default function SearchBar({
           }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#388596] text-[#388596] hover:bg-teal-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
         >
-          <svg className="w-5 h-5 text-[#388596]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
-            <path d="M2 4v16M2 8h20v12M2 17h20M6 8v3M10 8v3" />
-          </svg>
+          <Hotel className="w-5 h-5 text-[#388596]" />
           <span>{t.pillSleep ?? "Dormir"}</span>
         </button>
 
@@ -368,9 +350,7 @@ export default function SearchBar({
           }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#e59b38] text-[#e59b38] hover:bg-amber-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
         >
-          <svg className="w-4 h-4 text-[#e59b38] fill-current" viewBox="0 0 24 24">
-            <path d="M12 3L2 21h20L12 3z" />
-          </svg>
+          <Compass className="w-5 h-5 text-[#e59b38]" />
           <span>{t.pillExperiences ?? "Experiencias"}</span>
         </button>
 
@@ -384,11 +364,7 @@ export default function SearchBar({
           }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#d46597] text-[#d46597] hover:bg-pink-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
         >
-          <svg className="w-5 h-5 text-[#d46597]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
-            <rect x="3" y="4" width="18" height="16" rx="3" />
-            <circle cx="9" cy="10" r="2.5" />
-            <path d="M15 8h3M15 12h3M6 16c0-2 2-3 3-3s3 1 3 3" />
-          </svg>
+          <UserCheck className="w-5 h-5 text-[#d46597]" />
           <span>{t.pillGuides ?? "Guías Certificados"}</span>
         </button>
       </div>

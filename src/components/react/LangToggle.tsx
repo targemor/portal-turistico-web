@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { US, MX } from 'country-flag-icons/react/3x2';
 
 interface LangToggleProps {
   /** Clases CSS adicionales para el botón */
@@ -23,7 +24,7 @@ export default function LangToggle({ className = '', isScrolled = false }: LangT
 
   const nextLang = lang === 'es' ? 'en' : 'es';
   const label = nextLang === 'en' ? 'EN' : 'ES';
-  const flag = nextLang === 'en' ? '🇺🇸' : '🇲🇽';
+  const FlagIcon = nextLang === 'en' ? US : MX;
   const ariaLabel = nextLang === 'en' ? t.ariaEn : t.ariaEs;
 
   const btnStyle = isScrolled
@@ -38,7 +39,7 @@ export default function LangToggle({ className = '', isScrolled = false }: LangT
       aria-label={ariaLabel}
       title={ariaLabel}
     >
-      <span role="img" aria-hidden="true" className="text-sm leading-none">{flag}</span>
+      <FlagIcon className="w-4 h-3 rounded-[2px] shadow-2xs overflow-hidden shrink-0" />
       <span>{label}</span>
     </button>
   );

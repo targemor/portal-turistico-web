@@ -71,50 +71,20 @@ export default function LogoTehuacan({
           transitionDelay: isScrolled ? `${LETTERS.length * STAGGER_MS}ms` : "0ms",
         }}
       >
-        {TEHUACAN_LETTERS.map((letter) => {
-          if (letter.key === "e") {
-            // Conversión directa de dorado → rojo via CSS filter:
-            // hue-rotate(315°) lleva el hue de 43° (dorado) a 358° (rojo)
-            // saturate(0.94) ajusta la saturación de 67% → 63%
-            // brightness(0.87) reduce la luminosidad de 55% → ~48% (rojo exacto)
-            // Los pixels blancos del counter se vuelven gris claro (~222,222,222) → visible ✓
-            return (
-              <img
-                key={`base-${letter.key}`}
-                src={letter.src}
-                alt=""
-                aria-hidden="true"
-                draggable={false}
-                className="absolute"
-                style={{
-                  left: `${letter.left}%`,
-                  top: `${letter.top}%`,
-                  width: `${letter.width}%`,
-                  height: `${letter.height}%`,
-                  /* Convierte dorado → rojo #C82E31:
-                     hue-rotate(318deg) gira H=39° (dorado) a H≈357° (rojo)
-                     saturate(2.5)     ajusta saturación
-                     brightness(0.76)  ajusta luminosidad exacta */
-                  filter: "hue-rotate(318deg) saturate(2.5) brightness(0.76)",
-                }}
-              />
-            );
-          }
-          return (
-            <div
-              key={`base-${letter.key}`}
-              className="absolute"
-              style={{
-                left: `${letter.left}%`,
-                top: `${letter.top}%`,
-                width: `${letter.width}%`,
-                height: `${letter.height}%`,
-                ...maskOf(letter.src),
-                background: baseColor,
-              }}
-            />
-          );
-        })}
+        {TEHUACAN_LETTERS.map((letter) => (
+          <div
+            key={`base-${letter.key}`}
+            className="absolute"
+            style={{
+              left: `${letter.left}%`,
+              top: `${letter.top}%`,
+              width: `${letter.width}%`,
+              height: `${letter.height}%`,
+              ...maskOf(letter.src),
+              background: baseColor,
+            }}
+          />
+        ))}
       </div>
 
       {/* Cada letra con su color original, revelada en cascada al hacer scroll ("YO SOY DE" aparece aquí) */}

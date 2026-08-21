@@ -2,51 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../i18n/LanguageContext";
 import LangToggle from "./LangToggle";
 
-// Iconos SVG en línea
-const MessageCircleIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
-  </svg>
-);
-
-const PaperPlaneIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <polygon points="3 11 22 2 13 21 11 13 3 11" fill="currentColor" fillOpacity="0.1"/>
-  </svg>
-);
-
-const HomeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-  </svg>
-);
-
-const UtensilsIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-    <path d="M18 8h1a4 4 0 010 8h-1"/>
-    <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-    <line x1="6" y1="1" x2="6" y2="4"/>
-    <line x1="10" y1="1" x2="10" y2="4"/>
-    <line x1="14" y1="1" x2="14" y2="4"/>
-  </svg>
-);
-
-const UserIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-    <circle cx="12" cy="7" r="4"></circle>
-  </svg>
-);
+import { Compass, Hotel, Utensils, UserCheck } from "lucide-react";
 
 export default function BottomNav() {
   const { t } = useLanguage();
 
   const navItems = [
-    { id: 'destinos',     icon: PaperPlaneIcon, label: t.bnExplore, href: '/#destinos' },
-    { id: 'hoteles',      icon: HomeIcon,        label: t.bnHotels,  href: '/#hoteles' },
-    { id: 'restaurantes', icon: UtensilsIcon,    label: t.bnFood,    href: '/#restaurantes' },
-    { id: 'guias',        icon: UserIcon,        label: t.bnGuides,  href: '/#guias' },
+    { id: 'destinos',     icon: Compass,   label: t.bnExplore, href: '/#destinos' },
+    { id: 'hoteles',      icon: Hotel,     label: t.bnHotels,  href: '/#hoteles' },
+    { id: 'restaurantes', icon: Utensils,  label: t.bnFood,    href: '/#restaurantes' },
+    { id: 'guias',        icon: UserCheck, label: t.bnGuides,  href: '/#guias' },
   ];
 
   const [activeItem, setActiveItem] = useState<string>('destinos');
@@ -85,31 +50,41 @@ export default function BottomNav() {
       {/* Bottom nav (solo mobile) */}
       <div
         id="bottom-nav"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-3 flex justify-between items-center shadow-lg"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 flex items-center justify-between shadow-lg"
         role="navigation"
         aria-label={t.bnAriaLabel}
       >
-        {/* Nav items */}
-        {navItems.map((item) => {
-          const isActive = activeItem === item.id;
-          const Icon = item.icon;
-          return (
-            <a
-              key={item.id}
-              href={item.href}
-              id={`bn-${item.id}`}
-              className={`flex flex-col items-center gap-1 transition-colors ${isActive ? 'text-orange-600' : 'text-slate-400'}`}
-              onClick={() => setActiveItem(item.id)}
-            >
-              <Icon className="w-5 h-5" />
-              <span className="text-[9px] font-black uppercase">{item.label}</span>
-            </a>
-          );
-        })}
+        {/* Nav items distribuidos equitativamente */}
+        <nav className="flex-1 grid grid-cols-4 items-center gap-0.5">
+          {navItems.map((item) => {
+            const isActive = activeItem === item.id;
+            const Icon = item.icon;
+            return (
+              <a
+                key={item.id}
+                href={item.href}
+                id={`bn-${item.id}`}
+                className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all duration-200 active:scale-95 ${
+                  isActive
+                    ? 'text-[#C82E31] font-black'
+                    : 'text-slate-400 hover:text-slate-600 font-bold'
+                }`}
+                onClick={() => setActiveItem(item.id)}
+              >
+                <Icon className={`w-5 h-5 mb-0.5 ${isActive ? 'stroke-[2.5]' : 'stroke-[1.8]'}`} />
+                <span className="text-[10px] tracking-tight uppercase leading-none">{item.label}</span>
+              </a>
+            );
+          })}
+        </nav>
 
-        {/* Divisor + Lang toggle */}
-        <div className="w-px h-8 bg-slate-200 flex-shrink-0 mx-1" aria-hidden="true" />
-        <LangToggle isScrolled={true} />
+        {/* Divisor vertical */}
+        <div className="w-px h-7 bg-slate-200 shrink-0 mx-2" aria-hidden="true" />
+
+        {/* Selector de idioma */}
+        <div className="shrink-0">
+          <LangToggle isScrolled={true} />
+        </div>
       </div>
     </>
   );
