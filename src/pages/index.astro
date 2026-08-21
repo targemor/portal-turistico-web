@@ -19,6 +19,7 @@ import NavBar             from "../components/NavBar.astro";
 import HeroSection        from "../components/HeroSection.astro";
 import IntroSection       from "../components/IntroSection.astro";
 import ImperdiblesSection from "../components/ImperdiblesSection.astro";
+import ItinerarioTabs     from "../components/ItinerarioTabs.astro";
 import HotelesSection     from "../components/HotelesSection.astro";
 import RestaurantesSection from "../components/RestaurantesSection.astro";
 import GuiasSection       from "../components/GuiasSection.astro";
@@ -52,6 +53,11 @@ import destinos     from "../data/destinos-turisticos.json";
 
     <!-- Bento grid + Imperdibles por categoría -->
     <ImperdiblesSection imperdibles={homePageData.imperdibles} />
+
+    <!-- Sección de Itinerarios sugeridos -->
+    <section id="itinerarios" class="py-12 bg-slate-50/50">
+      <ItinerarioTabs />
+    </section>
 
     <!-- Hoteles (datos desde JSON) -->
     <HotelesSection hoteles={homePageData.mejores_hoteles} />

@@ -1,0 +1,121 @@
+{
+  "_comment": "English overlay for itinerario.json",
+  "unas-horas": {
+    "tabLabel": "⏳ Only a few hours?",
+    "titulo": "Only a few hours?",
+    "heroKicker": "EXPRESS",
+    "heroTitle": "Only a few hours?",
+    "heroSub": "Tehuacán fast-track: essential highlights.",
+    "elementos": [
+      {
+        "titulo": "Tehuacán Viejo Archaeological Site",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+        "meta": "Tue–Sun · 9:00–17:00 · Free admission"
+      },
+      {
+        "titulo": "Tehuacán-Cuicatlán Biosphere Reserve",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante.",
+        "meta": "Daily · 8:00–18:00 · Guided tour recommended"
+      },
+      {
+        "titulo": "Museum of the Valley of Tehuacán",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet nullam.",
+        "meta": "Tue–Sun · 10:00–18:00 · Free admission"
+      },
+      {
+        "titulo": "Traditional Gastronomy & Mole de Caderas",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis."
+      }
+    ],
+    "consejos": [
+      {
+        "titulo": "Before your visit",
+        "elementos": [
+          "👟 Wear comfortable shoes for walking on archaeological sites and trails.",
+          "☀️ Bring sunscreen, a hat, and plenty of water.",
+          "📷 Don't forget your camera to capture giant cacti landscapes."
+        ]
+      }
+    ]
+  },
+  "fin-de-semana": {
+    "tabLabel": "🌞 A weekend?",
+    "mobileTabLabel": "🌞 Weekend",
+    "titulo": "Staying for the weekend?",
+    "heroKicker": "GETAWAY",
+    "heroTitle": "Discover Tehuacán on the weekend",
+    "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "dias": [
+      {
+        "titulo": "DAY 1 — SATURDAY",
+        "elementos": [
+          { "titulo": "Tehuacán Viejo Archaeological Site Tour", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+          { "titulo": "Museum of the Valley of Tehuacán Visit", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+          { "titulo": "Traditional lunch in the historic center", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+          { "titulo": "Night walk around the Main Plaza & Portales", "meta": "Daily · Family atmosphere" }
+        ]
+      },
+      {
+        "titulo": "DAY 2 — SUNDAY",
+        "elementos": [
+          { "titulo": "Traditional Tehuacán breakfast", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+          { "titulo": "Helia Bravo Hollis Botanical Garden Excursion", "meta": "Weekends · 9:00–17:00" },
+          { "titulo": "Craft market & onyx souvenirs", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+        ]
+      }
+    ],
+    "consejos": [
+      {
+        "titulo": "Weekend Tip",
+        "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia arcu eget nulla."
+      }
+    ]
+  },
+  "tres-dias": {
+    "tabLabel": "🌿 Three days?",
+    "mobileTabLabel": "🌿 3 days",
+    "titulo": "Three days?",
+    "heroKicker": "IN DEPTH",
+    "heroTitle": "Explore Tehuacán like a local",
+    "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "elementos": [
+      { "titulo": "Follow the Day 1 cultural itinerary", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+      { "titulo": "Follow the Day 2 ecological itinerary", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+      { "titulo": "Guided tour with a certified local guide", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+    ],
+    "daytrip": {
+      "titulo": "🚗 Extra day? Excursions from Tehuacán",
+      "elementos": [
+        {
+          "nombre": "Zapotitlán Salinas & Artisanal Salt Mines",
+          "meta": "Lorem ipsum dolor sit amet · ~30 min drive"
+        },
+        {
+          "nombre": "Tehuacán Mineral Springs",
+          "meta": "Lorem ipsum dolor sit amet · ~20 min drive"
+        }
+      ],
+      "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 🌙"
+    },
+    "consejos": [
+      {
+        "titulo": "3-Day Tip",
+        "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis. Vivamus in erat."
+      }
+    ]
+  },
+  "imprescindibles": {
+    "tabLabel": "⭐ Don't leave without…",
+    "titulo": "Don't leave Tehuacán without…",
+    "heroKicker": "THE BASICS",
+    "heroTitle": "The must-dos in Tehuacán",
+    "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "elementos": [
+      { "titulo": "Visiting the birthplace of corn and Tehuacán Viejo" },
+      { "titulo": "Walking among giant cacti in Zapotitlán Salinas" },
+      { "titulo": "Tasting traditional Mole de Caderas" },
+      { "titulo": "Trying natural mineral water from Tehuacán springs" },
+      { "titulo": "Taking home an onyx or burnished clay handicraft" }
+    ]
+  }
+}

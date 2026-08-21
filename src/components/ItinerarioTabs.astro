@@ -1,0 +1,199 @@
+---
+import ItinerarioTimeline from "./ItinerarioTimeline.astro";
+import type { ItineraryProps } from "./ItinerarioTimeline.astro";
+import itinerarioEsData from "../data/itinerario.json";
+import itinerarioEnData from "../data/itinerario.en.json";
+
+interface Props {
+  itinerarios?: ItineraryProps[];
+  lang?: 'es' | 'en';
+}
+
+const { itinerarios: customItinerarios, lang = 'es' } = Astro.props;
+
+// Función para obtener itinerarios combinando es + en según idioma
+function getItinerarios(l: 'es' | 'en'): ItineraryProps[] {
+  const baseList = itinerarioEsData.itinerarios as ItineraryProps[];
+  if (l !== 'en') return baseList;
+
+  const enMap = itinerarioEnData as Record<string, any>;
+  return baseList.map((item) => {
+    const enOverlay = enMap[item.id];
+    if (!enOverlay) return item;
+
+    return {
+      ...item,
+      ...enOverlay,
+      elementos: item.elementos?.map((el: any, idx: number) => {
+        const enEl = enOverlay.elementos?.[idx];
+        return typeof el === 'string' ? (enEl?.titulo || enEl || el) : { ...el, ...enEl };
+      }),
+      dias: item.dias?.map((dia: any, dIdx: number) => {
+        const enDia = enOverlay.dias?.[dIdx];
+        return {
+          ...dia,
+          ...enDia,
+          elementos: dia.elementos?.map((el: any, eIdx: number) => {
+            const enEl = enDia?.elementos?.[eIdx];
+            return typeof el === 'string' ? (enEl?.titulo || enEl || el) : { ...el, ...enEl };
+          }),
+        };
+      }),
+    };
+  });
+}
+
+const listToRender = customItinerarios || getItinerarios(lang);
+---
+
+<div class="itinerario-tabs-container">
+  {/* Encabezado de la sección */}
+  <div class="section-header text-center mb-8">
+    <span class="text-xs font-black uppercase tracking-widest text-[#C82E31] mb-2 block">
+      {lang === 'en' ? 'PLAN YOUR VISIT' : 'PLANEA TU VISITA'}
+    </span>
+    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+      {lang === 'en' ? 'How much time do you have?' : '¿Cuánto tiempo tienes?'}
+    </h2>
+  </div>
+
+  <div class="tabs-header">
+    {listToRender.map((itinerario, index) => (
+      <button 
+        class={`tab-btn ${index === 0 ? 'active' : ''}`} 
+        data-tab-target={`tab-${itinerario.id}`}
+      >
+        <span class="tab-label-desktop">{itinerario.tabLabel || itinerario.titulo}</span>
+        <span class="tab-label-mobile">{itinerario.mobileTabLabel || itinerario.tabLabel || itinerario.titulo}</span>
+      </button>
+    ))}
+  </div>
+
+  <div class="tabs-content-wrapper">
+    {listToRender.map((itinerario, index) => (
+      <div 
+        id={`tab-${itinerario.id}`} 
+        class={`tab-content ${index === 0 ? 'active' : ''}`}
+      >
+        <ItinerarioTimeline itinerario={itinerario} lang={lang} />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .itinerario-tabs-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .tab-btn {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: all 0.25s ease;
+  }
+
+  .tab-btn:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+
+  .tab-btn.active {
+    background-color: var(--color-mex-rojo, #C82E31);
+    color: white;
+    border-color: var(--color-mex-rojo, #C82E31);
+    box-shadow: 0 4px 12px rgba(200, 46, 49, 0.25);
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.35s ease;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tab-label-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .itinerario-tabs-container {
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .tab-label-desktop {
+      display: none;
+    }
+    .tab-label-mobile {
+      display: inline;
+    }
+    .tabs-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .tab-btn {
+      width: 100%;
+      padding: 0.7rem 0.5rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .tab-btn:nth-child(1) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
+
+<script>
+  function initTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length === 0) return;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetId = btn.getAttribute('data-tab-target');
+        if (targetId) {
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.add('active');
+          }
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initTabs);
+  document.addEventListener('astro:page-load', initTabs);
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initTabs();
+  }
+</script>

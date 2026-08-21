@@ -1,0 +1,199 @@
+{
+  "itinerarios": [
+    {
+      "id": "unas-horas",
+      "tabLabel": "⏳ ¿Solo tienes unas horas?",
+      "titulo": "¿Solo tienes unas horas?",
+      "heroBgClass": "bg1",
+      "heroImage": "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=80",
+      "heroKicker": "EXPRÉS",
+      "heroTitle": "¿Solo tienes unas horas?",
+      "heroSub": "Tehuacán en formato rápido: lo esencial y más representativo.",
+      "heroCredit": "📸 Portal Turístico Tehuacán",
+      "elementos": [
+        {
+          "icono": "🏛️",
+          "titulo": "Zona Arqueológica de Tehuacán Viejo",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
+          "meta": "Mar.–Dom. · 9:00–17:00 h · Entrada libre"
+        },
+        {
+          "icono": "🌵",
+          "titulo": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam.",
+          "meta": "Todos los días · 8:00–18:00 h · Guía recomendado"
+        },
+        {
+          "icono": "🖼️",
+          "titulo": "Museo del Valle de Tehuacán",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis sem at nibh elemento imperdiet.",
+          "meta": "Mar.–Dom. · 10:00–18:00 h · Entrada libre"
+        },
+        {
+          "icono": "🍲",
+          "titulo": "Gastronomía Tradicional y Mole de Caderas",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis ipsum praesent mauris."
+        }
+      ],
+      "consejos": [
+        {
+          "titulo": "Recomendaciones para tu visita",
+          "elementos": [
+            "👟 Usa calzado cómodo para caminar en zonas arqueológicas y senderos.",
+            "☀️ Lleva protector solar, sombrero y suficiente agua.",
+            "📷 No olvides tu cámara para capturar los increíbles paisajes de cactáceas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fin-de-semana",
+      "tabLabel": "🌞 ¿Fin de semana?",
+      "mobileTabLabel": "🌞 Fin de semana",
+      "titulo": "¿Te quedas el fin de semana?",
+      "heroBgClass": "bg2",
+      "heroImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "heroKicker": "ESCAPADA",
+      "heroTitle": "Descubre Tehuacán el fin de semana",
+      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroCredit": "📸 Portal Turístico Tehuacán",
+      "dias": [
+        {
+          "titulo": "DÍA 1 — SÁBADO",
+          "elementos": [
+            {
+              "icono": "🏛️",
+              "titulo": "Recorrido por la Zona Arqueológica Tehuacán Viejo",
+              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "icono": "🖼️",
+              "titulo": "Visita al Museo del Valle de Tehuacán",
+              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "icono": "🍲",
+              "titulo": "Comida tradicional en el centro histórico",
+              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "icono": "🌙",
+              "titulo": "Paseo nocturno por el Zócalo y los Portales de Tehuacán",
+              "meta": "Todos los días · Ambiente familiar"
+            }
+          ]
+        },
+        {
+          "titulo": "DÍA 2 — DOMINGO",
+          "elementos": [
+            {
+              "icono": "☕",
+              "titulo": "Desayuno tradicional tehuacanero",
+              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "icono": "🌵",
+              "titulo": "Excursión a los Jardines Botánicos de Helia Bravo Hollis",
+              "meta": "Fines de semana · 9:00–17:00 h"
+            },
+            {
+              "icono": "🎁",
+              "titulo": "Mercado artesanal y recuerdos de ónix y mármol",
+              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          ]
+        }
+      ],
+      "consejos": [
+        {
+          "titulo": "Tip de fin de semana",
+          "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent."
+        }
+      ]
+    },
+    {
+      "id": "tres-dias",
+      "tabLabel": "🌿 ¿Tienes tres días?",
+      "mobileTabLabel": "🌿 3 días",
+      "titulo": "¿Tienes tres días?",
+      "heroBgClass": "bg3",
+      "heroImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+      "heroKicker": "A FONDO",
+      "heroTitle": "Explora Tehuacán como un experto",
+      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroCredit": "📸 Portal Turístico Tehuacán",
+      "elementos": [
+        {
+          "icono": "🏛️",
+          "titulo": "Sigue el itinerario cultural del Día 1",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "icono": "🌵",
+          "titulo": "Sigue el itinerario ecológico del Día 2",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "icono": "🧑‍🏫",
+          "titulo": "Recorrido con un guía certificado de Tehuacán",
+          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ],
+      "daytrip": {
+        "titulo": "🚗 ¿Día extra? Excursiones desde Tehuacán",
+        "elementos": [
+          {
+            "emoji": "🌵",
+            "nombre": "Zapotitlán Salinas y Salinas Artesanales",
+            "meta": "Lorem ipsum dolor sit amet · ~30 min en auto"
+          },
+          {
+            "emoji": "💧",
+            "nombre": "Manantiales de Agua Mineral Tehuacán",
+            "meta": "Lorem ipsum dolor sit amet · ~20 min en auto"
+          }
+        ],
+        "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 🌙"
+      },
+      "consejos": [
+        {
+          "titulo": "Recomendación para 3 días",
+          "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis. Vivamus in erat ut urna cursus vestibulum."
+        }
+      ]
+    },
+    {
+      "id": "imprescindibles",
+      "tabLabel": "⭐ No te puedes ir sin…",
+      "titulo": "No te puedes ir de Tehuacán sin…",
+      "heroBgClass": "bg4",
+      "heroImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+      "heroKicker": "LO BÁSICO",
+      "heroTitle": "Los imprescindibles de Tehuacán",
+      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroCredit": "📸 Portal Turístico Tehuacán",
+      "elementos": [
+        {
+          "icono": "🏛️",
+          "titulo": "Conocer la cuna del maíz y Tehuacán Viejo"
+        },
+        {
+          "icono": "🌵",
+          "titulo": "Caminar entre los cactus gigantes de Zapotitlán Salinas"
+        },
+        {
+          "icono": "🍲",
+          "titulo": "Degustar el tradicional Mole de Caderas"
+        },
+        {
+          "icono": "💧",
+          "titulo": "Probar el agua mineral natural de los manantiales de Tehuacán"
+        },
+        {
+          "icono": "🎁",
+          "titulo": "Llevarte una artesanía de ónix o barro bruñido"
+        }
+      ]
+    }
+  ]
+}
