@@ -822,25 +822,25 @@
     "galeria": [
       {
         "id": 300,
-        "url": "https://drive.google.com/open?id=1DQU1jVaL55jH_6bzfWhR7aAuR9YSpPi1",
+        "url": "/assets/violetta_1.webp",
         "alternativeText": "Violetta Tehuacán",
         "caption": null
       },
       {
         "id": 301,
-        "url": "https://drive.google.com/open?id=1QYAm7BTCWHvaaCz0Rc9HnfcEPMWRlV1a",
+        "url": "/assets/violetta_2.webp",
         "alternativeText": "Violetta Tehuacán",
         "caption": null
       },
       {
         "id": 302,
-        "url": "https://drive.google.com/open?id=1VGAOdxz0IWidX_qBKKFFVQ_XfiO5H6Qm",
+        "url": "/assets/violetta_3.webp",
         "alternativeText": "Violetta Tehuacán",
         "caption": null
       },
       {
         "id": 303,
-        "url": "https://drive.google.com/open?id=1nvd4TjxOGc8TdslIrbT8lDJjAmoLNd_G",
+        "url": "/assets/violetta_4.webp",
         "alternativeText": "Violetta Tehuacán",
         "caption": null
       }
@@ -901,19 +901,19 @@
     "galeria": [
       {
         "id": 310,
-        "url": "https://drive.google.com/open?id=1zH2VCoFN3mY6cMWgYJUGKoYFcGwBTt8i",
+        "url": "/assets/restaurante_casa_amachu_1.webp",
         "alternativeText": "Restaurante Casa Amachu",
         "caption": null
       },
       {
         "id": 311,
-        "url": "https://drive.google.com/open?id=1enl8awcZmra7e8dsxCezTxy7eN5bqYEn",
+        "url": "/assets/restaurante_casa_amachu_2.webp",
         "alternativeText": "Restaurante Casa Amachu",
         "caption": null
       },
       {
         "id": 312,
-        "url": "https://drive.google.com/open?id=13uomsWF8RfKHhq6JSx851Nbp7zBPU2hS",
+        "url": "/assets/restaurante_casa_amachu_3.webp",
         "alternativeText": "Restaurante Casa Amachu",
         "caption": null
       }
@@ -974,19 +974,19 @@
     "galeria": [
       {
         "id": 320,
-        "url": "https://drive.google.com/open?id=1F6ttT_I8pL2V6ovFXPG7FZ7BMJlXb6rS",
+        "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_1.webp",
         "alternativeText": "Restaurante Gran Hotel México by Solaris",
         "caption": null
       },
       {
         "id": 321,
-        "url": "https://drive.google.com/open?id=1geQ4-7UZk557tgW5TXUsH_r9FEf7wzWH",
+        "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_2.webp",
         "alternativeText": "Restaurante Gran Hotel México by Solaris",
         "caption": null
       },
       {
         "id": 322,
-        "url": "https://drive.google.com/open?id=1FJOGwxekyFktRnsUh7EO4s5SRDyk-ciN",
+        "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_3.webp",
         "alternativeText": "Restaurante Gran Hotel México by Solaris",
         "caption": null
       }
@@ -1053,25 +1053,25 @@
     "galeria": [
       {
         "id": 330,
-        "url": "https://drive.google.com/open?id=1gaFL2usnBm_gLtyhAJArJZhP4wz_rLQJ",
+        "url": "/assets/restaurante_camino_real_1.webp",
         "alternativeText": "Restaurante Camino Real",
         "caption": null
       },
       {
         "id": 331,
-        "url": "https://drive.google.com/open?id=1s7_nDTuXh3zqhRlXN17bPOS1ddeD7u7P",
+        "url": "/assets/restaurante_camino_real_2.webp",
         "alternativeText": "Restaurante Camino Real",
         "caption": null
       },
       {
         "id": 332,
-        "url": "https://drive.google.com/open?id=10AOIp_2Z109mxPIDsbT-EQBK_lXHn7ZK",
+        "url": "/assets/restaurante_camino_real_3.webp",
         "alternativeText": "Restaurante Camino Real",
         "caption": null
       },
       {
         "id": 333,
-        "url": "https://drive.google.com/open?id=15srPTU8_TpXlYuEErVlRIq9wsW47dID7",
+        "url": "/assets/restaurante_camino_real_4.webp",
         "alternativeText": "Restaurante Camino Real",
         "caption": null
       }
@@ -1131,7 +1131,7 @@
     "galeria": [
       {
         "id": 340,
-        "url": "https://drive.google.com/open?id=1qfv8a2MNJfU7pYqBsYZMgsm2gW2tWFNG",
+        "url": "/assets/abacaxi_1.webp",
         "alternativeText": "Abacaxi Tehuacán",
         "caption": null
       }

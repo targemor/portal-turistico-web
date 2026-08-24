@@ -206,13 +206,13 @@
     "galeria": [
       {
         "id": 200,
-        "url": "https://drive.google.com/open?id=1NYyFGXYnEkzMdmlGFkpwNUrUApjdkp5f",
+        "url": "/assets/hotel_zenith_1.webp",
         "alternativeText": "Hotel Zenith Tehuacán",
         "caption": null
       },
       {
         "id": 201,
-        "url": "https://drive.google.com/open?id=1O0VibllLRB6_SPTUdRQy2dzAsxNRX1FF",
+        "url": "/assets/hotel_zenith_2.webp",
         "alternativeText": "Hotel Zenith Tehuacán",
         "caption": null
       }
@@ -267,19 +267,19 @@
     "galeria": [
       {
         "id": 202,
-        "url": "https://drive.google.com/open?id=1UUSXN23y73wM56gPp6AoGOutm_nF7YLB",
+        "url": "/assets/gran_hotel_mexico_by_solaris_1.webp",
         "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
       },
       {
         "id": 203,
-        "url": "https://drive.google.com/open?id=1prDtD0_EaXjn-jDsV_HSxIKh1DdQDam2",
+        "url": "/assets/gran_hotel_mexico_by_solaris_2.webp",
         "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
       },
       {
         "id": 204,
-        "url": "https://drive.google.com/open?id=1Fh61OOHCY_qFZkVQv3xWE3k0RxNVY8h2",
+        "url": "/assets/gran_hotel_mexico_by_solaris_3.webp",
         "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
       }

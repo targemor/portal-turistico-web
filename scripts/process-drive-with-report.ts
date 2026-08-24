@@ -53,9 +53,53 @@ function slugify(text: string): string {
 }
 
 /**
- * Intenta descargar una imagen pública de Google Drive
+ * Obtiene el Token de Acceso de Google si está disponible en archivo o variable de entorno
+ */
+async function getAccessToken(): Promise<string | null> {
+  if (process.env.GOOGLE_ACCESS_TOKEN) {
+    return process.env.GOOGLE_ACCESS_TOKEN.trim();
+  }
+  const tokenFile = path.join(ROOT, 'drive_token.txt');
+  try {
+    const raw = await fs.readFile(tokenFile, 'utf-8');
+    const match = raw.match(/access_token=([^\s\r\n]+)/);
+    if (match) return match[1].trim();
+    return raw.trim();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Intenta descargar una imagen de Google Drive (autenticada o pública)
  */
 async function downloadDriveFile(fileId: string): Promise<Buffer | null> {
+  const token = await getAccessToken();
+
+  // 1. Si existe token de acceso, intentar la API v3 oficial con autenticación Bearer
+  if (token) {
+    try {
+      const apiUrl = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`;
+      const res = await fetch(apiUrl, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'image/*,*/*',
+        },
+      });
+
+      if (res.ok) {
+        const buffer = Buffer.from(await res.arrayBuffer());
+        const head = buffer.slice(0, 200).toString('utf-8').toLowerCase();
+        if (buffer.length > 500 && !head.includes('<!doctype html>') && !head.includes('<html') && !head.includes('error')) {
+          return buffer;
+        }
+      }
+    } catch (err) {
+      // Fallback a endpoints públicos
+    }
+  }
+
+  // 2. Endpoints de descarga pública tradicionales
   const urlsToTry = [
     `https://lh3.googleusercontent.com/d/${fileId}`,
     `https://drive.usercontent.google.com/download?id=${fileId}&export=download&confirm=t`,
@@ -75,7 +119,6 @@ async function downloadDriveFile(fileId: string): Promise<Buffer | null> {
       if (!res.ok) continue;
 
       const buffer = Buffer.from(await res.arrayBuffer());
-      // Verificar si es un buffer de imagen válido (mayor a 500 bytes y no HTML)
       const head = buffer.slice(0, 200).toString('utf-8').toLowerCase();
       if (buffer.length > 500 && !head.includes('<!doctype html>') && !head.includes('<html') && !head.includes('accounts.google.com')) {
         return buffer;
@@ -201,7 +244,7 @@ async function main() {
 
   // 2. Procesar todos los archivos JSON en src/data/
   console.log('📂 Procesando galerías en los archivos JSON de src/data/...\n');
-  const jsonFiles = (await fs.readdir(DATA_DIR)).filter((f) => f.endsWith('.json'));
+  const jsonFiles = (await fs.readdir(DATA_DIR)).filter((f) => f.endsWith('.json') && f !== 'logo-letters.json');
 
   for (const jsonFile of jsonFiles) {
     const filePath = path.join(DATA_DIR, jsonFile);
