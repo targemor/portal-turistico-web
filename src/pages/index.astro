@@ -25,12 +25,14 @@ import EventosSection from "../components/EventosSection.astro";
 import HotelesSection from "../components/HotelesSection.astro";
 import RestaurantesSection from "../components/RestaurantesSection.astro";
 import GuiasSection from "../components/GuiasSection.astro";
+import ArtesaniasSection from "../components/ArtesaniasSection.astro";
 import Footer from "../components/Footer.astro";
 import BottomNav from "../components/BottomNav.astro";
 
 import homePageData from "../data/home-page.json";
 import guias from "../data/guias-turisticos.json";
 import destinos from "../data/destinos-turisticos.json";
+import artesanias from "../data/artesanias.json";
 ---
 
 <BaseLayout
@@ -72,6 +74,9 @@ import destinos from "../data/destinos-turisticos.json";
 
     <!-- Guías turísticos (datos desde JSON) -->
     <GuiasSection guias={guias} />
+
+    <!-- Artesanías y Medicina Tradicional (datos desde JSON) -->
+    <ArtesaniasSection artesanias={artesanias} />
   </main>
 
   <!-- Footer dark -->

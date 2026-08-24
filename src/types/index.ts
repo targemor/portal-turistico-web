@@ -124,3 +124,19 @@ export interface Imperdible {
   updatedAt?: string;
   publishedAt?: string;
 }
+
+export interface Artesania {
+  id: number | string;
+  nombre: string;
+  clasificacion: string;
+  especialidad?: string | null;
+  descripcion?: string | null;
+  direccion?: string | null;
+  direccion_maps?: string | null;
+  horario?: string | null;
+  zona?: string | null;
+  contacto?: Contacto | null;
+  redes_sociales?: RedSocial[];
+  galeria?: Galeria[] | null;
+}
+

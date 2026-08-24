@@ -1,0 +1,237 @@
+[
+  {
+    "id": 1,
+    "nombre": "Joyería Gazaed",
+    "clasificacion": "Taller Artesanal & Joyería",
+    "especialidad": "Joyería fina en plata y piedras nativas",
+    "descripcion": "Elaboración artesanal de joyería en plata desde cero y venta de piezas exclusivas. Demostraciones en vivo del proceso de diseño y forjado de minerales y piedras de la región.",
+    "direccion": "Centro Histórico, Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Centro",
+    "horario": "Lu-Do 11:00 am - 3:00 pm | 5:15 pm - 10:00 pm",
+    "zona": "Centro Histórico",
+    "contacto": {
+      "id": 1,
+      "telefono": null,
+      "email": "beristainperezedgar@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 1,
+        "plataforma": "Instagram",
+        "usuario": "@joyeriagazaed",
+        "enlace": "https://www.instagram.com/joyeriagazaed"
+      },
+      {
+        "id": 2,
+        "plataforma": "Facebook",
+        "usuario": "Joyería Gazaed",
+        "enlace": "https://www.facebook.com/share/1C9bXnSivB/"
+      },
+      {
+        "id": 3,
+        "plataforma": "TikTok",
+        "usuario": "@joyeriagazaed",
+        "enlace": "https://www.tiktok.com/@joyeriagazaed"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/joyeria_gazaed_1.webp",
+        "alternativeText": "Joyería Gazaed - Piezas artesanales en plata"
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 2,
+    "nombre": "Cosmética Natural Herbal",
+    "clasificacion": "Medicina Tradicional & Cosmética Artesanal",
+    "especialidad": "Cuidado personal, sueros, cremas y repelentes botánicos",
+    "descripcion": "Productos de cuidado personal elaborados con botánica nativa de la Reserva de la Biosfera Tehuacán-Cuicatlán. Exfoliantes, sueros, repelente natural de mosquitos y enjuague bucal herbal.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Sábado 10:00 am - 8:00 pm",
+    "zona": "Tehuacán",
+    "contacto": {
+      "id": 2,
+      "telefono": null,
+      "email": "judithaguilar24.ae@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 4,
+        "plataforma": "Instagram",
+        "usuario": "@cosmetica_natural_herbal_th",
+        "enlace": "https://www.instagram.com/cosmetica_natural_herbal_th"
+      },
+      {
+        "id": 5,
+        "plataforma": "Facebook",
+        "usuario": "Cosmética Natural Herbal",
+        "enlace": "https://www.facebook.com/share/1H2RcnL4NU/"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 2,
+        "url": "/assets/cosmetica_natural_1.webp",
+        "alternativeText": "Cosmética Natural Herbal - Medicina botánica de Tehuacán"
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 3,
+    "nombre": "Arete Salazar Artesanías",
+    "clasificacion": "Artesanías & Arte Popular",
+    "especialidad": "Trabajo artesanal campesino y piezas tradicionales hechas a mano",
+    "descripcion": "Artesanías elaboradas por manos campesinas con técnica tradicional y diseño elegante. Demostraciones vivas del proceso de producción artesanal en la región.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Domingos 9:00 am - 9:00 pm",
+    "zona": "Tehuacán",
+    "contacto": {
+      "id": 3,
+      "telefono": null,
+      "email": "jimmyajolotin@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [],
+    "galeria": [
+      {
+        "id": 3,
+        "url": "/assets/arete_salazar_1.webp",
+        "alternativeText": "Arete Salazar - Artesanías tradicionales campesinas"
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 4,
+    "nombre": "CNK Natural Tehuacán",
+    "clasificacion": "Herbolaria Tradicional & Salud Natural",
+    "especialidad": "Shampoo herbal de Amole (Cholulo), Romero y Sábila",
+    "descripcion": "Elaboración artesanal de productos capilares y medicina herbal a base de plantas nativas de México. Tratamiento natural a base de amole (jaboncillo natural) y extractos botánicos.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Viernes 8:00 am - 7:00 pm",
+    "zona": "Tehuacán",
+    "contacto": {
+      "id": 4,
+      "telefono": null,
+      "email": "gregoriacruz7704@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 6,
+        "plataforma": "Instagram",
+        "usuario": "@CNk_TEH",
+        "enlace": "https://www.instagram.com/CNk_TEH"
+      },
+      {
+        "id": 7,
+        "plataforma": "Facebook",
+        "usuario": "CNK Natural Tehuacán",
+        "enlace": "https://www.facebook.com/CNKNaturalTeh"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 4,
+        "url": "/assets/cnk_natural_1.webp",
+        "alternativeText": "CNK Natural Tehuacán - Herbolaria de Amole y Sábila"
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 5,
+    "nombre": "Fénix Taller Artesanal",
+    "clasificacion": "Taller Artesanal & Exposición",
+    "especialidad": "Demostraciones vivas del proceso de producción artesanal",
+    "descripcion": "Taller tradicional donde el visitante puede conocer de primera mano y aprender sobre el proceso de elaboración de las artesanías autóctonas de Tehuacán y la región.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Domingo 9:00 am - 8:00 pm",
+    "zona": "Tehuacán",
+    "contacto": {
+      "id": 5,
+      "telefono": null,
+      "email": "fenix.28.medja@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [],
+    "galeria": [
+      {
+        "id": 5,
+        "url": "/assets/Biosfera_1.webp",
+        "alternativeText": "Fénix Taller Artesanal - Reserva de la Biosfera"
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  }
+]

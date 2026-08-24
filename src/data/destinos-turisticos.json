@@ -37,7 +37,19 @@
       "sitio_web": "https://www.tehuacan-viejo.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 102,
@@ -77,7 +89,19 @@
       "sitio_web": "https://www.penafiel.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 104,
@@ -117,7 +141,19 @@
       "sitio_web": "https://www.palacio-municipal.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 106,
@@ -157,7 +193,19 @@
       "sitio_web": "https://www.el-riego.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 108,
@@ -197,7 +245,19 @@
       "sitio_web": "https://www.reserva-biosfera.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 110,
@@ -237,6 +297,18 @@
       "sitio_web": "https://www.catedral-tehuacan.com",
       "whatsapp": "2380000000"
     },
-    "galeria": null
+    "galeria": null,
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   }
 ]

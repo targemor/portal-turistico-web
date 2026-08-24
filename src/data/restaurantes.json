@@ -81,7 +81,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": false,
+    "musica_en_vivo": true,
+    "vistas_increibles": true,
+    "para_llevar": true,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 7,
@@ -155,7 +167,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": true,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 9,
@@ -237,7 +261,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 11,
@@ -292,7 +328,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 14,
@@ -353,7 +401,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 16,
@@ -415,7 +475,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 18,
@@ -532,7 +604,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": true,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 20,
@@ -601,7 +685,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": true,
+    "musica_en_vivo": true,
+    "vistas_increibles": true,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 22,
@@ -669,7 +765,19 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 24,
@@ -736,7 +844,19 @@
         "alternativeText": "Violetta Tehuacán",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": true,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": true
   },
   {
     "id": 26,
@@ -797,7 +917,19 @@
         "alternativeText": "Restaurante Casa Amachu",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": true,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 28,
@@ -858,7 +990,19 @@
         "alternativeText": "Restaurante Gran Hotel México by Solaris",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": true,
+    "musica_en_vivo": true,
+    "vistas_increibles": true,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": true
   },
   {
     "id": 30,
@@ -931,7 +1075,19 @@
         "alternativeText": "Restaurante Camino Real",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 32,
@@ -979,6 +1135,18 @@
         "alternativeText": "Abacaxi Tehuacán",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": true,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": true,
+    "terraza": true,
+    "musica_en_vivo": false,
+    "vistas_increibles": true,
+    "para_llevar": false,
+    "aire_libre": true,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
   }
 ]

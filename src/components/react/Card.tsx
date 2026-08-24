@@ -113,10 +113,6 @@ export default function Card({ item, categoria, children }: CardProps) {
 
         <h3 className="text-xl font-bold mb-2 text-slate-900">{nombreItem}</h3>
 
-        {item.descripcion && (
-          <p className="text-slate-500 text-sm line-clamp-3 mb-3">{item.descripcion}</p>
-        )}
-
         {item.estrellas && (
           <div className="flex gap-0.5 mb-3" aria-label={`${item.estrellas} ${t.cardStars}`}>
             {Array.from({ length: 5 }).map((_, i) => (
@@ -125,12 +121,81 @@ export default function Card({ item, categoria, children }: CardProps) {
           </div>
         )}
 
-        {item.direccion && (
-          <p className="text-slate-500 text-sm flex items-start gap-2 mb-2">
-            <MapPin className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-            {item.direccion}
-          </p>
-        )}
+        {item.direccion && (() => {
+          const mapLink =
+            (item as any).direccion_maps ||
+            (item as any).direccion_google_maps ||
+            (item as any).mapsUrl ||
+            `https://maps.google.com/?q=${encodeURIComponent(nombreItem + " " + item.direccion + " Tehuacán")}`;
+
+          return (
+            <p className="text-slate-600 text-sm flex items-start gap-2 mb-2">
+              <MapPin className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+              <a
+                href={mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-brand transition-colors font-medium"
+                title="Abrir en Google Maps"
+              >
+                {item.direccion}
+              </a>
+            </p>
+          );
+        })()}
+
+        {/* Chips de Amenidades */}
+        {(() => {
+          const text = [
+            (item as any).caracteristicas,
+            (item as any).amenidades,
+            (item as any).especialidad,
+            item.descripcion
+          ].filter(Boolean).join(" ").toLowerCase();
+
+          const isPetFriendly = (item as any).pet_friendly || (item as any).petFriendly || (item as any).aceptaMascotas || text.includes("pet friendly") || text.includes("mascotas");
+          const hasEstacionamiento = (item as any).estacionamiento || text.includes("estacionamiento") || text.includes("parking");
+          const hasAlberca = (item as any).alberca || (item as any).tieneAlberca || text.includes("alberca") || text.includes("piscina");
+          const hasGimnasio = (item as any).gimnasio || text.includes("gimnasio") || text.includes("gym");
+          const hasJardin = (item as any).jardin || text.includes("jardín") || text.includes("jardin");
+          const hasTerraza = (item as any).terraza || text.includes("terraza");
+          const hasMusicaEnVivo = (item as any).musica_en_vivo || (item as any).musicaEnVivo || text.includes("música en vivo") || text.includes("musica en vivo");
+          const hasVistasIncreibles = (item as any).vistas_increibles || (item as any).vistasIncreibles || text.includes("vistas increíbles") || text.includes("vistas increibles") || text.includes("vista panorámica");
+          const hasParaLlevar = (item as any).para_llevar || (item as any).paraLlevar || text.includes("para llevar");
+          const hasAireLibre = (item as any).aire_libre || (item as any).aireLibre || text.includes("aire libre");
+          const hasRecepcion24h = (item as any).recepcion_24h || (item as any).recepcion24h || text.includes("24h") || text.includes("24 horas") || text.includes("recepción 24");
+          const hasDesayuno = (item as any).desayuno_cortesia || text.includes("desayuno");
+
+          const chips: { label: string; icon: string }[] = [];
+          if (isPetFriendly) chips.push({ label: "Pet Friendly", icon: "🐾" });
+          if (hasEstacionamiento) chips.push({ label: "Estacionamiento", icon: "🚗" });
+          if (hasAlberca) chips.push({ label: "Alberca", icon: "🏊" });
+          if (hasGimnasio) chips.push({ label: "Gimnasio", icon: "🏋️" });
+          if (hasJardin) chips.push({ label: "Jardín", icon: "🌳" });
+          if (hasTerraza) chips.push({ label: "Terraza", icon: "🌿" });
+          if (hasMusicaEnVivo) chips.push({ label: "Música en vivo", icon: "🎵" });
+          if (hasVistasIncreibles) chips.push({ label: "Vistas increíbles", icon: "🌄" });
+          if (hasParaLlevar) chips.push({ label: "Para llevar", icon: "🛍️" });
+          if (hasAireLibre) chips.push({ label: "Aire libre", icon: "🍃" });
+          if (hasRecepcion24h) chips.push({ label: "Recepción 24h", icon: "🕐" });
+          if (hasDesayuno) chips.push({ label: "Desayuno gratis", icon: "☕" });
+
+          if (chips.length === 0) return null;
+
+          return (
+            <div className="flex flex-wrap gap-1.5 my-3">
+              {chips.map((chip, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80"
+                >
+                  <span>{chip.icon}</span>
+                  <span>{chip.label}</span>
+                </span>
+              ))}
+            </div>
+          );
+        })()}
 
         {children}
 

@@ -91,7 +91,19 @@
           "usuario": "@hotelescityexpress",
           "enlace": "https://www.instagram.com/hotelescityexpress/"
         }
-      ]
+      ],
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 7,
@@ -145,7 +157,19 @@
           "usuario": "@hotelplazaiberia211",
           "enlace": "https://www.instagram.com/hotelplazaiberia211"
         }
-      ]
+      ],
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     }
   ],
   "mejores_restaurantes": [
@@ -244,7 +268,19 @@
           "usuario": "@restaurante_maria_sabina",
           "enlace": "https://www.instagram.com/restaurante_maria_sabina/"
         }
-      ]
+      ],
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 5,
@@ -318,7 +354,19 @@
           "usuario": "@mezcalaislados",
           "enlace": "https://www.tiktok.com/@mezcalaislados"
         }
-      ]
+      ],
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 9,
@@ -400,7 +448,19 @@
           "usuario": "Jacinta Cocina Casual ",
           "enlace": "https://www.facebook.com/jacintacocinacasual/"
         }
-      ]
+      ],
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     }
   ],
   "imperdibles": [
@@ -456,7 +516,19 @@
         "rating": 4.7,
         "userRatingsTotal": 10,
         "formattedAddress": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico"
-      }
+      },
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 114,
@@ -499,7 +571,19 @@
           "nombre": "Naturaleza"
         }
       ],
-      "googleMapsInfo": null
+      "googleMapsInfo": null,
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 106,
@@ -553,7 +637,19 @@
         "rating": 4.1,
         "userRatingsTotal": 1036,
         "formattedAddress": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico"
-      }
+      },
+      "pet_friendly": true,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 100,
@@ -607,7 +703,19 @@
         "rating": 4.5,
         "userRatingsTotal": 10,
         "formattedAddress": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico"
-      }
+      },
+      "pet_friendly": true,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 104,
@@ -661,7 +769,19 @@
         "rating": 4.2,
         "userRatingsTotal": 5,
         "formattedAddress": "Calle 1 Ote. 7, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico"
-      }
+      },
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 110,
@@ -715,7 +835,19 @@
         "rating": 4.6,
         "userRatingsTotal": 804,
         "formattedAddress": "C. 1 Sur 101, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico"
-      }
+      },
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 112,
@@ -752,7 +884,19 @@
           "nombre": "Cultura"
         }
       ],
-      "googleMapsInfo": null
+      "googleMapsInfo": null,
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     },
     {
       "id": 102,
@@ -806,7 +950,19 @@
         "rating": 4.4,
         "userRatingsTotal": 572,
         "formattedAddress": "Av. José Garci-Crespo 2805, Planta Peñafiel, San Nicolás Tetitzintla, 75750 Tehuacán, Pue., Mexico"
-      }
+      },
+      "pet_friendly": false,
+      "estacionamiento": false,
+      "alberca": false,
+      "gimnasio": false,
+      "jardin": false,
+      "terraza": false,
+      "musica_en_vivo": false,
+      "vistas_increibles": false,
+      "para_llevar": false,
+      "aire_libre": false,
+      "recepcion_24h": false,
+      "desayuno_cortesia": false
     }
   ]
 }

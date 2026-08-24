@@ -1,0 +1,66 @@
+---
+/**
+ * ArtesaniasSection.astro - Sección de Artesanías y Medicina Tradicional de Tehuacán
+ * Utiliza BusinessCard en formato grande amplio (Cholula layout)
+ */
+import BusinessCard from "./react/BusinessCard";
+import type { Artesania } from "../types";
+
+interface Props {
+  artesanias: Artesania[];
+}
+
+const { artesanias } = Astro.props;
+---
+
+<section id="artesanias" class="py-20 bg-slate-50 border-t border-slate-200/80">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header estilo Cholula / Tehuacán -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2" data-i18n="artesaniasBadge">
+        HECHO EN TEHUACÁN
+      </p>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-3" data-i18n="artesaniasTitle">
+        Artesanías de Tehuacán
+      </h2>
+      <p class="text-slate-600 text-base sm:text-xl font-normal leading-relaxed" data-i18n="artesaniasSubtitle">
+        El recuerdo que más vale la pena, hecho por manos tehuacaneras.
+      </p>
+    </div>
+
+    <!-- Grid amplio de 2 BusinessCards grandes -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
+      {artesanias.slice(0, 2).map((art) => {
+        const ig = art.redes_sociales?.find((r) => r.plataforma.toLowerCase() === "instagram")?.enlace || undefined;
+        const fb = art.redes_sociales?.find((r) => r.plataforma.toLowerCase() === "facebook")?.enlace || undefined;
+        const tt = art.redes_sociales?.find((r) => r.plataforma.toLowerCase() === "tiktok")?.enlace || undefined;
+
+        return (
+          <BusinessCard
+            client:visible
+            isLarge={true}
+            id={art.id}
+            title={art.nombre}
+            description={art.descripcion || undefined}
+            galeria={art.galeria}
+            clasificacion={art.clasificacion}
+            especializacion={art.especialidad || undefined}
+            address={art.direccion || undefined}
+            mapsUrl={art.direccion_maps || undefined}
+            phone={art.contacto?.telefono || undefined}
+            whatsapp={art.contacto?.whatsapp || undefined}
+            sitioWeb={art.contacto?.sitio_web || undefined}
+            instagram={ig}
+            facebook={fb}
+            tiktok={tt}
+            zona={art.zona || undefined}
+            caracteristicas={(art as any).caracteristicas || art.especialidad || undefined}
+            amenidades={art.horario ? `Horario: ${art.horario}` : undefined}
+            showLocationCta={true}
+          />
+        );
+      })}
+    </div>
+  </div>
+</section>
+

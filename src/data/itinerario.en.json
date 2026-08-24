@@ -49,18 +49,39 @@
       {
         "titulo": "DAY 1 — SATURDAY",
         "elementos": [
-          { "titulo": "Tehuacán Viejo Archaeological Site Tour", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-          { "titulo": "Museum of the Valley of Tehuacán Visit", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-          { "titulo": "Traditional lunch in the historic center", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-          { "titulo": "Night walk around the Main Plaza & Portales", "meta": "Daily · Family atmosphere" }
+          {
+            "titulo": "Tehuacán Viejo Archaeological Site Tour",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "titulo": "Museum of the Valley of Tehuacán Visit",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "titulo": "Traditional lunch in the historic center",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "titulo": "Night walk around the Main Plaza & Portales",
+            "meta": "Daily · Family atmosphere"
+          }
         ]
       },
       {
         "titulo": "DAY 2 — SUNDAY",
         "elementos": [
-          { "titulo": "Traditional Tehuacán breakfast", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-          { "titulo": "Helia Bravo Hollis Botanical Garden Excursion", "meta": "Weekends · 9:00–17:00" },
-          { "titulo": "Craft market & onyx souvenirs", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+          {
+            "titulo": "Traditional Tehuacán breakfast",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "titulo": "Helia Bravo Hollis Botanical Garden Excursion",
+            "meta": "Weekends · 9:00–17:00"
+          },
+          {
+            "titulo": "Craft market & onyx souvenirs",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         ]
       }
     ],
@@ -79,9 +100,18 @@
     "heroTitle": "Explore Tehuacán like a local",
     "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "elementos": [
-      { "titulo": "Follow the Day 1 cultural itinerary", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-      { "titulo": "Follow the Day 2 ecological itinerary", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-      { "titulo": "Guided tour with a certified local guide", "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+      {
+        "titulo": "Follow the Day 1 cultural itinerary",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "titulo": "Follow the Day 2 ecological itinerary",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "titulo": "Guided tour with a certified local guide",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
     ],
     "daytrip": {
       "titulo": "🚗 Extra day? Excursions from Tehuacán",
@@ -111,11 +141,21 @@
     "heroTitle": "The must-dos in Tehuacán",
     "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "elementos": [
-      { "titulo": "Visiting the birthplace of corn and Tehuacán Viejo" },
-      { "titulo": "Walking among giant cacti in Zapotitlán Salinas" },
-      { "titulo": "Tasting traditional Mole de Caderas" },
-      { "titulo": "Trying natural mineral water from Tehuacán springs" },
-      { "titulo": "Taking home an onyx or burnished clay handicraft" }
+      {
+        "titulo": "Visiting the birthplace of corn and Tehuacán Viejo"
+      },
+      {
+        "titulo": "Walking among giant cacti in Zapotitlán Salinas"
+      },
+      {
+        "titulo": "Tasting traditional Mole de Caderas"
+      },
+      {
+        "titulo": "Trying natural mineral water from Tehuacán springs"
+      },
+      {
+        "titulo": "Taking home an onyx or burnished clay handicraft"
+      }
     ]
   }
 }

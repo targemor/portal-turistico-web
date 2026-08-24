@@ -84,7 +84,18 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": true,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "desayuno_cortesia": true
   },
   {
     "id": 7,
@@ -143,7 +154,18 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": true,
+    "para_llevar": false,
+    "aire_libre": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 8,
@@ -194,7 +216,18 @@
         "alternativeText": "Hotel Zenith Tehuacán",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": true,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "desayuno_cortesia": false
   },
   {
     "id": 9,
@@ -250,6 +283,17 @@
         "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
       }
-    ]
+    ],
+    "pet_friendly": false,
+    "estacionamiento": true,
+    "alberca": true,
+    "gimnasio": true,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "desayuno_cortesia": false
   }
 ]

@@ -92,9 +92,17 @@ export interface BusinessCardProps {
   petFriendly?: boolean;
   musicaEnVivo?: boolean;
   espacioFisico?: string;
-  categoriaGrupo?: string;
   estrellaMichelin?: boolean;
   showLocationCta?: boolean;
+  isLarge?: boolean;
+  estacionamiento?: boolean;
+  gimnasio?: boolean;
+  jardin?: boolean;
+  vistasIncreibles?: boolean;
+  paraLlevar?: boolean;
+  aireLibre?: boolean;
+  desayunoCortesia?: boolean;
+  caracteristicas?: string;
 }
 
 /* ─── Utilidades ─────────────────────────────────────────── */
@@ -150,25 +158,54 @@ export default function BusinessCard({
   espacioFisico,
   estrellaMichelin = false,
   showLocationCta = false,
+  isLarge = false,
+  estacionamiento = false,
+  gimnasio = false,
+  jardin = false,
+  vistasIncreibles = false,
+  paraLlevar = false,
+  aireLibre = false,
+  desayunoCortesia = false,
+  caracteristicas,
 }: BusinessCardProps) {
   const { t } = useLanguage();
   const [showMore, setShowMore] = useState(false);
 
+  /* ── Detección inteligente de amenidades ── */
+  const amenidadesStr = [amenidades, espacioFisico, caracteristicas].filter(Boolean).join(" ").toLowerCase();
+
+  const isPetFriendly = aceptaMascotas || petFriendly || amenidadesStr.includes("pet friendly") || amenidadesStr.includes("mascotas");
+  const hasAlberca = tieneAlberca || amenidadesStr.includes("alberca") || amenidadesStr.includes("piscina");
+  const hasSpa = tieneSpa || amenidadesStr.includes("spa");
+  const hasTerraza = terraza || amenidadesStr.includes("terraza");
+  const hasRecepcion24h = recepcion24h || amenidadesStr.includes("24h") || amenidadesStr.includes("24 horas") || amenidadesStr.includes("recepción 24");
+  const hasMusicaEnVivo = musicaEnVivo || amenidadesStr.includes("música en vivo") || amenidadesStr.includes("musica en vivo");
+  const hasEstacionamiento = estacionamiento || amenidadesStr.includes("estacionamiento") || amenidadesStr.includes("parking");
+  const hasGimnasio = gimnasio || amenidadesStr.includes("gimnasio") || amenidadesStr.includes("gym");
+  const hasJardin = jardin || amenidadesStr.includes("jardín") || amenidadesStr.includes("jardin");
+  const hasVistasIncreibles = vistasIncreibles || amenidadesStr.includes("vistas increíbles") || amenidadesStr.includes("vistas increibles") || amenidadesStr.includes("vista panorámica");
+  const hasParaLlevar = paraLlevar || amenidadesStr.includes("para llevar");
+  const hasAireLibre = aireLibre || amenidadesStr.includes("aire libre");
+  const hasDesayunoCortesia = desayunoCortesia || amenidadesStr.includes("desayuno");
+
   /* ── Chips de atributos ── */
   const chips: { label: string; icon: string; isMichelin?: boolean }[] = [
-    ...(estrellaMichelin
-      ? [{ label: "Guía Michelin", icon: "⭐", isMichelin: true }]
-      : []),
+    ...(estrellaMichelin ? [{ label: "Guía Michelin", icon: "⭐", isMichelin: true }] : []),
     ...(zona ? [{ label: zona, icon: "📍" }] : []),
     ...(tipoComida ? [{ label: tipoComida, icon: "🍽️" }] : []),
-    ...(aceptaMascotas || petFriendly
-      ? [{ label: t.bcPetFriendly, icon: "🐾" }]
-      : []),
-    ...(tieneAlberca ? [{ label: t.bcPool, icon: "🏊" }] : []),
-    ...(tieneSpa ? [{ label: t.bcSpa, icon: "💆" }] : []),
-    ...(terraza ? [{ label: t.bcTerrace, icon: "🌿" }] : []),
-    ...(recepcion24h ? [{ label: t.bcReception24h, icon: "🕐" }] : []),
-    ...(musicaEnVivo ? [{ label: t.bcLiveMusic, icon: "🎵" }] : []),
+    ...(isPetFriendly ? [{ label: t.bcPetFriendly || "Pet Friendly", icon: "🐾" }] : []),
+    ...(hasAlberca ? [{ label: t.bcPool || "Alberca", icon: "🏊" }] : []),
+    ...(hasSpa ? [{ label: t.bcSpa || "Spa", icon: "💆" }] : []),
+    ...(hasTerraza ? [{ label: t.bcTerrace || "Terraza", icon: "🌿" }] : []),
+    ...(hasRecepcion24h ? [{ label: t.bcReception24h || "Recepción 24h", icon: "🕐" }] : []),
+    ...(hasMusicaEnVivo ? [{ label: t.bcLiveMusic || "Música en vivo", icon: "🎵" }] : []),
+    ...(hasEstacionamiento ? [{ label: "Estacionamiento", icon: "🚗" }] : []),
+    ...(hasGimnasio ? [{ label: "Gimnasio", icon: "🏋️" }] : []),
+    ...(hasJardin ? [{ label: "Jardín", icon: "🌳" }] : []),
+    ...(hasVistasIncreibles ? [{ label: "Vistas Increíbles", icon: "🌄" }] : []),
+    ...(hasParaLlevar ? [{ label: "Para llevar", icon: "🛍️" }] : []),
+    ...(hasAireLibre ? [{ label: "Aire libre", icon: "🍃" }] : []),
+    ...(hasDesayunoCortesia ? [{ label: "Desayuno gratis", icon: "☕" }] : []),
   ];
 
   /* ── Galería adaptada ── */
@@ -213,12 +250,20 @@ export default function BusinessCard({
   return (
     <div
       id={id ? String(id) : undefined}
-      className="bg-white rounded-2xl overflow-hidden flex flex-col w-full shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)] hover:-translate-y-1 border border-slate-100"
+      className={`bg-white rounded-2xl overflow-hidden flex flex-col w-full shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)] hover:-translate-y-1 border border-slate-100 ${
+        isLarge ? "h-full" : ""
+      }`}
       data-clasificacion={clasificacion}
       data-categoria-grupo={undefined}
     >
       {/* ── Galería de imágenes ── */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] overflow-hidden shrink-0 bg-slate-100">
+      <div
+        className={`relative w-full overflow-hidden shrink-0 bg-slate-100 ${
+          isLarge
+            ? "h-[360px] sm:h-[460px] aspect-[4/3] sm:aspect-[1/1]"
+            : "aspect-[4/3] sm:aspect-[3/2]"
+        }`}
+      >
         {estrellaMichelin && (
           <div className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 bg-black/85 backdrop-blur-sm text-amber-400 border border-amber-400/70 px-3 py-1 rounded-full text-xs font-bold tracking-wide shadow-lg pointer-events-none">
             <span className="text-sm">⭐</span> Guía Michelin
@@ -243,11 +288,30 @@ export default function BusinessCard({
           {title}
         </h3>
 
-        {/* Descripción */}
-        {description && (
+        {/* Descripción (solo en formato destacado grande) */}
+        {isLarge && description && (
           <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">
             {description}
           </p>
+        )}
+
+        {/* Chips de Atributos destacados */}
+        {chips.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 my-1">
+            {chips.map((chip, i) => (
+              <span
+                key={i}
+                className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap inline-flex items-center gap-1 ${
+                  chip.isMichelin
+                    ? "bg-gradient-to-br from-slate-900 to-slate-800 text-amber-400 border border-amber-400/60"
+                    : "bg-slate-100 text-slate-700 border border-slate-200/80"
+                }`}
+              >
+                <span>{chip.icon}</span>
+                <span>{chip.label}</span>
+              </span>
+            ))}
+          </div>
         )}
 
         {/* Redes sociales */}
@@ -329,23 +393,23 @@ export default function BusinessCard({
               </span>
             </li>
           )}
-          {address && (
-            <li className="flex items-start gap-2 text-slate-600">
-              <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
-              {mapsUrl ? (
+          {address && (() => {
+            const finalMapsUrl = mapsUrl || `https://maps.google.com/?q=${encodeURIComponent(title + " " + address + " Tehuacán")}`;
+            return (
+              <li className="flex items-start gap-2 text-slate-600">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
                 <a
-                  href={mapsUrl}
+                  href={finalMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline hover:opacity-70 transition-opacity"
+                  className="hover:underline hover:text-brand transition-colors font-medium"
+                  title="Abrir en Google Maps"
                 >
                   {address}
                 </a>
-              ) : (
-                <span>{address}</span>
-              )}
-            </li>
-          )}
+              </li>
+            );
+          })()}
           {distancia && (
             <li className="flex items-start gap-2 text-slate-600">
               <span className="text-base shrink-0">🏛️</span>
