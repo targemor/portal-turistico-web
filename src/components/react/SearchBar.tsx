@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { Search, X, Utensils, Hotel, Compass, UserCheck, ChevronRight, ArrowRight } from "lucide-react";
+import { Search, X, ArrowRight, Utensils, BedDouble, Compass, UserCheck, ChevronRight } from "lucide-react";
 
 /* ─── Tipos de ítem buscable ─────────────────────────────── */
 interface SearchableItem {
@@ -9,10 +9,12 @@ interface SearchableItem {
   category: string;
   sublabel?: string;
   href: string;
+  searchKeywords?: string;
+  rating?: number;
 }
 
 /* ─── Utilidad: normalizar texto para comparación ────────── */
-function normalize(str?: string | null) {
+function normalize(str?: string | null): string {
   if (!str) return "";
   return str
     .toLowerCase()
@@ -21,7 +23,20 @@ function normalize(str?: string | null) {
 }
 
 /**
- * Resalta TODAS las ocurrencias de `query` en `label`.
+ * Matching con fuzzy prefix para búsqueda flexible.
+ * Cubre subcadena exacta, prefijo del query sobre token y viceversa.
+ */
+function matchesWord(queryWord: string, text: string): boolean {
+  if (queryWord.length < 2) return false;
+  const tokens = text.split(/[\s,·\/\-–•()]+/).filter((w) => w.length > 1);
+  return tokens.some(
+    (token) => queryWord.startsWith(token) || token.startsWith(queryWord)
+  );
+}
+
+/**
+ * Resalta TODAS las ocurrencias de `query` en `label`,
+ * comparando texto normalizado (sin acentos, minúsculas).
  */
 function highlightLabel(label: string, query: string): React.ReactNode {
   if (!label) return "";
@@ -41,7 +56,7 @@ function highlightLabel(label: string, query: string): React.ReactNode {
       <mark
         key={idx}
         className="font-black rounded px-0.5"
-        style={{ background: "var(--color-mex-rosa)", color: "white" }}
+        style={{ background: "var(--color-brand)", color: "white" }}
       >
         {label.slice(idx, idx + normQ.length)}
       </mark>
@@ -54,28 +69,158 @@ function highlightLabel(label: string, query: string): React.ReactNode {
   return nodes.length > 0 ? <>{nodes}</> : label;
 }
 
+/* ─── Iconos de shortcuts ───────────────────────────────── */
+const SHORTCUTS = [
+  {
+    key: "food" as const,
+    Icon: Utensils,
+    colorClass: "border-[#c85244] text-[#c85244] hover:bg-rose-50/50",
+    labelKey: "searchShortcutFoodLabel",
+    queryKey: "searchShortcutFoodQuery",
+    aliasKey: "searchAliasFood",
+    categories: ["Restaurante", "Restaurant"],
+  },
+  {
+    key: "sleep" as const,
+    Icon: BedDouble,
+    colorClass: "border-[#388596] text-[#388596] hover:bg-teal-50/50",
+    labelKey: "searchShortcutSleepLabel",
+    queryKey: "searchShortcutSleepQuery",
+    aliasKey: "searchAliasSleep",
+    categories: ["Hotel"],
+  },
+  {
+    key: "things" as const,
+    Icon: Compass,
+    colorClass: "border-[#e59b38] text-[#e59b38] hover:bg-amber-50/50",
+    labelKey: "searchShortcutThingsLabel",
+    queryKey: "searchShortcutThingsQuery",
+    aliasKey: "searchAliasThings",
+    categories: ["Destino", "Destination", "Imperdible", "Must-see"],
+  },
+  {
+    key: "guides" as const,
+    Icon: UserCheck,
+    colorClass: "border-[#d46597] text-[#d46597] hover:bg-pink-50/50",
+    labelKey: "searchShortcutGuidesLabel",
+    queryKey: "searchShortcutGuidesQuery",
+    aliasKey: "searchAliasGuides",
+    categories: ["Guia", "Guide"],
+  },
+];
+
+/* ─── Iconos de sugerencias (SVG inline) ──────────────────── */
+const SugIcon = ({ type }: { type: string }) => {
+  const cls = "w-3.5 h-3.5 shrink-0";
+  if (type === "food")
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
+        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+        <path d="M7 2v20" />
+        <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
+      </svg>
+    );
+  if (type === "bed")
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
+        <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+        <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+        <path d="M12 4v6" />
+        <path d="M2 18h20" />
+      </svg>
+    );
+  if (type === "landmark")
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    );
+  if (type === "layers")
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </svg>
+    );
+  // user-check fallback
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <polyline points="16 11 18 13 22 9" />
+    </svg>
+  );
+};
+
+const SUGGESTION_ICONS = ["food", "bed", "landmark", "landmark", "layers", "layers"];
+
 /* ─── Props ──────────────────────────────────────────────── */
 interface SearchBarProps {
   placeholder?: string;
   items?: SearchableItem[];
 }
 
-export default function SearchBar({
-  placeholder,
-  items = [],
-}: SearchBarProps) {
+/* ═══════════════════════════════════════════════════════════
+   Componente principal
+═══════════════════════════════════════════════════════════ */
+export default function SearchBar({ placeholder, items = [] }: SearchBarProps) {
   const { t } = useLanguage();
-  const effectivePlaceholder = placeholder ?? t.heroPlaceholder;
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchableItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [openNow, setOpenNow] = useState(false);
+  const [typedPlaceholder, setTypedPlaceholder] = useState("");
+
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /* ── Búsqueda con debounce ── */
+  /* ── Efecto máquina de escribir ── */
+  const phrases = [
+    t.searchTypewriter0,
+    t.searchTypewriter1,
+    t.searchTypewriter2,
+    t.searchTypewriter3,
+    t.searchTypewriter4,
+  ];
+
+  useEffect(() => {
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const type = () => {
+      const phrase = phrases[phraseIdx];
+      if (isDeleting) {
+        setTypedPlaceholder(phrase.substring(0, charIdx - 1));
+        charIdx--;
+      } else {
+        setTypedPlaceholder(phrase.substring(0, charIdx + 1));
+        charIdx++;
+      }
+      let speed = isDeleting ? 30 : 65;
+      if (!isDeleting && charIdx === phrase.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        speed = 500;
+      }
+      timeoutId = setTimeout(type, speed);
+    };
+
+    timeoutId = setTimeout(type, 600);
+    return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /* ── Búsqueda con debounce y scoring ── */
   const search = useCallback(
     (q: string) => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -83,37 +228,87 @@ export default function SearchBar({
         const norm = normalize(q.trim());
         if (!norm) {
           setResults([]);
-          setIsOpen(false);
           document.dispatchEvent(
             new CustomEvent("portal:search", { detail: { query: "" } })
           );
           return;
         }
-        const found = items.filter(
-          (item) =>
-            normalize(item.label).includes(norm) ||
-            normalize(item.category).includes(norm) ||
-            (item.sublabel && normalize(item.sublabel).includes(norm))
+
+        let found: SearchableItem[] = [];
+
+        // ¿El query coincide con un alias de categoría?
+        const shortcut = SHORTCUTS.find((sc) =>
+          t[sc.aliasKey as keyof typeof t]
+            ?.split(",")
+            .some((alias: string) => normalize(alias) === norm)
         );
+
+        if (shortcut) {
+          found = items.filter((item) =>
+            shortcut.categories.includes(item.category)
+          );
+        } else {
+          const queryWords = norm.split(/\s+/).filter(Boolean);
+          const escapeRE = (s: string) =>
+            s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const exactRx = new RegExp("\\b" + escapeRE(norm), "i");
+
+          const scored = items.map((item) => {
+            const nLabel = normalize(item.label);
+            const nCat = normalize(item.category);
+            const nSub = normalize(item.sublabel);
+            const nKw = normalize(item.searchKeywords);
+
+            let score = 0;
+            queryWords.forEach((word) => {
+              let ws = 0;
+              if (matchesWord(word, nLabel)) ws += 3;
+              if (matchesWord(word, nCat)) ws += 2;
+              if (matchesWord(word, nSub)) ws += 1;
+              if (matchesWord(word, nKw)) ws += 1;
+              if (ws > 0) score += ws;
+            });
+
+            if (exactRx.test(nLabel)) score += 5;
+            else if (exactRx.test(nSub) || exactRx.test(nKw)) score += 2;
+            else if (exactRx.test(nCat)) score += 1;
+
+            return { item, score };
+          });
+
+          found = scored
+            .filter((x) => x.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .map((x) => x.item);
+        }
+
         setResults(found);
         setIsOpen(true);
+
         document.dispatchEvent(
-          new CustomEvent("portal:search", { detail: { query: norm, results: found } })
+          new CustomEvent("portal:search", {
+            detail: { query: norm, results: found },
+          })
         );
       }, 200);
     },
-    [items]
+    [items, t]
   );
 
   useEffect(() => {
     search(query);
-    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
   }, [query, search]);
 
   /* ── Cerrar al hacer click fuera ── */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -137,7 +332,9 @@ export default function SearchBar({
     setQuery(item.label);
     setIsOpen(false);
     if (item.category === "Imperdible" || item.category === "Must-see") {
-      const el = document.querySelector("#imperdibles") ?? document.querySelector(item.href);
+      const el =
+        document.querySelector("#imperdibles") ??
+        document.querySelector(item.href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
       const slug = categorySlug[item.category];
@@ -150,11 +347,27 @@ export default function SearchBar({
     }
   };
 
-  /* ── Agrupar resultados por categoría ── */
-  const grouped = results.reduce<Record<string, SearchableItem[]>>((acc, item) => {
-    (acc[item.category] ??= []).push(item);
-    return acc;
-  }, {});
+  /* ── Items a mostrar (con filtro openNow si se activa) ── */
+  const baseItems = query.trim() ? results : openNow ? items : [];
+  const displayItems = openNow
+    ? baseItems // sin filtro de horario (no tenemos horario en este proyecto)
+    : baseItems;
+
+  const displayGrouped = displayItems.reduce<Record<string, SearchableItem[]>>(
+    (acc, item) => {
+      (acc[item.category] ??= []).push(item);
+      return acc;
+    },
+    {}
+  );
+
+  const grouped = results.reduce<Record<string, SearchableItem[]>>(
+    (acc, item) => {
+      (acc[item.category] ??= []).push(item);
+      return acc;
+    },
+    {}
+  );
 
   const categoryIcons: Record<string, string> = {
     Hotel: "🏨",
@@ -164,129 +377,275 @@ export default function SearchBar({
     Destination: "📍",
     Imperdible: "⭐",
     "Must-see": "⭐",
+    Guia: "🪪",
+    Guide: "🪪",
   };
 
-  const showDropdown = isOpen && query.trim().length > 0;
+  const categoryGroupLabel: Record<string, string> = {
+    Hotel: t.searchGroupHotel,
+    Restaurante: t.searchGroupRestaurante,
+    Restaurant: t.searchGroupRestaurante,
+    Destino: t.searchGroupDestino,
+    Destination: t.searchGroupDestino,
+    Imperdible: t.searchGroupImperdible,
+    "Must-see": t.searchGroupImperdible,
+    Guia: t.searchGroupGuia,
+    Guide: t.searchGroupGuia,
+  };
 
-  const resultCount = results.length;
-  const resultLabel = resultCount !== 1 ? t.searchResults : t.searchResult;
+  const showDropdown = isOpen;
+  const suggestions = [
+    t.searchSug0,
+    t.searchSug1,
+    t.searchSug2,
+    t.searchSug3,
+    t.searchSug4,
+    t.searchSug5,
+  ];
+  const resultCount = displayItems.length;
+
+  /* ── Renderizador de shortcuts ── */
+  const renderShortcuts = (inDropdown = false) => (
+    <div
+      className={
+        inDropdown
+          ? "flex flex-wrap items-center justify-center gap-2 px-4 py-3 border-b border-slate-100 bg-white"
+          : "mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+      }
+    >
+      {SHORTCUTS.map((sc) => {
+        const Icon = sc.Icon;
+        const label = t[sc.labelKey as keyof typeof t] as string;
+        const qText = t[sc.queryKey as keyof typeof t] as string;
+        return (
+          <button
+            key={sc.key}
+            type="button"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              setQuery(qText);
+              setIsOpen(true);
+              inputRef.current?.focus();
+            }}
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border-[1.5px] font-bold text-sm transition-all bg-white active:scale-95 cursor-pointer ${sc.colorClass}`}
+          >
+            <Icon className="w-4 h-4 shrink-0" />
+            <span className={inDropdown ? "hidden sm:inline" : ""}>{label}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
 
   return (
-    <div ref={containerRef} className="max-w-4xl mx-auto relative">
-      {/* ── Card de búsqueda principal ── */}
+    <div ref={containerRef} className="max-w-4xl mx-auto relative z-40">
+      {/* ── Barra de búsqueda ── */}
       <div
-        className={`flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 transition-all duration-300 ${
+        className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 transition-all duration-300 ${
           focused ? "ring-2 ring-[#c85244]/25 border-transparent" : ""
-        }`}
+        } ${showDropdown ? "rounded-b-none border-b-slate-100" : ""}`}
       >
-        {/* Icono Lupa */}
-        <div className="pl-2 sm:pl-3 shrink-0 text-slate-700">
+        {/* Icono lupa */}
+        <div className="pl-2 sm:pl-3 shrink-0 text-slate-500">
           <Search className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
 
-        {/* Input enmarcado con borde gris suavizado */}
-        <div className="flex-1 flex items-center border border-slate-200 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 bg-white focus-within:border-slate-300 transition-colors">
-          <input
-            ref={inputRef}
-            id="hero-search"
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => {
-              setFocused(true);
-              if (results.length > 0) setIsOpen(true);
-            }}
-            onBlur={() => setFocused(false)}
-            onKeyDown={(e) => {
-              if (e.key === "Escape") {
-                setQuery("");
-                setIsOpen(false);
-                inputRef.current?.blur();
-              }
-            }}
-            placeholder={effectivePlaceholder}
-            className="w-full bg-transparent outline-none focus-visible:outline-none text-slate-700 font-normal placeholder:text-slate-400 text-xs sm:text-sm md:text-base py-0.5"
-            aria-label={t.heroAriaSearch}
-            aria-autocomplete="list"
-            aria-expanded={showDropdown}
-            autoComplete="off"
-          />
-
-          {/* Botón limpiar */}
-          {query && (
-            <button
-              type="button"
-              onClick={() => {
-                setQuery("");
-                setIsOpen(false);
-                inputRef.current?.focus();
-              }}
-              className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-all ml-1"
-              aria-label={t.searchClear}
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          )}
-        </div>
-
-        {/* Botón Buscar terracota rojo */}
-        <button
-          type="button"
-          onClick={() => {
-            if (results.length > 0) {
-              goTo(results[0]);
-            } else if (query.trim()) {
-              const el = document.querySelector("#imperdibles") || document.querySelector("#hoteles");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+        {/* Input */}
+        <input
+          ref={inputRef}
+          id="hero-search"
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => {
+            setFocused(true);
+            setIsOpen(true);
+          }}
+          onBlur={() => setFocused(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              setQuery("");
+              setIsOpen(false);
+              setOpenNow(false);
+              inputRef.current?.blur();
             }
           }}
-          className="shrink-0 bg-[#c85244] hover:bg-[#b54538] active:scale-95 text-white font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl shadow-xs transition-all duration-200 flex items-center gap-1.5 text-sm sm:text-base md:text-lg cursor-pointer"
+          placeholder={typedPlaceholder || placeholder || t.heroPlaceholder}
+          className="flex-1 min-w-0 bg-transparent outline-none focus-visible:outline-none text-slate-700 font-medium placeholder:text-slate-400 text-sm sm:text-base py-2 sm:py-2.5"
+          aria-label={t.heroAriaSearch}
+          aria-autocomplete="list"
+          aria-expanded={showDropdown}
+          autoComplete="off"
+        />
+
+        {/* Botón limpiar */}
+        {(query || openNow) && (
+          <button
+            type="button"
+            onClick={() => {
+              setQuery("");
+              setIsOpen(false);
+              setOpenNow(false);
+              inputRef.current?.focus();
+            }}
+            className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all"
+            aria-label={t.searchClear}
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
+
+        {/* Botón Buscar */}
+        <button
+          type="button"
+          onMouseDown={(e) => {
+            e.preventDefault();
+            if (query.trim()) {
+              search(query);
+              setIsOpen(true);
+            } else {
+              setIsOpen(true);
+              inputRef.current?.focus();
+            }
+          }}
+          className="shrink-0 bg-[#c85244] hover:bg-[#b54538] active:scale-95 text-white font-bold px-5 sm:px-7 py-2 sm:py-2.5 rounded-xl shadow-sm transition-all duration-200 flex items-center gap-1.5 text-sm sm:text-base cursor-pointer"
         >
-          <span>{t.heroSearchBtn ?? "Buscar"}</span>
+          <span className="hidden sm:inline">{t.heroSearchBtn ?? "Buscar"}</span>
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
         </button>
       </div>
 
-      {/* ── Dropdown de resultados ── */}
+      {/* ── Shortcuts fuera del dropdown ── */}
+      {!showDropdown && renderShortcuts(false)}
+
+      {/* ── Dropdown unificado ── */}
       {showDropdown && (
         <div
-          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden"
-          style={{ animation: "dropdownIn 0.18s ease-out", zIndex: 9999 }}
+          className="absolute top-full left-0 right-0 bg-white rounded-b-2xl shadow-2xl border border-t-0 border-slate-100 overflow-hidden"
+          style={{ animation: "dropdownIn 0.15s ease-out", zIndex: 9999 }}
           role="listbox"
           aria-label={t.searchAriaList}
         >
-          {results.length === 0 ? (
-            <div className="py-10 px-6 text-center">
-              <div className="text-3xl mb-2">🔍</div>
-              <p className="text-slate-500 font-medium">
-                {t.searchEmpty} <span className="text-slate-800 font-bold">"{query}"</span>
+          {/* Shortcuts dentro del dropdown */}
+          {renderShortcuts(true)}
+
+          {/* Chip "Abierto ahora" */}
+          <div className="flex gap-2 px-4 py-2.5 border-b border-slate-50">
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                setOpenNow((v) => !v);
+              }}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${
+                openNow
+                  ? "bg-emerald-50 border-emerald-400 text-emerald-700"
+                  : "bg-slate-50 border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700"
+              }`}
+            >
+              <span
+                className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                  openNow
+                    ? "bg-emerald-500 animate-pulse"
+                    : "bg-slate-300"
+                }`}
+              />
+              {t.searchOpenNow}
+            </button>
+          </div>
+
+          {/* Contenido del dropdown */}
+          {!query.trim() && !openNow ? (
+            /* Sugerencias */
+            <div className="p-4 pb-5">
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">
+                {t.searchSuggestionsTitle}
               </p>
-              <p className="text-slate-400 text-sm mt-1">{t.searchEmptySub}</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+                {suggestions.map((label, i) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      setQuery(label);
+                    }}
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded-full text-slate-600 text-xs font-medium hover:bg-slate-50 hover:border-slate-300 hover:text-slate-800 transition-all text-left truncate"
+                  >
+                    <span className="text-slate-400 shrink-0">
+                      <SugIcon type={SUGGESTION_ICONS[i % SUGGESTION_ICONS.length]} />
+                    </span>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : displayItems.length === 0 ? (
+            /* Estado vacío */
+            <div className="py-10 px-6 text-center">
+              <div className="text-3xl mb-2">{openNow ? "🔒" : "🔍"}</div>
+              <p className="text-slate-500 font-medium">
+                {openNow && !query
+                  ? t.searchEmptyClosed
+                  : openNow
+                  ? (
+                    <>
+                      {t.searchEmptyOpenResults}{" "}
+                      <span className="text-slate-800 font-bold">"{query}"</span>
+                    </>
+                  )
+                  : (
+                    <>
+                      {t.searchEmpty}{" "}
+                      <span className="text-slate-800 font-bold">"{query}"</span>
+                    </>
+                  )}
+              </p>
+              {!openNow && (
+                <p className="text-slate-400 text-sm mt-1">
+                  {t.searchEmptyHint}
+                </p>
+              )}
             </div>
           ) : (
+            /* Resultados agrupados */
             <div className="max-h-80 overflow-y-auto">
-              {Object.entries(grouped).map(([cat, catItems]) => (
+              {Object.entries(displayGrouped).map(([cat, catItems]) => (
                 <div key={cat}>
                   <div className="flex items-center gap-2 px-5 py-2 bg-slate-50 border-b border-slate-100">
                     <span className="text-base">{categoryIcons[cat] ?? "📌"}</span>
                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                      {cat}s
+                      {categoryGroupLabel[cat] ?? cat}
                     </span>
                   </div>
                   {catItems.map((item) => {
                     const labelNode = highlightLabel(item.label, query);
-                    const sublabelNode = item.sublabel ? highlightLabel(item.sublabel, query) : null;
+                    const sublabelNode = item.sublabel
+                      ? highlightLabel(item.sublabel, query)
+                      : null;
                     return (
                       <button
                         key={`${cat}-${item.id}`}
                         role="option"
-                        onMouseDown={(e) => { e.preventDefault(); goTo(item); }}
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          goTo(item);
+                        }}
                         className="w-full flex items-start gap-3 px-5 py-3 hover:bg-slate-50 transition-colors text-left group border-b border-slate-50 last:border-none"
                       >
                         <div className="min-w-0 flex-1">
-                          <p className="text-slate-800 font-semibold text-sm">{labelNode}</p>
+                          <p className="text-slate-800 font-semibold text-sm">
+                            {labelNode}
+                          </p>
                           {sublabelNode && (
-                            <p className="text-slate-400 text-xs truncate mt-0.5">{sublabelNode}</p>
+                            <p className="text-slate-400 text-xs truncate mt-0.5">
+                              {sublabelNode}
+                            </p>
+                          )}
+                          {item.rating && (
+                            <p className="text-[11px] mt-0.5" style={{ color: "var(--color-brand)" }}>
+                              {"★".repeat(item.rating)}
+                            </p>
                           )}
                         </div>
                         <ChevronRight className="w-4 h-4 ml-auto shrink-0 text-slate-300 group-hover:text-slate-400 transition-colors mt-0.5" />
@@ -299,7 +658,9 @@ export default function SearchBar({
               {/* Footer */}
               <div className="px-5 py-3 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs text-slate-400">
-                  {resultCount} {resultLabel}
+                  {resultCount}{" "}
+                  {resultCount !== 1 ? t.searchResults : t.searchResult}
+                  {openNow ? ` ${t.searchOpenNow.toLowerCase()}` : ""}
                 </span>
                 <span className="text-[10px] text-slate-300 uppercase tracking-wider">
                   {t.searchFooter}
@@ -310,66 +671,7 @@ export default function SearchBar({
         </div>
       )}
 
-      {/* ── Botones de categorías (Pills) debajo de la barra ── */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-        {/* Comer */}
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.querySelector("#restaurantes");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.location.href = "/directorio/restaurantes";
-          }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#c85244] text-[#c85244] hover:bg-rose-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
-        >
-          <Utensils className="w-5 h-5 text-[#c85244]" />
-          <span>{t.pillEat ?? "Comer"}</span>
-        </button>
-
-        {/* Dormir */}
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.querySelector("#hoteles");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.location.href = "/directorio/hoteles";
-          }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#388596] text-[#388596] hover:bg-teal-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
-        >
-          <Hotel className="w-5 h-5 text-[#388596]" />
-          <span>{t.pillSleep ?? "Dormir"}</span>
-        </button>
-
-        {/* Experiencias */}
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.querySelector("#imperdibles") || document.querySelector("#destinos");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.location.href = "/directorio/destinos";
-          }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#e59b38] text-[#e59b38] hover:bg-amber-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
-        >
-          <Compass className="w-5 h-5 text-[#e59b38]" />
-          <span>{t.pillExperiences ?? "Experiencias"}</span>
-        </button>
-
-        {/* Guías Certificados */}
-        <button
-          type="button"
-          onClick={() => {
-            const el = document.querySelector("#guias");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.location.href = "/directorio/guias";
-          }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] border-[#d46597] text-[#d46597] hover:bg-pink-50/50 font-bold text-sm sm:text-base transition-all bg-white shadow-2xs active:scale-95 cursor-pointer"
-        >
-          <UserCheck className="w-5 h-5 text-[#d46597]" />
-          <span>{t.pillGuides ?? "Guías Certificados"}</span>
-        </button>
-      </div>
-
-      {/* ── Animación CSS inline ── */}
+      {/* ── Animación CSS ── */}
       <style>{`
         @keyframes dropdownIn {
           from { opacity: 0; transform: translateY(-6px) scale(0.98); }

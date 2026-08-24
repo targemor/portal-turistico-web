@@ -4,6 +4,9 @@
     "documentId": "ihlmetk0b8phri2g13lsn6k3",
     "nombre": "Fabian Martínez Herrera",
     "credencial_sectur": "Sí",
+    "especialidad": "Naturaleza / ecoturismo, Historia, Paleontología",
+    "tours": "1) Jardín Botánico + Salineras Tradicionales — salida 9:00 am, duración 4 h, previa reserva. 2) Senderismo Paleontológico (San Juan Raya) — incluye huellas de dinosaurio, Museo Comunitario de San Juan Raya y Casa de las Artesanas; salida 9:00 am, duración 6 h, previa reserva. 3) Ruta del Mezcal (Palenque \"El Original\") — cata guiada, siembra de agave, caminata en Cerro Colorado; salida 4:00 pm, duración 4 h, previa reserva.",
+    "ubicacion": "4 Sur #303, Centro, Tehuacán",
     "createdAt": "2026-05-16T16:59:25.374Z",
     "updatedAt": "2026-05-16T17:01:10.604Z",
     "publishedAt": "2026-05-16T17:01:10.629Z",
@@ -34,6 +37,112 @@
         "documentId": "kx9a57kq0xrlvh8i3i02wmkl",
         "url": "/assets/fabian_martinez_herrera_59.webp",
         "alternativeText": null,
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "documentId": "nohemi-perez-gonzalez-guia",
+    "nombre": "Nohemí Pérez González",
+    "credencial_sectur": "Sí",
+    "numero_credencial": "E004775",
+    "tipo_acreditacion": "Guía especializado",
+    "vigencia_credencial": "30/11/2027",
+    "especialidad": "Naturaleza / ecoturismo",
+    "idiomas": "Español",
+    "duracion_recorridos": "De 2 a 6 horas dependiendo de la ruta",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "redes_sociales": [
+      {
+        "id": 110,
+        "plataforma": "Facebook",
+        "usuario": "Nohemí Pérez González",
+        "enlace": "https://www.facebook.com/share/1JcJbnvG2U/"
+      },
+      {
+        "id": 111,
+        "plataforma": "Instagram",
+        "usuario": "@desierto.magico",
+        "enlace": "https://www.instagram.com/desierto.magico"
+      }
+    ],
+    "contacto": {
+      "id": 110,
+      "telefono": "2461797016",
+      "email": "noe.pego711@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "2461797016"
+    },
+    "galeria": [
+      {
+        "id": 400,
+        "url": "https://drive.google.com/open?id=1kNgDxd529aaVDF_WcHI75MKamIb0GZY7",
+        "alternativeText": "Nohemí Pérez González - Guía turística",
+        "caption": null
+      },
+      {
+        "id": 401,
+        "url": "https://drive.google.com/open?id=19Esdb7d2w8vth-22uQUf3UPh2bNDathh",
+        "alternativeText": "Nohemí Pérez González - Guía turística",
+        "caption": null
+      },
+      {
+        "id": 402,
+        "url": "https://drive.google.com/open?id=1GnbivCXNjaO74acSyHpVxEJaCQn4bh1Z",
+        "alternativeText": "Nohemí Pérez González - Guía turística",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "documentId": "efren-perez-gonzalez-guia",
+    "nombre": "Efrén Pérez González",
+    "credencial_sectur": "Sí",
+    "numero_credencial": "E004774",
+    "tipo_acreditacion": "Guía especializado",
+    "vigencia_credencial": "07/11/2027",
+    "especialidad": "Naturaleza / ecoturismo",
+    "idiomas": "Inglés",
+    "duracion_recorridos": "1.5 a 2 horas",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "redes_sociales": [
+      {
+        "id": 112,
+        "plataforma": "Facebook",
+        "usuario": "Efrén Pérez González",
+        "enlace": "https://www.facebook.com/share/1HWK69oZyV/"
+      }
+    ],
+    "contacto": {
+      "id": 112,
+      "telefono": "2383932297",
+      "email": "monitoreszapotitlansalinas@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "2383932297"
+    },
+    "galeria": [
+      {
+        "id": 410,
+        "url": "https://drive.google.com/open?id=1KyPUF8tvdk3UgTcO5UgTFyBO0pq-plGY",
+        "alternativeText": "Efrén Pérez González - Guía turístico",
+        "caption": null
+      },
+      {
+        "id": 411,
+        "url": "https://drive.google.com/open?id=1ZadGGjnIp9MSX7PVWJVGGF0qD-RubzS7",
+        "alternativeText": "Efrén Pérez González - Guía turístico",
+        "caption": null
+      },
+      {
+        "id": 412,
+        "url": "https://drive.google.com/open?id=1oDSJxHqr9WvemHxMyzkdQpQ31T7pp8Ac",
+        "alternativeText": "Efrén Pérez González - Guía turístico",
         "caption": null
       }
     ]

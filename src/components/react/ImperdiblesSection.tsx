@@ -106,12 +106,12 @@ function ImperdiblesSectionInner({ imperdibles }: Props) {
 
   // Card principal (la más grande, col-span-7)
   const main = filtered[0];
-  // Cards secundarias
-  const secondary = filtered.slice(1);
+  // Cards secundarias — máximo 2 para el bento grid (total: 1 main + 2 = 3)
+  const secondary = filtered.slice(1, 3);
 
   // Si no hay filtrados, mostrar el primero de todos
   const mainItem = main ?? imperdibles[0];
-  const secondaryItems = secondary.length > 0 ? secondary : imperdibles.slice(1);
+  const secondaryItems = secondary.length > 0 ? secondary : imperdibles.slice(1, 3);
 
   const mainColor =
     CATEGORIA_CONFIG[mainItem?.categorias?.[0]?.nombre || ""]?.color ?? "#64748b";

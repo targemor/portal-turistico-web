@@ -4,15 +4,16 @@
     "documentId": "de68rzj8wec0971yg9b1ugi7",
     "nombre": "City Express By Marriott Tehuacán",
     "estrellas": 4,
+    "descripcion": "Ofrecemos una excelente relación calidad-precio en una ubicación estratégica, complementada con desayuno en cortesía, transportación y beneficios de nuestro programa de lealtad.",
     "direccion": "Calz. Adolfo López Mateos 3800, San Lorenzo Teotipilco, 75855 Tehuacán, Pue.",
     "createdAt": "2026-05-16T17:07:04.355Z",
-    "updatedAt": "2026-05-16T17:07:05.705Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:07:05.733Z",
     "redes_sociales": [
       {
         "id": 41,
         "plataforma": "Facebook",
-        "usuario": "Hoteles City Express ",
+        "usuario": "Hoteles City Express",
         "enlace": "https://www.facebook.com/hotelescityexpress"
       },
       {
@@ -24,11 +25,15 @@
     ],
     "contacto": {
       "id": 13,
-      "telefono": "2225010408",
+      "telefono": "2383840120",
       "email": null,
       "sitio_web": null,
-      "whatsapp": "2383840120"
+      "whatsapp": "2225010408"
     },
+    "categoria_precio": "$$$",
+    "caracteristicas": "Estacionamiento, Gimnasio, Desayuno en cortesía, Transportación gratuita 10 km a la redonda",
+    "recepcion_24h": true,
+    "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios, Para grupos grandes",
     "galeria": [
       {
         "id": 80,
@@ -86,15 +91,16 @@
     "documentId": "lmh7aezklj3p65ch6zpjff20",
     "nombre": "Hotel Plaza Iberia",
     "estrellas": 4,
-    "direccion": "Avenida Independencia Oriente # 211, Centro de la Ciudad, 75700 Tehuacán, Pue.",
+    "descripcion": "El restaurante y el Bar son el atractivo principal del hotel.",
+    "direccion": "Avenida Independencia Oriente esquina con 3 Norte #211, Colonia Centro, C.P. 75700, Tehuacán, Pue.",
     "createdAt": "2026-05-16T17:12:38.740Z",
-    "updatedAt": "2026-05-16T17:12:41.956Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:12:41.973Z",
     "redes_sociales": [
       {
         "id": 45,
         "plataforma": "Facebook",
-        "usuario": "Hotel Plaza Iberia ",
+        "usuario": "Hotel Plaza Iberia",
         "enlace": "https://www.facebook.com/hotelplazaiberia"
       },
       {
@@ -106,11 +112,15 @@
     ],
     "contacto": {
       "id": 15,
-      "telefono": "238 38 31500",
-      "email": null,
+      "telefono": "2383831500",
+      "email": "hoteliberia_teh@live.com.mx",
       "sitio_web": null,
       "whatsapp": null
     },
+    "categoria_precio": "$$",
+    "caracteristicas": "Estacionamiento, Vista panorámica, Restaurante y Bar",
+    "recepcion_24h": false,
+    "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios, Para grupos grandes",
     "galeria": [
       {
         "id": 83,
@@ -131,6 +141,113 @@
         "documentId": "oo79wfpgvknekp0m6bp2g7ls",
         "url": "/assets/hotel_plaza_iberia_10.webp",
         "alternativeText": null,
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "documentId": "hotel-zenith-tehuacan",
+    "nombre": "Hotel Zenith",
+    "estrellas": null,
+    "descripcion": "Servicio personalizado con estacionamiento y recepción 24 horas.",
+    "direccion": null,
+    "direccion_maps": "https://www.google.com/maps/place/Hotel+ZENITH/@18.461795,-97.3947553,17z/data=!3m1!4b1!4m9!3m8!1s0x85c5bcd7fc6b86ab:0xbc35b182d726b7a9",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "redes_sociales": [
+      {
+        "id": 100,
+        "plataforma": "Instagram",
+        "usuario": "@hotelzenith_tehuacan",
+        "enlace": "https://www.instagram.com/hotelzenith_tehuacan"
+      },
+      {
+        "id": 101,
+        "plataforma": "Facebook",
+        "usuario": "Hotel.Zenith.Th",
+        "enlace": "https://www.facebook.com/Hotel.Zenith.Th"
+      }
+    ],
+    "contacto": {
+      "id": 100,
+      "telefono": "2383840130",
+      "email": "ventas@hotelzenith.com.mx",
+      "sitio_web": null,
+      "whatsapp": "2381686528"
+    },
+    "categoria_precio": "$$$",
+    "caracteristicas": "Estacionamiento, Recepción 24 horas, Servicio personalizado",
+    "recepcion_24h": true,
+    "para_quien": "Viaje de negocios",
+    "galeria": [
+      {
+        "id": 200,
+        "url": "https://drive.google.com/open?id=1NYyFGXYnEkzMdmlGFkpwNUrUApjdkp5f",
+        "alternativeText": "Hotel Zenith Tehuacán",
+        "caption": null
+      },
+      {
+        "id": 201,
+        "url": "https://drive.google.com/open?id=1O0VibllLRB6_SPTUdRQy2dzAsxNRX1FF",
+        "alternativeText": "Hotel Zenith Tehuacán",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "documentId": "gran-hotel-mexico-by-solaris",
+    "nombre": "Gran Hotel México by Solaris",
+    "estrellas": null,
+    "descripcion": "Instalaciones remodeladas con alberca, gimnasio, restaurante-bar y estacionamiento en el corazón de Tehuacán.",
+    "direccion": "Av. Reforma Nte. s/n, Centro de la Ciudad, 75700 Tehuacán, Pue.",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "redes_sociales": [
+      {
+        "id": 102,
+        "plataforma": "Instagram",
+        "usuario": "@granhotelmexicobysolaris",
+        "enlace": "https://www.instagram.com/granhotelmexicobysolaris"
+      },
+      {
+        "id": 103,
+        "plataforma": "Facebook",
+        "usuario": "Gran Hotel México by Solaris",
+        "enlace": "https://www.facebook.com/share/1J6BayQMJx/"
+      }
+    ],
+    "contacto": {
+      "id": 101,
+      "telefono": "2381700854",
+      "email": "ggeneral@granhotelmexicobysolaris.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "categoria_precio": "$$$",
+    "caracteristicas": "Alberca, Gimnasio, Restaurante-bar, Estacionamiento, Recepción 24 horas",
+    "recepcion_24h": true,
+    "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios",
+    "galeria": [
+      {
+        "id": 202,
+        "url": "https://drive.google.com/open?id=1UUSXN23y73wM56gPp6AoGOutm_nF7YLB",
+        "alternativeText": "Gran Hotel México by Solaris",
+        "caption": null
+      },
+      {
+        "id": 203,
+        "url": "https://drive.google.com/open?id=1prDtD0_EaXjn-jDsV_HSxIKh1DdQDam2",
+        "alternativeText": "Gran Hotel México by Solaris",
+        "caption": null
+      },
+      {
+        "id": 204,
+        "url": "https://drive.google.com/open?id=1Fh61OOHCY_qFZkVQv3xWE3k0RxNVY8h2",
+        "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
       }
     ]

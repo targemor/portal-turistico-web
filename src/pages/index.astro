@@ -6,7 +6,8 @@
  * - NavBar          → header transparente → blur al scroll
  * - HeroSection     → imagen + overlay + barra búsqueda
  * - IntroSection    → cita minimalista con divisor rojo
- * - ImperdiblesSection → grid de 3 cards shadcn
+ * - ImperdiblesSection → bento grid + tabs por categoría
+ * - EventosSection    → lista de próximos eventos
  * - ExploraSection  → bento grid + tabs por categoría
  * - HotelesSection  → cards de hoteles con datos JSON
  * - RestaurantesSection → cards de restaurantes con datos JSON
@@ -14,21 +15,22 @@
  * - Footer          → dark slate-950
  * - BottomNav       → nav móvil fijo + FAB
  */
-import BaseLayout         from "../layouts/BaseLayout.astro";
-import NavBar             from "../components/NavBar.astro";
-import HeroSection        from "../components/HeroSection.astro";
-import IntroSection       from "../components/IntroSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+import HeroSection from "../components/HeroSection.astro";
+import IntroSection from "../components/IntroSection.astro";
 import ImperdiblesSection from "../components/ImperdiblesSection.astro";
-import ItinerarioTabs     from "../components/ItinerarioTabs.astro";
-import HotelesSection     from "../components/HotelesSection.astro";
+import ItinerarioTabs from "../components/ItinerarioTabs.astro";
+import EventosSection from "../components/EventosSection.astro";
+import HotelesSection from "../components/HotelesSection.astro";
 import RestaurantesSection from "../components/RestaurantesSection.astro";
-import GuiasSection       from "../components/GuiasSection.astro";
-import Footer             from "../components/Footer.astro";
-import BottomNav          from "../components/BottomNav.astro";
+import GuiasSection from "../components/GuiasSection.astro";
+import Footer from "../components/Footer.astro";
+import BottomNav from "../components/BottomNav.astro";
 
 import homePageData from "../data/home-page.json";
-import guias        from "../data/guias-turisticos.json";
-import destinos     from "../data/destinos-turisticos.json";
+import guias from "../data/guias-turisticos.json";
+import destinos from "../data/destinos-turisticos.json";
 ---
 
 <BaseLayout
@@ -59,6 +61,9 @@ import destinos     from "../data/destinos-turisticos.json";
       <ItinerarioTabs />
     </section>
 
+    <!-- Próximos Eventos -->
+    <EventosSection />
+
     <!-- Hoteles (datos desde JSON) -->
     <HotelesSection hoteles={homePageData.mejores_hoteles} />
 
@@ -74,5 +79,4 @@ import destinos     from "../data/destinos-turisticos.json";
 
   <!-- Bottom nav móvil + FAB -->
   <BottomNav />
-
 </BaseLayout>

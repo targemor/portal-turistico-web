@@ -2,12 +2,22 @@
   {
     "id": 5,
     "documentId": "tnvxpn35qkab9qi1zkd7ql1u",
-    "nombre": "Rancho Aislados",
-    "descripcion": null,
-    "direccion": "Carretera Tehuacán Huajuapan Km 52, Plan de San Miguel, Caltepec Puebla. C.P. 75895",
+    "nombre": "Rancho Mezcal Aislados",
+    "descripcion": "Cocina y coctelería a base de Mezcal Aislados, con ingredientes de la región y en base a su temporalidad. Un espacio único en la Reserva de la Biosfera Tehuacán-Cuicatlán.",
+    "descripcion_larga": "Aislados tiene 6 actividades económicas dentro del proyecto: vivero de maguey y plántulas nativas, invernaderos de hortalizas, palenque de mezcal Aislados, restaurante con cocina local de temporada, actividad acuícola (tilapia) y hospedaje en desarrollo. Nos hacemos llamar 'mezcaleros desde la raíz'. Durante el recorrido puedes tener avistamiento de aves como águilas, pájaros reloj, zopilotes, calandrias, carpinteros y fauna como linces, zorros y coyotes.",
+    "direccion": "Carretera Tehuacán Huajuapan Km 52, Plan de San Miguel, Caltepec, Pue. C.P. 75895",
+    "direccion_maps": "https://maps.app.goo.gl/LJzY94zDt6KpKd2VA",
     "createdAt": "2026-05-16T17:16:26.226Z",
-    "updatedAt": "2026-05-16T17:18:12.965Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:18:13.006Z",
+    "horario": "Martes-Domingo 09:00 am – 07:00 pm",
+    "tipo_comida": "Mexicana, Saludable",
+    "clasificacion": "Restaurante",
+    "categoria_precio": "$$$",
+    "caracteristicas": "Pet friendly, Música en vivo, Jardín, Vistas increíbles, Aire libre, Estacionamiento, Para llevar",
+    "atractivo_principal": "Cocina tradicional con insumos de la región. La pasión por compartir su riqueza cultural y gastronómica. El agave no solo es mezcal.",
+    "tipo_servicio": "Desayuno, Comida",
+    "sitio_web": "https://ranchoaislados.com",
     "redes_sociales": [
       {
         "id": 50,
@@ -31,9 +41,9 @@
     "contacto": {
       "id": 17,
       "telefono": null,
-      "email": "ranchoaislados@gmail.com",
-      "sitio_web": null,
-      "whatsapp": "221 421 6257"
+      "email": "RANCHOAISLADOS@gmail.com",
+      "sitio_web": "https://ranchoaislados.com",
+      "whatsapp": "2214216257"
     },
     "galeria": [
       {
@@ -76,17 +86,24 @@
   {
     "id": 7,
     "documentId": "oazpt9n26hvctc56ipo1evir",
-    "nombre": "Creamy",
-    "descripcion": "Ice Cream Factory",
-    "direccion": "Heroes de La Independencia 1101, Guadalupe Hidalgo, 75790 Tehuacán, Pue.",
+    "nombre": "Creamy, Ice Cream Factory",
+    "descripcion": "Helados artesanales, paletas e icepops elaborados con ingredientes 100% naturales, sin saborizantes ni colorantes artificiales, con sabores clásicos, gourmet e innovadores.",
+    "direccion": "Héroes de la Independencia #1101-B, Guadalupe Hidalgo, 75790 Tehuacán, Pue.",
+    "direccion_maps": "https://maps.app.goo.gl/KNnbDJEmcQKyBSvAA",
     "createdAt": "2026-05-16T17:21:17.387Z",
-    "updatedAt": "2026-05-16T17:21:18.976Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:21:19.053Z",
+    "horario": "L-V 12:00 pm – 9:00 pm  |  S-D 11:30 am – 9:00 pm",
+    "tipo_comida": "Helados artesanales, Paletas, Nieves, Helados gourmet, Helados sin azúcar",
+    "clasificacion": "Heladería",
+    "categoria_precio": "$$$",
+    "caracteristicas": "Pet friendly, Para llevar",
+    "atractivo_principal": "Ingredientes 100% naturales, sin saborizantes ni colorantes artificiales.",
     "redes_sociales": [
       {
         "id": 55,
         "plataforma": "Facebook",
-        "usuario": "Creamy ",
+        "usuario": "Creamy",
         "enlace": "https://www.facebook.com/Creamyteh/"
       },
       {
@@ -94,9 +111,21 @@
         "plataforma": "Instagram",
         "usuario": "@creamy_teh",
         "enlace": "https://www.instagram.com/creamy_teh"
+      },
+      {
+        "id": 57,
+        "plataforma": "TikTok",
+        "usuario": "@heladoscreamy",
+        "enlace": "https://www.tiktok.com/@heladoscreamy"
       }
     ],
-    "contacto": null,
+    "contacto": {
+      "id": 18,
+      "telefono": "2383865720",
+      "email": "creamyteh@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "2383865720"
+    },
     "galeria": [
       {
         "id": 35,
@@ -147,7 +176,7 @@
       {
         "id": 60,
         "plataforma": "Facebook",
-        "usuario": "Jacinta Cocina Casual ",
+        "usuario": "Jacinta Cocina Casual",
         "enlace": "https://www.facebook.com/jacintacocinacasual/"
       }
     ],
@@ -215,7 +244,7 @@
     "documentId": "e9uskpv8na821oiq9800ugz5",
     "nombre": "Las Parrillas",
     "descripcion": null,
-    "direccion": "Restaurante LasParrillas ,ZonaAlta Calz.Adolfo López Mateos 2008, ZonaAlta, 75750 Tehuacán,Pue.",
+    "direccion": "Calz. Adolfo López Mateos 2008, Zona Alta, 75750 Tehuacán, Pue.",
     "createdAt": "2026-05-16T17:58:07.785Z",
     "updatedAt": "2026-05-16T17:58:09.038Z",
     "publishedAt": "2026-05-16T17:58:09.123Z",
@@ -268,9 +297,9 @@
   {
     "id": 14,
     "documentId": "g8le8xrfqtd6ku1y6v8c46g0",
-    "nombre": "La Greca ",
-    "descripcion": "𝗟𝗮 𝗧𝗿𝗮𝗱𝗶𝗰𝗶𝗼́𝗻 𝗱𝗲 𝗢𝗮𝘅𝗮𝗰𝗮 𝗲𝗻 𝗧𝗲𝗵𝘂𝗮𝗰𝗮́𝗻",
-    "direccion": "Calle 1 poniente #142 Colonia Centro Código Postal 75700, Tehuacán, Puebla.",
+    "nombre": "La Greca",
+    "descripcion": "La Tradición de Oaxaca en Tehuacán",
+    "direccion": "Calle 1 Poniente #142, Colonia Centro, C.P. 75700, Tehuacán, Pue.",
     "createdAt": "2026-05-16T18:01:27.094Z",
     "updatedAt": "2026-05-16T18:02:04.985Z",
     "publishedAt": "2026-05-16T18:02:05.066Z",
@@ -278,7 +307,7 @@
       {
         "id": 67,
         "plataforma": "Facebook",
-        "usuario": "Restaurant \"La Greca\" ",
+        "usuario": "Restaurant \"La Greca\"",
         "enlace": "https://www.facebook.com/people/Restaurant-La-Greca"
       },
       {
@@ -392,25 +421,45 @@
     "id": 18,
     "documentId": "uxgnlp7ikibeswznoorijg7x",
     "nombre": "Restaurante María Sabina",
-    "descripcion": null,
-    "direccion": "Calle 13 oriente No. 309 Colonia Guadalupe Hidalgo, a una cuadra del parque Jardín Guadalupe",
+    "descripcion": "Preparamos platillos oaxaqueños con insumos que nos envían desde Oaxaca, así como platillos mexicanos con insumos locales. Un espacio agradable para disfrutar en familia y relajarse del ruido del centro.",
+    "direccion": "Calle 13 Oriente No. 309, Colonia Guadalupe Hidalgo, a una cuadra del parque Jardín Guadalupe",
+    "direccion_maps": "https://maps.app.goo.gl/QcMJdZgJb9bHGNK96",
     "createdAt": "2026-05-16T18:09:24.379Z",
-    "updatedAt": "2026-05-16T18:09:31.682Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T18:09:31.724Z",
+    "horario": "L-D 8:00 am – 4:30 pm  |  Domingos 8:00 am – 1:30 pm",
+    "tipo_comida": "Mexicana, Oaxaqueña",
+    "clasificacion": "Restaurante",
+    "categoria_precio": "$$$",
+    "caracteristicas": "Pet friendly, Jardín, Aire libre, Para llevar",
+    "atractivo_principal": "Tlayudas, comida oaxaqueña y menú de comida del día.",
+    "tipo_servicio": "Desayuno, Comida, Eventos a domicilio",
     "redes_sociales": [
       {
         "id": 72,
         "plataforma": "Instagram",
         "usuario": "@restaurante_maria_sabina",
         "enlace": "https://www.instagram.com/restaurante_maria_sabina/"
+      },
+      {
+        "id": 73,
+        "plataforma": "Facebook",
+        "usuario": "Restaurante María Sabina",
+        "enlace": "https://www.facebook.com/share/1F5aa7E2sk/"
+      },
+      {
+        "id": 74,
+        "plataforma": "TikTok",
+        "usuario": "sabinademisamoresmezcal",
+        "enlace": null
       }
     ],
     "contacto": {
       "id": 28,
       "telefono": "2381472023",
-      "email": null,
+      "email": "restaurantemariasabina@hotmail.com",
       "sitio_web": null,
-      "whatsapp": "2381092989"
+      "whatsapp": "2381382218"
     },
     "galeria": [
       {
@@ -488,12 +537,20 @@
   {
     "id": 20,
     "documentId": "wyptd49sq1hh13jge17axhu8",
-    "nombre": "Za Bistro",
-    "descripcion": "Algo nuevo y fresco en la ciudad, con el mejor sabor y originalidad de la bella Italia.",
+    "nombre": "Restaurante ZA Bistró Italian Food & Pizza",
+    "descripcion": "Algo nuevo y fresco en la ciudad, con el mejor sabor y originalidad de la bella Italia. Ensaladas, pastas, quesos, pizzas y vinos.",
     "direccion": "Calz. Adolfo López Mateos 2420, Zona Alta, 75760 Tehuacán, Pue.",
+    "direccion_maps": "https://zabistroitalianfoodpizza.negocio.site",
     "createdAt": "2026-05-16T18:13:17.904Z",
-    "updatedAt": "2026-05-16T18:13:19.128Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T18:13:19.164Z",
+    "horario": "M-J 2:00 pm – 9:30 pm  |  V-S 2:00 pm – 10:30 pm  |  D 2:00 pm – 7:30 pm",
+    "tipo_comida": "Italiana",
+    "clasificacion": "Restaurante - Bar",
+    "categoria_precio": "$$$",
+    "caracteristicas": "Pet friendly, Música en vivo, Jardín, Vistas increíbles, Terraza, Aire libre",
+    "atractivo_principal": "Las pizzas son muy buenas.",
+    "tipo_servicio": "Comida, Cena",
     "redes_sociales": [
       {
         "id": 75,
@@ -504,15 +561,15 @@
       {
         "id": 76,
         "plataforma": "Facebook",
-        "usuario": "ZA bistró italian food & pizza ",
+        "usuario": "ZA bistró italian food & pizza",
         "enlace": "https://www.facebook.com/ZABISTRO"
       }
     ],
     "contacto": {
       "id": 30,
-      "telefono": "2386885038",
-      "email": null,
-      "sitio_web": null,
+      "telefono": "2383880105",
+      "email": "zabistro@hotmail.com",
+      "sitio_web": "https://zabistroitalianfoodpizza.negocio.site",
       "whatsapp": "2383880105"
     },
     "galeria": [
@@ -550,7 +607,7 @@
     "id": 22,
     "documentId": "h9dvm5s0cf344b6q7v44tdvx",
     "nombre": "Yankee's Pizza",
-    "descripcion": "Yankee's pizzas 5 ote\nYankee's pizzas Serdan\nYankee's pizzas Reforma",
+    "descripcion": "Yankee's Pizzas 5 Ote  |  Yankee's Pizzas Serdán  |  Yankee's Pizzas Reforma",
     "direccion": null,
     "createdAt": "2026-05-16T18:19:53.560Z",
     "updatedAt": "2026-05-16T18:19:54.819Z",
@@ -559,7 +616,7 @@
       {
         "id": 80,
         "plataforma": "Facebook",
-        "usuario": "Yankees Pizzas ",
+        "usuario": "Yankees Pizzas",
         "enlace": "https://www.facebook.com/yankees.pizzas"
       },
       {
@@ -610,6 +667,316 @@
         "documentId": "nnz60obku7tuyj5j1h3nnuzg",
         "url": "/assets/yankee_s_pizza_58.webp",
         "alternativeText": null,
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "documentId": "violetta-tehuacan",
+    "nombre": "Violetta",
+    "descripcion": "Panadería, desayunos, cafetería y bar. Sus chilaquiles y su pan dulce, muy popular, son la especialidad de la casa.",
+    "direccion": "1 Sur No. 100, Col. Centro, Tehuacán, Pue.",
+    "direccion_maps": "https://maps.app.goo.gl/nenqzdnZF2k6JGgL6",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "horario": "L-D 8:00 am – 11:00 pm",
+    "tipo_comida": "Mexicana, Panadería",
+    "clasificacion": "Restaurante - Bar",
+    "categoria_precio": "$$$",
+    "zona": "Zona Centro",
+    "caracteristicas": "Pet friendly, Terraza, Aire libre",
+    "atractivo_principal": "Sus chilaquiles y su pan dulce, muy popular, son la especialidad de la casa.",
+    "tipo_servicio": "Desayuno, Bar, Cafetería y panadería",
+    "para_quien": "Parejas, Familias con niños, Amigos, Ocasiones especiales",
+    "redes_sociales": [
+      {
+        "id": 90,
+        "plataforma": "Instagram",
+        "usuario": "@violettacafe_th",
+        "enlace": "https://www.instagram.com/violettacafe_th"
+      },
+      {
+        "id": 91,
+        "plataforma": "Facebook",
+        "usuario": "Violetta",
+        "enlace": "https://www.facebook.com/profile.php?id=100069603012469"
+      }
+    ],
+    "contacto": {
+      "id": 90,
+      "telefono": "2224368697",
+      "email": "violetta.admi@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "2224368697"
+    },
+    "galeria": [
+      {
+        "id": 300,
+        "url": "https://drive.google.com/open?id=1DQU1jVaL55jH_6bzfWhR7aAuR9YSpPi1",
+        "alternativeText": "Violetta Tehuacán",
+        "caption": null
+      },
+      {
+        "id": 301,
+        "url": "https://drive.google.com/open?id=1QYAm7BTCWHvaaCz0Rc9HnfcEPMWRlV1a",
+        "alternativeText": "Violetta Tehuacán",
+        "caption": null
+      },
+      {
+        "id": 302,
+        "url": "https://drive.google.com/open?id=1VGAOdxz0IWidX_qBKKFFVQ_XfiO5H6Qm",
+        "alternativeText": "Violetta Tehuacán",
+        "caption": null
+      },
+      {
+        "id": 303,
+        "url": "https://drive.google.com/open?id=1nvd4TjxOGc8TdslIrbT8lDJjAmoLNd_G",
+        "alternativeText": "Violetta Tehuacán",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "documentId": "restaurante-casa-amachu",
+    "nombre": "Restaurante Casa Amachu",
+    "descripcion": "Variedad de platillos entre mar y tierra, vegetariana, almuerzos y comida a la carta, así como buffet dominical.",
+    "direccion": "Camelia Pte 128, Villa Granada, 75732 Tehuacán, Pue.",
+    "direccion_maps": "https://www.google.com/maps/place/casa+amachu",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "horario": "L-D 8:00 am – 5:00 pm",
+    "tipo_comida": "Variedad de platillos, mar y tierra, vegetariana, buffet dominical",
+    "clasificacion": "Restaurante",
+    "categoria_precio": "$$$",
+    "zona": "Cerca del centro",
+    "caracteristicas": "Pet friendly, Jardín, Terraza, Aire libre",
+    "atractivo_principal": "En temporada, uno de los mejores lugares de Tehuacán para el mole de caderas.",
+    "tipo_servicio": "Desayuno, Comida, Bar",
+    "para_quien": "Parejas, Familias con niños, Reuniones de trabajo, Amigos, Ocasiones especiales",
+    "redes_sociales": [
+      {
+        "id": 92,
+        "plataforma": "Instagram",
+        "usuario": "@casaamachu",
+        "enlace": "https://www.instagram.com/casaamachu"
+      },
+      {
+        "id": 93,
+        "plataforma": "Facebook",
+        "usuario": "Casa Amachu",
+        "enlace": "https://www.facebook.com/casaamachu"
+      }
+    ],
+    "contacto": {
+      "id": 92,
+      "telefono": "2383860567",
+      "email": "chefleofer@hotmail.com",
+      "sitio_web": null,
+      "whatsapp": "2383860567"
+    },
+    "galeria": [
+      {
+        "id": 310,
+        "url": "https://drive.google.com/open?id=1zH2VCoFN3mY6cMWgYJUGKoYFcGwBTt8i",
+        "alternativeText": "Restaurante Casa Amachu",
+        "caption": null
+      },
+      {
+        "id": 311,
+        "url": "https://drive.google.com/open?id=1enl8awcZmra7e8dsxCezTxy7eN5bqYEn",
+        "alternativeText": "Restaurante Casa Amachu",
+        "caption": null
+      },
+      {
+        "id": 312,
+        "url": "https://drive.google.com/open?id=13uomsWF8RfKHhq6JSx851Nbp7zBPU2hS",
+        "alternativeText": "Restaurante Casa Amachu",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "documentId": "restaurante-gran-hotel-mexico-solaris",
+    "nombre": "Restaurante Gran Hotel México by Solaris",
+    "descripcion": "Desayuno tranquilo en un edificio colonial de más de 100 años, con jardines. Comida tradicional y española.",
+    "direccion": "Av. Reforma Nte. s/n, Centro de la Ciudad, 75700 Tehuacán, Pue.",
+    "direccion_maps": "https://maps.app.goo.gl/68m5XDCTywSqPqSz9",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "horario": "L-S 7:00 am – 10:00 pm",
+    "tipo_comida": "Comida Tradicional y Española",
+    "clasificacion": "Restaurante - Bar",
+    "categoria_precio": "$$",
+    "zona": "Zona Centro",
+    "caracteristicas": "Pet friendly, Música en vivo, Jardín, Vistas increíbles, Terraza, Aire libre",
+    "atractivo_principal": "Desayuno tranquilo en un edificio colonial de más de 100 años, con jardines.",
+    "tipo_servicio": "Desayuno, Comida, Cena, Bar, Eventos",
+    "para_quien": "Parejas, Familias con niños, Reuniones de trabajo, Amigos, Ocasiones especiales",
+    "redes_sociales": [
+      {
+        "id": 94,
+        "plataforma": "Instagram",
+        "usuario": "@granhotelmexicobysolaris",
+        "enlace": "https://www.instagram.com/granhotelmexicobysolaris"
+      },
+      {
+        "id": 95,
+        "plataforma": "Facebook",
+        "usuario": "Gran Hotel México by Solaris",
+        "enlace": "https://www.facebook.com/share/1J6BayQMJx/"
+      }
+    ],
+    "contacto": {
+      "id": 94,
+      "telefono": "2381700854",
+      "email": "ggeneral@granhotelmexicobysolaris.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "galeria": [
+      {
+        "id": 320,
+        "url": "https://drive.google.com/open?id=1F6ttT_I8pL2V6ovFXPG7FZ7BMJlXb6rS",
+        "alternativeText": "Restaurante Gran Hotel México by Solaris",
+        "caption": null
+      },
+      {
+        "id": 321,
+        "url": "https://drive.google.com/open?id=1geQ4-7UZk557tgW5TXUsH_r9FEf7wzWH",
+        "alternativeText": "Restaurante Gran Hotel México by Solaris",
+        "caption": null
+      },
+      {
+        "id": 322,
+        "url": "https://drive.google.com/open?id=1FJOGwxekyFktRnsUh7EO4s5SRDyk-ciN",
+        "alternativeText": "Restaurante Gran Hotel México by Solaris",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "documentId": "restaurante-camino-real",
+    "nombre": "Restaurante Camino Real",
+    "descripcion": "Tampiqueña y en temporada chiles en nogada y mole de caderas. El mejor mole de caderas de la región.",
+    "direccion": "Av. Reforma Sur 2106, Centro de la Ciudad, 75770 Tehuacán, Pue.",
+    "direccion_maps": "https://maps.app.goo.gl/fsbFqdp4WB8LXvPs7",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "horario": "L-D 8:30 am – 8:00 pm",
+    "tipo_comida": "Mexicana",
+    "clasificacion": "Restaurante - Bar",
+    "categoria_precio": "$$$",
+    "zona": "Zona Centro",
+    "caracteristicas": "Pet friendly, Jardín, Aire libre, Estacionamiento",
+    "atractivo_principal": "El mejor mole de caderas de la región según reseñas de visitantes.",
+    "tipo_servicio": "Desayuno, Comida, Cena, Bar",
+    "para_quien": "Parejas, Familias con niños, Reuniones de trabajo, Amigos, Ocasiones especiales",
+    "redes_sociales": [
+      {
+        "id": 96,
+        "plataforma": "Instagram",
+        "usuario": "@restaurantecaminoreal84",
+        "enlace": "https://www.instagram.com/restaurantecaminoreal84"
+      },
+      {
+        "id": 97,
+        "plataforma": "Facebook",
+        "usuario": "Restaurante Camino Real",
+        "enlace": "https://www.facebook.com/share/1EWkTAw69X/"
+      },
+      {
+        "id": 98,
+        "plataforma": "TikTok",
+        "usuario": "@restaurantecaminoreal84",
+        "enlace": "https://www.tiktok.com/@restaurantecaminoreal84"
+      }
+    ],
+    "contacto": {
+      "id": 96,
+      "telefono": "2381034181",
+      "email": "soga_cruz@hotmail.com",
+      "sitio_web": null,
+      "whatsapp": "2381034181"
+    },
+    "galeria": [
+      {
+        "id": 330,
+        "url": "https://drive.google.com/open?id=1gaFL2usnBm_gLtyhAJArJZhP4wz_rLQJ",
+        "alternativeText": "Restaurante Camino Real",
+        "caption": null
+      },
+      {
+        "id": 331,
+        "url": "https://drive.google.com/open?id=1s7_nDTuXh3zqhRlXN17bPOS1ddeD7u7P",
+        "alternativeText": "Restaurante Camino Real",
+        "caption": null
+      },
+      {
+        "id": 332,
+        "url": "https://drive.google.com/open?id=10AOIp_2Z109mxPIDsbT-EQBK_lXHn7ZK",
+        "alternativeText": "Restaurante Camino Real",
+        "caption": null
+      },
+      {
+        "id": 333,
+        "url": "https://drive.google.com/open?id=15srPTU8_TpXlYuEErVlRIq9wsW47dID7",
+        "alternativeText": "Restaurante Camino Real",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "documentId": "abacaxi-steakhouse",
+    "nombre": "Abacaxi",
+    "descripcion": "Buenos cócteles, cortes Rib Eye y cocina internacional en ambiente con terraza y vistas increíbles.",
+    "direccion": "Calle 14 Sur #115, La Arcadia, Tehuacán, Pue.",
+    "createdAt": "2026-08-24T00:00:00.000Z",
+    "updatedAt": "2026-08-24T00:00:00.000Z",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "horario": "Ma-Sá 2:00 pm – 11:00 pm  |  Do 2:00 pm – 9:00 pm  |  Lu cerrado",
+    "tipo_comida": "Internacional, Mariscos, Saludable, Cortes y parrilla, Repostería",
+    "clasificacion": "Restaurante - Bar",
+    "categoria_precio": "$$",
+    "zona": "Zona Centro",
+    "caracteristicas": "Pet friendly, Jardín, Vistas increíbles, Terraza, Aire libre, Estacionamiento",
+    "atractivo_principal": "Cortes Rib Eye y buenos cócteles.",
+    "tipo_servicio": "Comida, Cena, Bar",
+    "para_quien": "Parejas, Familias con niños, Reuniones de trabajo, Amigos",
+    "redes_sociales": [
+      {
+        "id": 104,
+        "plataforma": "Instagram",
+        "usuario": "@abacaxi_steakhouse.th",
+        "enlace": "https://www.instagram.com/abacaxi_steakhouse.th"
+      },
+      {
+        "id": 105,
+        "plataforma": "Facebook",
+        "usuario": "Abacaxi Steak House",
+        "enlace": "https://www.facebook.com/Abacaxi.steak.house"
+      }
+    ],
+    "contacto": {
+      "id": 100,
+      "telefono": "2382077832",
+      "email": "suarez.rivera2009@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "2382077832"
+    },
+    "galeria": [
+      {
+        "id": 340,
+        "url": "https://drive.google.com/open?id=1qfv8a2MNJfU7pYqBsYZMgsm2gW2tWFNG",
+        "alternativeText": "Abacaxi Tehuacán",
         "caption": null
       }
     ]

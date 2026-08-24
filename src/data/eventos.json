@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titulo": "Feria Nacional de la Industria Textil",
+    "descripcion": "La feria más importante del sector textil en México con exposiciones, conferencias y networking entre empresarios y artesanos de la región.",
+    "dia": 14,
+    "mes": "Abril",
+    "mes_corto": "ABR",
+    "dia_semana": "Sábado",
+    "ubicacion": "Centro de Convenciones de Tehuacán",
+    "horario": "10:00 - 8:00 PM",
+    "imagen": "/assets/Biosfera_1.webp",
+    "url_info": null,
+    "categoria": "Feria"
+  },
+  {
+    "id": 2,
+    "titulo": "Festival del Mole de Caderas",
+    "descripcion": "Celebración gastronómica anual del platillo más emblemático de Tehuacán. Degustación de mole de caderas con los mejores restaurantes de la ciudad.",
+    "dia": 21,
+    "mes": "Octubre",
+    "mes_corto": "OCT",
+    "dia_semana": "Martes",
+    "ubicacion": "Zócalo de Tehuacán, Centro",
+    "horario": "12:00 - 9:00 PM",
+    "imagen": "/assets/mole.webp",
+    "url_info": null,
+    "categoria": "Gastronomía"
+  },
+  {
+    "id": 3,
+    "titulo": "Noche de Leyendas en Tehuacán Viejo",
+    "descripcion": "Recorrido nocturno guiado por la zona arqueológica con iluminación especial, narración de leyendas y música prehispánica en vivo.",
+    "dia": 5,
+    "mes": "Noviembre",
+    "mes_corto": "NOV",
+    "dia_semana": "Miércoles",
+    "ubicacion": "Zona Arqueológica Tehuacán Viejo",
+    "horario": "7:00 - 10:00 PM",
+    "imagen": "/assets/tehuacan_viejo_ndajhian_ndyan_60.webp",
+    "url_info": null,
+    "categoria": "Cultura"
+  }
+]

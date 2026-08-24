@@ -1,0 +1,12 @@
+﻿---
+import EventosReact from "./react/EventosSection";
+import eventosData from "../data/eventos.json";
+
+interface Props {
+  eventos?: typeof eventosData;
+}
+
+const { eventos = eventosData } = Astro.props;
+---
+
+<EventosReact eventos={eventos} client:only="react" />

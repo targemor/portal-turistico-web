@@ -405,105 +405,198 @@
   ],
   "imperdibles": [
     {
-      "id": 110,
-      "documentId": "yhycl7x2em703wh7o0jo5azr",
-      "nombre": "Catedral de Tehuacán",
-      "direccion_google_maps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
-      "slug": "catedral-tehuacan",
-      "descripcion_corta": "Conoce la historia de la catedral y maravíllate con su reloj solar.",
-      "descripcion_larga": "Ubicada en el corazón de la ciudad, la Catedral de Tehuacán es un recinto histórico que resguarda importantes relatos religiosos y restos de personajes destacados de la región.",
-      "precio": "GRATIS",
-      "como_llegar": "Ubicada en el Centro de Tehuacán.",
-      "horarios": "Lunes a sábado",
-      "duracion_recomendada": "30 minutos",
-      "recomendaciones": "Acércate al módulo de información turística y solicita un recorrido.",
-      "tips_imperdibles": "Visita libre para conocer su interior y no te pierdas el asombroso reloj solar.",
+      "id": 108,
+      "documentId": "c9svq0e1jb5o0fvxckp92i5s",
+      "nombre": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+      "direccion_google_maps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
+      "slug": "reserva-biosfera",
+      "descripcion_corta": "Cactus gigantes, paisajes surrealistas y fósiles marinos en uno de los lugares más extraordinarios de México. Patrimonio Mundial Mixto UNESCO.",
+      "descripcion_larga": "Declarada Patrimonio Mundial Mixto por la UNESCO, esta reserva cuenta con más de 490 mil hectáreas. Alberga la mayor concentración de cactáceas columnares del planeta y especies emblemáticas. Entre sus atractivos destacan el Jardín Botánico Helia Bravo Hollis, las salinas ancestrales y los fósiles marinos de San Juan Raya.",
+      "precio": "$50 pesos (entrada con guía)",
+      "como_llegar": "A unos 50 minutos del centro. Lo más recomendable es ir en tour (ej. Vagabundos, BIOFAN, Desierto Mágico).",
+      "horarios": "Lunes a domingo de 9:00 am a 3:00 pm",
+      "duracion_recomendada": "De 2 a 5 horas, o bien, apartar todo el día para la experiencia completa.",
+      "recomendaciones": "Ir en un horario de 9:00 am a 1:00 pm (no se recomienda en la tarde por el sol). Llevar botas, sombrero o gorra, ropa para cubrirse del calor, bloqueador solar y abundante agua. Cuidado con las plantas.",
+      "tips_imperdibles": "Conoce más de 9,000 plantas endémicas. Si vas a San Juan Raya, pide a tu guía ver los fósiles marinos, o las huellas de dinosaurio en Santa Ana Teloxtoc.",
       "es_pet_friendly": false,
-      "lat": 18.46,
-      "lng": -97.39,
-      "galeria": null,
+      "lat": 18.33,
+      "lng": -97.45,
+      "galeria": [
+        {
+          "id": 65,
+          "documentId": "reserva-biosfera-img",
+          "url": "/assets/reserva_de_la_biosfera_tehuacan_cuicatlan_65.webp",
+          "alternativeText": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+          "caption": null
+        }
+      ],
       "contacto": {
-        "id": 98,
+        "id": 96,
         "telefono": "2380000000",
-        "email": "hola@catedral-tehuacan.com",
-        "sitio_web": "https://www.catedral-tehuacan.com",
+        "email": "hola@reserva-biosfera.com",
+        "sitio_web": "https://www.reserva-biosfera.com",
         "whatsapp": "2380000000"
       },
       "redes_sociales": [
         {
-          "id": 150,
+          "id": 148,
           "plataforma": "Facebook",
-          "usuario": "Catedral de Tehuacán",
-          "enlace": "https://facebook.com/catedral-tehuacan"
+          "usuario": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+          "enlace": "https://facebook.com/reserva-biosfera"
         }
       ],
       "categorias": [
         {
-          "id": 19,
-          "documentId": "ryiyluspglmy2hskvsfbme5w",
-          "nombre": "Cultura"
-        },
-        {
-          "id": 17,
-          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
-          "nombre": "Historia"
-        },
-        {
-          "id": 23,
-          "documentId": "ps8n0brqd7s8f4kumden0xto",
-          "nombre": "Religión"
+          "id": 22,
+          "documentId": "o6g0j3x4hi6n1dk2a0lykf10",
+          "nombre": "Naturaleza"
         }
       ],
       "googleMapsInfo": {
-        "rating": 4.6,
-        "userRatingsTotal": 804,
-        "formattedAddress": "C. 1 Sur 101, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico"
+        "rating": 4.7,
+        "userRatingsTotal": 10,
+        "formattedAddress": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico"
       }
     },
     {
-      "id": 102,
-      "documentId": "kxu7kms4g8tnkt8gl4gbpshb",
-      "nombre": "Museo del Agua Peñafiel",
-      "direccion_google_maps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
-      "slug": "penafiel",
-      "descripcion_corta": "Aquí el agua nace de la tierra… y puedes probarla directo del manantial.",
-      "descripcion_larga": "El Museo del Agua Peñafiel te lleva al origen de una de las aguas minerales más famosas de México. Rodeado de jardines de cactáceas y manantiales naturales, este espacio combina historia, tradición y ciencia. Podrás conocer antiguas máquinas, procesos de embotellado y un impresionante mural que narra la historia de la ciudad, además de probar agua mineral de El Chorrito, un venero natural.",
+      "id": 114,
+      "documentId": "cascada-rancho-cabras-tehuacan",
+      "nombre": "Cascada de Rancho Cabras",
+      "direccion_google_maps": "https://www.google.com/maps/search/Cascada+Rancho+Cabras+Tehuacan",
+      "slug": "cascada-rancho-cabras",
+      "descripcion_corta": "Camina entre pinos y oyameles, escucha el canto de las cascadas y conecta con la naturaleza en Rancho Cabras, hogar de la mariposa Parche de Gapp.",
+      "descripcion_larga": "Rancho Cabras es un destino natural imperdible para los amantes del senderismo y la naturaleza. Rodeado de bosques de pinos y oyameles, el recorrido culmina en una zona de cascadas de gran belleza. Es hogar de la mariposa Parche de Gapp y ofrece una experiencia auténtica lejos del bullicio de la ciudad. Se requiere reservación previa.",
       "precio": "GRATIS",
-      "como_llegar": "A 5 minutos del centro, desde el zócalo puedes llegar caminando, en taxi o usando apps de transporte.",
-      "horarios": "Martes a domingo de 10:00 am a 5:00 pm",
-      "duracion_recomendada": "1 hora",
-      "recomendaciones": "De preferencia, TIENES QUE RESERVAR.",
-      "tips_imperdibles": "Prueba el agua mineral directo del manantial que tiene propiedades curativas. Conoce el Tecuate (Guía de piedra) representativo de Tehuacán. No te pierdas los obsequios al final del recorrido.",
+      "como_llegar": "Desde el centro: carretera hacia Orizaba, desviación a Nicolás Bravo; después de San Bernardino Lagunas tomar la desviación a Rancho Cabras y seguir hasta el final de la carretera. Después camino de terracería y a pie (~1 h 20 min caminando).",
+      "horarios": "Lunes a domingo de 9:00 am a 4:00 pm",
+      "duracion_recomendada": "4 horas",
+      "recomendaciones": "Requiere reservación — llamar un día antes al 238 171 4878. Apto para niños mayores de 10 años y adultos menores de 50. No apto para personas con discapacidad. Mejor asistir a las 10:00 am, con ropa y calzado de senderismo.",
+      "tips_imperdibles": "Mejor asistir a las 10:00 am con ropa y calzado de senderismo. Llama un día antes para reservar al 238 171 4878.",
       "es_pet_friendly": false,
-      "lat": 18.47,
-      "lng": -97.4,
-      "galeria": null,
+      "lat": 18.52,
+      "lng": -97.35,
+      "galeria": [
+        {
+          "id": 86,
+          "documentId": "cascada-rancho-cabras-img",
+          "url": "/assets/media_86.webp",
+          "alternativeText": "Cascada de Rancho Cabras",
+          "caption": null
+        }
+      ],
       "contacto": {
-        "id": 90,
+        "id": null,
+        "telefono": "2381714878",
+        "email": null,
+        "sitio_web": null,
+        "whatsapp": "2381714878"
+      },
+      "redes_sociales": [],
+      "categorias": [
+        {
+          "id": 22,
+          "documentId": "o6g0j3x4hi6n1dk2a0lykf10",
+          "nombre": "Naturaleza"
+        }
+      ],
+      "googleMapsInfo": null
+    },
+    {
+      "id": 106,
+      "documentId": "r9wydfbz2dzo16d8pirimnf5",
+      "nombre": "Parque El Riego",
+      "direccion_google_maps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
+      "slug": "el-riego",
+      "descripcion_corta": "El lugar donde Tehuacán vivió su época más elegante entre aguas minerales, fiestas y noches de porfiriato.",
+      "descripcion_larga": "Inaugurado en 1879 sobre una antigua hacienda, El Riego fue uno de los hoteles más exclusivos de Tehuacán durante el Porfiriato. Actualmente conserva su valor histórico y funciona como un extenso espacio recreativo y deportivo con aire libre, ideal para pasar el día.",
+      "precio": "$12 pesos",
+      "como_llegar": "A 15 minutos del centro en coche. Puedes llegar en taxi o apps de transporte.",
+      "horarios": "Lunes a domingo de 9:00 am a 6:00 pm",
+      "duracion_recomendada": "1 hora o más",
+      "recomendaciones": "Perfecto para un día de picnic familiar. Si te gusta el ejercicio, cuenta con pista de atletismo y cancha de fútbol.",
+      "tips_imperdibles": "Visita el jardín botánico con plantas endémicas de la reserva de la biosfera (ideal si no tienes tiempo de ir a la reserva completa).",
+      "es_pet_friendly": true,
+      "lat": 18.46,
+      "lng": -97.41,
+      "galeria": [
+        {
+          "id": 61,
+          "documentId": "parque-el-riego-img",
+          "url": "/assets/parque_el_riego_61.webp",
+          "alternativeText": "Parque El Riego",
+          "caption": null
+        }
+      ],
+      "contacto": {
+        "id": 94,
         "telefono": "2380000000",
-        "email": "hola@penafiel.com",
-        "sitio_web": "https://www.penafiel.com",
+        "email": "hola@el-riego.com",
+        "sitio_web": "https://www.el-riego.com",
         "whatsapp": "2380000000"
       },
       "redes_sociales": [
         {
-          "id": 142,
+          "id": 146,
           "plataforma": "Facebook",
-          "usuario": "Museo del Agua Peñafiel",
-          "enlace": "https://facebook.com/penafiel"
+          "usuario": "Parque El Riego",
+          "enlace": "https://facebook.com/el-riego"
         }
       ],
       "categorias": [
         {
-          "id": 18,
-          "documentId": "zr9vhu22gm0dwznq94scya1b",
-          "nombre": "Familiar"
-        },
+          "id": 22,
+          "documentId": "o6g0j3x4hi6n1dk2a0lykf10",
+          "nombre": "Naturaleza"
+        }
+      ],
+      "googleMapsInfo": {
+        "rating": 4.1,
+        "userRatingsTotal": 1036,
+        "formattedAddress": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico"
+      }
+    },
+    {
+      "id": 100,
+      "documentId": "m6duqnahn5wq4hywkbwpdbct",
+      "nombre": "Tehuacán Viejo (Ndajhian - Ndyan)",
+      "direccion_google_maps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
+      "slug": "tehuacan-viejo",
+      "descripcion_corta": "Explora una impresionante ciudad prehispánica llena de templos, plazas ceremoniales y vestigios ancestrales con vistas únicas del valle de Tehuacán.",
+      "descripcion_larga": "Tehuacán Viejo es una antigua ciudad prehispánica construida sobre una extensa meseta y considerada uno de los sitios arqueológicos más importantes de la región. Entre sus principales atractivos destacan el Templo Mayor, el Templo de las Calaveras y el emblemático templo dedicado a Ehécatl-Quetzalcóatl, dios del viento. También sobresale la Plaza del Fuego Nuevo. El sitio cuenta con plazas, calzadas, áreas habitacionales, estructuras piramidales y antiguos sistemas de drenaje.",
+      "precio": "Extranjeros $195 (corroborar), domingos gratuitos para nacionales.",
+      "como_llegar": "Se encuentra a 20 minutos en coche del centro de Tehuacán. Transporte: Taxi, unidad propia, o apps (Pronto, inDrive, taxi regular).",
+      "horarios": "10:00 am a 5:00 pm",
+      "duracion_recomendada": "1 hora",
+      "recomendaciones": "Llevar sombrilla para el sol, ropa y zapatos cómodos porque se camina mucho y se suben escaleras, llevar agua. Se recomienda tomar el tour temprano por el sol y llevar un guía para que te cuente la historia.",
+      "tips_imperdibles": "Escucha el sonido del ave prehispánica (el Quetzal) en el Templo Mayor. Si corres con suerte puedes ver a un correcaminos.",
+      "es_pet_friendly": true,
+      "lat": 18.42,
+      "lng": -97.44,
+      "galeria": [
         {
-          "id": 19,
-          "documentId": "ryiyluspglmy2hskvsfbme5w",
-          "nombre": "Cultura"
-        },
+          "id": 60,
+          "documentId": "tehuacan-viejo-img",
+          "url": "/assets/tehuacan_viejo_ndajhian_ndyan_60.webp",
+          "alternativeText": "Tehuacán Viejo (Ndajhian - Ndyan)",
+          "caption": null
+        }
+      ],
+      "contacto": {
+        "id": 88,
+        "telefono": "2380000000",
+        "email": "hola@tehuacan-viejo.com",
+        "sitio_web": "https://www.tehuacan-viejo.com",
+        "whatsapp": "2380000000"
+      },
+      "redes_sociales": [
+        {
+          "id": 140,
+          "plataforma": "Facebook",
+          "usuario": "Tehuacán Viejo (Ndajhian - Ndyan)",
+          "enlace": "https://facebook.com/tehuacan-viejo"
+        }
+      ],
+      "categorias": [
         {
           "id": 17,
           "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
@@ -511,9 +604,9 @@
         }
       ],
       "googleMapsInfo": {
-        "rating": 4.4,
-        "userRatingsTotal": 572,
-        "formattedAddress": "Av. José Garci-Crespo 2805, Planta Peñafiel, San Nicolás Tetitzintla, 75750 Tehuacán, Pue., Mexico"
+        "rating": 4.5,
+        "userRatingsTotal": 10,
+        "formattedAddress": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico"
       }
     },
     {
@@ -533,7 +626,15 @@
       "es_pet_friendly": false,
       "lat": 18.46,
       "lng": -97.39,
-      "galeria": null,
+      "galeria": [
+        {
+          "id": 61,
+          "documentId": "palacio-municipal-img",
+          "url": "/assets/palacio_municipal_61.webp",
+          "alternativeText": "Palacio Municipal",
+          "caption": null
+        }
+      ],
       "contacto": {
         "id": 92,
         "telefono": "2380000000",
@@ -554,11 +655,6 @@
           "id": 17,
           "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
           "nombre": "Historia"
-        },
-        {
-          "id": 19,
-          "documentId": "ryiyluspglmy2hskvsfbme5w",
-          "nombre": "Cultura"
         }
       ],
       "googleMapsInfo": {
@@ -568,100 +664,47 @@
       }
     },
     {
-      "id": 106,
-      "documentId": "r9wydfbz2dzo16d8pirimnf5",
-      "nombre": "Parque El Riego",
-      "direccion_google_maps": "https://www.google.com/maps/place/Parque+El+Riego/@18.4552433,-97.4111322,15z",
-      "slug": "el-riego",
-      "descripcion_corta": "El lugar donde Tehuacán vivió su época más elegante entre aguas minerales, fiestas y noches de porfiriato.",
-      "descripcion_larga": "Inaugurado en 1879 sobre una antigua hacienda, El Riego fue uno de los hoteles más exclusivos de Tehuacán durante el Porfiriato. Actualmente conserva su valor histórico y funciona como un extenso espacio recreativo y deportivo con aire libre, ideal para pasar el día.",
-      "precio": "$12 pesos",
-      "como_llegar": "A 15 minutos del centro en coche. Puedes llegar en taxi o apps de transporte.",
-      "horarios": "Lunes a domingo de 9:00 am a 6:00 pm",
-      "duracion_recomendada": "1 hora o más",
-      "recomendaciones": "Perfecto para un día de picnic familiar. Si te gusta el ejercicio, cuenta con pista de atletismo y cancha de fútbol.",
-      "tips_imperdibles": "Visita el jardín botánico con plantas endémicas de la reserva de la biosfera (ideal si no tienes tiempo de ir a la reserva completa).",
-      "es_pet_friendly": true,
-      "lat": 18.46,
-      "lng": -97.41,
-      "galeria": null,
-      "contacto": {
-        "id": 94,
-        "telefono": "2380000000",
-        "email": "hola@el-riego.com",
-        "sitio_web": "https://www.el-riego.com",
-        "whatsapp": "2380000000"
-      },
-      "redes_sociales": [
-        {
-          "id": 146,
-          "plataforma": "Facebook",
-          "usuario": "Parque El Riego",
-          "enlace": "https://facebook.com/el-riego"
-        }
-      ],
-      "categorias": [
-        {
-          "id": 18,
-          "documentId": "zr9vhu22gm0dwznq94scya1b",
-          "nombre": "Familiar"
-        },
-        {
-          "id": 21,
-          "documentId": "dslpgaen45yjangpqmu4no1c",
-          "nombre": "Deporte"
-        }
-      ],
-      "googleMapsInfo": {
-        "rating": 4.1,
-        "userRatingsTotal": 1036,
-        "formattedAddress": "Av. Baja California 3623, El Riego, 75760 Tehuacán, Pue., Mexico"
-      }
-    },
-    {
-      "id": 108,
-      "documentId": "c9svq0e1jb5o0fvxckp92i5s",
-      "nombre": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-      "direccion_google_maps": "https://www.google.com/maps/place/Jardin+Botanico+Helia+Bravo+Hollis/@18.3308906,-97.4533038,15z",
-      "slug": "reserva-biosfera",
-      "descripcion_corta": "Cactus gigantes, paisajes surrealistas y fósiles marinos en uno de los lugares más extraordinarios de México. Patrimonio Mundial Mixto UNESCO.",
-      "descripcion_larga": "Declarada Patrimonio Mundial Mixto por la UNESCO, esta reserva cuenta con más de 490 mil hectáreas. Alberga la mayor concentración de cactáceas columnares del planeta y especies emblemáticas. Entre sus atractivos destacan el Jardín Botánico Helia Bravo Hollis, las salinas ancestrales y los fósiles marinos de San Juan Raya.",
-      "precio": "$50 pesos (entrada con guía)",
-      "como_llegar": "A unos 50 minutos del centro. Lo más recomendable es ir en tour (ej. Vagabundos, BIOFAN, Desierto Mágico).",
-      "horarios": "Lunes a domingo de 9:00 am a 3:00 pm",
-      "duracion_recomendada": "De 2 a 5 horas, o bien, apartar todo el día para la experiencia completa.",
-      "recomendaciones": "Ir en un horario de 9:00 am a 1:00 pm (no se recomienda en la tarde por el sol). Llevar botas, sombrero o gorra, ropa para cubrirse del calor, bloqueador solar y abundante agua. Cuidado con las plantas.",
-      "tips_imperdibles": "Conoce más de 9,000 plantas endémicas. Si vas a San Juan Raya, pide a tu guía ver los fósiles marinos, o las huellas de dinosaurio en Santa Ana Teloxtoc.",
+      "id": 110,
+      "documentId": "yhycl7x2em703wh7o0jo5azr",
+      "nombre": "Catedral de Tehuacán",
+      "direccion_google_maps": "https://www.google.com/maps/place/Catedral+De+La+Inmaculada+Concepci%C3%B3n/@18.4611598,-97.3933519,15z",
+      "slug": "catedral-tehuacan",
+      "descripcion_corta": "Conoce la historia de la catedral y maravíllate con su reloj solar.",
+      "descripcion_larga": "Ubicada en el corazón de la ciudad, la Catedral de Tehuacán es un recinto histórico que resguarda importantes relatos religiosos y restos de personajes destacados de la región.",
+      "precio": "GRATIS",
+      "como_llegar": "Ubicada en el Centro de Tehuacán.",
+      "horarios": "Lunes a sábado",
+      "duracion_recomendada": "30 minutos",
+      "recomendaciones": "Acércate al módulo de información turística y solicita un recorrido.",
+      "tips_imperdibles": "Visita libre para conocer su interior y no te pierdas el asombroso reloj solar.",
       "es_pet_friendly": false,
-      "lat": 18.33,
-      "lng": -97.45,
-      "galeria": null,
+      "lat": 18.46,
+      "lng": -97.39,
+      "galeria": [
+        {
+          "id": 63,
+          "documentId": "catedral-tehuacan-img",
+          "url": "/assets/catedral_de_tehuacan_63.webp",
+          "alternativeText": "Catedral de Tehuacán",
+          "caption": null
+        }
+      ],
       "contacto": {
-        "id": 96,
+        "id": 98,
         "telefono": "2380000000",
-        "email": "hola@reserva-biosfera.com",
-        "sitio_web": "https://www.reserva-biosfera.com",
+        "email": "hola@catedral-tehuacan.com",
+        "sitio_web": "https://www.catedral-tehuacan.com",
         "whatsapp": "2380000000"
       },
       "redes_sociales": [
         {
-          "id": 148,
+          "id": 150,
           "plataforma": "Facebook",
-          "usuario": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-          "enlace": "https://facebook.com/reserva-biosfera"
+          "usuario": "Catedral de Tehuacán",
+          "enlace": "https://facebook.com/catedral-tehuacan"
         }
       ],
       "categorias": [
-        {
-          "id": 16,
-          "documentId": "awlik42fn9e1y5qs4uizfehc",
-          "nombre": "Aventura"
-        },
-        {
-          "id": 22,
-          "documentId": "o6g0j3x4hi6n1dk2a0lykf10",
-          "nombre": "Naturaleza"
-        },
         {
           "id": 17,
           "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
@@ -669,65 +712,100 @@
         }
       ],
       "googleMapsInfo": {
-        "rating": 4.7,
-        "userRatingsTotal": 10,
-        "formattedAddress": "Oaxaca-Tehuacán, Barrio del Agua Buena, 68593 Santiago Suchilquitongo, Oax., Mexico"
+        "rating": 4.6,
+        "userRatingsTotal": 804,
+        "formattedAddress": "C. 1 Sur 101, Centro de la Ciudad, 75700 Tehuacán, Pue., Mexico"
       }
     },
     {
-      "id": 100,
-      "documentId": "m6duqnahn5wq4hywkbwpdbct",
-      "nombre": "Tehuacán Viejo (Ndajhian - Ndyan)",
-      "direccion_google_maps": "https://www.google.com/maps/place/Zona+Arqueologica+Tehuacan+Viejo/@18.423985,-97.436151,15z",
-      "slug": "tehuacan-viejo",
-      "descripcion_corta": "Explora una impresionante ciudad prehispánica llena de templos, plazas ceremoniales y vestigios ancestrales con vistas únicas del valle de Tehuacán.",
-      "descripcion_larga": "Tehuacán Viejo es una antigua ciudad prehispánica construida sobre una extensa meseta y considerada uno de los sitios arqueológicos más importantes de la región. Entre sus principales atractivos destacan el Templo Mayor, el Templo de las Calaveras y el emblemático templo dedicado a Ehécatl-Quetzalcóatl, dios del viento. También sobresale la Plaza del Fuego Nuevo. El sitio cuenta con plazas, calzadas, áreas habitacionales, estructuras piramidales y antiguos sistemas de drenaje.",
-      "precio": "Extranjeros $195 (corroborar), domingos gratuitos para nacionales.",
-      "como_llegar": "Se encuentra a 20 minutos en coche del centro de Tehuacán. Transporte: Taxi, unidad propia, o apps (Pronto, inDrive, taxi regular).",
-      "horarios": "10:00 am a 5:00 pm",
+      "id": 112,
+      "documentId": "museo-evolucion-tehuacan",
+      "nombre": "Museo de la Evolución",
+      "direccion_google_maps": "https://www.google.com/maps/search/Museo+de+la+Evolucion+Tehuacan",
+      "slug": "museo-evolucion",
+      "descripcion_corta": "Un fascinante recorrido por la historia natural y la evolución de la vida en la región de Tehuacán.",
+      "descripcion_larga": "El Museo de la Evolución en Tehuacán ofrece una experiencia educativa única sobre la historia natural de la región. Ubicado en el corazón del centro histórico, este museo invita a explorar el pasado geológico y biológico de una de las zonas más ricas en biodiversidad de México.",
+      "precio": "GRATIS",
+      "como_llegar": "Ubicado en el Centro / zócalo de Tehuacán.",
+      "horarios": "Consultar en módulo de información turística",
       "duracion_recomendada": "1 hora",
-      "recomendaciones": "Llevar sombrilla para el sol, ropa y zapatos cómodos porque se camina mucho y se suben escaleras, llevar agua. Se recomienda tomar el tour temprano por el sol y llevar un guía para que te cuente la historia.",
-      "tips_imperdibles": "Escucha el sonido del ave prehispánica (el Quetzal) en el Templo Mayor. Si corres con suerte puedes ver a un correcaminos.",
-      "es_pet_friendly": true,
-      "lat": 18.42,
-      "lng": -97.44,
-      "galeria": null,
+      "recomendaciones": "Visita libre. Recorrido guiado disponible solicitándolo en el módulo de información turística.",
+      "tips_imperdibles": "Visita libre; recorrido guiado disponible solicitándolo en el módulo de información turística.",
+      "es_pet_friendly": false,
+      "lat": 18.461,
+      "lng": -97.392,
+      "galeria": [
+        {
+          "id": 87,
+          "documentId": "museo-evolucion-img",
+          "url": "/assets/media_87.webp",
+          "alternativeText": "Museo de la Evolución",
+          "caption": null
+        }
+      ],
+      "contacto": null,
+      "redes_sociales": [],
+      "categorias": [
+        {
+          "id": 19,
+          "documentId": "ryiyluspglmy2hskvsfbme5w",
+          "nombre": "Cultura"
+        }
+      ],
+      "googleMapsInfo": null
+    },
+    {
+      "id": 102,
+      "documentId": "kxu7kms4g8tnkt8gl4gbpshb",
+      "nombre": "Museo del Agua Peñafiel",
+      "direccion_google_maps": "https://www.google.com/maps/place/Museo+Hidromineral+de+Pe%C3%B1afiel/@18.4719001,-97.4042888,15z",
+      "slug": "penafiel",
+      "descripcion_corta": "Aquí el agua nace de la tierra… y puedes probarla directo del manantial.",
+      "descripcion_larga": "El Museo del Agua Peñafiel te lleva al origen de una de las aguas minerales más famosas de México. Rodeado de jardines de cactáceas y manantiales naturales, este espacio combina historia, tradición y ciencia. Podrás conocer antiguas máquinas, procesos de embotellado y un impresionante mural que narra la historia de la ciudad, además de probar agua mineral de El Chorrito, un venero natural.",
+      "precio": "GRATIS",
+      "como_llegar": "A 5 minutos del centro, desde el zócalo puedes llegar caminando, en taxi o usando apps de transporte.",
+      "horarios": "Martes a domingo de 10:00 am a 5:00 pm",
+      "duracion_recomendada": "1 hora",
+      "recomendaciones": "De preferencia, TIENES QUE RESERVAR.",
+      "tips_imperdibles": "Prueba el agua mineral directo del manantial que tiene propiedades curativas. Conoce el Tecuate (Guía de piedra) representativo de Tehuacán. No te pierdas los obsequios al final del recorrido.",
+      "es_pet_friendly": false,
+      "lat": 18.47,
+      "lng": -97.4,
+      "galeria": [
+        {
+          "id": 62,
+          "documentId": "museo-agua-penafiel-img",
+          "url": "/assets/museo_del_agua_penafiel_62.webp",
+          "alternativeText": "Museo del Agua Peñafiel",
+          "caption": null
+        }
+      ],
       "contacto": {
-        "id": 88,
+        "id": 90,
         "telefono": "2380000000",
-        "email": "hola@tehuacan-viejo.com",
-        "sitio_web": "https://www.tehuacan-viejo.com",
+        "email": "hola@penafiel.com",
+        "sitio_web": "https://www.penafiel.com",
         "whatsapp": "2380000000"
       },
       "redes_sociales": [
         {
-          "id": 140,
+          "id": 142,
           "plataforma": "Facebook",
-          "usuario": "Tehuacán Viejo (Ndajhian - Ndyan)",
-          "enlace": "https://facebook.com/tehuacan-viejo"
+          "usuario": "Museo del Agua Peñafiel",
+          "enlace": "https://facebook.com/penafiel"
         }
       ],
       "categorias": [
         {
-          "id": 15,
-          "documentId": "tqsza0s5xpj74q55i0oviyfm",
-          "nombre": "Espiritual"
-        },
-        {
-          "id": 16,
-          "documentId": "awlik42fn9e1y5qs4uizfehc",
-          "nombre": "Aventura"
-        },
-        {
-          "id": 17,
-          "documentId": "kr7lyufeyuq0xflu4ib6lv0q",
-          "nombre": "Historia"
+          "id": 20,
+          "documentId": "salud-manantiales-tehuacan",
+          "nombre": "Salud"
         }
       ],
       "googleMapsInfo": {
-        "rating": 4.5,
-        "userRatingsTotal": 10,
-        "formattedAddress": "San Diego Chalma, 75859 Tehuacán, Pue., Mexico"
+        "rating": 4.4,
+        "userRatingsTotal": 572,
+        "formattedAddress": "Av. José Garci-Crespo 2805, Planta Peñafiel, San Nicolás Tetitzintla, 75750 Tehuacán, Pue., Mexico"
       }
     }
   ]
