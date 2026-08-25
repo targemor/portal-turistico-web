@@ -28,7 +28,6 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
   const navLinks = [
     { label: t.navWhere, href: "/directorio/hoteles" },
     { label: t.navEat, href: "/directorio/restaurantes" },
-    { label: t.navDo, href: "/directorio/destinos" },
     { label: t.navGuides, href: "/directorio/guias" },
   ];
 

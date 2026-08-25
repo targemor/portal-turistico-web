@@ -8,13 +8,12 @@ export default function BottomNav() {
   const { t } = useLanguage();
 
   const navItems = [
-    { id: 'destinos',     icon: Compass,   label: t.bnExplore, href: '/#destinos' },
-    { id: 'hoteles',      icon: Hotel,     label: t.bnHotels,  href: '/#hoteles' },
-    { id: 'restaurantes', icon: Utensils,  label: t.bnFood,    href: '/#restaurantes' },
-    { id: 'guias',        icon: UserCheck, label: t.bnGuides,  href: '/#guias' },
+    { id: 'hoteles',      icon: Hotel,     label: t.bnHotels,  href: '/directorio/hoteles' },
+    { id: 'restaurantes', icon: Utensils,  label: t.bnFood,    href: '/directorio/restaurantes' },
+    { id: 'guias',        icon: UserCheck, label: t.bnGuides,  href: '/directorio/guias' },
   ];
 
-  const [activeItem, setActiveItem] = useState<string>('destinos');
+  const [activeItem, setActiveItem] = useState<string>('hoteles');
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -55,7 +54,7 @@ export default function BottomNav() {
         aria-label={t.bnAriaLabel}
       >
         {/* Nav items distribuidos equitativamente */}
-        <nav className="flex-1 grid grid-cols-4 items-center gap-0.5">
+        <nav className="flex-1 grid grid-cols-3 items-center gap-0.5">
           {navItems.map((item) => {
             const isActive = activeItem === item.id;
             const Icon = item.icon;

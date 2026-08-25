@@ -1,49 +1,24 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { Search, X, ArrowRight, Utensils, BedDouble, Compass, UserCheck, ChevronRight } from "lucide-react";
+import {
+  useSearch,
+  normalizeText,
+  scoredSearchAlgorithm,
+  type SearchableItem,
+  type SearchAlgorithm,
+  type ShortcutItem,
+} from "../../hooks/useSearch";
 
-/* ─── Tipos de ítem buscable ─────────────────────────────── */
-interface SearchableItem {
-  id: string | number;
-  label: string;
-  category: string;
-  sublabel?: string;
-  href: string;
-  searchKeywords?: string;
-  rating?: number;
-}
+export type { SearchableItem, SearchAlgorithm };
 
-/* ─── Utilidad: normalizar texto para comparación ────────── */
-function normalize(str?: string | null): string {
-  if (!str) return "";
-  return str
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
-
-/**
- * Matching con fuzzy prefix para búsqueda flexible.
- * Cubre subcadena exacta, prefijo del query sobre token y viceversa.
- */
-function matchesWord(queryWord: string, text: string): boolean {
-  if (queryWord.length < 2) return false;
-  const tokens = text.split(/[\s,·\/\-–•()]+/).filter((w) => w.length > 1);
-  return tokens.some(
-    (token) => queryWord.startsWith(token) || token.startsWith(queryWord)
-  );
-}
-
-/**
- * Resalta TODAS las ocurrencias de `query` en `label`,
- * comparando texto normalizado (sin acentos, minúsculas).
- */
+/* ─── Resalta ocurrencias de query ───────────────────────── */
 function highlightLabel(label: string, query: string): React.ReactNode {
   if (!label) return "";
-  const normQ = normalize(query.trim());
+  const normQ = normalizeText(query.trim());
   if (!normQ) return label;
 
-  const normLabel = normalize(label);
+  const normLabel = normalizeText(label);
   const nodes: React.ReactNode[] = [];
   let lastIdx = 0;
   let searchFrom = 0;
@@ -70,9 +45,14 @@ function highlightLabel(label: string, query: string): React.ReactNode {
 }
 
 /* ─── Iconos de shortcuts ───────────────────────────────── */
-const SHORTCUTS = [
+const SHORTCUTS: (ShortcutItem & {
+  Icon: any;
+  colorClass: string;
+  labelKey: string;
+  queryKey: string;
+})[] = [
   {
-    key: "food" as const,
+    key: "food",
     Icon: Utensils,
     colorClass: "border-[#c85244] text-[#c85244] hover:bg-rose-50/50",
     labelKey: "searchShortcutFoodLabel",
@@ -81,7 +61,7 @@ const SHORTCUTS = [
     categories: ["Restaurante", "Restaurant"],
   },
   {
-    key: "sleep" as const,
+    key: "sleep",
     Icon: BedDouble,
     colorClass: "border-[#388596] text-[#388596] hover:bg-teal-50/50",
     labelKey: "searchShortcutSleepLabel",
@@ -90,7 +70,7 @@ const SHORTCUTS = [
     categories: ["Hotel"],
   },
   {
-    key: "things" as const,
+    key: "things",
     Icon: Compass,
     colorClass: "border-[#e59b38] text-[#e59b38] hover:bg-amber-50/50",
     labelKey: "searchShortcutThingsLabel",
@@ -99,7 +79,7 @@ const SHORTCUTS = [
     categories: ["Destino", "Destination", "Imperdible", "Must-see"],
   },
   {
-    key: "guides" as const,
+    key: "guides",
     Icon: UserCheck,
     colorClass: "border-[#d46597] text-[#d46597] hover:bg-pink-50/50",
     labelKey: "searchShortcutGuidesLabel",
@@ -144,7 +124,6 @@ const SugIcon = ({ type }: { type: string }) => {
         <path d="M2 12l10 5 10-5" />
       </svg>
     );
-  // user-check fallback
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={cls}>
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -160,16 +139,33 @@ const SUGGESTION_ICONS = ["food", "bed", "landmark", "landmark", "layers", "laye
 interface SearchBarProps {
   placeholder?: string;
   items?: SearchableItem[];
+  algorithm?: SearchAlgorithm;
 }
 
 /* ═══════════════════════════════════════════════════════════
    Componente principal
 ═══════════════════════════════════════════════════════════ */
-export default function SearchBar({ placeholder, items = [] }: SearchBarProps) {
+export default function SearchBar({
+  placeholder,
+  items = [],
+  algorithm = scoredSearchAlgorithm,
+}: SearchBarProps) {
   const { t } = useLanguage();
 
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchableItem[]>([]);
+  const {
+    query,
+    setQuery,
+    clearQuery,
+    results,
+    currentAlgorithm,
+    setAlgorithm,
+  } = useSearch({
+    items,
+    algorithm,
+    shortcuts: SHORTCUTS,
+    translations: t,
+  });
+
   const [isOpen, setIsOpen] = useState(false);
   const [focused, setFocused] = useState(false);
   const [openNow, setOpenNow] = useState(false);
@@ -177,7 +173,6 @@ export default function SearchBar({ placeholder, items = [] }: SearchBarProps) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* ── Efecto máquina de escribir ── */
   const phrases = [
@@ -220,87 +215,12 @@ export default function SearchBar({ placeholder, items = [] }: SearchBarProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* ── Búsqueda con debounce y scoring ── */
-  const search = useCallback(
-    (q: string) => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-      debounceRef.current = setTimeout(() => {
-        const norm = normalize(q.trim());
-        if (!norm) {
-          setResults([]);
-          document.dispatchEvent(
-            new CustomEvent("portal:search", { detail: { query: "" } })
-          );
-          return;
-        }
-
-        let found: SearchableItem[] = [];
-
-        // ¿El query coincide con un alias de categoría?
-        const shortcut = SHORTCUTS.find((sc) =>
-          t[sc.aliasKey as keyof typeof t]
-            ?.split(",")
-            .some((alias: string) => normalize(alias) === norm)
-        );
-
-        if (shortcut) {
-          found = items.filter((item) =>
-            shortcut.categories.includes(item.category)
-          );
-        } else {
-          const queryWords = norm.split(/\s+/).filter(Boolean);
-          const escapeRE = (s: string) =>
-            s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-          const exactRx = new RegExp("\\b" + escapeRE(norm), "i");
-
-          const scored = items.map((item) => {
-            const nLabel = normalize(item.label);
-            const nCat = normalize(item.category);
-            const nSub = normalize(item.sublabel);
-            const nKw = normalize(item.searchKeywords);
-
-            let score = 0;
-            queryWords.forEach((word) => {
-              let ws = 0;
-              if (matchesWord(word, nLabel)) ws += 3;
-              if (matchesWord(word, nCat)) ws += 2;
-              if (matchesWord(word, nSub)) ws += 1;
-              if (matchesWord(word, nKw)) ws += 1;
-              if (ws > 0) score += ws;
-            });
-
-            if (exactRx.test(nLabel)) score += 5;
-            else if (exactRx.test(nSub) || exactRx.test(nKw)) score += 2;
-            else if (exactRx.test(nCat)) score += 1;
-
-            return { item, score };
-          });
-
-          found = scored
-            .filter((x) => x.score > 0)
-            .sort((a, b) => b.score - a.score)
-            .map((x) => x.item);
-        }
-
-        setResults(found);
-        setIsOpen(true);
-
-        document.dispatchEvent(
-          new CustomEvent("portal:search", {
-            detail: { query: norm, results: found },
-          })
-        );
-      }, 200);
-    },
-    [items, t]
-  );
-
+  /* ── Abrir dropdown cuando hay query ── */
   useEffect(() => {
-    search(query);
-    return () => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-    };
-  }, [query, search]);
+    if (query.trim()) {
+      setIsOpen(true);
+    }
+  }, [query]);
 
   /* ── Cerrar al hacer click fuera ── */
   useEffect(() => {

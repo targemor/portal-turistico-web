@@ -31,6 +31,9 @@
       "whatsapp": "2225010408"
     },
     "categoria_precio": "$$$",
+    "zona": "Fuera del centro (15 min en coche)",
+    "atractivo_principal": "Confiable y funcional para viaje de negocios, con desayuno de cortesía y transporte gratuito incluido",
+    "buscador_keywords": "city express, marriott, fuera del centro, negocios, recepción 24 horas, estacionamiento, desayuno cortesía",
     "caracteristicas": "Estacionamiento, Gimnasio, Desayuno en cortesía, Transportación gratuita 10 km a la redonda",
     "recepcion_24h": true,
     "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios, Para grupos grandes",
@@ -126,11 +129,14 @@
       "telefono": "2383831500",
       "email": "hoteliberia_teh@live.com.mx",
       "sitio_web": null,
-      "whatsapp": null
+      "whatsapp": "2383831500"
     },
     "categoria_precio": "$$",
+    "zona": "Zona Centro",
+    "atractivo_principal": "El restaurante y el bar, en un edificio histórico con arquitectura porfiriana en pleno centro",
+    "buscador_keywords": "hotel plaza iberia, zona centro, económico, estacionamiento, histórico, porfiriano",
     "caracteristicas": "Estacionamiento, Vista panorámica, Restaurante y Bar",
-    "recepcion_24h": false,
+    "recepcion_24h": true,
     "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios, Para grupos grandes",
     "galeria": [
       {
@@ -173,7 +179,7 @@
     "nombre": "Hotel Zenith",
     "estrellas": null,
     "descripcion": "Servicio personalizado con estacionamiento y recepción 24 horas.",
-    "direccion": null,
+    "direccion": "1 Poniente No. 113, Centro, Tehuacán",
     "direccion_maps": "https://www.google.com/maps/place/Hotel+ZENITH/@18.461795,-97.3947553,17z/data=!3m1!4b1!4m9!3m8!1s0x85c5bcd7fc6b86ab:0xbc35b182d726b7a9",
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
@@ -200,6 +206,9 @@
       "whatsapp": "2381686528"
     },
     "categoria_precio": "$$$",
+    "zona": "Zona Centro",
+    "atractivo_principal": "Servicio personalizado y atención muy cuidada al huésped",
+    "buscador_keywords": "hotel zenith, zona centro, recepción 24 horas, estacionamiento, servicio personalizado",
     "caracteristicas": "Estacionamiento, Recepción 24 horas, Servicio personalizado",
     "recepcion_24h": true,
     "para_quien": "Viaje de negocios",
@@ -258,9 +267,12 @@
       "telefono": "2381700854",
       "email": "ggeneral@granhotelmexicobysolaris.com",
       "sitio_web": null,
-      "whatsapp": null
+      "whatsapp": "+52 238 170 0854"
     },
     "categoria_precio": "$$$",
+    "zona": "Zona Centro",
+    "atractivo_principal": "Comodidad y hotel con historia",
+    "buscador_keywords": "gran hotel méxico, solaris, zona centro, alberca, recepción 24 horas, estacionamiento, historia, comodidad",
     "caracteristicas": "Alberca, Gimnasio, Restaurante-bar, Estacionamiento, Recepción 24 horas",
     "recepcion_24h": true,
     "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios",

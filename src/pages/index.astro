@@ -9,9 +9,7 @@
  * - ImperdiblesSection → bento grid + tabs por categoría
  * - EventosSection    → lista de próximos eventos
  * - ExploraSection  → bento grid + tabs por categoría
- * - HotelesSection  → cards de hoteles con datos JSON
- * - RestaurantesSection → cards de restaurantes con datos JSON
- * - GuiasSection    → cards de guías con datos JSON
+ * - VisitanosSection → rejilla de categorías (hoteles, restaurantes, destinos, guías)
  * - Footer          → dark slate-950
  * - BottomNav       → nav móvil fijo + FAB
  */
@@ -22,15 +20,12 @@ import IntroSection from "../components/IntroSection.astro";
 import ImperdiblesSection from "../components/ImperdiblesSection.astro";
 import ItinerarioTabs from "../components/ItinerarioTabs.astro";
 import EventosSection from "../components/EventosSection.astro";
-import HotelesSection from "../components/HotelesSection.astro";
-import RestaurantesSection from "../components/RestaurantesSection.astro";
-import GuiasSection from "../components/GuiasSection.astro";
+import VisitanosSection from "../components/VisitanosSection.astro";
 import ArtesaniasSection from "../components/ArtesaniasSection.astro";
 import Footer from "../components/Footer.astro";
 import BottomNav from "../components/BottomNav.astro";
 
 import homePageData from "../data/home-page.json";
-import guias from "../data/guias-turisticos.json";
 import destinos from "../data/destinos-turisticos.json";
 import artesanias from "../data/artesanias.json";
 ---
@@ -66,14 +61,8 @@ import artesanias from "../data/artesanias.json";
     <!-- Próximos Eventos -->
     <EventosSection />
 
-    <!-- Hoteles (datos desde JSON) -->
-    <HotelesSection hoteles={homePageData.mejores_hoteles} />
-
-    <!-- Restaurantes (datos desde JSON) -->
-    <RestaurantesSection restaurantes={homePageData.mejores_restaurantes} />
-
-    <!-- Guías turísticos (datos desde JSON) -->
-    <GuiasSection guias={guias} />
+    <!-- Visítanos: rejilla de categorías hacia el directorio -->
+    <VisitanosSection />
 
     <!-- Artesanías y Medicina Tradicional (datos desde JSON) -->
     <ArtesaniasSection artesanias={artesanias} />

@@ -52,6 +52,13 @@
     "cornCradle": "Cuna del Maíz",
     "colors": "colores",
 
+    "visitanosBadge": "EXPLORA TEHUACÁN",
+    "visitanosTitle": "Visítanos",
+    "visitHoteles": "Hoteles",
+    "visitRestaurantes": "Restaurantes · Bares",
+    "visitDestinos": "Destinos turísticos",
+    "visitGuias": "Guías certificados",
+
     "hotelBadge": "Alojamiento",
     "hotelTitle": "DONDE HOSPEDARSE",
     "hotelCta": "VER TODOS LOS HOTELES",
@@ -242,6 +249,13 @@
     "introText": "Discover the <span style=\"color:var(--color-mex-rosa)\">Cradle of Corn</span>, a UNESCO World Heritage destination that pulses with the <span style=\"color:var(--color-mex-naranja)\">colors</span> of our land.",
     "cornCradle": "Cradle of Corn",
     "colors": "colors",
+
+    "visitanosBadge": "EXPLORE TEHUACÁN",
+    "visitanosTitle": "Visit us",
+    "visitHoteles": "Hotels",
+    "visitRestaurantes": "Restaurants · Bars",
+    "visitDestinos": "Destinations",
+    "visitGuias": "Certified guides",
 
     "hotelBadge": "Accommodation",
     "hotelTitle": "WHERE TO STAY",

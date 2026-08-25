@@ -1,0 +1,89 @@
+---
+/**
+ * VisitanosSection – "VISÍTANOS — Categorías".
+ * Portado de sitio-cholula (`HomeSections.astro` + estilos de `index.css`).
+ *
+ * Sustituye a HotelesSection / RestaurantesSection / GuiasSection: en vez de
+ * tres bloques de cards con datos, una sola rejilla que lleva al directorio.
+ *
+ * Para añadir o quitar una categoría basta con editar `categorias`; la rejilla
+ * es de 2 columnas, así que conviene mantener un número par de cards.
+ */
+import VisitanosCard from "./VisitanosCard.astro";
+
+const categorias = [
+  {
+    href: "/directorio/hoteles",
+    title: "Hoteles",
+    i18nKey: "visitHoteles",
+    img: "/assets/visitanos_hoteles.webp",
+    icons: ["🐾", "🏊"],
+  },
+  {
+    href: "/directorio/restaurantes",
+    title: "Restaurantes · Bares",
+    i18nKey: "visitRestaurantes",
+    img: "/assets/visitanos_restaurantes.webp",
+    icons: ["🐾", "🎵"],
+  },
+  {
+    href: "/directorio/destinos",
+    title: "Destinos turísticos",
+    i18nKey: "visitDestinos",
+    img: "/assets/visitanos_destinos.webp",
+    icons: ["🌵", "🏛️"],
+  },
+  {
+    href: "/directorio/guias",
+    title: "Guías certificados",
+    i18nKey: "visitGuias",
+    img: "/assets/visitanos_guias.webp",
+    icons: ["🪪", "🗣️"],
+  },
+];
+---
+
+<section
+  id="visitanos"
+  class="py-20 bg-slate-50 border-y border-slate-200/80"
+>
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header estilo Cholula / Tehuacán -->
+    <div class="text-center max-w-3xl mx-auto mb-4">
+      <p
+        class="text-brand font-bold text-xs uppercase tracking-[0.3em] mb-2"
+        data-i18n="visitanosBadge"
+      >
+        EXPLORA TEHUACÁN
+      </p>
+      <h2
+        class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900"
+        data-i18n="visitanosTitle"
+      >
+        Visítanos
+      </h2>
+    </div>
+
+    <div class="visitanos-grid">
+      {categorias.map((c) => <VisitanosCard {...c} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .visitanos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin: 3rem auto 0;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .visitanos-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+  }
+</style>

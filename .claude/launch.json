@@ -3,6 +3,8 @@
   "configurations": [
     {
       "name": "astro-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
       "port": 4500,
       "url": "http://localhost:4500"
     }

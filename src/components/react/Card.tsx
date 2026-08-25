@@ -2,7 +2,7 @@ import React from "react";
 import ImageGallery from "./ImageGallery";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-import { MapPin, Home, Star, Phone, Share2, User } from "lucide-react";
+import { MapPin, Home, Star, Phone, Share2, User, Globe } from "lucide-react";
 
 // Iconos para redes sociales de marcas (Facebook, Instagram, Tiktok, WhatsApp)
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -44,6 +44,7 @@ export interface CardItem {
   redes_sociales?: { plataforma: string; enlace: string }[];
   telefono?: string;
   whatsapp?: string;
+  sitio_web?: string;
   contacto?: {
     telefono?: string | null;
     whatsapp?: string | null;
@@ -58,22 +59,32 @@ interface CardProps {
   children?: React.ReactNode;
 }
 
+/* ─── Utilidades ─────────────────────────────────────────── */
+function getValidHref(url?: string): string {
+  if (!url) return "#";
+  return url.startsWith("http") ? url : `https://${url}`;
+}
+
+function formatUrl(url?: string): string {
+  if (!url) return "";
+  try {
+    const validUrl = url.startsWith("http") ? url : `https://${url}`;
+    return new URL(validUrl).hostname.replace("www.", "");
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace("www.", "").split('/')[0];
+  }
+}
+
 export default function Card({ item, categoria, children }: CardProps) {
   const { t } = useLanguage();
-
-  const getBtnText = () => {
-    switch (categoria) {
-      case 'hoteles':      return t.cardAvailability;
-      case 'restaurantes': return t.cardMenu;
-      case 'guias':        return t.cardContact;
-      default:             return t.cardDetails;
-    }
-  };
 
   const nombreItem = item.nombre || item.titulo || t.cardNoName;
 
   const hasGaleria = item.galeria && (Array.isArray(item.galeria) ? item.galeria.length > 0 : true);
   const galeriaAdaptada = hasGaleria ? item.galeria : (item.imagen ? [{ url: item.imagen }] : null);
+
+  const phoneNum = item.contacto?.telefono || item.telefono;
+  const website = item.contacto?.sitio_web || (item as any).sitio_web || (item as any).sitioWeb;
 
   return (
     <div id={`${categoria}-${item.id}`} className="rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md overflow-hidden group flex flex-col h-full">
@@ -121,6 +132,31 @@ export default function Card({ item, categoria, children }: CardProps) {
           </div>
         )}
 
+        {/* Redes sociales */}
+        {item.redes_sociales && item.redes_sociales.length > 0 && (
+          <div className="flex gap-2 mb-3 mt-1">
+            {item.redes_sociales.map((red, idx) => {
+              const platformLower = red.plataforma.toLowerCase();
+              const IconComp = platformLower === 'facebook' ? FacebookIcon :
+                               platformLower === 'instagram' ? InstagramIcon :
+                               platformLower === 'tiktok' ? TiktokIcon : null;
+              return (
+                <a
+                  key={idx}
+                  href={red.enlace ?? "#"}
+                  target={red.enlace ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={red.plataforma}
+                  className="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
+                >
+                  {IconComp && <IconComp className="w-4 h-4" />}
+                </a>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Dirección */}
         {item.direccion && (() => {
           const mapLink =
             (item as any).direccion_maps ||
@@ -143,6 +179,44 @@ export default function Card({ item, categoria, children }: CardProps) {
             </p>
           );
         })()}
+
+        {/* Teléfono + Página Web en la misma línea con separador | */}
+        {(phoneNum || website) && (
+          <div className="flex items-center gap-2.5 text-slate-600 text-sm mb-2 flex-wrap font-medium">
+            {phoneNum && (
+              <div className="flex items-center gap-1.5 min-w-0">
+                <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                <a
+                  href={`tel:${phoneNum.replace(/\D/g, "")}`}
+                  className="hover:underline hover:text-brand transition-colors text-slate-700 font-medium"
+                >
+                  {phoneNum}
+                </a>
+              </div>
+            )}
+
+            {phoneNum && website && (
+              <span className="text-slate-300 font-light">|</span>
+            )}
+
+            {website && (
+              <div className="flex items-center gap-1.5 min-w-0">
+                <Globe className="w-4 h-4 text-slate-400 shrink-0" />
+                <a
+                  href={getValidHref(website)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-brand transition-colors text-slate-700 font-medium truncate"
+                  title={website}
+                >
+                  {formatUrl(website)}
+                </a>
+              </div>
+            )}
+          </div>
+        )}
+
+        {children}
 
         {/* Chips de Amenidades */}
         {(() => {
@@ -183,50 +257,28 @@ export default function Card({ item, categoria, children }: CardProps) {
           if (chips.length === 0) return null;
 
           return (
-            <div className="flex flex-wrap gap-1.5 my-3">
-              {chips.map((chip, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80"
-                >
-                  <span>{chip.icon}</span>
-                  <span>{chip.label}</span>
-                </span>
-              ))}
+            <div className="pt-3 my-3 border-t border-dashed border-slate-200">
+              <div className="flex flex-wrap gap-1.5">
+                {chips.map((chip, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80"
+                  >
+                    <span>{chip.icon}</span>
+                    <span>{chip.label}</span>
+                  </span>
+                ))}
+              </div>
             </div>
           );
         })()}
 
-        {children}
-
-        {item.redes_sociales && item.redes_sociales.length > 0 && (
-          <div className="flex gap-2 mb-3 mt-4">
-            {item.redes_sociales.map((red, idx) => {
-              const platformLower = red.plataforma.toLowerCase();
-              const IconComp = platformLower === 'facebook' ? FacebookIcon :
-                               platformLower === 'instagram' ? InstagramIcon :
-                               platformLower === 'tiktok' ? TiktokIcon : null;
-              return (
-                <a
-                  key={idx}
-                  href={red.enlace ?? "#"}
-                  target={red.enlace ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  aria-label={red.plataforma}
-                  className="w-8 h-8 rounded-md flex items-center justify-center text-slate-400 hover:text-brand border border-slate-200 hover:border-brand/30 bg-white transition-all"
-                >
-                  {IconComp && <IconComp className="w-4 h-4" />}
-                </a>
-              );
-            })}
-          </div>
-        )}
-
-        <div className="mt-auto pt-6">
+        {/* CTAs / Botones de acción */}
+        <div className="mt-auto pt-4 border-t border-slate-100">
           <div className="flex gap-2 w-full">
-            {(item.contacto?.telefono || item.telefono) && (
+            {phoneNum && (
               <a
-                href={`tel:${item.contacto?.telefono || item.telefono}`}
+                href={`tel:${phoneNum}`}
                 className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md text-xs sm:text-sm font-bold transition-colors bg-[#C55A50] hover:bg-[#A84C43] text-white h-10 px-2 py-2 whitespace-nowrap"
               >
                 {t.cardCall}

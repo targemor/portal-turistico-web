@@ -295,25 +295,6 @@ export default function BusinessCard({
           </p>
         )}
 
-        {/* Chips de Atributos destacados */}
-        {chips.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 my-1">
-            {chips.map((chip, i) => (
-              <span
-                key={i}
-                className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap inline-flex items-center gap-1 ${
-                  chip.isMichelin
-                    ? "bg-gradient-to-br from-slate-900 to-slate-800 text-amber-400 border border-amber-400/60"
-                    : "bg-slate-100 text-slate-700 border border-slate-200/80"
-                }`}
-              >
-                <span>{chip.icon}</span>
-                <span>{chip.label}</span>
-              </span>
-            ))}
-          </div>
-        )}
-
         {/* Redes sociales */}
         {(instagram || facebook || tiktok) && (
           <ul className="grid grid-cols-3 gap-2 text-sm">
@@ -361,6 +342,29 @@ export default function BusinessCard({
 
         {/* Info list */}
         <ul className="flex flex-col gap-2 text-sm">
+          {address && (() => {
+            const finalMapsUrl = mapsUrl || `https://maps.google.com/?q=${encodeURIComponent(title + " " + address + " Tehuacán")}`;
+            return (
+              <li className="flex items-start gap-2 text-slate-600">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
+                <a
+                  href={finalMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-brand transition-colors font-medium"
+                  title="Abrir en Google Maps"
+                >
+                  {address}
+                </a>
+              </li>
+            );
+          })()}
+          {distancia && (
+            <li className="flex items-start gap-2 text-slate-600">
+              <span className="text-base shrink-0">🏛️</span>
+              <span>{distancia}</span>
+            </li>
+          )}
           {acreditacion && (
             <li className="flex items-start gap-2 text-slate-600">
               <span className="text-base shrink-0">📜</span>
@@ -393,68 +397,46 @@ export default function BusinessCard({
               </span>
             </li>
           )}
-          {address && (() => {
-            const finalMapsUrl = mapsUrl || `https://maps.google.com/?q=${encodeURIComponent(title + " " + address + " Tehuacán")}`;
-            return (
-              <li className="flex items-start gap-2 text-slate-600">
-                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
-                <a
-                  href={finalMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline hover:text-brand transition-colors font-medium"
-                  title="Abrir en Google Maps"
-                >
-                  {address}
-                </a>
-              </li>
-            );
-          })()}
-          {distancia && (
-            <li className="flex items-start gap-2 text-slate-600">
-              <span className="text-base shrink-0">🏛️</span>
-              <span>{distancia}</span>
-            </li>
-          )}
-          {/* Teléfono + Sitio web en grid */}
+          {/* Teléfono + Sitio web en línea con separador | */}
           {(phone || sitioWeb) && (
-            <li className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2">
+            <li className="flex items-center gap-2.5 text-slate-600 flex-wrap font-medium">
               {phone && (
-                <>
-                  <Phone className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
-                  <span className="min-w-0">
-                    <a
-                      href={`tel:${phone.replace(/\D/g, "")}`}
-                      className="hover:underline hover:opacity-70 transition-opacity text-slate-600"
-                    >
-                      {phone}
-                    </a>
-                    {telefonoAlt && (
-                      <>
-                        ,{" "}
-                        <a
-                          href={`tel:${telefonoAlt.replace(/\D/g, "")}`}
-                          className="hover:underline hover:opacity-70 transition-opacity text-slate-600"
-                        >
-                          {telefonoAlt}
-                        </a>
-                      </>
-                    )}
-                  </span>
-                </>
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <Phone className="w-4 h-4 shrink-0 text-slate-400" />
+                  <a
+                    href={`tel:${phone.replace(/\D/g, "")}`}
+                    className="hover:underline hover:text-brand transition-colors text-slate-600"
+                  >
+                    {phone}
+                  </a>
+                  {telefonoAlt && (
+                    <>
+                      ,{" "}
+                      <a
+                        href={`tel:${telefonoAlt.replace(/\D/g, "")}`}
+                        className="hover:underline hover:text-brand transition-colors text-slate-600"
+                      >
+                        {telefonoAlt}
+                      </a>
+                    </>
+                  )}
+                </div>
+              )}
+              {phone && sitioWeb && (
+                <span className="text-slate-300 font-light">|</span>
               )}
               {sitioWeb && (
-                <>
-                  <Globe className="w-4 h-4 shrink-0 mt-0.5 text-slate-400" />
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <Globe className="w-4 h-4 shrink-0 text-slate-400" />
                   <a
                     href={getValidHref(sitioWeb)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="truncate hover:underline hover:opacity-70 transition-opacity text-slate-600"
+                    className="hover:underline hover:text-brand transition-colors text-slate-600 truncate"
                   >
                     {formatUrl(sitioWeb)}
                   </a>
-                </>
+                </div>
               )}
             </li>
           )}
