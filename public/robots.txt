@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Los parámetros de resaltado del directorio generan la misma página:
+# el canonical ya lo resuelve, pero así se ahorra rastreo.
+Disallow: /*?id=
+
+Sitemap: https://visit-tehuacan.vercel.app/sitemap-index.xml

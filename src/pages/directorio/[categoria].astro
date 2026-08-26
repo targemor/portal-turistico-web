@@ -4,6 +4,7 @@ import NavBar    from "../../components/NavBar.astro";
 import Footer    from "../../components/Footer.astro";
 import BottomNav from "../../components/BottomNav.astro";
 import DirectorioGrid from "../../components/react/DirectorioGrid";
+import { buildDirectorioSchemas } from "../../lib/schema";
 
 export function getStaticPaths() {
   return [
@@ -54,6 +55,8 @@ if (categoria === 'hoteles') {
 <BaseLayout
   title={`${tituloES} | Portal Turístico Tehuacán`}
   description={`Descubre los mejores ${tituloES.toLowerCase()} de Tehuacán, Puebla. Cuna del Maíz y Patrimonio de la Humanidad.`}
+  canonical={`/directorio/${categoria}`}
+  jsonLd={buildDirectorioSchemas(categoria, data)}
   bodyClass="pb-20 md:pb-0"
 >
   <NavBar forceBackground={true} />

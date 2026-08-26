@@ -6,6 +6,7 @@
  * - NavBar          → header transparente → blur al scroll
  * - HeroSection     → imagen + overlay + barra búsqueda
  * - IntroSection    → cita minimalista con divisor rojo
+ * - BienvenidoSection → banner de la biosfera + cifras clave
  * - ImperdiblesSection → bento grid + tabs por categoría
  * - EventosSection    → lista de próximos eventos
  * - ExploraSection  → bento grid + tabs por categoría
@@ -17,6 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import NavBar from "../components/NavBar.astro";
 import HeroSection from "../components/HeroSection.astro";
 import IntroSection from "../components/IntroSection.astro";
+import BienvenidoSection from "../components/BienvenidoSection.astro";
 import ImperdiblesSection from "../components/ImperdiblesSection.astro";
 import ItinerarioTabs from "../components/ItinerarioTabs.astro";
 import EventosSection from "../components/EventosSection.astro";
@@ -28,11 +30,14 @@ import BottomNav from "../components/BottomNav.astro";
 import homePageData from "../data/home-page.json";
 import destinos from "../data/destinos-turisticos.json";
 import artesanias from "../data/artesanias.json";
+import { buildHomeSchemas } from "../lib/schema";
 ---
 
 <BaseLayout
   title="Portal Turístico Tehuacán | Cuna del Maíz"
   description="Portal Turístico Tehuacán – Descubre la Cuna del Maíz y Patrimonio de la Humanidad. Hoteles, restaurantes, destinos y guías certificados en Tehuacán, Puebla."
+  canonical="/"
+  jsonLd={buildHomeSchemas(homePageData.imperdibles)}
 >
   <!-- Preload del LCP (imagen hero) — específico de esta página -->
   <link
@@ -49,6 +54,9 @@ import artesanias from "../data/artesanias.json";
   <main id="main-content">
     <!-- HeroSection: video + cita intro + buscador -->
     <HeroSection data={homePageData} destinos={destinos} />
+
+    <!-- Bienvenido a Tehuacán: banner de la biosfera + cifras -->
+    <BienvenidoSection />
 
     <!-- Bento grid + Imperdibles por categoría -->
     <ImperdiblesSection imperdibles={homePageData.imperdibles} />

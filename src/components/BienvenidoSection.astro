@@ -1,0 +1,462 @@
+---
+/**
+ * BienvenidoSection – "BIENVENIDO A TEHUACÁN".
+ * Portado de sitio-cholula (bloque `section-bienvenido` + `.piramide-*` de
+ * `index.css`) y adaptado: donde Cholula presume su pirámide, Tehuacán presume
+ * el valle de la Reserva de la Biosfera Tehuacán-Cuicatlán.
+ *
+ * Diferencias respecto al original:
+ * - El fondo es un <img> en vez de `background-image`, para poder darle
+ *   width/height/loading y que no bloquee el render.
+ * - Paleta adaptada a la del sitio (--color-brand y la paleta "México").
+ *
+ * Las cifras están verificadas; ver public/assets/CREDITOS-IMAGENES.md.
+ */
+
+const stats = [
+  {
+    icon: "🌽",
+    num: "5,000",
+    unitKey: "statMaizUnit",
+    unit: "AÑOS",
+    descKey: "statMaizDesc",
+    desc: "El registro arqueológico de maíz más antiguo de México, en sus cuevas",
+  },
+  {
+    icon: "🌵",
+    num: "#1",
+    unitKey: "statCactusUnit",
+    unit: "DEL PLANETA",
+    descKey: "statCactusDesc",
+    desc: "La mayor concentración de cactáceas columnares del mundo",
+    noteKey: "statCactusNote",
+    note: "(UNESCO, 2018)",
+  },
+  {
+    icon: "🏞️",
+    num: "490 MIL",
+    unitKey: "statReservaUnit",
+    unit: "HECTÁREAS",
+    descKey: "statReservaDesc",
+    desc: "Reserva de la Biosfera Tehuacán-Cuicatlán",
+  },
+];
+---
+
+<section class="section-bienvenido" id="bienvenido">
+  <div class="biosfera-wrapper">
+    <div class="section-biosfera">
+      <img
+        class="biosfera-bg"
+        src="/assets/bienvenido_biosfera.webp"
+        alt="Bosque de cactáceas columnares al atardecer en la Reserva de la Biosfera Tehuacán-Cuicatlán"
+        width="2400"
+        height="1029"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="biosfera-overlay"></div>
+
+      <div class="biosfera-content">
+        <h2 class="biosfera-title">
+          <span data-i18n="bienvenidoTitleBefore">Tenemos el bosque de cactáceas </span><span
+            class="biosfera-title-highlight"
+            data-i18n="bienvenidoTitleHighlight">más denso del planeta</span
+          >
+        </h2>
+        <p class="biosfera-subtitle" data-i18n="bienvenidoSubtitle">
+          Cactus gigantes, fósiles marinos bajo tus pies y el valle donde nació
+          el maíz mesoamericano.
+        </p>
+        <div class="biosfera-actions">
+          <a
+            href="#itinerarios"
+            class="biosfera-btn-primary"
+            data-i18n="bienvenidoCtaPrimary">Planea tu visita</a
+          >
+          <a
+            href="#imperdibles"
+            class="biosfera-btn-secondary"
+            data-i18n="bienvenidoCtaSecondary">Ver los imperdibles →</a
+          >
+        </div>
+      </div>
+
+      <div class="biosfera-photo-credit">
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+          ></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+        <span data-i18n="photoBy">Foto:</span>
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Zapotitlan_salinas_Botanical_Garden,_Mexico_(Unsplash).jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="biosfera-credit-link">Andrés Sanz</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="bienvenido-stats-container">
+    <div class="bienvenido-stats">
+      {
+        stats.map((stat) => (
+          <div class="bienvenido-stat">
+            <div class="bienvenido-stat-icon" aria-hidden="true">
+              {stat.icon}
+            </div>
+            <div class="bienvenido-stat-num">{stat.num}</div>
+            <div class="bienvenido-stat-unit" data-i18n={stat.unitKey}>
+              {stat.unit}
+            </div>
+            <div class="bienvenido-stat-desc">
+              <span data-i18n={stat.descKey}>{stat.desc}</span>
+              {stat.note && (
+                <>
+                  <br />
+                  <span data-i18n={stat.noteKey}>{stat.note}</span>
+                </>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-bienvenido {
+    /* 5rem arriba para respetar el ritmo vertical del resto del home (py-20) */
+    padding: 5rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+  }
+
+  /* A sangre, de borde a borde: igual que en Cholula, donde el .container
+     que envuelve el banner es una clase muerta (global.css no se importa). */
+  .biosfera-wrapper {
+    order: 1;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* ── Banner ── */
+  .section-biosfera {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .biosfera-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .biosfera-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.32) 55%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1;
+  }
+
+  .biosfera-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 3.5rem;
+    max-width: 680px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .biosfera-title {
+    color: #ffffff;
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .biosfera-title-highlight {
+    color: var(--color-mex-naranja, #f39200);
+  }
+
+  .biosfera-subtitle {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ── CTAs ── */
+  .biosfera-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+
+  .biosfera-btn-primary,
+  .biosfera-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .biosfera-btn-primary {
+    background-color: var(--color-brand, #c82e31);
+    color: #ffffff;
+    border: 2px solid var(--color-brand, #c82e31);
+  }
+
+  .biosfera-btn-primary:hover {
+    background-color: #a82327;
+    border-color: #a82327;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 46, 49, 0.45);
+  }
+
+  .biosfera-btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+
+  .biosfera-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .biosfera-btn-primary:focus-visible,
+  .biosfera-btn-secondary:focus-visible,
+  .biosfera-credit-link:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  /* ── Crédito fotográfico ── */
+  .biosfera-photo-credit {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .biosfera-credit-link {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+  }
+
+  .biosfera-credit-link:hover {
+    color: var(--color-mex-naranja, #f39200);
+    text-decoration-color: var(--color-mex-naranja, #f39200);
+  }
+
+  /* ── Cifras ── */
+  .bienvenido-stats-container {
+    order: 2;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .bienvenido-stats {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bienvenido-stat {
+    flex: 1;
+    padding: 0 2rem;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bienvenido-stat:first-child {
+    padding-left: 0;
+  }
+
+  .bienvenido-stat:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .bienvenido-stat-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  }
+
+  .bienvenido-stat-num {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-brand, #c82e31);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .bienvenido-stat-unit {
+    display: block;
+    font-size: 18px;
+    color: var(--color-mex-naranja, #f39200);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .bienvenido-stat-desc {
+    font-size: 15px;
+    color: #55524a;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* ── Móvil ── */
+  @media (max-width: 900px) {
+    .biosfera-wrapper {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-biosfera {
+      aspect-ratio: unset;
+      min-height: 560px;
+    }
+
+    .biosfera-content {
+      padding: 1.75rem 1.25rem 2rem;
+      max-width: 100%;
+      gap: 0.9rem;
+    }
+
+    .biosfera-title {
+      font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+
+    .biosfera-photo-credit {
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.65rem;
+    }
+
+    .bienvenido-stats-container {
+      margin-top: 0;
+      padding: 0 0.5rem;
+    }
+
+    .bienvenido-stats {
+      padding-top: 24px;
+      padding-bottom: 16px;
+      justify-content: space-between;
+    }
+
+    .bienvenido-stat {
+      padding: 0 0.35rem;
+    }
+
+    .bienvenido-stat-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .bienvenido-stat-num {
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+      margin-bottom: 2px;
+      line-height: 1.1;
+    }
+
+    .bienvenido-stat-unit {
+      font-size: 0.72rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .bienvenido-stat-desc {
+      font-size: clamp(0.8rem, 2.8vw, 0.95rem);
+      line-height: 1.4;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .biosfera-btn-primary,
+    .biosfera-btn-secondary {
+      transition: none;
+    }
+
+    .biosfera-btn-primary:hover,
+    .biosfera-btn-secondary:hover {
+      transform: none;
+    }
+  }
+</style>

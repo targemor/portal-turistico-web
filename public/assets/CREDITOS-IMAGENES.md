@@ -14,6 +14,29 @@ en obras derivadas; CC0 es dominio público.
 | Museo de la Evolución | `imperdible_museo_evolucion.webp` | Lupitahc14 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File%3AMuseo_de_la_Evoluci%C3%B3n%2C_Tehuac%C3%A1n._.jpg) |
 | Museo del Agua Peñafiel | `imperdible_penafiel.webp` | Lupitahc14 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File%3AMuseo_Hidromineral_Pe%C3%B1afiel.jpg) |
 
+## 1b. Sección "Bienvenido a Tehuacán" y cards de Visítanos
+
+| Uso | Archivo | Autor | Licencia | Fuente |
+|---|---|---|---|---|
+| Banner "Bienvenido" | `bienvenido_biosfera.webp` | Andrés Sanz (sanzolome) | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Zapotitlan_salinas_Botanical_Garden,_Mexico_(Unsplash).jpg) |
+| Card Destinos | `visitanos_destinos.webp` | Luistlatoani | Dominio público | [Commons](https://commons.wikimedia.org/wiki/File:Paisaje_en_Texcala,_Puebla,_M%C3%A9xico.JPG) |
+
+Las cards de Hoteles, Restaurantes y Guías (`visitanos_*.webp`) son recortes de
+fotos que ya estaban en el proyecto (Hotel Zenith, Il Divinità, Efrén Pérez González).
+
+### Cifras de la sección "Bienvenido"
+
+- **5,000 años / registro de maíz**: los especímenes de las cuevas del valle
+  (Coxcatlán, San Marcos, El Riego...) datan de ~5,300–4,970 años. Ojo: la cifra
+  clásica de "7,000 años" está revisada a la baja, y hoy se acepta que el maíz se
+  domesticó en la cuenca del Balsas — Tehuacán conserva el registro arqueológico
+  más antiguo, que no es lo mismo. La redacción de la sección lo refleja.
+- **Mayor concentración de cactáceas columnares del mundo**: superlativo recogido
+  en la inscripción de la UNESCO (2 de julio de 2018), que declaró el Valle de
+  Tehuacán-Cuicatlán Patrimonio Mundial Mixto, el segundo de México.
+- **490 mil hectáreas**: superficie de la Reserva de la Biosfera (CONANP). No
+  confundir con las 145,255 ha del polígono inscrito por la UNESCO.
+
 ## 2. PENDIENTE DE AUTORIZACIÓN ⚠️
 
 Estos dos lugares **no tienen ninguna foto con licencia libre** en Wikimedia Commons,

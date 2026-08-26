@@ -1,0 +1,107 @@
+---
+/**
+ * GoogleAnalytics.astro – GA4 + eventos automáticos.
+ * Portado de sitio-cholula (bloque inline de `Layout.astro`).
+ *
+ * Si PUBLIC_GA_ID no está definida no se inyecta absolutamente nada: preferimos
+ * quedarnos sin analítica antes que mandar datos a una propiedad equivocada.
+ *
+ * Convive con Vercel Analytics, que mide otras cosas (Web Vitals, page views
+ * sin cookies). GA4 aporta el embudo de eventos personalizados.
+ */
+import { GA_MEASUREMENT_ID, SITE_URL } from "../lib/seo";
+
+const gaId = GA_MEASUREMENT_ID;
+const siteHost = new URL(SITE_URL).hostname;
+---
+
+{
+  gaId && (
+    <>
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        is:inline
+      />
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", gaId, {
+          anonymize_ip: true,
+          send_page_view: true,
+        });
+      </script>
+
+      {/* Eventos automáticos: scroll depth, WhatsApp y enlaces externos */}
+      <script is:inline define:vars={{ siteHost }}>
+        (function () {
+          // ── Scroll depth ──────────────────────────────────────────────
+          var milestones = [25, 50, 75, 100];
+          var fired = {};
+
+          function onScroll() {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight =
+              Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight
+              ) - window.innerHeight;
+            if (docHeight <= 0) return;
+            var pct = Math.round((scrollTop / docHeight) * 100);
+            for (var i = 0; i < milestones.length; i++) {
+              var m = milestones[i];
+              if (pct >= m && !fired[m]) {
+                fired[m] = true;
+                if (typeof gtag === "function") {
+                  gtag("event", "scroll", { percent_scrolled: m });
+                }
+              }
+            }
+          }
+
+          window.addEventListener("scroll", onScroll, { passive: true });
+
+          // ── WhatsApp FAB ──────────────────────────────────────────────
+          var wa = document.getElementById("whatsapp-fab");
+          if (wa) {
+            wa.addEventListener("click", function () {
+              if (typeof gtag === "function") {
+                gtag("event", "whatsapp_click", {
+                  event_category: "contact",
+                  event_label: "fab",
+                });
+              }
+            });
+          }
+
+          // ── Enlaces externos ──────────────────────────────────────────
+          document.addEventListener("click", function (e) {
+            var a = e.target && e.target.closest && e.target.closest("a[href]");
+            if (!a) return;
+            var href = a.getAttribute("href") || "";
+            if (href.indexOf("http") !== 0) return;
+            if (href.indexOf(siteHost) !== -1) return;
+            if (a.dataset && a.dataset.gaWhatsapp) return; // ya medido arriba
+            try {
+              if (typeof gtag === "function") {
+                gtag("event", "click", {
+                  event_category: "outbound",
+                  event_label: href,
+                  link_domain: new URL(href).hostname,
+                  link_url: href,
+                });
+              }
+            } catch (err) {
+              /* URL inválida */
+            }
+          });
+        })();
+      </script>
+    </>
+  )
+}

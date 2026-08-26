@@ -4,14 +4,24 @@
  *
  * Responsabilidades:
  * - Estructura HTML completa (doctype, head, body)
- * - Meta tags SEO comunes + slot para meta tags específicos por página
+ * - Meta tags SEO comunes + canonical + Open Graph / Twitter absolutos
+ * - Geo tags y JSON-LD (schema.org) por página
  * - Google Fonts (carga no bloqueante)
- * - Vercel SpeedInsights y Analytics (cubren TODAS las páginas)
+ * - Vercel SpeedInsights/Analytics + Google Analytics 4
  * - Slot default para el contenido de cada página
  */
 
 import SpeedInsights from '@vercel/speed-insights/astro';
 import Analytics    from '@vercel/analytics/astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import {
+  SITE_NAME,
+  GEO,
+  DEFAULT_OG_IMAGE,
+  OG_IMAGE_WIDTH,
+  OG_IMAGE_HEIGHT,
+  absoluteUrl,
+} from '../lib/seo';
 import '../styles/global.css';
 
 interface Props {
@@ -19,8 +29,16 @@ interface Props {
   title?: string;
   /** Meta description */
   description?: string;
-  /** URL de la imagen OG */
+  /** URL de la imagen OG (relativa o absoluta) */
   ogImage?: string;
+  /** Ruta canónica; por defecto la de la propia página */
+  canonical?: string;
+  /** Tipo de Open Graph */
+  ogType?: string;
+  /** Excluir la página de los índices de búsqueda */
+  noindex?: boolean;
+  /** JSON-LD de schema.org: un objeto o un array */
+  jsonLd?: object | object[];
   /** Clase CSS adicional para <body> */
   bodyClass?: string;
 }
@@ -28,9 +46,16 @@ interface Props {
 const {
   title       = 'Portal Turístico Tehuacán | Cuna del Maíz',
   description = 'Portal Turístico Tehuacán – Descubre la Cuna del Maíz y Patrimonio de la Humanidad. Hoteles, restaurantes, destinos y guías certificados en Tehuacán, Puebla.',
-  ogImage     = '/assets/hero-poster.webp',
+  ogImage     = DEFAULT_OG_IMAGE,
+  canonical,
+  ogType      = 'website',
+  noindex     = false,
+  jsonLd,
   bodyClass   = '',
 } = Astro.props;
+
+const canonicalUrl = absoluteUrl(canonical ?? Astro.url.pathname);
+const ogImageUrl   = absoluteUrl(ogImage);
 ---
 
 <!doctype html>
@@ -42,18 +67,34 @@ const {
     <meta id="meta-keywords" name="keywords" content="Tehuacán, Puebla, turismo, hoteles, restaurantes, destinos turísticos, biosfera, patrimonio, México" />
     <meta name="author" content="Ayuntamiento de Tehuacán" />
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
+    <!-- Canonical: evita duplicados por query strings (?id=, utm_*) -->
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <!-- Open Graph (URLs absolutas: las relativas no resuelven al compartir) -->
+    <meta property="og:type"        content={ogType} />
     <meta id="og-title"             property="og:title"       content={title} />
     <meta id="og-desc"              property="og:description" content={description} />
-    <meta property="og:image"       content={ogImage} />
+    <meta property="og:url"         content={canonicalUrl} />
+    <meta property="og:image"       content={ogImageUrl} />
+    <meta property="og:image:width"  content={String(OG_IMAGE_WIDTH)} />
+    <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+    <meta property="og:image:alt"   content={title} />
+    <meta property="og:site_name"   content={SITE_NAME} />
     <meta id="og-locale"            property="og:locale"      content="es_MX" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta id="tw-title"              name="twitter:title"       content={title} />
     <meta id="tw-desc"               name="twitter:description" content={description} />
-    <meta name="twitter:image"       content={ogImage} />
+    <meta name="twitter:image"       content={ogImageUrl} />
+    <meta name="twitter:image:alt"   content={title} />
+
+    <!-- Geo tags: búsqueda local -->
+    <meta name="geo.region"    content={GEO.region} />
+    <meta name="geo.placename" content={GEO.placename} />
+    <meta name="geo.position"  content={`${GEO.lat};${GEO.lng}`} />
+    <meta name="ICBM"          content={`${GEO.lat}, ${GEO.lng}`} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
@@ -81,6 +122,19 @@ const {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       />
     </noscript>
+
+    <!-- ─── Google Analytics 4 (no se emite si falta PUBLIC_GA_ID) ─── -->
+    <GoogleAnalytics />
+
+    <!-- ─── JSON-LD schema.org ──────────────────────────────────────── -->
+    {
+      jsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd])}
+        />
+      )
+    }
 
     <!-- Slot para meta tags adicionales específicos de cada página (preloads, etc.) -->
     <slot name="head" />
