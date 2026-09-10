@@ -29,6 +29,7 @@ export default function NavBar({ forceBackground = false }: NavBarProps) {
     { label: t.navWhere, href: "/directorio/hoteles" },
     { label: t.navEat, href: "/directorio/restaurantes" },
     { label: t.navGuides, href: "/directorio/guias" },
+    { label: "🆘 Emergencias", href: "/emergencias" },
   ];
 
   return (

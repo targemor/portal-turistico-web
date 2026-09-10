@@ -1,0 +1,209 @@
+---
+/**
+ * EmergenciasSection.astro – Sección interactiva de números de emergencia,
+ * hospitales de referencia y protocolos de seguridad para turistas en Tehuacán (Diseño en tonos claros).
+ */
+---
+
+<section id="emergencias" class="py-10 bg-slate-50 text-slate-800 relative overflow-hidden">
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Grid Principal de Emergencias -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      
+      <!-- Card 1: 911 Emergencias -->
+      <div class="bg-white border border-slate-200/90 hover:border-red-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-2xl font-black shadow-xs">
+              911
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              24 Horas / 7 Días
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-red-600 transition-colors">
+            Emergencias Nacionales (911)
+          </h3>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+            Atención inmediata de emergencias médicas, policía y situaciones de urgencia.
+          </p>
+        </div>
+        <a
+          href="tel:911"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 Llamar al 911</span>
+        </a>
+      </div>
+
+      <!-- Card 2: CERIT Seguridad Pública -->
+      <div class="bg-white border border-slate-200/90 hover:border-amber-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🛡️
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              CERIT Tehuacán
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">
+            Seguridad Pública Municipal
+          </h3>
+          <p class="text-xs text-slate-600 mb-2 leading-relaxed">
+            Comandancia central de respuesta rápida y monitoreo en el municipio.
+          </p>
+          <div class="text-xs text-amber-900/90 mb-4 space-y-1 bg-amber-50/80 p-2.5 rounded-lg border border-amber-200/60">
+            <p>🕒 <strong>Oficina:</strong> Lun-Vie 8am-9pm | Sáb 9am-3pm</p>
+            <p>🚨 <strong>Emergencias:</strong> Operativas 24 Horas</p>
+          </div>
+        </div>
+        <a
+          href="tel:2383043000"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 Llamar al 238 304 3000</span>
+        </a>
+      </div>
+
+      <!-- Card 3: Cruz Roja Tehuacán -->
+      <div class="bg-white border border-slate-200/90 hover:border-rose-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🚑
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              Ambulancias
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-600 transition-colors">
+            Cruz Roja Tehuacán
+          </h3>
+          <p class="text-xs text-slate-500 mb-2 font-medium">
+            📍 C. 6 Sur 500, Insurgentes, 75770 Tehuacán, Pue.
+          </p>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+            Servicio de ambulancias y atención médica urgente.
+          </p>
+        </div>
+        <a
+          href="tel:2383820026"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 238 382 0026</span>
+        </a>
+      </div>
+
+      <!-- Card 4: Protección Civil y Bomberos -->
+      <div class="bg-white border border-slate-200/90 hover:border-orange-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🚒
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              PC & Bomberos
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-orange-600 transition-colors">
+            Protección Civil y Bomberos
+          </h3>
+          <p class="text-xs text-slate-500 mb-2 font-medium">
+            📍 Av. José Garci-Crespo 1203, Jacarandas, 75730 Tehuacán.
+          </p>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+            Cuerpo de bomberos integrado a Protección Civil Municipal.
+          </p>
+        </div>
+        <a
+          href="tel:2383804304"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 238 380 4304</span>
+        </a>
+      </div>
+
+      <!-- Card 5: Centro Médico Esperanza -->
+      <div class="bg-white border border-slate-200/90 hover:border-blue-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🏥
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              Hospital de Referencia
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+            Centro Médico Esperanza
+          </h3>
+          <p class="text-xs text-slate-500 mb-2 font-medium">
+            📍 Calle 8 Pte. No. 100, Jacarandas, 75732 Tehuacán.
+          </p>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+            Atención médica general y consulta cercana al centro histórico.
+          </p>
+        </div>
+        <a
+          href="tel:2381390881"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 238 139 0881</span>
+        </a>
+      </div>
+
+      <!-- Card 6: Clínica San Fernando -->
+      <div class="bg-white border border-slate-200/90 hover:border-teal-300 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🏥
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              Clínica Privada
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-teal-600 transition-colors">
+            Clínica San Fernando
+          </h3>
+          <p class="text-xs text-slate-500 mb-2 font-medium">
+            📍 Calle Héroes de Independencia No. 525, Col. Guadalupe Hidalgo.
+          </p>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+            Clínica de referencia accesible para turistas en la zona centro.
+          </p>
+        </div>
+        <a
+          href="tel:2383821323"
+          class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
+        >
+          <span>📞 238 382 1323</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Banner de Protocolo para Sitios Remotos (Biosfera & Rancho Cabras) -->
+    <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-100 border border-emerald-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm">
+      <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-3xl shrink-0 shadow-xs">
+        🌲
+      </div>
+      <div class="flex-1">
+        <h4 class="text-lg font-bold text-emerald-950 mb-1">
+          Protocolo de Seguridad en Sitios Remotos (Biosfera & Cascadas Rancho Cabras)
+        </h4>
+        <p class="text-slate-700 text-xs md:text-sm leading-relaxed">
+          En zonas naturales donde no exista señal de celular garantizada, la comunidad local se encuentra capacitada en <strong>primeros auxilios y labores de rescate</strong>. Ante cualquier inconveniente en campo, acércate a los guías o pobladores locales, o llama inmediatamente al <strong>911</strong> o <strong>CERIT (238 304 3000)</strong> en cuanto recuperes señal.
+        </p>
+      </div>
+      <a
+        href="tel:911"
+        class="shrink-0 px-5 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
+      >
+        Llamada de Emergencia
+      </a>
+    </div>
+
+  </div>
+</section>

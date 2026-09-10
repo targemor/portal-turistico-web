@@ -6,42 +6,37 @@
       "titulo": "¿Solo tienes unas horas?",
       "heroBgClass": "bg1",
       "heroImage": "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=80",
-      "heroKicker": "EXPRÉS",
+      "heroKicker": "EXPRÉS (5 HORAS)",
       "heroTitle": "¿Solo tienes unas horas?",
-      "heroSub": "Tehuacán en formato rápido: lo esencial y más representativo.",
+      "heroSub": "Recorrido exprés para descubrir la historia, arqueología y gastronomía de Tehuacán en medio día.",
       "heroCredit": "📸 Portal Turístico Tehuacán",
       "elementos": [
         {
           "icono": "🏛️",
-          "titulo": "Zona Arqueológica de Tehuacán Viejo",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
-          "meta": "Mar.–Dom. · 9:00–17:00 h · Entrada libre"
+          "titulo": "Zona Arqueológica de Tehuacán Viejo (Ndajhian)",
+          "descripcion": "Visita la zona arqueológica, conoce la historia de las primeras tribus Ngiwa y admira la pirámide de Tepeteopan (palacio del rey Popoloca).",
+          "meta": "Mar.–Dom. · 10:00–17:00 h · Guía recomendado"
         },
         {
-          "icono": "🌵",
-          "titulo": "Reserva de la Biosfera Tehuacán-Cuicatlán",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam.",
-          "meta": "Todos los días · 8:00–18:00 h · Guía recomendado"
-        },
-        {
-          "icono": "🖼️",
-          "titulo": "Museo del Valle de Tehuacán",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis sem at nibh elemento imperdiet.",
-          "meta": "Mar.–Dom. · 10:00–18:00 h · Entrada libre"
+          "icono": "🏛️",
+          "titulo": "Zócalo y Palacio Municipal",
+          "descripcion": "Disfruta de un recorrido totalmente gratuito en el centro histórico adquiriendo historia y cultura, y admira sus murales emblemáticos.",
+          "meta": "Todos los días · Recorridos guiados gratuitos en módulo de turismo"
         },
         {
           "icono": "🍲",
-          "titulo": "Gastronomía Tradicional y Mole de Caderas",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis ipsum praesent mauris."
+          "titulo": "Gastronomía Tradicional Tehuacanera",
+          "descripcion": "Prueba los sabores auténticos del centro histórico: Mole de Caderas (en temporada), muéganos tradicionales y platillos regionales.",
+          "meta": "Centro Histórico · Zonas gastronómicas"
         }
       ],
       "consejos": [
         {
-          "titulo": "Recomendaciones para tu visita",
+          "titulo": "Recomendaciones para tu visita exprés",
           "elementos": [
-            "👟 Usa calzado cómodo para caminar en zonas arqueológicas y senderos.",
-            "☀️ Lleva protector solar, sombrero y suficiente agua.",
-            "📷 No olvides tu cámara para capturar los increíbles paisajes de cactáceas."
+            "👟 Usa calzado cómodo para caminar en zonas arqueológicas y calles del centro.",
+            "☀️ Lleva protector solar, sombrero y suficiente agua mineral de Tehuacán.",
+            "📷 Aprovecha las primeras horas del día para capturar la mejor luz en Tehuacán Viejo y Palacio Municipal."
           ]
         }
       ]
@@ -53,112 +48,114 @@
       "titulo": "¿Te quedas el fin de semana?",
       "heroBgClass": "bg2",
       "heroImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "heroKicker": "ESCAPADA",
+      "heroKicker": "ESCAPADA COMPLETA",
       "heroTitle": "Descubre Tehuacán el fin de semana",
-      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroSub": "Una escapada inolvidable combinando naturaleza, arqueología prehispánica, artesanías y gastronomía.",
       "heroCredit": "📸 Portal Turístico Tehuacán",
       "dias": [
         {
-          "titulo": "DÍA 1 — SÁBADO",
+          "titulo": "DÍA 1 — SÁBADO: HISTORIA & BIOSFERA",
           "elementos": [
             {
               "icono": "🏛️",
-              "titulo": "Recorrido por la Zona Arqueológica Tehuacán Viejo",
-              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "titulo": "Zona Arqueológica de Tehuacán Viejo",
+              "descripcion": "Explora la historia de las primeras tribus (NGIWA) y la pirámide de Tepeteopan (palacio del rey Popoloca)."
             },
             {
-              "icono": "🖼️",
-              "titulo": "Visita al Museo del Valle de Tehuacán",
-              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "icono": "🌵",
+              "titulo": "Reserva de la Biosfera Tehuacán-Cuicatlán",
+              "descripcion": "Adéntrate al senderismo conociendo plantas endémicas, salinas ancestrales y la inmensa biodiversidad."
             },
             {
-              "icono": "🍲",
-              "titulo": "Comida tradicional en el centro histórico",
-              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "icono": "🎁",
+              "titulo": "Artesanos Representativos de Tehuacán",
+              "descripcion": "Conoce a los maestros artesanos y sus creaciones en palma, ónix, mármol, carrizo y barro bruñido."
             },
             {
               "icono": "🌙",
-              "titulo": "Paseo nocturno por el Zócalo y los Portales de Tehuacán",
+              "titulo": "Paseo Nocturno en Zócalo y Portales",
+              "descripcion": "Disfruta el ambiente nocturno en los portales con platillos tradicionales y bebidas artesanales.",
               "meta": "Todos los días · Ambiente familiar"
             }
           ]
         },
         {
-          "titulo": "DÍA 2 — DOMINGO",
+          "titulo": "DÍA 2 — DOMINGO: NATURALEZA Y MUSEOS",
           "elementos": [
             {
+              "icono": "💦",
+              "titulo": "Cascadas de Rancho Cabras",
+              "descripcion": "Visita este tesoro imperdible de Tehuacán entre pinos, oyameles y pozas naturales de agua cristalina."
+            },
+            {
+              "icono": "💧",
+              "titulo": "Museo del Agua Peñafiel y Manantiales",
+              "descripcion": "Aprende la historia del agua mineral y pruébala directamente del manantial natural.",
+              "meta": "Recorridos gratuitos · Fines de semana 11:00 am y 4:00 pm"
+            },
+            {
               "icono": "☕",
-              "titulo": "Desayuno tradicional tehuacanero",
-              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            },
-            {
-              "icono": "🌵",
-              "titulo": "Excursión a los Jardines Botánicos de Helia Bravo Hollis",
-              "meta": "Fines de semana · 9:00–17:00 h"
-            },
-            {
-              "icono": "🎁",
-              "titulo": "Mercado artesanal y recuerdos de ónix y mármol",
-              "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "titulo": "Comida y Despedida Tradicional",
+              "descripcion": "Cierra tu viaje saboreando la gastronomía típica en los restaurantes icónicos del centro."
             }
           ]
         }
       ],
       "consejos": [
         {
-          "titulo": "Tip de fin de semana",
-          "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent."
+          "titulo": "Tip de fin de semana de los locales",
+          "contenido": "Para lugares como Rancho Cabras o la Biosfera se puede viajar mediante un touroperador recomendado o en unidad propia. En el Palacio Municipal puedes solicitar asistencia de ruta directa."
         }
       ]
     },
     {
       "id": "tres-dias",
-      "tabLabel": "🌿 ¿Tienes tres días?",
-      "mobileTabLabel": "🌿 3 días",
-      "titulo": "¿Tienes tres días?",
+      "tabLabel": "🌿 ¿Tienes tres días o más?",
+      "mobileTabLabel": "🌿 3 a 5 días",
+      "titulo": "¿Tienes de 3 a 5 días?",
       "heroBgClass": "bg3",
       "heroImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "heroKicker": "A FONDO",
-      "heroTitle": "Explora Tehuacán como un experto",
-      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroKicker": "EXPERIENCIA A FONDO",
+      "heroTitle": "Explora Tehuacán como un experto (3 a 5 Días)",
+      "heroSub": "Sumergimiento total en ecoturismo, senderismo, camping, circuito de museos e historia profunda.",
       "heroCredit": "📸 Portal Turístico Tehuacán",
       "elementos": [
         {
-          "icono": "🏛️",
-          "titulo": "Sigue el itinerario cultural del Día 1",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "icono": "⛺",
+          "titulo": "Camping y Senderismo en Rancho Cabras",
+          "descripcion": "Disfruta del senderismo de montaña y aprovecha las áreas para acampar bajo las estrellas rodeado de pinos y oyameles."
         },
         {
-          "icono": "🌵",
-          "titulo": "Sigue el itinerario ecológico del Día 2",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "icono": "🏛️",
+          "titulo": "Circuito Cultural de Museos",
+          "descripcion": "Visita el Museo de la Evolución, Museo Hidromineral Peñafiel, Museo del Valle de Tehuacán y Museo del Agua."
         },
         {
           "icono": "🧑‍🏫",
-          "titulo": "Recorrido con un guía certificado de Tehuacán",
-          "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "titulo": "Recorridos Guíados Certificados",
+          "descripcion": "Contrata a touroperadores y guías acreditados para profundizar en el patrimonio biocultural tehuacanero."
         }
       ],
       "daytrip": {
-        "titulo": "🚗 ¿Día extra? Excursiones desde Tehuacán",
+        "titulo": "🚗 Imperdibles con Touroperador o Auto Propio",
         "elementos": [
           {
             "emoji": "🌵",
-            "nombre": "Zapotitlán Salinas y Salinas Artesanales",
-            "meta": "Lorem ipsum dolor sit amet · ~30 min en auto"
+            "nombre": "Zapotitlán Salinas & Jardín Botánico Helia Bravo Hollis",
+            "meta": "Salinas ancestrales y cactáceas gigantes · ~45 min en auto"
           },
           {
-            "emoji": "💧",
-            "nombre": "Manantiales de Agua Mineral Tehuacán",
-            "meta": "Lorem ipsum dolor sit amet · ~20 min en auto"
+            "emoji": "🍶",
+            "nombre": "Rancho Mezcal Aislados (Caltepec)",
+            "meta": "Producción artesanal de mezcal en la Reserva de la Biosfera · Touroperador o auto propio"
           }
         ],
-        "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 🌙"
+        "footer": "💡 Tip local: Pide indicaciones exactas de ruta y touroperadores recomendados en el módulo turístico del Palacio Municipal."
       },
       "consejos": [
         {
-          "titulo": "Recomendación para 3 días",
-          "contenido": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis. Vivamus in erat ut urna cursus vestibulum."
+          "titulo": "Recomendación para estancias prolongadas",
+          "contenido": "Rancho Cabras cuenta con áreas de campamento para los amantes del ecoturismo. Prepara ropa abrigadora para la noche y botas de montaña."
         }
       ]
     },
@@ -170,28 +167,28 @@
       "heroImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
       "heroKicker": "LO BÁSICO",
       "heroTitle": "Los imprescindibles de Tehuacán",
-      "heroSub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heroSub": "Las vivencias esenciales que debes experimentar en la cuna del maíz y de las aguas minerales.",
       "heroCredit": "📸 Portal Turístico Tehuacán",
       "elementos": [
         {
           "icono": "🏛️",
-          "titulo": "Conocer la cuna del maíz y Tehuacán Viejo"
+          "titulo": "Conocer la cuna del maíz y la Zona Arqueológica Tehuacán Viejo"
         },
         {
           "icono": "🌵",
-          "titulo": "Caminar entre los cactus gigantes de Zapotitlán Salinas"
+          "titulo": "Caminar entre cactus gigantes en la Reserva de la Biosfera Tehuacán-Cuicatlán"
         },
         {
           "icono": "🍲",
-          "titulo": "Degustar el tradicional Mole de Caderas"
+          "titulo": "Degustar el tradicional Mole de Caderas y gastronomía tehuacanera"
         },
         {
           "icono": "💧",
-          "titulo": "Probar el agua mineral natural de los manantiales de Tehuacán"
+          "titulo": "Probar el agua mineral natural directo del manantial en Peñafiel"
         },
         {
           "icono": "🎁",
-          "titulo": "Llevarte una artesanía de ónix o barro bruñido"
+          "titulo": "Adquirir una pieza artesanal de ónix, mármol, palma, carrizo o barro bruñido"
         }
       ]
     }

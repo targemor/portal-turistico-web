@@ -1,0 +1,44 @@
+---
+/**
+ * emergencias.astro – Página dedicada a Números de Emergencia, Salud y Protocolos de Seguridad
+ * para turistas en Tehuacán, Puebla (Diseño claro).
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+import EmergenciasSection from "../components/EmergenciasSection.astro";
+import Footer from "../components/Footer.astro";
+import BottomNav from "../components/BottomNav.astro";
+---
+
+<BaseLayout
+  title="Números de Emergencia y Salud | Portal Turístico Tehuacán"
+  description="Directorio oficial de asistencia al turista, emergencias 911, CERIT, Cruz Roja, clínicas de referencia y protocolos de seguridad en Tehuacán."
+  canonical="/emergencias"
+  bodyClass="pb-20 md:pb-0"
+>
+  <NavBar forceBackground={true} />
+
+  <main id="main-content" class="pt-4 sm:pt-6">
+    <!-- Header visual claro de la página -->
+    <div class="bg-slate-100/80 border-b border-slate-200/80 py-10 px-6">
+      <div class="container mx-auto max-w-5xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>🆘</span>
+          <span>ASISTENCIA Y SEGURIDAD AL TURISTA</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+          Directorio de Emergencias y Salud
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed">
+          Contacto directo y oficial con servicios de emergencias médicas, seguridad pública y clínicas locales. Presiona sobre cualquier número para realizar una llamada directa desde tu teléfono móvil.
+        </p>
+      </div>
+    </div>
+
+    <!-- Componente de tarjetas de emergencia (fondo claro) -->
+    <EmergenciasSection />
+  </main>
+
+  <Footer />
+  <BottomNav />
+</BaseLayout>
