@@ -10,7 +10,7 @@
     "createdAt": "2026-05-16T17:16:26.226Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:18:13.006Z",
-    "horario": "Martes-Domingo 09:00 am – 07:00 pm",
+    "horario": "Martes a Domingo: 9:00 am – 7:00 pm (lunes cerrado)",
     "tipo_comida": "Mexicana, Saludable",
     "clasificacion": "Restaurante",
     "categoria_precio": "$$$",
@@ -40,7 +40,7 @@
     ],
     "contacto": {
       "id": 17,
-      "telefono": null,
+      "telefono": "221 421 6257",
       "email": "RANCHOAISLADOS@gmail.com",
       "sitio_web": "https://ranchoaislados.com",
       "whatsapp": "2214216257"
@@ -80,6 +80,18 @@
         "url": "/assets/rancho_aislados_15.webp",
         "alternativeText": null,
         "caption": null
+      },
+      {
+        "id": 66,
+        "url": "/assets/rancho_aislados_16.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados",
+        "caption": null
+      },
+      {
+        "id": 67,
+        "url": "/assets/rancho_aislados_17.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados",
+        "caption": null
       }
     ],
     "pet_friendly": true,
@@ -93,7 +105,11 @@
     "para_llevar": true,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "zona": "Ruta Reserva de la Biosfera (Caltepec) — fuera de Tehuacán, 20-50 min en coche",
+    "buscador_keywords": "rancho mezcal aislados, mezcal, coctelería, mexicana, saludable, pet friendly, música en vivo, jardín, vistas increíbles, aire libre, estacionamiento, para llevar, reserva de la biosfera, caltepec",
+    "area_de_ninos": true,
+    "musica_en_vivo_detalle": "en eventos especiales"
   },
   {
     "id": 7,
@@ -105,7 +121,7 @@
     "createdAt": "2026-05-16T17:21:17.387Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:21:19.053Z",
-    "horario": "L-V 12:00 pm – 9:00 pm  |  S-D 11:30 am – 9:00 pm",
+    "horario": "Lunes a Viernes: 12:00-9:00 pm · Sábado-Domingo: 11:30 am-9:00 pm",
     "tipo_comida": "Helados artesanales, Paletas, Nieves, Helados gourmet, Helados sin azúcar",
     "clasificacion": "Heladería",
     "categoria_precio": "$$$",
@@ -166,6 +182,36 @@
         "url": "/assets/creamy_19.webp",
         "alternativeText": null,
         "caption": null
+      },
+      {
+        "id": 36,
+        "url": "/assets/creamy_20.webp",
+        "alternativeText": "Creamy, Ice Cream Factory - creamy",
+        "caption": null
+      },
+      {
+        "id": 37,
+        "url": "/assets/creamy_21.webp",
+        "alternativeText": "Creamy, Ice Cream Factory - creamy",
+        "caption": null
+      },
+      {
+        "id": 38,
+        "url": "/assets/creamy_22.webp",
+        "alternativeText": "Creamy, Ice Cream Factory - creamy",
+        "caption": null
+      },
+      {
+        "id": 39,
+        "url": "/assets/creamy_23.webp",
+        "alternativeText": "Creamy, Ice Cream Factory - creamy",
+        "caption": null
+      },
+      {
+        "id": 40,
+        "url": "/assets/creamy_24.webp",
+        "alternativeText": "Creamy, Ice Cream Factory - creamy",
+        "caption": null
       }
     ],
     "pet_friendly": true,
@@ -179,7 +225,10 @@
     "para_llevar": true,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "zona": "Cerca del centro",
+    "buscador_keywords": "creamy, heladería, helados artesanales, paletas, nieves, gourmet, sin azúcar, pet friendly, para llevar, natural, saludable",
+    "area_de_ninos": false
   },
   {
     "id": 9,
@@ -273,7 +322,8 @@
     "para_llevar": false,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "area_de_ninos": false
   },
   {
     "id": 11,
@@ -340,7 +390,8 @@
     "para_llevar": false,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "area_de_ninos": false
   },
   {
     "id": 14,
@@ -413,7 +464,8 @@
     "para_llevar": false,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "area_de_ninos": false
   },
   {
     "id": 16,
@@ -487,7 +539,8 @@
     "para_llevar": false,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "area_de_ninos": false
   },
   {
     "id": 18,
@@ -499,7 +552,7 @@
     "createdAt": "2026-05-16T18:09:24.379Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T18:09:31.724Z",
-    "horario": "L-D 8:00 am – 4:30 pm  |  Domingos 8:00 am – 1:30 pm",
+    "horario": "Lunes a Sábado: 8:00 am – 4:30 pm · Domingo: 8:00 am – 1:30 pm",
     "tipo_comida": "Mexicana, Oaxaqueña",
     "clasificacion": "Restaurante",
     "categoria_precio": "$$$",
@@ -603,6 +656,30 @@
         "url": "/assets/restaurante_maria_sabina_49.webp",
         "alternativeText": null,
         "caption": null
+      },
+      {
+        "id": 28,
+        "url": "/assets/restaurante_maria_sabina_50.webp",
+        "alternativeText": "Restaurante María Sabina - restaurante maria sabina",
+        "caption": null
+      },
+      {
+        "id": 29,
+        "url": "/assets/restaurante_maria_sabina_51.webp",
+        "alternativeText": "Restaurante María Sabina - restaurante maria sabina",
+        "caption": null
+      },
+      {
+        "id": 30,
+        "url": "/assets/restaurante_maria_sabina_52.webp",
+        "alternativeText": "Restaurante María Sabina - restaurante maria sabina",
+        "caption": null
+      },
+      {
+        "id": 31,
+        "url": "/assets/restaurante_maria_sabina_53.webp",
+        "alternativeText": "Restaurante María Sabina - restaurante maria sabina",
+        "caption": null
       }
     ],
     "pet_friendly": true,
@@ -616,7 +693,10 @@
     "para_llevar": true,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "zona": "Guadalupe Hidalgo — dentro de Tehuacán, distancia al centro sin confirmar",
+    "buscador_keywords": "maria sabina, oaxaqueña, tlayudas, mexicana, pet friendly, jardín, aire libre, para llevar, guadalupe hidalgo",
+    "area_de_ninos": true
   },
   {
     "id": 20,
@@ -624,11 +704,11 @@
     "nombre": "Restaurante ZA Bistró Italian Food & Pizza",
     "descripcion": "Algo nuevo y fresco en la ciudad, con el mejor sabor y originalidad de la bella Italia. Ensaladas, pastas, quesos, pizzas y vinos.",
     "direccion": "Calz. Adolfo López Mateos 2420, Zona Alta, 75760 Tehuacán, Pue.",
-    "direccion_maps": "https://zabistroitalianfoodpizza.negocio.site",
+    "direccion_maps": "https://maps.app.goo.gl/SGMpvTD2PC5bfZn47",
     "createdAt": "2026-05-16T18:13:17.904Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-05-16T18:13:19.164Z",
-    "horario": "M-J 2:00 pm – 9:30 pm  |  V-S 2:00 pm – 10:30 pm  |  D 2:00 pm – 7:30 pm",
+    "horario": "Ma-Ju 2:00-9:30 pm · Vi-Sa 2:00-10:30 pm · Do 2:00-7:30 pm",
     "tipo_comida": "Italiana",
     "clasificacion": "Restaurante - Bar",
     "categoria_precio": "$$$",
@@ -684,6 +764,36 @@
         "url": "/assets/za_bistro_53.webp",
         "alternativeText": null,
         "caption": null
+      },
+      {
+        "id": 32,
+        "url": "/assets/za_bistro_54.webp",
+        "alternativeText": "Restaurante ZA Bistró Italian Food & Pizza - za bistro",
+        "caption": null
+      },
+      {
+        "id": 33,
+        "url": "/assets/za_bistro_55.webp",
+        "alternativeText": "Restaurante ZA Bistró Italian Food & Pizza - za bistro",
+        "caption": null
+      },
+      {
+        "id": 34,
+        "url": "/assets/za_bistro_56.webp",
+        "alternativeText": "Restaurante ZA Bistró Italian Food & Pizza - za bistro",
+        "caption": null
+      },
+      {
+        "id": 35,
+        "url": "/assets/za_bistro_57.webp",
+        "alternativeText": "Restaurante ZA Bistró Italian Food & Pizza - za bistro",
+        "caption": null
+      },
+      {
+        "id": 36,
+        "url": "/assets/za_bistro_58.webp",
+        "alternativeText": "Restaurante ZA Bistró Italian Food & Pizza - za bistro",
+        "caption": null
       }
     ],
     "pet_friendly": true,
@@ -697,7 +807,10 @@
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "zona": "Fuera del centro",
+    "buscador_keywords": "za bistró, italiana, pizza, pastas, pet friendly, música en vivo, jardín, vistas increíbles, terraza, aire libre, comida, cena, zona alta",
+    "area_de_ninos": false
   },
   {
     "id": 22,
@@ -777,7 +890,8 @@
     "para_llevar": false,
     "aire_libre": false,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "area_de_ninos": false
   },
   {
     "id": 24,
@@ -789,7 +903,7 @@
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-08-24T00:00:00.000Z",
-    "horario": "L-D 8:00 am – 11:00 pm",
+    "horario": "Lunes a Domingo: 8:00 am – 11:00 pm",
     "tipo_comida": "Mexicana, Panadería",
     "clasificacion": "Restaurante - Bar",
     "categoria_precio": "$$$",
@@ -856,7 +970,9 @@
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": true
+    "desayuno_cortesia": true,
+    "buscador_keywords": "violetta, mexicana, pet friendly, terraza, aire libre, desayuno, bar, cafetería, panadería, área de niños, chilaquiles, pan dulce, los portales, centro",
+    "area_de_ninos": true
   },
   {
     "id": 26,
@@ -864,11 +980,11 @@
     "nombre": "Restaurante Casa Amachu",
     "descripcion": "Variedad de platillos entre mar y tierra, vegetariana, almuerzos y comida a la carta, así como buffet dominical.",
     "direccion": "Camelia Pte 128, Villa Granada, 75732 Tehuacán, Pue.",
-    "direccion_maps": "https://www.google.com/maps/place/casa+amachu",
+    "direccion_maps": "https://maps.app.goo.gl/Fe3isenyhuszW2ow9",
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-08-24T00:00:00.000Z",
-    "horario": "L-D 8:00 am – 5:00 pm",
+    "horario": "Lunes a Domingo: 8:00 am – 5:00 pm",
     "tipo_comida": "Variedad de platillos, mar y tierra, vegetariana, buffet dominical",
     "clasificacion": "Restaurante",
     "categoria_precio": "$$$",
@@ -929,7 +1045,9 @@
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "buscador_keywords": "casa amachu, mariscos, vegetariano, buffet dominical, pet friendly, jardín, terraza, aire libre, desayuno, comida, bar, mole de caderas",
+    "area_de_ninos": true
   },
   {
     "id": 28,
@@ -941,7 +1059,7 @@
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-08-24T00:00:00.000Z",
-    "horario": "L-S 7:00 am – 10:00 pm",
+    "horario": "Lunes a Sábado: 7:00 am – 10:00 pm",
     "tipo_comida": "Comida Tradicional y Española",
     "clasificacion": "Restaurante - Bar",
     "categoria_precio": "$$",
@@ -969,7 +1087,7 @@
       "telefono": "2381700854",
       "email": "ggeneral@granhotelmexicobysolaris.com",
       "sitio_web": null,
-      "whatsapp": null
+      "whatsapp": "+52 238 170 0854"
     },
     "galeria": [
       {
@@ -989,6 +1107,18 @@
         "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_3.webp",
         "alternativeText": "Restaurante Gran Hotel México by Solaris",
         "caption": null
+      },
+      {
+        "id": 323,
+        "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_4.webp",
+        "alternativeText": "Restaurante Gran Hotel México by Solaris - restaurante gran hotel mexico by solaris",
+        "caption": null
+      },
+      {
+        "id": 324,
+        "url": "/assets/restaurante_gran_hotel_mexico_by_solaris_5.webp",
+        "alternativeText": "Restaurante Gran Hotel México by Solaris - restaurante gran hotel mexico by solaris",
+        "caption": null
       }
     ],
     "pet_friendly": true,
@@ -1002,7 +1132,9 @@
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": true
+    "desayuno_cortesia": true,
+    "buscador_keywords": "gran hotel méxico, solaris, tradicional, española, pet friendly, música en vivo, jardín, vistas increíbles, terraza, aire libre, desayuno, comida, cena, bar, eventos, colonial",
+    "area_de_ninos": true
   },
   {
     "id": 30,
@@ -1010,11 +1142,11 @@
     "nombre": "Restaurante Camino Real",
     "descripcion": "Tampiqueña y en temporada chiles en nogada y mole de caderas. El mejor mole de caderas de la región.",
     "direccion": "Av. Reforma Sur 2106, Centro de la Ciudad, 75770 Tehuacán, Pue.",
-    "direccion_maps": "https://maps.app.goo.gl/fsbFqdp4WB8LXvPs7",
+    "direccion_maps": "https://maps.app.goo.gl/S5vmJtmB8WQuAhgC6",
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-08-24T00:00:00.000Z",
-    "horario": "L-D 8:30 am – 8:00 pm",
+    "horario": "Lunes a Domingo 8:30 am – 8:00 pm",
     "tipo_comida": "Mexicana",
     "clasificacion": "Restaurante - Bar",
     "categoria_precio": "$$$",
@@ -1087,7 +1219,9 @@
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "buscador_keywords": "camino real, mexicana, tampiqueña, mole de caderas, chile en nogada, pet friendly, jardín, aire libre, estacionamiento, desayuno, comida, cena, bar",
+    "area_de_ninos": true
   },
   {
     "id": 32,
@@ -1098,7 +1232,7 @@
     "createdAt": "2026-08-24T00:00:00.000Z",
     "updatedAt": "2026-08-24T00:00:00.000Z",
     "publishedAt": "2026-08-24T00:00:00.000Z",
-    "horario": "Ma-Sá 2:00 pm – 11:00 pm  |  Do 2:00 pm – 9:00 pm  |  Lu cerrado",
+    "horario": "Martes a Sábado: 2:00-11:00 pm · Domingo: 2:00-9:00 pm · Lunes: Cerrado",
     "tipo_comida": "Internacional, Mariscos, Saludable, Cortes y parrilla, Repostería",
     "clasificacion": "Restaurante - Bar",
     "categoria_precio": "$$",
@@ -1142,11 +1276,15 @@
     "gimnasio": false,
     "jardin": true,
     "terraza": true,
-    "musica_en_vivo": false,
+    "musica_en_vivo": true,
     "vistas_increibles": true,
     "para_llevar": false,
     "aire_libre": true,
     "recepcion_24h": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "direccion_maps": "https://maps.app.goo.gl/DDDVWXynMhWKxKqu8",
+    "buscador_keywords": "abacaxi, steakhouse, mariscos, cortes, rib eye, internacional, cócteles, pet friendly, jardín, vistas increíbles, terraza, aire libre, estacionamiento, música en vivo, chile en nogada, la arcadia",
+    "area_de_ninos": true,
+    "musica_en_vivo_detalle": "miércoles y viernes"
   }
 ]

@@ -8,7 +8,7 @@
     "tours": "1) Jardín Botánico + Salineras Tradicionales — salida 9:00 am, duración 4 h, previa reserva. 2) Senderismo Paleontológico (San Juan Raya) — incluye huellas de dinosaurio, Museo Comunitario de San Juan Raya y Casa de las Artesanas; salida 9:00 am, duración 6 h, previa reserva. 3) Ruta del Mezcal (Palenque \"El Original\") — cata guiada, siembra de agave, caminata en Cerro Colorado; salida 4:00 pm, duración 4 h, previa reserva.",
     "ubicacion": "4 Sur #303, Centro, Tehuacán",
     "createdAt": "2026-05-16T16:59:25.374Z",
-    "updatedAt": "2026-05-16T17:01:10.604Z",
+    "updatedAt": "2026-09-23T00:00:00.000Z",
     "publishedAt": "2026-05-16T17:01:10.629Z",
     "redes_sociales": [
       {
@@ -29,7 +29,8 @@
       "telefono": "238 203 8526",
       "email": null,
       "sitio_web": null,
-      "whatsapp": "238 203 8526"
+      "whatsapp": "238 203 8526",
+      "telefono_alterno": "238 151 2407"
     },
     "galeria": [
       {
@@ -39,7 +40,14 @@
         "alternativeText": null,
         "caption": null
       }
-    ]
+    ],
+    "empresa": "Vagabundos Tours",
+    "categoria_principal": "Naturaleza",
+    "zona": "Zona Centro (punto de encuentro: 4 Sur #303, Centro)",
+    "duracion_recorridos": "4 a 6 horas, según el tour",
+    "idiomas": "Español",
+    "atractivo_principal": "3 tours guiados: jardín botánico + salineras tradicionales, senderismo paleontológico en San Juan Raya, y ruta del mezcal",
+    "buscador_keywords": "vagabundos tours, naturaleza, senderismo, paleontología, mezcal, jardín botánico, salineras, zona centro, guía certificado"
   },
   {
     "id": 6,
@@ -94,8 +102,22 @@
         "url": "/assets/nohemi_perez_gonzalez_3.webp",
         "alternativeText": "Nohemí Pérez González - Guía turística",
         "caption": null
+      },
+      {
+        "id": 403,
+        "url": "/assets/nohemi_perez_gonzalez_4.webp",
+        "alternativeText": "Nohemí Pérez González - nohemi perez gonzalez",
+        "caption": null
+      },
+      {
+        "id": 404,
+        "url": "/assets/nohemi_perez_gonzalez_5.webp",
+        "alternativeText": "Nohemí Pérez González - nohemi perez gonzalez",
+        "caption": null
       }
-    ]
+    ],
+    "zona": "Zapotitlán Salinas y Reserva de la Biosfera Tehuacán-Cuicatlán",
+    "buscador_keywords": "nohemí pérez, desierto mágico, guía especializado, naturaleza, ecoturismo, zapotitlán salinas, reserva de la biosfera"
   },
   {
     "id": 7,
@@ -144,7 +166,21 @@
         "url": "/assets/efren_perez_gonzalez_3.webp",
         "alternativeText": "Efrén Pérez González - Guía turístico",
         "caption": null
+      },
+      {
+        "id": 413,
+        "url": "/assets/efren_perez_gonzalez_4.webp",
+        "alternativeText": "Efrén Pérez González - efren perez gonzalez",
+        "caption": null
+      },
+      {
+        "id": 414,
+        "url": "/assets/efren_perez_gonzalez_5.webp",
+        "alternativeText": "Efrén Pérez González - efren perez gonzalez",
+        "caption": null
       }
-    ]
+    ],
+    "zona": "Zapotitlán Salinas",
+    "buscador_keywords": "efrén pérez, guía especializado, naturaleza, ecoturismo, inglés, zapotitlán salinas, monitores zapotitlán"
   }
 ]

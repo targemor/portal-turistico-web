@@ -103,6 +103,8 @@ export interface BusinessCardProps {
   aireLibre?: boolean;
   desayunoCortesia?: boolean;
   caracteristicas?: string;
+  atractivoPrincipal?: string;
+  atractivo_principal?: string;
 }
 
 /* ─── Utilidades ─────────────────────────────────────────── */
@@ -167,6 +169,8 @@ export default function BusinessCard({
   aireLibre = false,
   desayunoCortesia = false,
   caracteristicas,
+  atractivoPrincipal,
+  atractivo_principal,
 }: BusinessCardProps) {
   const { t } = useLanguage();
   const [showMore, setShowMore] = useState(false);
@@ -491,6 +495,14 @@ export default function BusinessCard({
                 </p>
               </div>
             )}
+          </div>
+        )}
+
+        {/* Elemento destacado con estrellita */}
+        {(atractivoPrincipal || atractivo_principal) && (
+          <div className="flex items-start gap-2 text-xs font-medium text-slate-800 bg-amber-50/90 border border-amber-200/80 rounded-lg p-2.5 my-2 shadow-xs">
+            <span className="text-amber-500 text-sm leading-none shrink-0 mt-0.5">⭐</span>
+            <span className="leading-relaxed">{atractivoPrincipal || atractivo_principal}</span>
           </div>
         )}
 

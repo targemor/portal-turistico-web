@@ -1,0 +1,267 @@
+[
+  {
+    "id": 1,
+    "documentId": "vagabundos-tours",
+    "nombre": "Vagabundos Tours",
+    "categoria_principal": "Naturaleza",
+    "especialidad": "Naturaleza",
+    "zona": "Zona Centro (punto de encuentro: 4 Sur #303, Centro)",
+    "direccion": "4 Sur #303, Centro, Tehuacán",
+    "direccion_maps": null,
+    "duracion": "4 a 6 horas, según el tour",
+    "certificacion_sectur": "Sí",
+    "atractivo_principal": "3 tours guiados: jardín botánico + salineras tradicionales, senderismo paleontológico en San Juan Raya, y ruta del mezcal",
+    "descripcion": "1) Jardín Botánico + Salineras Tradicionales — salida 9:00 am, duración 4 h, previa reserva. 2) Senderismo Paleontológico (San Juan Raya) — incluye huellas de dinosaurio, Museo Comunitario de San Juan Raya y Casa de las Artesanas; salida 9:00 am, duración 6 h, previa reserva. 3) Ruta del Mezcal (Palenque \"El Original\") — cata guiada, siembra de agave, caminata en Cerro Colorado; salida 4:00 pm, duración 4 h, previa reserva.",
+    "buscador_keywords": "vagabundos tours, naturaleza, senderismo, paleontología, mezcal, jardín botánico, salineras, zona centro, guía certificado",
+    "createdAt": "2026-09-23T00:00:00.000Z",
+    "updatedAt": "2026-09-23T00:00:00.000Z",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "contacto": {
+      "id": 1,
+      "telefono": "238 203 8526",
+      "telefono_alterno": "238 151 2407",
+      "email": null,
+      "sitio_web": null,
+      "whatsapp": "238 203 8526"
+    },
+    "redes_sociales": [
+      {
+        "id": 1,
+        "plataforma": "Instagram",
+        "usuario": "@vagabundostoursmx",
+        "enlace": "https://www.instagram.com/vagabundostoursmx/"
+      },
+      {
+        "id": 2,
+        "plataforma": "Facebook",
+        "usuario": "Vagabundos Tours Tehuacán",
+        "enlace": "https://www.facebook.com/vagabundostours1"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/fabian_martinez_herrera_59.webp",
+        "alternativeText": "Vagabundos Tours - recorridos guiados en Tehuacán"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "documentId": "rancho-mezcal-aislados-experiencia",
+    "nombre": "Rancho Mezcal Aislados",
+    "categoria_principal": "Naturaleza / Agroturismo",
+    "especialidad": "Naturaleza / Agroturismo",
+    "zona": "Fuera de Tehuacán — ruta Reserva de la Biosfera (Caltepec)",
+    "direccion": "Carretera Tehuacán-Huajuapan Km 52, Plan de San Miguel, Caltepec, Pue. C.P. 75895",
+    "direccion_maps": "https://maps.app.goo.gl/LJzY94zDt6KpKd2VA",
+    "duracion": "1 hora 30 minutos",
+    "certificacion_sectur": "Pendiente",
+    "atractivo_principal": "Recorrido por vivero, invernaderos y palenque de mezcal — pasión por compartir su riqueza cultural y gastronómica",
+    "descripcion": "Aislados integra seis actividades dentro del proyecto: vivero de maguey y plántulas nativas, invernaderos de hortalizas, palenque de mezcal, restaurante de cocina local de temporada, actividad acuícola (tilapia) y hospedaje en desarrollo. En el recorrido se vive el tape (horneado), la molienda y la primera y segunda destilación, probando las distintas etapas del agave. Hay avistamiento de aves (águilas, pájaros reloj, zopilotes, calandrias, carpinteros) y fauna como linces, zorros y coyotes.",
+    "buscador_keywords": "rancho mezcal aislados, agroturismo, mezcal, vivero, invernaderos, caltepec, reserva de la biosfera",
+    "createdAt": "2026-09-23T00:00:00.000Z",
+    "updatedAt": "2026-09-23T00:00:00.000Z",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "contacto": {
+      "id": 2,
+      "telefono": "221 421 6257",
+      "email": "RANCHOAISLADOS@gmail.com",
+      "sitio_web": "https://ranchoaislados.com",
+      "whatsapp": "221 421 6257"
+    },
+    "redes_sociales": [
+      {
+        "id": 3,
+        "plataforma": "Instagram",
+        "usuario": "@mezcalaislados",
+        "enlace": "https://www.instagram.com/mezcalaislados"
+      },
+      {
+        "id": 4,
+        "plataforma": "Facebook",
+        "usuario": "Mezcal Aislados",
+        "enlace": "https://www.facebook.com/mezcalaislados"
+      },
+      {
+        "id": 5,
+        "plataforma": "TikTok",
+        "usuario": "@mezcalaislados",
+        "enlace": "https://www.tiktok.com/@mezcalaislados"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/rancho_aislados_experiencia_1.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/rancho_aislados_experiencia_2.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/rancho_aislados_experiencia_3.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/rancho_aislados_experiencia_4.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/rancho_aislados_experiencia_5.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 6,
+        "url": "/assets/rancho_aislados_experiencia_6.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      },
+      {
+        "id": 7,
+        "url": "/assets/rancho_aislados_experiencia_7.webp",
+        "alternativeText": "Rancho Mezcal Aislados - rancho aislados experiencia",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "documentId": "la-finca-del-sitio",
+    "nombre": "La Finca del Sitio",
+    "categoria_principal": "Cultura / Producción artesanal de sal",
+    "especialidad": "Cultura / Producción artesanal de sal",
+    "zona": "Zapotitlán Salinas (fuera de Tehuacán)",
+    "direccion": "Zapotitlán Salinas, Pue. — punto de encuentro: Las letras de Zapotitlán",
+    "direccion_maps": "https://maps.app.goo.gl/bumEKK4y37sokGN79",
+    "duracion": "1 hora 30 minutos",
+    "certificacion_sectur": "Pendiente",
+    "atractivo_principal": "Tour \"El corazón de Iztatl\": conoce y participa en la elaboración de sal 100% natural",
+    "descripcion": "Tour \"El corazón de Iztatl\". Duración aproximada de 1:30 h. Punto de encuentro: las letras de Zapotitlán. Grupo mínimo de 70 personas. $40 por persona. Se conoce paso a paso cómo, desde hace miles de años, se elabora sal 100% natural, y se participa en su elaboración.",
+    "buscador_keywords": "la finca del sitio, corazón de iztatl, sal artesanal, zapotitlán salinas",
+    "createdAt": "2026-09-23T00:00:00.000Z",
+    "updatedAt": "2026-09-23T00:00:00.000Z",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "contacto": {
+      "id": 3,
+      "telefono": "237 110 0198",
+      "email": "reydavid.7b@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "237 110 0198"
+    },
+    "redes_sociales": [
+      {
+        "id": 6,
+        "plataforma": "Instagram",
+        "usuario": "@la_finca_del_sitio_",
+        "enlace": "https://www.instagram.com/la_finca_del_sitio_"
+      },
+      {
+        "id": 7,
+        "plataforma": "Facebook",
+        "usuario": "La Finca del Sitio",
+        "enlace": "https://www.facebook.com/share/1MTN9qXPPq/"
+      },
+      {
+        "id": 8,
+        "plataforma": "TikTok",
+        "usuario": "@lafincadelsitio38",
+        "enlace": "https://www.tiktok.com/@lafincadelsitio38"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/la_finca_del_sitio_1.webp",
+        "alternativeText": "La Finca del Sitio - la finca del sitio",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/la_finca_del_sitio_2.webp",
+        "alternativeText": "La Finca del Sitio - la finca del sitio",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/la_finca_del_sitio_3.webp",
+        "alternativeText": "La Finca del Sitio - la finca del sitio",
+        "caption": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "documentId": "la-reserva-de-don-goyo-54",
+    "nombre": "La Reserva de Don Goyo 54",
+    "categoria_principal": "Cultura / Arqueología / Naturaleza",
+    "especialidad": "Cultura / Arqueología / Naturaleza",
+    "zona": "El Valle de Tehuacán — San Antonio Texcala",
+    "direccion": "Calle Josefa Ortiz de Domínguez #29, San Antonio Texcala, 75875",
+    "direccion_maps": null,
+    "duracion": "Desde 2 horas hasta un fin de semana",
+    "certificacion_sectur": "Pendiente",
+    "atractivo_principal": "Rutas guiadas por especialistas en arqueología, botánica, cultura e historia dentro de la Reserva de la Biosfera Tehuacán-Cuicatlán",
+    "descripcion": "Grupo de especialistas en temas arqueológicos, botánicos, culturales e históricos. Sus rutas abarcan la producción de sal artesanal, el mezcal, zonas arqueológicas de gran relevancia, alfarería y gastronomía local, en medio de la Reserva de la Biosfera Tehuacán-Cuicatlán. Su diferenciador: son parte de la comunidad, no visitantes.",
+    "buscador_keywords": "reserva de don goyo, arqueología, reserva de la biosfera, san antonio texcala, sal, mezcal",
+    "createdAt": "2026-09-23T00:00:00.000Z",
+    "updatedAt": "2026-09-23T00:00:00.000Z",
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "contacto": {
+      "id": 4,
+      "telefono": "238 111 7038",
+      "email": "origenesngivas@gmail.com",
+      "sitio_web": null,
+      "whatsapp": "238 111 7038"
+    },
+    "redes_sociales": [],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/la_reserva_de_don_goyo_54_1.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/la_reserva_de_don_goyo_54_2.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/la_reserva_de_don_goyo_54_3.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/la_reserva_de_don_goyo_54_4.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/la_reserva_de_don_goyo_54_5.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      },
+      {
+        "id": 6,
+        "url": "/assets/la_reserva_de_don_goyo_54_6.webp",
+        "alternativeText": "La Reserva de Don Goyo 54 - la reserva de don goyo 54",
+        "caption": null
+      }
+    ]
+  }
+]

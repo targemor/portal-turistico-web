@@ -6,40 +6,51 @@ import BottomNav from "../../components/BottomNav.astro";
 import DirectorioGrid from "../../components/react/DirectorioGrid";
 import { buildDirectorioSchemas } from "../../lib/schema";
 
+/**
+ * Cada categoría del directorio declara aquí su JSON, sus claves i18n y sus
+ * textos por defecto en español (el script i18n del cliente los sobreescribe).
+ */
+const CATEGORIAS = {
+  hoteles: {
+    tituloKey: 'dirHoteles',        tituloES: 'HOTELES',
+    subtituloKey: 'dirHotelesSub',  subtituloES: 'Alojamiento',
+  },
+  restaurantes: {
+    tituloKey: 'dirRestaurantes',       tituloES: 'RESTAURANTES',
+    subtituloKey: 'dirRestaurantesSub', subtituloES: 'Gastronomía',
+  },
+  destinos: {
+    tituloKey: 'dirDestinos',       tituloES: 'DESTINOS TURÍSTICOS',
+    subtituloKey: 'dirDestinosSub', subtituloES: 'Explora Tehuacán',
+  },
+  guias: {
+    tituloKey: 'dirGuias',       tituloES: 'GUÍAS TURÍSTICOS',
+    subtituloKey: 'dirGuiasSub', subtituloES: 'Tours y Experiencias',
+  },
+  touroperadores: {
+    tituloKey: 'dirTouroperadores',       tituloES: 'TOUROPERADORES',
+    subtituloKey: 'dirTouroperadoresSub', subtituloES: 'Experiencias Guiadas',
+  },
+} as const;
+
+type Categoria = keyof typeof CATEGORIAS;
+
+// Astro extrae getStaticPaths a su propio módulo, así que no puede leer
+// CATEGORIAS: las rutas se listan aquí y deben coincidir con esas claves.
 export function getStaticPaths() {
   return [
     { params: { categoria: 'hoteles' } },
     { params: { categoria: 'restaurantes' } },
     { params: { categoria: 'destinos' } },
     { params: { categoria: 'guias' } },
+    { params: { categoria: 'touroperadores' } },
   ];
 }
 
-const { categoria } = Astro.params;
+const categoria = Astro.params.categoria as Categoria;
+const { tituloKey, tituloES, subtituloKey, subtituloES } = CATEGORIAS[categoria];
 
 let data: any[] = [];
-
-// Claves i18n para el script del BaseLayout (se usan en data-i18n)
-const tituloKey   = categoria === 'hoteles'      ? 'dirHoteles'
-                  : categoria === 'restaurantes' ? 'dirRestaurantes'
-                  : categoria === 'destinos'     ? 'dirDestinos'
-                  : 'dirGuias';
-
-const subtituloKey = categoria === 'hoteles'      ? 'dirHotelesSub'
-                   : categoria === 'restaurantes' ? 'dirRestaurantesSub'
-                   : categoria === 'destinos'     ? 'dirDestinosSub'
-                   : 'dirGuiasSub';
-
-// Valores por defecto en ES (se sobreescriben por el script i18n del cliente)
-const tituloES   = categoria === 'hoteles'      ? 'HOTELES'
-                 : categoria === 'restaurantes' ? 'RESTAURANTES'
-                 : categoria === 'destinos'     ? 'DESTINOS TURÍSTICOS'
-                 : 'GUÍAS TURÍSTICOS';
-
-const subtituloES = categoria === 'hoteles'      ? 'Alojamiento'
-                  : categoria === 'restaurantes' ? 'Gastronomía'
-                  : categoria === 'destinos'     ? 'Explora Tehuacán'
-                  : 'Tours y Experiencias';
 
 if (categoria === 'hoteles') {
   data = (await import("../../data/hoteles.json")).default;
@@ -49,6 +60,8 @@ if (categoria === 'hoteles') {
   data = (await import("../../data/destinos-turisticos.json")).default;
 } else if (categoria === 'guias') {
   data = (await import("../../data/guias-turisticos.json")).default;
+} else if (categoria === 'touroperadores') {
+  data = (await import("../../data/touroperadores.json")).default;
 }
 ---
 

@@ -41,6 +41,24 @@
         "id": 1,
         "url": "/assets/joyeria_gazaed_1.webp",
         "alternativeText": "Joyería Gazaed - Piezas artesanales en plata"
+      },
+      {
+        "id": 2,
+        "url": "/assets/joyeria_gazaed_2.webp",
+        "alternativeText": "Joyería Gazaed - joyeria gazaed",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/joyeria_gazaed_3.webp",
+        "alternativeText": "Joyería Gazaed - joyeria gazaed",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/joyeria_gazaed_4.webp",
+        "alternativeText": "Joyería Gazaed - joyeria gazaed",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -92,6 +110,30 @@
         "id": 2,
         "url": "/assets/cosmetica_natural_1.webp",
         "alternativeText": "Cosmética Natural Herbal - Medicina botánica de Tehuacán"
+      },
+      {
+        "id": 3,
+        "url": "/assets/cosmetica_natural_2.webp",
+        "alternativeText": "Cosmética Natural Herbal - cosmetica natural",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/cosmetica_natural_3.webp",
+        "alternativeText": "Cosmética Natural Herbal - cosmetica natural",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/cosmetica_natural_4.webp",
+        "alternativeText": "Cosmética Natural Herbal - cosmetica natural",
+        "caption": null
+      },
+      {
+        "id": 6,
+        "url": "/assets/cosmetica_natural_5.webp",
+        "alternativeText": "Cosmética Natural Herbal - cosmetica natural",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -130,6 +172,36 @@
         "id": 3,
         "url": "/assets/arete_salazar_1.webp",
         "alternativeText": "Arete Salazar - Artesanías tradicionales campesinas"
+      },
+      {
+        "id": 4,
+        "url": "/assets/arete_salazar_2.webp",
+        "alternativeText": "Arete Salazar Artesanías - arete salazar",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/arete_salazar_3.webp",
+        "alternativeText": "Arete Salazar Artesanías - arete salazar",
+        "caption": null
+      },
+      {
+        "id": 6,
+        "url": "/assets/arete_salazar_4.webp",
+        "alternativeText": "Arete Salazar Artesanías - arete salazar",
+        "caption": null
+      },
+      {
+        "id": 7,
+        "url": "/assets/arete_salazar_5.webp",
+        "alternativeText": "Arete Salazar Artesanías - arete salazar",
+        "caption": null
+      },
+      {
+        "id": 8,
+        "url": "/assets/arete_salazar_6.webp",
+        "alternativeText": "Arete Salazar Artesanías - arete salazar",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -219,6 +291,374 @@
         "id": 5,
         "url": "/assets/Biosfera_1.webp",
         "alternativeText": "Fénix Taller Artesanal - Reserva de la Biosfera"
+      },
+      {
+        "id": 6,
+        "url": "/assets/fenix_taller_artesanal_2.webp",
+        "alternativeText": "Fénix Taller Artesanal - fenix taller artesanal",
+        "caption": null
+      },
+      {
+        "id": 7,
+        "url": "/assets/fenix_taller_artesanal_3.webp",
+        "alternativeText": "Fénix Taller Artesanal - fenix taller artesanal",
+        "caption": null
+      },
+      {
+        "id": 8,
+        "url": "/assets/fenix_taller_artesanal_4.webp",
+        "alternativeText": "Fénix Taller Artesanal - fenix taller artesanal",
+        "caption": null
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 6,
+    "nombre": "Artesanías de Palma Santa Ana Teloxtoc",
+    "clasificacion": "Artesanía en Palma",
+    "especialidad": "Tortilleros, alhajeros, joyería, petates, tenates y figuras de palma",
+    "descripcion": "Venta de artesanías de palma tejidas a mano: tortilleros, alhajeros, joyería, petates, tenates y figuras decorativas.",
+    "direccion": "Santa Ana Teloxtoc, Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Santa+Ana+Teloxtoc+Tehuacan",
+    "horario": "Lunes a Viernes 9:00 am - 3:00 pm",
+    "zona": "Santa Ana Teloxtoc, junta auxiliar de Tehuacán",
+    "contacto": {
+      "id": 6,
+      "telefono": null,
+      "email": "saraajeho@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [],
+    "galeria": [],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 7,
+    "nombre": "Bordados y Tejidos Artesanales de Tehuacán",
+    "clasificacion": "Bordado, Tejido & Artesanía en Barro y Madera",
+    "especialidad": "Bordados y tejidos con aplicación de artesanía en barro y madera",
+    "descripcion": "Venta y demostración de la elaboración de bordados y tejidos, con aplicación de diversas artesanías de barro y madera. Talleres de artesanía según la temporada: piñatas, calabazas, papalotes y más.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Domingo 5:00 pm - 9:00 pm",
+    "zona": "Fuera del centro de Tehuacán",
+    "contacto": {
+      "id": 7,
+      "telefono": null,
+      "email": "chaliaf20@hotmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/bordados_tejidos_tehuacan_1.webp",
+        "alternativeText": "Bordados y Tejidos Artesanales de Tehuacán - bordados tejidos tehuacan",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/bordados_tejidos_tehuacan_2.webp",
+        "alternativeText": "Bordados y Tejidos Artesanales de Tehuacán - bordados tejidos tehuacan",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/bordados_tejidos_tehuacan_3.webp",
+        "alternativeText": "Bordados y Tejidos Artesanales de Tehuacán - bordados tejidos tehuacan",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/bordados_tejidos_tehuacan_4.webp",
+        "alternativeText": "Bordados y Tejidos Artesanales de Tehuacán - bordados tejidos tehuacan",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/bordados_tejidos_tehuacan_5.webp",
+        "alternativeText": "Bordados y Tejidos Artesanales de Tehuacán - bordados tejidos tehuacan",
+        "caption": null
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 8,
+    "nombre": "Artesanas Vale y Yur",
+    "clasificacion": "Taller Artesanal",
+    "especialidad": "Elaboración y venta de artesanías",
+    "descripcion": "Taller familiar de elaboración y venta de artesanías, con demostración del proceso de producción.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Domingo 9:00 am - 7:00 pm",
+    "zona": "Fuera del centro de Tehuacán",
+    "contacto": {
+      "id": 8,
+      "telefono": null,
+      "email": "angmendo28@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 8,
+        "plataforma": "Facebook",
+        "usuario": "Artesanas Vale y Yur",
+        "enlace": "https://www.facebook.com/share/19USKFQcp7/"
+      },
+      {
+        "id": 9,
+        "plataforma": "TikTok",
+        "usuario": "@artesanas.vale.yur",
+        "enlace": "https://www.tiktok.com/@artesanas.vale.yur"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/artesanas_vale_y_yur_1.webp",
+        "alternativeText": "Artesanas Vale y Yur - artesanas vale y yur",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/artesanas_vale_y_yur_2.webp",
+        "alternativeText": "Artesanas Vale y Yur - artesanas vale y yur",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/artesanas_vale_y_yur_3.webp",
+        "alternativeText": "Artesanas Vale y Yur - artesanas vale y yur",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/artesanas_vale_y_yur_4.webp",
+        "alternativeText": "Artesanas Vale y Yur - artesanas vale y yur",
+        "caption": null
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 9,
+    "nombre": "Artesanías de Palma Josefa Salazar",
+    "clasificacion": "Artesanía en Palma",
+    "especialidad": "Aretes, coyares, bolsas, tortilleros, alhajeros, servilleteros y tapetes de palma",
+    "descripcion": "Artesanías de palma hechas a mano: aretes, coyares, bolsas, tortilleros, alhajeros, servilleteros y tapetes. Se puede presenciar el proceso de elaboración.",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Los 7 días de la semana, todo el día",
+    "zona": "Fuera del centro de Tehuacán",
+    "contacto": {
+      "id": 9,
+      "telefono": null,
+      "email": "josefasalazarrodrigez124@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/artesanias_palma_josefa_salazar_1.webp",
+        "alternativeText": "Artesanías de Palma Josefa Salazar - artesanias palma josefa salazar",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/artesanias_palma_josefa_salazar_2.webp",
+        "alternativeText": "Artesanías de Palma Josefa Salazar - artesanias palma josefa salazar",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/artesanias_palma_josefa_salazar_3.webp",
+        "alternativeText": "Artesanías de Palma Josefa Salazar - artesanias palma josefa salazar",
+        "caption": null
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 10,
+    "nombre": "Luzema Bisutería Artesanal",
+    "clasificacion": "Bisutería Artesanal",
+    "especialidad": "Aretes, pulseras, collares, llaveros, coleteros y moños",
+    "descripcion": "Bisutería artesanal hecha a mano: aretes, pulseras, collares, llaveros, coleteros y moños.",
+    "direccion": "Zona Centro, Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Centro",
+    "horario": "Lunes a Sábado 10:00 am - 8:00 pm",
+    "zona": "Zona Centro",
+    "contacto": {
+      "id": 10,
+      "telefono": null,
+      "email": "marialuisagarciaocana0916@gmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 10,
+        "plataforma": "Facebook",
+        "usuario": "Luzema Bisutería Artesanal",
+        "enlace": null
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/luzema_bisuteria_artesanal_1.webp",
+        "alternativeText": "Luzema Bisutería Artesanal - luzema bisuteria artesanal",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/luzema_bisuteria_artesanal_2.webp",
+        "alternativeText": "Luzema Bisutería Artesanal - luzema bisuteria artesanal",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/luzema_bisuteria_artesanal_3.webp",
+        "alternativeText": "Luzema Bisutería Artesanal - luzema bisuteria artesanal",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/luzema_bisuteria_artesanal_4.webp",
+        "alternativeText": "Luzema Bisutería Artesanal - luzema bisuteria artesanal",
+        "caption": null
+      },
+      {
+        "id": 5,
+        "url": "/assets/luzema_bisuteria_artesanal_5.webp",
+        "alternativeText": "Luzema Bisutería Artesanal - luzema bisuteria artesanal",
+        "caption": null
+      }
+    ],
+    "pet_friendly": false,
+    "estacionamiento": false,
+    "alberca": false,
+    "gimnasio": false,
+    "jardin": false,
+    "terraza": false,
+    "musica_en_vivo": false,
+    "vistas_increibles": false,
+    "para_llevar": false,
+    "aire_libre": false,
+    "recepcion_24h": false,
+    "desayuno_cortesia": false
+  },
+  {
+    "id": 11,
+    "nombre": "Cafesa, Café de Altura",
+    "clasificacion": "Café de Altura & Productos Artesanales de Café",
+    "especialidad": "Café en grano o molido al momento y productos artesanales de café",
+    "descripcion": "Para los amantes del café: café en grano o molido al momento, chocolates, bombones, galletas, crema y licor de café, además de café preparado (americano, lechero, capuchino, frío y frappé).",
+    "direccion": "Tehuacán, Pue.",
+    "direccion_maps": "https://maps.google.com/?q=Tehuacan+Puebla",
+    "horario": "Lunes a Domingo 10:00 am - 8:00 pm",
+    "zona": "Cerca del centro",
+    "contacto": {
+      "id": 11,
+      "telefono": null,
+      "email": "iraiss7@hotmail.com",
+      "sitio_web": null,
+      "whatsapp": null
+    },
+    "redes_sociales": [
+      {
+        "id": 11,
+        "plataforma": "Facebook",
+        "usuario": "Cafesa Café de Altura",
+        "enlace": "https://www.facebook.com/cafesacafedealtura"
+      }
+    ],
+    "galeria": [
+      {
+        "id": 1,
+        "url": "/assets/cafesa_cafe_de_altura_1.webp",
+        "alternativeText": "Cafesa, Café de Altura - cafesa cafe de altura",
+        "caption": null
+      },
+      {
+        "id": 2,
+        "url": "/assets/cafesa_cafe_de_altura_2.webp",
+        "alternativeText": "Cafesa, Café de Altura - cafesa cafe de altura",
+        "caption": null
+      },
+      {
+        "id": 3,
+        "url": "/assets/cafesa_cafe_de_altura_3.webp",
+        "alternativeText": "Cafesa, Café de Altura - cafesa cafe de altura",
+        "caption": null
+      },
+      {
+        "id": 4,
+        "url": "/assets/cafesa_cafe_de_altura_4.webp",
+        "alternativeText": "Cafesa, Café de Altura - cafesa cafe de altura",
+        "caption": null
       }
     ],
     "pet_friendly": false,

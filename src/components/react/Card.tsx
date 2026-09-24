@@ -39,6 +39,8 @@ export interface CardItem {
   direccion?: string;
   estrellas?: number;
   especialidad?: string;
+  atractivo_principal?: string;
+  atractivoPrincipal?: string;
   galeria?: any;
   imagen?: string;
   redes_sociales?: { plataforma: string; enlace: string }[];
@@ -269,6 +271,19 @@ export default function Card({ item, categoria, children }: CardProps) {
                   </span>
                 ))}
               </div>
+            </div>
+          );
+        })()}
+
+        {/* Elemento destacado con estrellita */}
+        {(() => {
+          const atractivo = (item as any).atractivo_principal || (item as any).atractivoPrincipal;
+          if (!atractivo) return null;
+
+          return (
+            <div className="flex items-start gap-2 text-xs font-medium text-slate-800 bg-amber-50/90 border border-amber-200/80 rounded-lg p-2.5 my-2 shadow-xs">
+              <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0 mt-0.5" />
+              <span className="leading-relaxed">{atractivo}</span>
             </div>
           );
         })()}

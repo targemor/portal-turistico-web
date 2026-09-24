@@ -33,7 +33,7 @@
     "categoria_precio": "$$$",
     "zona": "Fuera del centro (15 min en coche)",
     "atractivo_principal": "Confiable y funcional para viaje de negocios, con desayuno de cortesía y transporte gratuito incluido",
-    "buscador_keywords": "city express, marriott, fuera del centro, negocios, recepción 24 horas, estacionamiento, desayuno cortesía",
+    "buscador_keywords": "city express, marriott, fuera del centro, estándar, negocios, recepción 24 horas, estacionamiento, gimnasio, desayuno cortesía",
     "caracteristicas": "Estacionamiento, Gimnasio, Desayuno en cortesía, Transportación gratuita 10 km a la redonda",
     "recepcion_24h": true,
     "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios, Para grupos grandes",
@@ -86,6 +86,36 @@
         "url": "/assets/city_express_by_marriott_tehuacan_7.webp",
         "alternativeText": null,
         "caption": null
+      },
+      {
+        "id": 81,
+        "url": "/assets/city_express_by_marriott_tehuacan_8.webp",
+        "alternativeText": "City Express By Marriott Tehuacán - city express by marriott tehuacan",
+        "caption": null
+      },
+      {
+        "id": 82,
+        "url": "/assets/city_express_by_marriott_tehuacan_9.webp",
+        "alternativeText": "City Express By Marriott Tehuacán - city express by marriott tehuacan",
+        "caption": null
+      },
+      {
+        "id": 83,
+        "url": "/assets/city_express_by_marriott_tehuacan_10.webp",
+        "alternativeText": "City Express By Marriott Tehuacán - city express by marriott tehuacan",
+        "caption": null
+      },
+      {
+        "id": 84,
+        "url": "/assets/city_express_by_marriott_tehuacan_11.webp",
+        "alternativeText": "City Express By Marriott Tehuacán - city express by marriott tehuacan",
+        "caption": null
+      },
+      {
+        "id": 85,
+        "url": "/assets/city_express_by_marriott_tehuacan_12.webp",
+        "alternativeText": "City Express By Marriott Tehuacán - city express by marriott tehuacan",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -98,7 +128,10 @@
     "vistas_increibles": false,
     "para_llevar": false,
     "aire_libre": false,
-    "desayuno_cortesia": true
+    "desayuno_cortesia": true,
+    "categoria_nivel": "Estándar",
+    "destacados": "Ideal para negocios: desayuno y transporte incluidos",
+    "spa": false
   },
   {
     "id": 7,
@@ -171,7 +204,12 @@
     "vistas_increibles": true,
     "para_llevar": false,
     "aire_libre": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "direccion_maps": "https://maps.app.goo.gl/DhZ2kZPAvVR8AhcG9",
+    "categoria_nivel": "Económico",
+    "destacados": "Edificio histórico porfiriano con restaurante y bar",
+    "spa": false,
+    "recepcion_24h_detalle": "Solo para huéspedes"
   },
   {
     "id": 8,
@@ -208,7 +246,7 @@
     "categoria_precio": "$$$",
     "zona": "Zona Centro",
     "atractivo_principal": "Servicio personalizado y atención muy cuidada al huésped",
-    "buscador_keywords": "hotel zenith, zona centro, recepción 24 horas, estacionamiento, servicio personalizado",
+    "buscador_keywords": "hotel zenith, zona centro, estándar, recepción 24 horas, estacionamiento, servicio personalizado",
     "caracteristicas": "Estacionamiento, Recepción 24 horas, Servicio personalizado",
     "recepcion_24h": true,
     "para_quien": "Viaje de negocios",
@@ -224,6 +262,24 @@
         "url": "/assets/hotel_zenith_2.webp",
         "alternativeText": "Hotel Zenith Tehuacán",
         "caption": null
+      },
+      {
+        "id": 202,
+        "url": "/assets/hotel_zenith_3.webp",
+        "alternativeText": "Hotel Zenith - hotel zenith",
+        "caption": null
+      },
+      {
+        "id": 203,
+        "url": "/assets/hotel_zenith_4.webp",
+        "alternativeText": "Hotel Zenith - hotel zenith",
+        "caption": null
+      },
+      {
+        "id": 204,
+        "url": "/assets/hotel_zenith_5.webp",
+        "alternativeText": "Hotel Zenith - hotel zenith",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -236,7 +292,10 @@
     "vistas_increibles": false,
     "para_llevar": false,
     "aire_libre": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "categoria_nivel": "Estándar",
+    "destacados": "Servicio personalizado y atención muy cuidada al huésped",
+    "spa": false
   },
   {
     "id": 9,
@@ -272,7 +331,7 @@
     "categoria_precio": "$$$",
     "zona": "Zona Centro",
     "atractivo_principal": "Comodidad y hotel con historia",
-    "buscador_keywords": "gran hotel méxico, solaris, zona centro, alberca, recepción 24 horas, estacionamiento, historia, comodidad",
+    "buscador_keywords": "gran hotel méxico, solaris, zona centro, superior, alberca, gimnasio, recepción 24 horas, estacionamiento, historia, comodidad",
     "caracteristicas": "Alberca, Gimnasio, Restaurante-bar, Estacionamiento, Recepción 24 horas",
     "recepcion_24h": true,
     "para_quien": "Parejas, Familias con niños, Viajeros solos, Viaje de negocios",
@@ -294,6 +353,18 @@
         "url": "/assets/gran_hotel_mexico_by_solaris_3.webp",
         "alternativeText": "Gran Hotel México by Solaris",
         "caption": null
+      },
+      {
+        "id": 205,
+        "url": "/assets/gran_hotel_mexico_by_solaris_4.webp",
+        "alternativeText": "Gran Hotel México by Solaris - gran hotel mexico by solaris",
+        "caption": null
+      },
+      {
+        "id": 206,
+        "url": "/assets/gran_hotel_mexico_by_solaris_5.webp",
+        "alternativeText": "Gran Hotel México by Solaris - gran hotel mexico by solaris",
+        "caption": null
       }
     ],
     "pet_friendly": false,
@@ -306,6 +377,10 @@
     "vistas_increibles": false,
     "para_llevar": false,
     "aire_libre": false,
-    "desayuno_cortesia": false
+    "desayuno_cortesia": false,
+    "direccion_maps": "https://maps.app.goo.gl/p6wXbqVeAZWhsXCk7",
+    "categoria_nivel": "Superior",
+    "destacados": "Hotel de categoría superior: alberca, gimnasio y encanto histórico en pleno centro",
+    "spa": false
   }
 ]

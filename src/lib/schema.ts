@@ -215,6 +215,11 @@ const CATEGORIA_META: Record<
     singular: "destino",
   },
   guias: { label: "Guías turísticos", type: "Person", singular: "guía" },
+  touroperadores: {
+    label: "Touroperadores",
+    type: "TravelAgency",
+    singular: "touroperador",
+  },
 };
 
 function directorioItem(categoria: string, item: any) {
@@ -273,6 +278,12 @@ function directorioItem(categoria: string, item: any) {
     if (typeof item.precio === "string" && /gratis/i.test(item.precio)) {
       base.isAccessibleForFree = true;
     }
+  }
+
+  if (categoria === "touroperadores") {
+    base.hasMap = item.direccion_maps || undefined;
+    base.knowsAbout = splitList(item.categoria_principal);
+    base.areaServed = item.zona || undefined;
   }
 
   return clean(base);
